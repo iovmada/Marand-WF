@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marand — Galerie</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --border: #d8d8d8;
+    --text: #222;
+    --muted: #777;
+    --accent: #e63322;
+    --accent2: #ff6b35;
+    --dark: #1a1a1a;
+    --radius: 10px;
+    --grid-columns: 12;
+    --grid-gutter: 24px;
+    --grid-max-width: 1320px;
+    --grid-margin: 48px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    padding: 0 var(--grid-margin);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--grid-gutter);
+  }
+  .row.align-center { align-items: center; }
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-12 { grid-column: span 12; }
+
+  .wf-badge {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 18px;
+    border-radius: 20px;
+    z-index: 1001;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(26, 26, 26, .97);
+    backdrop-filter: blur(12px);
+    height: 68px;
+  }
+  nav > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .nav-logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .55);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: color .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--accent2); }
+
+  .page-hero {
+    padding: 124px 0 72px;
+    background:
+      linear-gradient(120deg, rgba(26, 26, 26, .93), rgba(26, 26, 26, .68)),
+      url("https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&amp;fit=crop&amp;w=1400&amp;q=80") center/cover;
+    color: #fff;
+  }
+  .screen-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin-bottom: 32px;
+    background: rgba(255, 255, 255, .04);
+  }
+  .breadcrumb {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, .55);
+    margin-bottom: 18px;
+  }
+  .breadcrumb a { color: rgba(255, 255, 255, .75); text-decoration: none; }
+  h1 {
+    font-size: clamp(38px, 4.8vw, 64px);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+  .subtitle {
+    max-width: 700px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, .75);
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .hero-stat {
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .hero-stat strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .hero-stat span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .page { padding: 48px 0 80px; }
+  .section { margin-bottom: 88px; }
+  .tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section-intro {
+    margin-bottom: 36px;
+  }
+  .section-intro p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .section-title-copy { padding-right: 24px; }
+  .section-side-copy { padding-top: 34px; }
+
+  .cat-nav {
+    position: sticky;
+    top: 76px;
+    z-index: 90;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: rgba(244, 244, 244, .92);
+    backdrop-filter: blur(12px);
+    padding: 14px 0 18px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+  }
+  .cat-nav button {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--border);
+    transition: all .2s;
+    cursor: pointer;
+    font: inherit;
+  }
+  .cat-nav button:hover, .cat-nav button.active {
+    background: var(--dark);
+    color: #fff;
+    border-color: var(--dark);
+  }
+  .is-filtered-out { display: none; }
+
+  .feature-card,
+  .gallery-card,
+  .quote-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .feature-image,
+  .gallery-image {
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+  }
+  .feature-image img,
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .feature-image { height: 420px; }
+  .feature-caption {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    color: #fff;
+  }
+  .feature-caption strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .feature-caption span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: rgba(230, 51, 34, .92);
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
+  .feature-body,
+  .quote-body {
+    padding: 24px;
+  }
+  .feature-body p,
+  .quote-body p { color: var(--muted); line-height: 1.7; }
+
+  .gallery-image { height: 260px; }
+  .gallery-body { padding: 22px 22px 24px; }
+  .gallery-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .gallery-meta span {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    background: rgba(230, 51, 34, .08);
+    border-radius: 999px;
+    padding: 6px 10px;
+  }
+  .gallery-body p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .detail-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .detail-list div {
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .detail-list strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .detail-list span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .quote-card {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 0;
+    margin-top: 52px;
+  }
+  .quote-image {
+    min-height: 100%;
+    background:
+      linear-gradient(145deg, rgba(26, 26, 26, .72), rgba(230, 51, 34, .25)),
+      url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80") center/cover;
+  }
+  .quote-mark {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  blockquote {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+  .quote-person {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .cta-banner {
+    padding: 38px 40px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--dark), #2a2a2a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .cta-banner p { color: rgba(255, 255, 255, .62); max-width: 620px; }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent2); }
+
+  footer {
+    background: var(--dark);
+    color: #fff;
+    padding: 64px 0 32px;
+  }
+  footer a { color: rgba(255, 255, 255, .5); text-decoration: none; font-size: 14px; }
+  footer a:hover { color: #fff; }
+  .footer-grid {
+    margin-bottom: 48px;
+  }
+  .footer-col h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    opacity: .4;
+    font-weight: 700;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    padding-top: 24px;
+    font-size: 13px;
+    opacity: .3;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  @media (max-width: 1080px) {
+    .nav-links { display: none; }
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8 { grid-column: span 12; }
+    .hero-stats,
+    .quote-card { grid-template-columns: 1fr 1fr; }
+    .detail-list { grid-template-columns: 1fr 1fr 1fr; }
+    .section-side-copy { padding-top: 0; }
+  }
+
+  @media (max-width: 760px) {
+    :root { --grid-margin: 20px; }
+    .page-hero { padding-top: 110px; }
+    .hero-stats,
+    .quote-card,
+    .detail-list { grid-template-columns: 1fr; }
+    .feature-image,
+    .gallery-image { height: 240px; }
+    .feature-caption { flex-direction: column; align-items: flex-start; }
+    .cta-banner,
+    .footer-bottom { display: block; }
+    .cta-banner .btn { margin-top: 18px; }
+    .cat-nav { top: 68px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wf-badge">Wireframe — Pagina galerie</div>
+
+<nav>
+  <div class="container">
+    <a href="marand-wireframes-ro.html" class="nav-logo">MAR<span>AND</span></a>
+    <ul class="nav-links">
+      <li><a href="marand-wireframes-ro.html#home">Acasă</a></li>
+      <li><a href="marand-products-ro.html">Produse</a></li>
+      <li><a href="marand-wireframes-ro.html#design">Design</a></li>
+      <li><a href="marand-wireframes-ro.html#how-it-works">Cum funcționează</a></li>
+      <li><a href="marand-gallery-ro.html" class="active">Galerie</a></li>
+      <li><a href="marand-wireframes-ro.html#equipment">Echipamente</a></li>
+      <li><a href="marand-wireframes-ro.html#about">Despre</a></li>
+      <li><a href="marand-quote-ro.html">Contact</a></li>
+    </ul>
+    <a href="marand-quote-ro.html" class="nav-cta">Cere ofertă</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="row align-center">
+      <div class="col-7">
+        <div class="screen-label">Pagina galerie — antet</div>
+        <div class="breadcrumb"><a href="marand-wireframes-ro.html">Acasă</a> / <strong style="color:rgba(255,255,255,.75);">Galerie</strong></div>
+        <h1>Proiecte de print care par construite cu intenție, nu generice<span style="color:var(--accent)">.</span></h1>
+        <p class="subtitle">O selecție atentă de bannere, grafică de retail, lucrări pe canvas, stickere, print textil și piese de format mic. Fiecare bloc combină o referință vizuală cu detaliile de producție care contează pentru clienți.</p>
+      </div>
+      <div class="col-5">
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>6</strong><span>Categorii principale</span></div>
+          <div class="hero-stat"><strong>18+</strong><span>Tipuri de proiect prezentate</span></div>
+          <div class="hero-stat"><strong>Interior + exterior</strong><span>Aplicații</span></div>
+          <div class="hero-stat"><strong>Execuție rapidă</strong><span>Focus pe producție</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="cat-nav">
+          <button type="button" class="active" data-filter="all">Toate lucrările</button>
+          <button type="button" data-filter="featured">Recomandate</button>
+          <button type="button" data-filter="retail">Branding retail</button>
+          <button type="button" data-filter="events">Evenimente &amp; semnalistică</button>
+          <button type="button" data-filter="canvas">Canvas &amp; decor</button>
+          <button type="button" data-filter="vinyl">Vinyl &amp; stickere</button>
+          <button type="button" data-filter="textiles">Textile</button>
+          <button type="button" data-filter="print">Format mic</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section filter-section" id="featured" data-category="featured">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Proiecte recomandate</p>
+          <h2>Referințe hero pentru evaluarea clientului<span style="color:var(--accent)">.</span></h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Aceste carduri mari arată cum pagina de galerie poate combina imagini curate cu note scurte despre producție. Scopul este ca clientul să înțeleagă atât aspectul lucrării, cât și detaliile practice de livrare.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-7">
+          <div class="feature-card">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Large event backdrop and stage branding">
+              <div class="feature-caption">
+                <div>
+                  <span>Fundal de eveniment</span>
+                  <strong>Perete de scenă pentru conferință cu branding de sponsori</strong>
+                </div>
+                <div style="font-size:13px; color:rgba(255,255,255,.76);">Print PVC flex · montaj modular</div>
+              </div>
+            </div>
+            <div class="feature-body">
+              <p>Un exemplu reprezentativ de large format care arată un fundal branduit gândit pentru fotografii la eveniment, vizibilitatea sponsorilor și o prezență curată pe scenă. Cardul poate include ulterior note pentru client, dimensiuni sau instrucțiuni de montaj.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="feature-card">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Storefront window graphics and retail branding">
+              <div class="feature-caption">
+                <div>
+                  <span>Vitrină retail</span>
+                  <strong>Grafică de vitrină pentru campanie sezonieră</strong>
+                </div>
+                <div style="font-size:13px; color:rgba(255,255,255,.76);">Aplicare vinyl · retail stradal</div>
+              </div>
+            </div>
+            <div class="feature-body">
+              <p>Un vizual orientat spre retail care pune accent pe mesajul campaniei, vizibilitatea din stradă și brandingul coerent pe suprafețele vitrate și la intrare.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="retail" data-category="retail">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 01</p>
+          <h2>Branding retail și grafică pentru vitrine</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Proiectele din această categorie arată cum Marand poate face un magazin, showroom sau pop-up să pară imediat mai bine finisat și mai vizibil din exterior.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1481437156560-3205f6a55735?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Retail storefront with printed window graphics">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Branding retail</span>
+                <span>Window Vinyl</span>
+              </div>
+              <h3>Campanie de lansare orientată spre stradă pentru o vitrină boutique</h3>
+              <p>Grafică integrală pe geam, gândită pentru a atrage privirea, a marca experiența de intrare și a comunica promoția sezonieră fără a bloca prea agresiv lumina naturală.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Lansare magazin</span></div>
+                <div><strong>Material</strong><span>Vinyl printat</span></div>
+                <div><strong>Finish</strong><span>Laminare mată</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Semnalistică interioară retail și display-uri branduite">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Branding retail</span>
+                <span>Interior Signage</span>
+              </div>
+              <h3>Grafică de display pentru prezentarea produselor în magazin</h3>
+              <p>Acest card de referință combină printuri montate, semnalistică direcțională și suprafețe de display branduite. Funcționează bine pentru a demonstra semnalistica de categorie și coerența campaniei în interiorul magazinului.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Showroom</span></div>
+                <div><strong>Material</strong><span>Foam board</span></div>
+                <div><strong>Finish</strong><span>Montaj rigid</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="events" data-category="events">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 02</p>
+          <h2>Evenimente, bannere și wayfinding</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Pentru lansări, expoziții, nunți, conferințe și activări publice, această categorie arată suprafețe puternice care trebuie să fie lizibile de la distanță.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Semnalistică branduită și sistem de fundal pentru eveniment">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Evenimente</span>
+                <span>Fundal</span>
+              </div>
+              <h3>Fundal de scenă și perete de sponsori pentru un eveniment live</h3>
+              <p>O aplicație de print cu vizibilitate mare, reproducere curată a logo-urilor, dimensiuni modulare și material rezistent potrivit pentru montaj, demontare și transport între locații.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Conferință</span></div>
+                <div><strong>Material</strong><span>PVC flex</span></div>
+                <div><strong>Finish</strong><span>Capse + tiv</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Banner exterior pentru eveniment și semnalistică direcțională">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Exterior</span>
+                <span>Wayfinding</span>
+              </div>
+              <h3>Set de semnalistică direcțională pentru fluxul mulțimii și vizibilitate</h3>
+              <p>Acest card demonstrează cum sistemele de bannere și panourile de semnalistică pot susține orientarea, consolida brandingul și rămâne lizibile în medii exterioare ample.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Festival</span></div>
+                <div><strong>Material</strong><span>Mesh + banner</span></div>
+                <div><strong>Finish</strong><span>Rezistent la exterior</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="canvas" data-category="canvas">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 03</p>
+          <h2>Printuri pe canvas și lucrări decorative</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Această parte a galeriei le permite clienților să analizeze lucrări premium, orientate spre interior: canvas înrămat, pereți de galerie, reproduceri și piese decorative gata de expus.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Lucrare pe canvas expusă într-un interior de tip galerie">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Canvas</span>
+                <span>Stil galerie</span>
+              </div>
+              <h3>Print mare pe canvas pregătit pentru expunere tip galerie</h3>
+              <p>O referință vizuală premium pentru clienții interesați de reproduceri de artă și decor interior. Structura paginii lasă loc pentru notarea adâncimii ramei, wrap-ului pe margini și opțiunilor de finisaj.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Expoziție</span></div>
+                <div><strong>Material</strong><span>Canvas artistic</span></div>
+                <div><strong>Finish</strong><span>Ramă întinsă</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Print decorativ înrămat într-un interior modern">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Decor</span>
+                <span>Print înrămat</span>
+              </div>
+              <h3>Print de perete pentru decor hotelier sau de birou</h3>
+              <p>O aplicație mai subtilă care arată cum Marand poate susține hoteluri, birouri și interioare rezidențiale cu vizualuri printate rafinate, care completează spațiul fără să îl domine.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Decor interior</span></div>
+                <div><strong>Material</strong><span>Canvas sau hârtie foto</span></div>
+                <div><strong>Finish</strong><span>Opțiune înrămată</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="vinyl" data-category="vinyl">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 04</p>
+          <h2>Vinyl, decaluri și stickere</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Aceste exemple ajută la prezentarea tăierii precise, a aplicațiilor branduite de dimensiuni mici și a suprafețelor unde contează durabilitatea și calitatea conturului.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Coli de stickere și producție de decaluri din vinyl">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Stickere</span>
+                <span>Producție în serie</span>
+              </div>
+              <h3>Coli de stickere printate pentru packaging și merch</h3>
+              <p>O categorie compactă, dar foarte utilă comercial, care se potrivește brandurilor de produs, evenimentelor și micilor afaceri care au nevoie de loturi repetabile de stickere, cu tăiere curată și culoare consistentă.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Packaging</span></div>
+                <div><strong>Material</strong><span>Vinyl autoadeziv</span></div>
+                <div><strong>Finish</strong><span>Tăiere de contur</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Aplicare de decaluri auto și litere branduite din vinyl">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Vinyl</span>
+                <span>Grafică auto</span>
+              </div>
+              <h3>Branding auto cu aplicare de vinyl rezistent la exterior</h3>
+              <p>Un caz de utilizare cu impact mare, construit în jurul vizibilității în trafic, materialelor durabile și unei tipografii clare, care rămâne lizibilă pe suprafețe curbate și vehicule în mișcare.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Branding flotă</span></div>
+                <div><strong>Material</strong><span>Vinyl exterior</span></div>
+                <div><strong>Finish</strong><span>Laminated</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="textiles" data-category="textiles">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 05</p>
+          <h2>Print textil și articole pentru echipe</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Secțiunea de textile este utilă pentru a demonstra flexibilitatea DTF pe uniforme de staff, merch branduit, tricouri de eveniment și comenzi personalizate mai mici.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Tricouri printate expuse pe umerașe">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Textile</span>
+                <span>Print DTF</span>
+              </div>
+              <h3>Tricouri de echipă branduite, cu grafică frontală puternică</h3>
+              <p>Un exemplu direct pentru workwear sau comenzi promoționale. Layoutul poate include note despre tipul de articol, dimensiunea printului, opțiunile de plasare și consistența culorilor pe mai multe mărimi.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Articole pentru echipă</span></div>
+                <div><strong>Material</strong><span>Amestec de bumbac</span></div>
+                <div><strong>Finish</strong><span>Rezistent la spălare</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Produse textile împăturite și merch branduit">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Merch</span>
+                <span>Accesorii</span>
+              </div>
+              <h3>Sacoșe tote personalizate și accesorii textile pentru campanii</h3>
+              <p>Acest exemplu arată cum aceeași secțiune poate merge dincolo de tricouri spre sacoșe tote, kituri de eveniment și extra-uri textile branduite care susțin lansări promoționale sau merchandise de retail.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Merch promoțional</span></div>
+                <div><strong>Material</strong><span>Textil canvas</span></div>
+                <div><strong>Finish</strong><span>Transfer DTF</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section filter-section" id="print" data-category="print">
+      <div class="row section-intro">
+        <div class="col-7 section-title-copy">
+          <p class="tag">Categoria 06</p>
+          <h2>Piese printate de format mic</h2>
+        </div>
+        <div class="col-5 section-side-copy">
+          <p>Cărțile de vizită, flyerele, meniurile pliate, materialele de tip handout și broșurile completează galeria cu exemple practice de care clienții pot avea nevoie alături de lucrările de format mare.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Flyere printate și materiale de marketing pe birou">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Flyers</span>
+                <span>Print de campanie</span>
+              </div>
+              <h3>Flyere promoționale cu acoperire bună de culoare și tăiere curată</h3>
+              <p>Un material compact de campanie, ideal pentru promoții locale, meniuri, oferte sau handout-uri de eveniment. Acest card echilibrează exemplul vizual cu suficiente detalii de producție pentru a construi încredere.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Campanie locală</span></div>
+                <div><strong>Material</strong><span>Hârtie cretată</span></div>
+                <div><strong>Finish</strong><span>Față-verso</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="gallery-card">
+            <div class="gallery-image">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Cărți de vizită și papetărie printată">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>Papetărie</span>
+                <span>Cărți de vizită</span>
+              </div>
+              <h3>Set de cărți de vizită cu finisaj premium la atingere</h3>
+              <p>Un final de galerie util pentru clienții corporate care au nevoie de piese esențiale: cărți de vizită, carduri de programare și alte materiale mici, cu finisaje curate și tipografie mai bine definită.</p>
+              <div class="detail-list">
+                <div><strong>Utilizare</strong><span>Papetărie de brand</span></div>
+                <div><strong>Material</strong><span>Carton 350g</span></div>
+                <div><strong>Finish</strong><span>Mat soft-touch</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="row">
+        <div class="col-12">
+          <div class="quote-card">
+            <div class="quote-image"></div>
+            <div class="quote-body">
+              <span class="quote-mark">Bloc pentru feedback client</span>
+              <blockquote>“Acest format de galerie face mai ușor de înțeles ce poate produce efectiv Marand, nu doar ce servicii sunt listate.”</blockquote>
+              <p class="quote-person">Poziționare sugerată pentru testimonial pe site-ul live sau pentru review intern în faza de wireframe. Această secțiune poate afișa ulterior testimoniale reale sau proiecte reprezentative.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="row">
+        <div class="col-12">
+          <div class="cta-banner">
+            <div>
+              <h2 style="margin-bottom:8px;">Vrei ca proiectul tău să fie prezentat așa?</h2>
+              <p>Folosește această pagină ca layout de referință pentru viitoare fotografii reale, studii de caz și proiecte finalizate pentru clienți. Este deja structurată pe categorii, vizualuri și texte scurte descriptive.</p>
+            </div>
+            <a href="marand-quote-ro.html" class="btn btn-primary">Cere ofertă</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row footer-grid">
+      <div class="col-4 footer-col">
+        <div style="font-size:24px; font-weight:900; margin-bottom:16px;">MAR<span style="color:var(--accent);">AND</span></div>
+        <p style="font-size:14px; opacity:.5; line-height:1.7; max-width:280px;">Print shop profesionist cu vizualuri pregătite pentru galerie pentru large format, textile, vinyl, semnalistică și produse de print uzual.</p>
+      </div>
+      <div class="col-3 footer-col">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="marand-wireframes-ro.html">Acasă</a></li>
+          <li><a href="marand-products-ro.html">Produse</a></li>
+          <li><a href="marand-gallery-ro.html">Galerie</a></li>
+        </ul>
+      </div>
+      <div class="col-3 footer-col">
+        <h4>Categorii</h4>
+        <ul>
+          <li><a href="#retail">Branding retail</a></li>
+          <li><a href="#events">Evenimente &amp; semnalistică</a></li>
+          <li><a href="#canvas">Canvas &amp; decor</a></li>
+          <li><a href="#vinyl">Vinyl &amp; stickere</a></li>
+          <li><a href="#textiles">Textile</a></li>
+          <li><a href="#print">Format mic</a></li>
+        </ul>
+      </div>
+      <div class="col-2 footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">hello@marand.ro</a></li>
+          <li><a href="#">+40 (XXX) XXX-XXX</a></li>
+          <li><a href="marand-quote-ro.html">Cere ofertă</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Marand Print Shop. Toate drepturile rezervate.</span>
+      <span>Termeni &amp; condiții · Politica de confidențialitate</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const filterButtons = document.querySelectorAll('.cat-nav button');
+  const filterSections = document.querySelectorAll('.filter-section');
+
+  function applyFilter(filter) {
+    filterButtons.forEach((button) => {
+      button.classList.toggle('active', button.dataset.filter === filter);
+    });
+
+    filterSections.forEach((section) => {
+      const shouldShow = filter === 'all' || section.dataset.category === filter;
+      section.classList.toggle('is-filtered-out', !shouldShow);
+    });
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => applyFilter(button.dataset.filter));
+  });
+</script>
+
+</body>
+</html>
