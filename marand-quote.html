@@ -182,7 +182,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-  .page { padding: 48px 0 80px; }
+  .page {
+    padding: 48px 0 140px;
+    position: relative;
+    z-index: 2;
+    background: var(--bg);
+  }
   .section { margin-bottom: 88px; }
   .tag {
     font-size: 12px;
@@ -197,6 +202,8 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
+    position: relative;
+    z-index: 2;
   }
   .quote-card { padding: 28px; }
   .field-grid {
@@ -290,6 +297,8 @@
     background: #faf8f4;
     border: 1px solid #ece8e1;
     padding: 16px 18px;
+    position: relative;
+    z-index: 2;
   }
   .stat-box strong { display: block; font-size: 22px; margin-bottom: 4px; }
   .stat-box span { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
@@ -311,6 +320,8 @@
     background: var(--dark);
     color: #fff;
     padding: 64px 0 32px;
+    position: relative;
+    z-index: 1;
   }
   footer a { color: rgba(255,255,255,.5); text-decoration: none; font-size: 14px; }
   footer a:hover { color: #fff; }
