@@ -104,6 +104,18 @@
     font-weight: 700;
     text-decoration: none;
   }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .lang-switch { display: flex; gap: 6px; }
+  .lang-switch a {
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .lang-switch a.is-active { background: #fff; color: #111; }
+  .lang-switch a:not(.is-active) { background: rgba(255,255,255,.08); color: rgba(255,255,255,.72); }
   .page-hero {
     padding: 124px 0 64px;
     background:
@@ -354,6 +366,10 @@
     justify-content: space-between;
     gap: 12px;
   }
+  @media (max-width: 1080px) {
+    .nav-links { display: none; }
+  }
+
   @media (max-width: 980px) {
     .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 { grid-column: span 12; }
     .field-grid, .option-grid, .hero-panel-grid, .stat-grid { grid-template-columns: 1fr; }
@@ -362,10 +378,16 @@
     .footer-grid > :nth-child(2),
     .footer-grid > :nth-child(3),
     .footer-grid > :nth-child(4) { grid-column: span 6; }
-    .nav-links { display: none; }
+  }
+  @media (max-width: 760px) {
+    :root { --grid-margin: 20px; }
+    .wf-badge { display: none; }
+    .nav-logo { font-size: 20px; }
+    .nav-actions { gap: 8px; }
+    .lang-switch a { padding: 7px 9px; font-size: 11px; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
   }
   @media (max-width: 640px) {
-    :root { --grid-margin: 20px; }
     .footer-grid > :nth-child(1),
     .footer-grid > :nth-child(2),
     .footer-grid > :nth-child(3),
@@ -386,10 +408,10 @@
       <li><a href="marand-wireframes.html#how-it-works">How It Works</a></li>
       <li><a href="marand-quote.html" class="active">Quote</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:12px;">
-      <div style="display:flex; gap:6px;">
-        <a href="marand-quote.html" style="padding:8px 10px; border-radius:6px; background:#fff; color:#111; font-size:12px; font-weight:700; text-decoration:none;">EN</a>
-        <a href="marand-quote-ro.html" style="padding:8px 10px; border-radius:6px; background:rgba(255,255,255,.08); color:rgba(255,255,255,.72); font-size:12px; font-weight:700; text-decoration:none;">RO</a>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="marand-quote.html" class="is-active">EN</a>
+        <a href="marand-quote-ro.html">RO</a>
       </div>
       <a href="marand-quote.html" class="nav-cta">Request a Quote</a>
     </div>

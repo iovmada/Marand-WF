@@ -117,6 +117,18 @@
   .nav-links a:hover, .nav-links a.active { color: #fff; }
   .nav-cta { background: var(--accent); color: #fff; padding: 10px 24px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
   .nav-cta:hover { background: var(--accent2); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .lang-switch { display: flex; gap: 6px; }
+  .lang-switch a {
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .lang-switch a.is-active { background: #fff; color: #111; }
+  .lang-switch a:not(.is-active) { background: rgba(255,255,255,.08); color: rgba(255,255,255,.72); }
 
   /* ── Sections ─────────────────────────────────────── */
   .screen { padding: 120px 0 80px; }
@@ -221,6 +233,24 @@
     .step-connector { display: none; }
   }
 
+  @media (max-width: 1080px) {
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 760px) {
+    .wf-badge,
+    .grid-spec-badge { display: none; }
+    .nav-logo { font-size: 20px; }
+    .nav-actions { gap: 8px; }
+    .lang-switch a { padding: 7px 9px; font-size: 11px; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { display: block; }
+  }
+
   /* ── Reveal ───────────────────────────────────────── */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .5s, transform .5s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -265,10 +295,10 @@
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:12px;">
-      <div style="display:flex; gap:6px;">
-        <a href="marand-wireframes.html" style="padding:8px 10px; border-radius:6px; background:#fff; color:#111; font-size:12px; font-weight:700; text-decoration:none;">EN</a>
-        <a href="marand-wireframes-ro.html" style="padding:8px 10px; border-radius:6px; background:rgba(255,255,255,.08); color:rgba(255,255,255,.72); font-size:12px; font-weight:700; text-decoration:none;">RO</a>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="marand-wireframes.html" class="is-active">EN</a>
+        <a href="marand-wireframes-ro.html">RO</a>
       </div>
       <a href="marand-quote.html" class="nav-cta">Request a Quote</a>
     </div>

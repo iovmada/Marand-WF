@@ -113,6 +113,18 @@
     transition: background .2s;
   }
   .nav-cta:hover { background: var(--accent2); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .lang-switch { display: flex; gap: 6px; }
+  .lang-switch a {
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .lang-switch a.is-active { background: #fff; color: #111; }
+  .lang-switch a:not(.is-active) { background: rgba(255,255,255,.08); color: rgba(255,255,255,.72); }
 
   .page-hero {
     padding: 124px 0 72px;
@@ -451,6 +463,11 @@
 
   @media (max-width: 760px) {
     :root { --grid-margin: 20px; }
+    .wf-badge { display: none; }
+    .nav-logo { font-size: 20px; }
+    .nav-actions { gap: 8px; }
+    .lang-switch a { padding: 7px 9px; font-size: 11px; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
     .page-hero { padding-top: 110px; }
     .hero-stats,
     .quote-card,
@@ -482,10 +499,10 @@
       <li><a href="marand-wireframes.html#about">About</a></li>
       <li><a href="marand-quote.html">Contact</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:12px;">
-      <div style="display:flex; gap:6px;">
-        <a href="marand-gallery.html" style="padding:8px 10px; border-radius:6px; background:#fff; color:#111; font-size:12px; font-weight:700; text-decoration:none;">EN</a>
-        <a href="marand-gallery-ro.html" style="padding:8px 10px; border-radius:6px; background:rgba(255,255,255,.08); color:rgba(255,255,255,.72); font-size:12px; font-weight:700; text-decoration:none;">RO</a>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="marand-gallery.html" class="is-active">EN</a>
+        <a href="marand-gallery-ro.html">RO</a>
       </div>
       <a href="marand-quote.html" class="nav-cta">Request a Quote</a>
     </div>
