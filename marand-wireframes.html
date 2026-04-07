@@ -339,6 +339,7 @@
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .5s, transform .5s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
+<link rel="stylesheet" href="assets/chatbot.css">
 </head>
 <body>
 
@@ -977,6 +978,7 @@
   mobileMenuPanel?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMobileMenu(false); });
 </script>
+<script src="assets/chatbot.js"></script>
 
 </body>
 </html>
