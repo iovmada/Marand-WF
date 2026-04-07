@@ -221,10 +221,13 @@
   .marand-chat {
     right: 16px;
     left: 16px;
-    bottom: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   }
 
   .marand-chat-button {
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
     margin-left: auto;
     display: block;
   }
@@ -233,7 +236,126 @@
     right: 0;
     left: 0;
     width: auto;
-    height: min(72vh, 620px);
-    bottom: 82px;
+    height: min(78vh, 640px);
+    bottom: 74px;
+    border-radius: 20px;
+  }
+
+  .marand-chat-header {
+    padding: 16px 16px 14px;
+  }
+
+  .marand-chat-header-top {
+    align-items: flex-start;
+  }
+
+  .marand-chat-title {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .marand-chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .marand-chat-label {
+    font-size: 13px;
+  }
+
+  .marand-chat-subtitle {
+    font-size: 11px;
+  }
+
+  .marand-chat-close {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .marand-chat-messages {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .marand-chat-bubble {
+    max-width: 94%;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .marand-chat-links {
+    gap: 6px;
+  }
+
+  .marand-chat-links a {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .marand-chat-quick {
+    padding: 0 14px 12px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  .marand-chat-quick::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marand-chat-chip {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .marand-chat-form {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .marand-chat-input {
+    min-height: 46px;
+  }
+
+  .marand-chat-send {
+    min-height: 46px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .marand-chat {
+    right: 12px;
+    left: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .marand-chat-panel {
+    bottom: 70px;
+    height: min(82vh, 680px);
+    border-radius: 18px;
+  }
+
+  .marand-chat-header {
+    padding: 14px 14px 12px;
+  }
+
+  .marand-chat-status {
+    font-size: 11px;
+  }
+
+  .marand-chat-messages,
+  .marand-chat-quick,
+  .marand-chat-form {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
