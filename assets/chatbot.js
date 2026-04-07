@@ -196,11 +196,31 @@
     const quick = root.querySelector(".marand-chat-quick");
     const form = root.querySelector(".marand-chat-form");
     const input = root.querySelector(".marand-chat-input");
+    const media = window.matchMedia("(max-width: 760px)");
+
+    function syncViewport() {
+      if (!media.matches) {
+        root.style.removeProperty("--marand-chat-mobile-top");
+        root.style.removeProperty("--marand-chat-mobile-height");
+        return;
+      }
+
+      const viewport = window.visualViewport;
+      const top = viewport ? viewport.offsetTop : 0;
+      const height = viewport ? viewport.height : window.innerHeight;
+      root.style.setProperty("--marand-chat-mobile-top", `${Math.max(0, top)}px`);
+      root.style.setProperty("--marand-chat-mobile-height", `${Math.max(320, height)}px`);
+      messages.scrollTop = messages.scrollHeight;
+    }
 
     function setOpen(next) {
       root.classList.toggle("is-open", next);
       openBtn.setAttribute("aria-expanded", next ? "true" : "false");
-      if (next) input.focus();
+      if (next) {
+        syncViewport();
+        input.focus();
+        messages.scrollTop = messages.scrollHeight;
+      }
     }
 
     function submitMessage(text) {
@@ -231,7 +251,19 @@
       event.preventDefault();
       submitMessage(input.value);
       input.value = "";
+      input.focus();
     });
+
+    input.addEventListener("focus", () => {
+      window.setTimeout(syncViewport, 50);
+      window.setTimeout(() => { messages.scrollTop = messages.scrollHeight; }, 120);
+    });
+
+    media.addEventListener("change", syncViewport);
+    window.addEventListener("resize", syncViewport);
+    window.visualViewport?.addEventListener("resize", syncViewport);
+    window.visualViewport?.addEventListener("scroll", syncViewport);
+    syncViewport();
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setOpen(false);
