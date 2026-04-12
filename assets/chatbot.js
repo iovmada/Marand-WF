@@ -55,7 +55,7 @@
         home: "marand-wireframes-ro.html",
         products: "marand-products-ro.html",
         gallery: "marand-gallery-ro.html",
-        quote: "marand-quote-ro.html"
+        quote: "marand-oferta-ro.html"
       }
     : {
         home: "marand-wireframes.html",

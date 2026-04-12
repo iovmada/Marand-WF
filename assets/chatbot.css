@@ -123,11 +123,17 @@
   overflow-y: auto;
   overflow-x: hidden;
   display: grid;
+  justify-items: start;
+  align-items: start;
+  grid-auto-rows: max-content;
   gap: 14px;
 }
 
 .marand-chat-bubble {
+  display: inline-block;
+  width: fit-content;
   max-width: 88%;
+  align-self: start;
   padding: 14px 16px;
   border-radius: 16px;
   line-height: 1.6;
@@ -144,7 +150,8 @@
 }
 
 .marand-chat-bubble.user {
-  margin-left: auto;
+  justify-self: end;
+  align-self: start;
   background: #171717;
   color: #fff;
   border-top-right-radius: 6px;
@@ -251,7 +258,7 @@
     width: 100vw;
     height: var(--marand-chat-mobile-height);
     max-height: none;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto;
     border-radius: 0;
     border: 0;
     box-shadow: none;
@@ -324,11 +331,7 @@
   }
 
   .marand-chat-quick {
-    padding: 0 10px 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    background: #efeae2;
+    display: none;
   }
 
   .marand-chat-chip {

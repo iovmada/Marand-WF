@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marand — Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/marand-shell.css" />
+<link rel="stylesheet" href="./assets/chatbot.css" />
+<style>
+  :root {
+    --bg: #f7f7f7;
+    --surface: #fcfcfc;
+    --blue: #0c24c2;
+    --lime: #9dfd43;
+    --border: #e1e1e1;
+    --muted: #717171;
+    --module-grid-width: 1376px;
+    --shadow-card: 0 7px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 110px; }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    background: var(--bg);
+    color: #333;
+    line-height: 1.4;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .page { position: relative; overflow-x: hidden; z-index: 1; }
+
+  .contact-hero {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 0 auto;
+    padding: 150px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .contact-chip {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--lime);
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .contact-hero-title {
+    margin: 0;
+    max-width: 914px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .contact-hero-title .accent {
+    color: var(--blue);
+  }
+
+  .contact-hero-subtitle {
+    margin: 0;
+    max-width: 780px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+  }
+
+  .contact-layout {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 64px auto 0;
+    display: grid;
+    grid-template-columns: 5fr 1fr 6fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  .contact-card,
+  .contact-form-card {
+    background: var(--surface);
+    border-radius: 32px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .contact-card {
+    padding: 40px 32px;
+  }
+
+  .contact-intro {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #020202;
+  }
+
+  .contact-info-list {
+    display: grid;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .contact-value {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0b0b0b;
+  }
+
+  .contact-map {
+    min-height: 240px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .contact-map-visual {
+    min-height: 240px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(157, 253, 67, 0.22), transparent 24%),
+      radial-gradient(circle at 78% 28%, rgba(12, 36, 194, 0.14), transparent 28%),
+      linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,247,247,0.92));
+  }
+
+  .contact-map-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.38;
+    background-image:
+      linear-gradient(rgba(12, 36, 194, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(12, 36, 194, 0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+
+  .contact-map-pin {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(12, 36, 194, 0.08);
+    border: 1px solid rgba(12, 36, 194, 0.14);
+    backdrop-filter: blur(8px);
+  }
+
+  .contact-map-pin::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 10px rgba(12, 36, 194, 0.12);
+  }
+
+  .contact-map-copy strong {
+    display: block;
+    margin-bottom: 4px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0b0b0b;
+  }
+
+  .contact-map-copy p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .contact-form-card {
+    padding: 40px 32px;
+    min-width: 0;
+  }
+
+  .contact-form-tag {
+    display: block;
+    margin: 0 0 8px;
+    color: var(--blue);
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-form-title {
+    margin: 0 0 8px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 32px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .contact-form-desc {
+    margin: 0 0 32px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #020202;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-field--full {
+    grid-column: 1 / -1;
+  }
+
+  .contact-field label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .contact-input,
+  .contact-select,
+  .contact-textarea {
+    width: 100%;
+    height: 56px;
+    padding: 0 24px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230c24c2' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+    padding-right: 56px;
+  }
+
+  .contact-textarea {
+    height: 160px;
+    padding: 20px 24px;
+    resize: vertical;
+    line-height: 1.5;
+    text-transform: none;
+  }
+
+  .contact-input:focus,
+  .contact-select:focus,
+  .contact-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(12, 36, 194, 0.12);
+  }
+
+  .contact-upload {
+    border: 2px dashed var(--border);
+    border-radius: 24px;
+    padding: 32px;
+    text-align: center;
+    background: #fff;
+  }
+
+  .contact-upload strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0b0b0b;
+    margin-bottom: 8px;
+  }
+
+  .contact-upload p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .contact-submit {
+    min-width: 215px;
+    border: none;
+  }
+
+  .contact-secondary {
+    min-width: 215px;
+  }
+
+  @media (max-width: 960px) {
+    .contact-hero {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+    }
+
+    .contact-hero-title {
+      font-size: 44px;
+      line-height: 1.08;
+    }
+
+    .contact-layout {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .contact-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contact-hero {
+      width: min(calc(100% - 20px), var(--module-grid-width));
+      padding-top: 110px;
+      gap: 24px;
+    }
+
+    .contact-hero-title {
+      font-size: 36px;
+      line-height: 1.08;
+    }
+
+    .contact-hero-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .contact-layout {
+      width: min(calc(100% - 20px), var(--module-grid-width));
+      margin-top: 40px;
+    }
+
+    .contact-card,
+    .contact-form-card {
+      padding: 32px 20px;
+      border-radius: 24px;
+    }
+
+    .contact-input,
+    .contact-select {
+      height: 52px;
+      padding-inline: 20px;
+      border-radius: 26px;
+    }
+
+    .contact-select {
+      background-position: right 20px center;
+      padding-right: 52px;
+    }
+
+    .contact-textarea {
+      height: 148px;
+      padding: 18px 20px;
+      border-radius: 26px;
+    }
+
+    .contact-map {
+      min-height: 220px;
+    }
+
+    .contact-map-visual {
+      min-height: 220px;
+      padding: 24px;
+    }
+
+    .contact-buttons {
+      flex-direction: column;
+    }
+
+    .contact-submit,
+    .contact-secondary {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+</style>
+</head>
+<body data-marand-page="contact" data-marand-nav-active="contact">
+<div class="page">
+  <div data-marand-shell-header></div>
+
+  <main>
+    <section class="contact-hero">
+      <span class="contact-chip">Ia legătura cu noi</span>
+      <h1 class="contact-hero-title">Cere o ofertă sau vizitează shopul<span class="accent">.</span></h1>
+      <p class="contact-hero-subtitle">Trimite-ne fișierele și cerințele tale. Îți răspundem cu o ofertă în decurs de o oră în timpul programului și te ghidăm către materialul potrivit pentru proiect.</p>
+    </section>
+
+    <section class="contact-layout" aria-label="Contact Marand">
+      <div class="contact-info">
+        <div class="contact-card">
+          <p class="contact-intro">Dacă vrei o discuție rapidă înainte să completezi cererea, ne poți scrie direct sau poți trece prin shop pentru mostre, materiale și recomandări de producție.</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-info-list">
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <p class="contact-value">hello@marand.ro</p>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Telefon</span>
+              <p class="contact-value">+40 (XXX) XXX-XXX</p>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Adresă</span>
+              <p class="contact-value">Numele străzii, nr. XX<br />Oraș, România</p>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Program</span>
+              <p class="contact-value">Lun–Vin: 9:00 – 18:00<br />Sâm: 10:00 – 14:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card contact-map">
+          <div class="contact-map-grid" aria-hidden="true"></div>
+          <div class="contact-map-visual">
+            <div class="contact-map-pin" aria-hidden="true"></div>
+            <div class="contact-map-copy">
+              <strong>Vizitează shopul</strong>
+              <p>Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div></div>
+
+      <div class="contact-form-card">
+        <span class="contact-form-tag">Cere ofertă</span>
+        <h2 class="contact-form-title">Trimite cererea ta</h2>
+        <p class="contact-form-desc">Completează informațiile esențiale o singură dată și revenim cu recomandarea de material, termen și cost estimativ.</p>
+
+        <form class="contact-form">
+          <div class="contact-row">
+            <div class="contact-field">
+              <label for="contact-name">Nume</label>
+              <input class="contact-input" type="text" id="contact-name" name="contact-name" placeholder="Numele tău" />
+            </div>
+            <div class="contact-field">
+              <label for="contact-phone">Telefon</label>
+              <input class="contact-input" type="tel" id="contact-phone" name="contact-phone" placeholder="+40 XXX XXX XXX" />
+            </div>
+          </div>
+
+          <div class="contact-field contact-field--full">
+            <label for="contact-email">Email</label>
+            <input class="contact-input" type="email" id="contact-email" name="contact-email" placeholder="your@email.com" />
+          </div>
+
+          <div class="contact-field contact-field--full">
+            <label for="contact-product">Tip produs</label>
+            <select class="contact-select" id="contact-product" name="contact-product">
+              <option value="">Selectează un produs...</option>
+              <option>Print large format</option>
+              <option>Banner (PVC / Mesh)</option>
+              <option>Print pe canvas</option>
+              <option>Stickere / autocolant vinyl</option>
+              <option>Tricouri / textile (DTF)</option>
+              <option>Flyere / cărți de vizită</option>
+              <option>Altul</option>
+            </select>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-field">
+              <label for="contact-size">Dimensiune</label>
+              <input class="contact-input" type="text" id="contact-size" name="contact-size" placeholder="ex. 200x100 cm" />
+            </div>
+            <div class="contact-field">
+              <label for="contact-qty">Cantitate</label>
+              <input class="contact-input" type="text" id="contact-qty" name="contact-qty" placeholder="ex. 50 bucăți" />
+            </div>
+          </div>
+
+          <div class="contact-field contact-field--full">
+            <label for="contact-details">Detalii proiect</label>
+            <textarea class="contact-textarea" id="contact-details" name="contact-details" placeholder="Spune-ne despre proiect — preferințe de material, finisaje, termen de livrare..."></textarea>
+          </div>
+
+          <div class="contact-upload">
+            <strong>Trage fișierele aici sau dă click pentru upload</strong>
+            <p>PDF, AI, EPS, PSD, PNG, JPG — max. 50 MB</p>
+          </div>
+
+          <div class="contact-buttons">
+            <button class="cta cta-primary cta-pill contact-submit" type="submit">Trimite cererea</button>
+            <a class="cta cta-secondary contact-secondary" href="./marand-oferta-ro.html">Vezi formularul complet</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-marand-shell-footer></div>
+</div>
+<script src="./assets/marand-shell.js"></script>
+<script src="./assets/chatbot.js"></script>
+</body>
+</html>

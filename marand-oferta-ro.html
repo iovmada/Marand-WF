@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marand — Cere Ofertă</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/marand-shell.css" />
+<link rel="stylesheet" href="./assets/chatbot.css" />
+<style>
+  :root {
+    --bg: #f7f7f7;
+    --surface: #fcfcfc;
+    --blue: #0c24c2;
+    --lime: #9dfd43;
+    --border: #e1e1e1;
+    --muted: #717171;
+    --module-grid-width: 1376px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 110px; }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    background: var(--bg);
+    color: #333;
+    line-height: 1.4;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .page { position: relative; overflow-x: hidden; z-index: 1; }
+
+  /* ── Page header ── */
+  .offer-hero {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 0 auto;
+    padding: 150px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .offer-chip {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--lime);
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .offer-hero-title {
+    margin: 0;
+    max-width: 914px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .offer-hero-subtitle {
+    margin: 0;
+    max-width: 780px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+  }
+
+  /* ── Hero chips row ── */
+  .offer-hero-chips {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .offer-hero-stat {
+    padding: 20px;
+    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .offer-hero-stat strong {
+    display: block;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0b0b0b;
+    margin-bottom: 4px;
+  }
+
+  .offer-hero-stat span {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── Main layout ── */
+  .offer-layout {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 64px auto 0;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* ── Form card ── */
+  .offer-card {
+    background: var(--surface);
+    border-radius: 32px;
+    padding: 48px 40px;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  .offer-tag {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .offer-form-title {
+    margin: 0 0 8px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 32px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .offer-form-desc {
+    margin: 0 0 32px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #020202;
+  }
+
+  /* ── Fields ── */
+  .offer-form { display: flex; flex-direction: column; gap: 28px; }
+
+  .offer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .offer-field { display: flex; flex-direction: column; gap: 10px; }
+  .offer-field--full { grid-column: 1 / -1; }
+
+  .offer-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .offer-input,
+  .offer-textarea {
+    width: 100%;
+    height: 56px;
+    padding: 0 24px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  .offer-dropdown {
+    position: relative;
+  }
+
+  .offer-dropdown-trigger {
+    width: 100%;
+    height: 56px;
+    padding: 0 24px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 180ms ease;
+  }
+
+  .offer-dropdown-trigger::after {
+    content: "";
+    width: 12px;
+    height: 8px;
+    flex: 0 0 auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230c24c2' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 180ms ease;
+  }
+
+  .offer-dropdown.is-open .offer-dropdown-trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .offer-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(12, 36, 194, 0.12);
+    z-index: 8;
+  }
+
+  .offer-dropdown.is-open .offer-dropdown-menu {
+    display: flex;
+  }
+
+  .offer-dropdown-option {
+    min-height: 48px;
+    border: 0;
+    border-radius: 24px;
+    background: transparent;
+    padding: 0 18px;
+    text-align: left;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .offer-dropdown-option:hover,
+  .offer-dropdown-option:focus-visible {
+    outline: none;
+    background: rgba(12, 36, 194, 0.06);
+    color: var(--blue);
+  }
+
+  .offer-dropdown-option.is-current {
+    background: rgba(12, 36, 194, 0.08);
+    color: var(--blue);
+  }
+
+  .offer-textarea {
+    height: 160px;
+    padding: 20px 24px;
+    resize: vertical;
+    line-height: 1.5;
+    text-transform: none;
+  }
+
+  .offer-dropdown-trigger:focus,
+  .offer-input:focus,
+  .offer-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(12, 36, 194, 0.12);
+  }
+
+  /* ── Graphics stage ── */
+  .offer-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+
+  .offer-radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .offer-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .offer-option:has(input:checked) {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(12, 36, 194, 0.12);
+  }
+
+  .offer-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 21px;
+    height: 21px;
+    min-width: 21px;
+    margin: 2px 0 0;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .offer-option input[type="radio"]:checked {
+    background: var(--blue);
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .offer-option-content { display: flex; flex-direction: column; gap: 6px; }
+
+  .offer-option-title {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  .offer-option-desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* ── Upload zone ── */
+  .offer-upload {
+    border: 2px dashed var(--border);
+    border-radius: 24px;
+    padding: 32px;
+    text-align: center;
+    background: #fff;
+    transition: border-color 180ms ease;
+  }
+
+  .offer-upload:hover { border-color: var(--blue); }
+
+  .offer-upload strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0b0b0b;
+    margin-bottom: 8px;
+  }
+
+  .offer-upload p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── Buttons ── */
+  .offer-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .offer-submit {
+    min-width: 215px;
+    border: none;
+  }
+
+  .offer-back {
+    /* sizing handled by .cta */
+  }
+
+  /* ── Sidebar ── */
+  .offer-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+  .offer-info-card {
+    background: var(--surface);
+    border-radius: 32px;
+    padding: 32px;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  .offer-info-title {
+    margin: 0 0 16px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0b0b0b;
+  }
+
+  .offer-checklist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .offer-checklist li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .offer-checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  .offer-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .offer-stat-box {
+    padding: 18px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+  }
+
+  .offer-stat-box strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b0b0b;
+    margin-bottom: 4px;
+  }
+
+  .offer-stat-box span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* ── Timeline ── */
+  .offer-timeline { display: flex; flex-direction: column; gap: 20px; }
+
+  .offer-timeline-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .offer-timeline-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .offer-timeline-item strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #0b0b0b;
+  }
+
+  .offer-timeline-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .offer-hero {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+    }
+
+    .offer-hero-title {
+      font-size: 44px;
+      line-height: 1.08;
+    }
+
+    .offer-hero-chips {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .offer-layout {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+      grid-template-columns: 1fr;
+    }
+
+    .offer-row {
+      grid-template-columns: 1fr;
+    }
+
+    .offer-radio-group {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .offer-hero {
+      width: min(calc(100% - 20px), var(--module-grid-width));
+      padding-top: 110px;
+      gap: 24px;
+    }
+
+    .offer-hero-title {
+      font-size: 36px;
+      line-height: 1.08;
+    }
+
+    .offer-hero-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .offer-hero-chips {
+      grid-template-columns: 1fr;
+    }
+
+    .offer-layout {
+      width: min(calc(100% - 20px), var(--module-grid-width));
+      margin-top: 40px;
+    }
+
+    .offer-card {
+      padding: 32px 20px;
+      border-radius: 24px;
+    }
+
+    .offer-dropdown-trigger,
+    .offer-input {
+      height: 52px;
+      padding: 0 20px;
+      border-radius: 24px;
+    }
+
+    .offer-dropdown-menu {
+      border-radius: 24px;
+      padding: 10px;
+    }
+
+    .offer-textarea {
+      border-radius: 24px;
+      padding: 16px 20px;
+    }
+
+    .offer-option {
+      padding: 16px;
+      border-radius: 16px;
+    }
+
+    .offer-upload {
+      padding: 24px 16px;
+      border-radius: 20px;
+    }
+
+    .offer-buttons {
+      flex-direction: column;
+    }
+
+    .offer-submit,
+    .offer-back {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .offer-info-card {
+      padding: 24px 20px;
+      border-radius: 24px;
+    }
+
+    .offer-stat-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body data-marand-page="contact" data-marand-nav-active="contact">
+<div class="page">
+  <div data-marand-shell-header></div>
+
+  <main>
+    <!-- Hero -->
+    <div class="offer-hero">
+      <span class="offer-chip">Brief de proiect</span>
+      <h1 class="offer-hero-title">Descrie proiectul o singură dată și primești mai rapid recomandarea potrivită.</h1>
+      <p class="offer-hero-subtitle">Această pagină te ajută să definești tipul de produs, cantitatea, termenul, stadiul graficii și datele de contact într-o singură cerere structurată.</p>
+      <div class="offer-hero-chips">
+        <div class="offer-hero-stat"><strong>1 oră</strong><span>Timp țintă de răspuns</span></div>
+        <div class="offer-hero-stat"><strong>Fără minim</strong><span>De la o singură bucată</span></div>
+        <div class="offer-hero-stat"><strong>Verificare fișier</strong><span>Suport grafică inclus</span></div>
+        <div class="offer-hero-stat"><strong>Livrare sau ridicare</strong><span>Predare flexibilă</span></div>
+      </div>
+    </div>
+
+    <!-- Main layout -->
+    <div class="offer-layout">
+
+      <!-- Left: Form -->
+      <div class="offer-card">
+        <span class="offer-tag">Brief de proiect</span>
+        <h2 class="offer-form-title">Cere ofertă</h2>
+        <p class="offer-form-desc">Câmpurile sunt organizate pentru a reduce cererile vagi și pentru a ajuta Marand să califice rapid lucrările.</p>
+
+        <form class="offer-form" id="oferta" action="#" method="post">
+
+          <div class="offer-row">
+            <div class="offer-field">
+              <label class="offer-label" for="categorie">Categorie produs</label>
+              <div class="offer-dropdown" data-offer-dropdown>
+                <input type="hidden" id="categorie" name="categorie" value="" />
+                <button class="offer-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span data-offer-dropdown-label>Alege categoria</span>
+                </button>
+                <div class="offer-dropdown-menu" role="listbox" aria-label="Categorie produs">
+                  <button class="offer-dropdown-option is-current" type="button" role="option" data-value="" aria-selected="true">Alege categoria</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="large-format" aria-selected="false">Printuri large format</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="banners" aria-selected="false">Bannere și mesh</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="canvas" aria-selected="false">Printuri pe canvas</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="stickers" aria-selected="false">Stickere și vinyl</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="textiles" aria-selected="false">Tricouri și textile</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="small-format" aria-selected="false">Printuri format mic</button>
+                </div>
+              </div>
+            </div>
+            <div class="offer-field">
+              <label class="offer-label" for="termen">Termen dorit</label>
+              <div class="offer-dropdown" data-offer-dropdown>
+                <input type="hidden" id="termen" name="termen" value="" />
+                <button class="offer-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span data-offer-dropdown-label>Alege termenul</span>
+                </button>
+                <div class="offer-dropdown-menu" role="listbox" aria-label="Termen dorit">
+                  <button class="offer-dropdown-option is-current" type="button" role="option" data-value="" aria-selected="true">Alege termenul</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="asap" aria-selected="false">Cât mai curând posibil</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="2-3days" aria-selected="false">În 2–3 zile</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="1week" aria-selected="false">În 1 săptămână</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="flexible" aria-selected="false">Termen flexibil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-row">
+            <div class="offer-field">
+              <label class="offer-label" for="cantitate">Cantitate estimată</label>
+              <input class="offer-input" type="text" id="cantitate" name="cantitate" placeholder="Ex: 50 stickere, 2 bannere" />
+            </div>
+            <div class="offer-field">
+              <label class="offer-label" for="buget">Buget estimat</label>
+              <div class="offer-dropdown" data-offer-dropdown>
+                <input type="hidden" id="buget" name="buget" value="" />
+                <button class="offer-dropdown-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span data-offer-dropdown-label>Alege bugetul</span>
+                </button>
+                <div class="offer-dropdown-menu" role="listbox" aria-label="Buget estimat">
+                  <button class="offer-dropdown-option is-current" type="button" role="option" data-value="" aria-selected="true">Alege bugetul</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="recommend" aria-selected="false">Am nevoie de recomandare</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="under100" aria-selected="false">Sub 100 €</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="100-300" aria-selected="false">100 €–300 €</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="300-1000" aria-selected="false">300 €–1000 €</button>
+                  <button class="offer-dropdown-option" type="button" role="option" data-value="1000+" aria-selected="false">€1000+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-field offer-field--full">
+            <label class="offer-label" for="detalii">Detalii proiect</label>
+            <textarea class="offer-textarea" id="detalii" name="detalii" placeholder="Descrie produsul, dimensiunea, preferința de material, finisajele, nevoia de montaj și orice context care influențează oferta."></textarea>
+          </div>
+
+          <div>
+            <p class="offer-section-label">Stadiul graficii</p>
+            <div class="offer-radio-group">
+              <label class="offer-option">
+                <input type="radio" name="stadiu" value="ready" />
+                <div class="offer-option-content">
+                  <p class="offer-option-title">Fișier pregătit pentru print</p>
+                  <p class="offer-option-desc">Ai deja grafica și ai nevoie de preț, confirmare dimensiuni sau ghidaj pentru producție.</p>
+                </div>
+              </label>
+              <label class="offer-option">
+                <input type="radio" name="stadiu" value="design" />
+                <div class="offer-option-content">
+                  <p class="offer-option-title">Am nevoie de suport de design</p>
+                  <p class="offer-option-desc">Ai nevoie de ajutor pentru adaptarea, corectarea sau crearea graficii înainte de producție.</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p class="offer-section-label">Upload fișiere</p>
+            <div class="offer-upload">
+              <strong>Trage fișierele aici sau dă click pentru upload</strong>
+              <p>PDF, AI, EPS, PSD, TIFF, PNG, JPG, SVG, CDR</p>
+            </div>
+          </div>
+
+          <div class="offer-row">
+            <div class="offer-field">
+              <label class="offer-label" for="nume">Nume</label>
+              <input class="offer-input" type="text" id="nume" name="nume" placeholder="Numele tău complet" />
+            </div>
+            <div class="offer-field">
+              <label class="offer-label" for="companie">Companie</label>
+              <input class="offer-input" type="text" id="companie" name="companie" placeholder="Numele companiei sau al brandului" />
+            </div>
+          </div>
+
+          <div class="offer-row">
+            <div class="offer-field">
+              <label class="offer-label" for="email">Email</label>
+              <input class="offer-input" type="email" id="email" name="email" placeholder="hello@company.com" />
+            </div>
+            <div class="offer-field">
+              <label class="offer-label" for="telefon">Telefon</label>
+              <input class="offer-input" type="tel" id="telefon" name="telefon" placeholder="+40 ..." />
+            </div>
+          </div>
+
+          <div class="offer-buttons">
+            <button class="cta cta-primary offer-submit" type="submit">Trimite cererea de ofertă</button>
+            <a class="cta cta-secondary offer-back" href="./marand-produse-ro.html">Înapoi la produse</a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <aside class="offer-sidebar">
+
+        <div class="offer-info-card">
+          <span class="offer-tag">Înainte să trimiți</span>
+          <h3 class="offer-info-title">Ce ajută Marand să ofere mai rapid o estimare</h3>
+          <ul class="offer-checklist">
+            <li>Dimensiuni exacte sau aproximative, mai ales pentru bannere, semnalistică sau grafică de perete.</li>
+            <li>Cantitatea și dacă este o lucrare unică sau una recurentă.</li>
+            <li>Preferința de material dacă o cunoști deja sau menționează că vrei o recomandare.</li>
+            <li>Stadiul graficii: gata de print, necesită corecții sau trebuie făcută de la zero.</li>
+            <li>Deadline-ul și dacă este nevoie de montaj sau livrare.</li>
+          </ul>
+        </div>
+
+        <div class="offer-info-card">
+          <span class="offer-tag">Rezumat ofertă</span>
+          <h3 class="offer-info-title">Factori care influențează oferta</h3>
+          <div class="offer-stat-grid">
+            <div class="offer-stat-box"><strong>Dim.</strong><span>Format și dimensiuni</span></div>
+            <div class="offer-stat-box"><strong>Qty</strong><span>Unicat vs. lot</span></div>
+            <div class="offer-stat-box"><strong>Material</strong><span>Hârtie, vinyl, canvas, textil</span></div>
+            <div class="offer-stat-box"><strong>Finisaj</strong><span>Laminare, tăiere, ramă, montaj</span></div>
+          </div>
+        </div>
+
+        <div class="offer-info-card">
+          <span class="offer-tag">Cum funcționează</span>
+          <h3 class="offer-info-title">Fluxul de ofertare</h3>
+          <div class="offer-timeline">
+            <div class="offer-timeline-item">
+              <div class="offer-timeline-step">1</div>
+              <div><strong>Alege produsul</strong><p>Din pagina de produse, galerie sau CTA-ul din homepage.</p></div>
+            </div>
+            <div class="offer-timeline-item">
+              <div class="offer-timeline-step">2</div>
+              <div><strong>Trimite detaliile</strong><p>Cantitate, format, termen, fișiere și date de contact într-o singură cerere structurată.</p></div>
+            </div>
+            <div class="offer-timeline-item">
+              <div class="offer-timeline-step">3</div>
+              <div><strong>Verificăm fezabilitatea</strong><p>Material, metodă de print, finisaje și suport de design — estimare imediată.</p></div>
+            </div>
+            <div class="offer-timeline-item">
+              <div class="offer-timeline-step">4</div>
+              <div><strong>Primești oferta</strong><p>Recomandare clară, termen estimat și confirmarea pașilor următori.</p></div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <div data-marand-shell-footer></div>
+</div>
+<script src="./assets/marand-shell.js"></script>
+<script>
+  (() => {
+    const dropdowns = Array.from(document.querySelectorAll('[data-offer-dropdown]'));
+    if (!dropdowns.length) return;
+
+    const closeAll = () => {
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove('is-open');
+        const trigger = dropdown.querySelector('.offer-dropdown-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    dropdowns.forEach((dropdown) => {
+      const trigger = dropdown.querySelector('.offer-dropdown-trigger');
+      const label = dropdown.querySelector('[data-offer-dropdown-label]');
+      const input = dropdown.querySelector('input[type="hidden"]');
+      const options = Array.from(dropdown.querySelectorAll('.offer-dropdown-option'));
+
+      if (!trigger || !label || !input || !options.length) return;
+
+      trigger.addEventListener('click', () => {
+        const isOpen = dropdown.classList.contains('is-open');
+        closeAll();
+        if (!isOpen) {
+          dropdown.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', () => {
+          const value = option.dataset.value ?? '';
+          input.value = value;
+          label.textContent = option.textContent.trim();
+
+          options.forEach((item) => {
+            const isCurrent = item === option;
+            item.classList.toggle('is-current', isCurrent);
+            item.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+          });
+
+          closeAll();
+        });
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdowns.some((dropdown) => dropdown.contains(event.target))) {
+        closeAll();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeAll();
+    });
+  })();
+</script>
+<script src="./assets/chatbot.js"></script>
+</body>
+</html>

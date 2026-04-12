@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marand — Produse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Playfair+Display:ital,wght@1,300&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/marand-shell.css" />
+<link rel="stylesheet" href="./assets/chatbot.css" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f7f7;
+    --surface-2: #fcfcfc;
+    --soft-cream: #f8f0e3;
+    --text: #1a1a1a;
+    --muted: #333333;
+    --blue: #0c24c2;
+    --lime: #9dfd43;
+    --container: 1380px;
+    --content-width: 1377px;
+    --card-width: 447px;
+    --radius-card: 32px;
+    --shadow-card: 0 7px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 118px; }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  .page {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .products-page {
+    padding: 165px 0 0;
+  }
+
+  .hero-banner {
+    width: min(calc(100% - 60px), 1380px);
+    margin: 0 auto;
+    height: 485px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .products-overview {
+    width: min(calc(100% - 60px), var(--content-width));
+    margin: 24px auto 0;
+    position: sticky;
+    top: 118px;
+    z-index: 6;
+  }
+
+  .products-overview-inner {
+    width: 100%;
+    position: relative;
+  }
+
+  .products-overview-trigger {
+    width: 100%;
+    height: 56px;
+    padding: 0 56px 0 24px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .products-overview-trigger::after {
+    content: "";
+    width: 12px;
+    height: 8px;
+    flex: 0 0 auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230c24c2' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 180ms ease;
+  }
+
+  .products-overview-trigger:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(12, 36, 194, 0.12);
+  }
+
+  .products-overview-dropdown.is-open .products-overview-trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .products-overview-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(12, 36, 194, 0.12);
+  }
+
+  .products-overview-dropdown.is-open .products-overview-menu {
+    display: flex;
+  }
+
+  .products-overview-option {
+    min-height: 48px;
+    border: 0;
+    border-radius: 24px;
+    background: transparent;
+    padding: 0 18px;
+    text-align: left;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .products-overview-option:hover,
+  .products-overview-option:focus-visible {
+    outline: none;
+    background: rgba(12, 36, 194, 0.06);
+    color: var(--blue);
+  }
+
+  .products-overview-option.is-current {
+    background: rgba(12, 36, 194, 0.08);
+    color: var(--blue);
+  }
+
+  .products-layout {
+    width: min(calc(100% - 60px), var(--content-width));
+    margin: 64px auto 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .products-blob {
+    position: absolute;
+    top: 270px;
+    right: -210px;
+    width: 1440px;
+    height: 1500px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+    transform: rotate(180deg);
+    transform-origin: center;
+  }
+
+  .products-blob img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .products-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+    margin-bottom: 56px;
+  }
+
+  .section-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--lime);
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  .products-title {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .products-copy {
+    margin: 0;
+    width: min(100%, 1377px);
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+  }
+
+  .products-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 32px;
+  }
+
+  .product-detail-card {
+    grid-column: span 4;
+    width: 100%;
+    background: var(--surface-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-top: 12px;
+    padding-bottom: 32px;
+  }
+
+  .product-detail-media {
+    width: calc(100% - 20px);
+    height: 431px;
+    overflow: hidden;
+    border-radius: 32px;
+  }
+
+  .product-detail-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .product-detail-card:hover .product-detail-media img {
+    transform: scale(1.05);
+  }
+
+  .product-detail-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .product-detail-main {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .product-copy-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .product-detail-title {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 37px;
+    line-height: 45px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: #1a1a1a;
+  }
+
+  .product-detail-description {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    line-height: 27px;
+    color: #585858;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .product-specs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-spec-row {
+    width: min(100%, 408px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #9c8a8a;
+  }
+
+  .product-spec-row + .product-spec-row {
+    margin-top: 16px;
+  }
+
+  .product-spec-label {
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #000;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+
+  .product-spec-value {
+    width: 243px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    line-height: 18px;
+    color: #282828;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .product-sizes {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .product-sizes-label {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 17px;
+    line-height: 45px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+  }
+
+  .product-size-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 12px;
+  }
+
+  .product-size-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--soft-cream);
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  .product-size-pill.is-custom {
+    background: #fff;
+  }
+
+  .product-size-pill.is-accent {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  .product-price {
+    margin: 0;
+    padding: 0 16px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #333;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+  }
+
+  .product-price strong {
+    font-size: 23px;
+    line-height: 18px;
+    color: #000;
+    letter-spacing: -0.02em;
+  }
+
+  .product-card-actions {
+    padding: 0 16px;
+  }
+
+  .product-card-actions .cta-secondary {
+    width: 100%;
+    height: 63px;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .catalog-anchors {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .products-divider-media {
+    width: 100%;
+    margin: 64px 0 0;
+    height: 446px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    z-index: 1;
+  }
+
+  .products-divider-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 960px) {
+    .products-page {
+      padding-top: 150px;
+    }
+
+    .hero-banner {
+      width: min(calc(100% - 40px), 1380px);
+      height: 360px;
+    }
+
+    .products-overview {
+      width: min(calc(100% - 40px), var(--content-width));
+      top: 104px;
+    }
+
+    .products-overview-inner {
+      width: 100%;
+    }
+
+    .products-layout {
+      width: min(calc(100% - 40px), var(--content-width));
+      margin-top: 48px;
+    }
+
+    .products-blob {
+      right: -380px;
+      top: 360px;
+      width: 1080px;
+      height: 1180px;
+      opacity: 0.88;
+    }
+
+    .products-title {
+      font-size: 44px;
+      line-height: 1.04;
+    }
+
+    .products-copy {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-detail-card {
+      grid-column: span 1;
+      max-width: none;
+      padding-top: 10px;
+    }
+
+    .product-detail-media {
+      width: calc(100% - 20px);
+      height: 360px;
+    }
+
+    .product-spec-row {
+      width: 100%;
+    }
+
+    .product-spec-value {
+      width: min(56%, 243px);
+    }
+
+    .products-divider-media {
+      height: 320px;
+      margin-top: 48px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .products-page {
+      padding-top: 136px;
+    }
+
+    .hero-banner {
+      width: min(calc(100% - 20px), 1380px);
+      height: 220px;
+      border-radius: 24px;
+    }
+
+    .products-overview {
+      width: min(calc(100% - 20px), var(--content-width));
+      top: 92px;
+      margin-top: 16px;
+    }
+
+    .products-overview-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .products-overview-trigger {
+      height: 56px;
+      border-radius: 32px;
+    }
+
+    .products-overview-menu {
+      border-radius: 24px;
+      padding: 10px;
+    }
+
+    .products-layout {
+      width: min(calc(100% - 20px), var(--content-width));
+      margin-top: 32px;
+    }
+
+    .products-header {
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .products-title {
+      font-size: 36px;
+      line-height: 1.03;
+    }
+
+    .products-copy {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .products-blob {
+      top: 420px;
+      right: -300px;
+      width: 860px;
+      height: 960px;
+      opacity: 0.78;
+    }
+
+    .product-detail-card {
+      grid-column: 1 / -1;
+      border-radius: 24px;
+      align-items: stretch;
+      gap: 24px;
+      padding-top: 10px;
+      padding-bottom: 24px;
+    }
+
+    .product-detail-media {
+      width: calc(100% - 20px);
+      height: 280px;
+      margin: 0 auto;
+      border-radius: 24px;
+    }
+
+    .product-detail-main,
+    .product-sizes,
+    .product-card-actions {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .product-detail-main {
+      gap: 28px;
+    }
+
+    .product-detail-title {
+      font-size: 31px;
+      line-height: 1.08;
+    }
+
+    .product-spec-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .product-spec-row + .product-spec-row {
+      margin-top: 14px;
+    }
+
+    .product-spec-value {
+      width: 100%;
+    }
+
+    .product-size-pills {
+      gap: 12px 10px;
+    }
+
+    .product-size-pill {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .products-divider-media {
+      height: 220px;
+      border-radius: 24px;
+      margin-top: 32px;
+    }
+  }
+</style>
+</head>
+<body data-marand-page="products" data-marand-nav-active="products">
+<div class="page">
+  <div data-marand-shell-header></div>
+
+  <main class="products-page">
+    <section class="hero-banner" aria-label="Hero produse">
+      <img src="https://www.figma.com/api/mcp/asset/a741c951-7fd8-4393-b2e5-7c2ce0911c0b" alt="Hero abstract pentru produse Marand" />
+    </section>
+
+    <section class="products-overview" aria-label="Selector rapid produse">
+      <div class="products-overview-inner">
+        <div class="products-overview-dropdown" data-products-jump>
+          <button class="products-overview-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span data-products-jump-label>Alege categoria</span>
+          </button>
+          <div class="products-overview-menu" role="listbox" aria-label="Alege categoria">
+            <button class="products-overview-option is-current" type="button" role="option" data-target="" aria-selected="true">Alege categoria</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#large-format" aria-selected="false">Printuri large format</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#banners" aria-selected="false">Bannere și mesh</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#canvas" aria-selected="false">Printuri pe canvas</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#stickers" aria-selected="false">Stickere și vinyl</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#textiles" aria-selected="false">Tricouri și textile</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#small-format" aria-selected="false">Small format</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-layout" id="large-format">
+      <div class="products-blob" aria-hidden="true">
+        <img src="https://www.figma.com/api/mcp/asset/20a4b46b-da5a-4cea-bae7-01428d68a076" alt="" />
+      </div>
+
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Printuri large format</h1>
+        <p class="products-copy">Printuri de înaltă rezoluție de până la 134 cm lățime pe diverse materiale. Ideale pentru postere, semnalistică, fotografii mărite, reproduceri de artă, grafică pentru expoziții și display-uri POS. Printate pe MUTOH XPJ-1341 SR PRO cu cerneluri eco-solvent pentru culori vii și rezistente.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Poster pe hârtie foto">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/eec0a2a3-345b-4ff2-ade5-0e3dc8fd602d" alt="Poster pe hârtie foto" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Poster pe hârtie foto</h2>
+                <p class="product-detail-description">Hârtie foto lucioasă sau mată. Perfectă pentru postere de interior, printuri foto și grafică de retail.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">HÂRTIE FOTO 200G (LUCIOASĂ / MATĂ)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Rezoluție</div>
+                  <div class="product-spec-value">1440 DPI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A3</span>
+                <span class="product-size-pill">A2</span>
+                <span class="product-size-pill">A1</span>
+                <span class="product-size-pill">A0</span>
+                <span class="product-size-pill">50×70cm</span>
+                <span class="product-size-pill">70×100</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €5</strong>&nbsp;/ A3</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Banner frontlit">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/de55e674-8565-44a9-b13a-18c9d3775a93" alt="Banner frontlit" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Banner frontlit</h2>
+                <p class="product-detail-description">Banner PVC pentru retail, outdoor și evenimente. Print clar, rezistență bună și finisare cu tiv și capse.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">PVC FRONTLIT 440G</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">320 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Rezoluție</div>
+                  <div class="product-spec-value">1440 DPI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / EXTERIOR</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100×200</span>
+                <span class="product-size-pill">200×300</span>
+                <span class="product-size-pill">300×500</span>
+                <span class="product-size-pill">Mesh</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €12</strong>&nbsp;/ m²</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Sticker vinyl">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Sticker vinyl" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Sticker vinyl</h2>
+                <p class="product-detail-description">Adeziv printat pentru vitrine, panouri și aplicații promo. Disponibil mat, lucios sau transparent, cu tăiere la contur.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">VINYL AUTOADEZIV MAT / LUCIOS</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Rezoluție</div>
+                  <div class="product-spec-value">1440 DPI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / EXTERIOR</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A4</span>
+                <span class="product-size-pill">A3</span>
+                <span class="product-size-pill">50×70</span>
+                <span class="product-size-pill">Tăiere contur</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €8</strong>&nbsp;/ m²</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="products-divider-media" aria-label="Showcase produse">
+        <img src="https://www.figma.com/api/mcp/asset/0f4db881-a4ff-4b07-bdd4-e410e959f610" alt="Interior cu artă murală și lucrări printate" />
+      </section>
+    </section>
+
+    <section class="products-layout" id="banners">
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Bannere și mesh</h1>
+        <p class="products-copy">Bannere rezistente pentru exterior, potrivite pentru evenimente, șantiere, vitrine și expoziții. Opțiuni din PVC flex și mesh cu tiv, capse și laminare opțională. Printate pe MUTOH XPJ-1341 SR PRO și finisate cu laminatorul Flexa X-Pro 160.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Banner PVC Din Vinyl">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/6ad57c4b-178d-4320-9532-f2a6e839f804" alt="Banner PVC Din Vinyl" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Banner PVC Din Vinyl</h2>
+                <p class="product-detail-description">Banner PVC heavy-duty 440g — standardul industriei pentru semnalistică exterioară și grafică de eveniment.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">PVC FLEX 440G (FRONTLIT)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM (JOINABLE WIDER)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Finishing</div>
+                  <div class="product-spec-value">TIVUIT + CAPSE (LA FIECARE 50 CM)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Durabilitate</div>
+                  <div class="product-spec-value">EXTERIOR 2–3 ANI</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100×50</span>
+                <span class="product-size-pill">200×100</span>
+                <span class="product-size-pill">300×100</span>
+                <span class="product-size-pill">400×150</span>
+                <span class="product-size-pill is-accent">Custom</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €12</strong>&nbsp;/ a3</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Banner Mesh">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/b8eda364-e972-42ac-80e8-9bd2c42a4bc0" alt="Banner Mesh" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Banner Mesh</h2>
+                <p class="product-detail-description">Material mesh perforat cu micro-găuri care lasă vântul să treacă — perfect pentru garduri, schele și fațade de clădiri.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">PVC MESH (PERFORAT)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM (JOINABLE WIDER)</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Vânt</div>
+                  <div class="product-spec-value">VÂNT-THROUGH DESIGN</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Durabilitate</div>
+                  <div class="product-spec-value">EXTERIOR 1–2 ANI</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €14</strong>&nbsp;/ a3</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Roll-Up Display">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/28a54394-4a19-4524-84e8-7fca33f06dab" alt="Roll-Up Display" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Roll-Up Display</h2>
+                <p class="product-detail-description">Sistem retractabil portabil — include print, stand din aluminiu și geantă de transport. Se montează în câteva secunde.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Dimensiune print</div>
+                  <div class="product-spec-value">85×200 CM / 100×200 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Stand</div>
+                  <div class="product-spec-value">ALUMINIU RETRACTABIL</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Include</div>
+                  <div class="product-spec-value">PRINT + STAND + GEANTĂ</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">EVENIMENTE, EXPOZIȚII, LOBBY-URI</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €55</strong>&nbsp;/ complete</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="catalog-anchors" aria-hidden="true">
+      <div id="canvas"></div>
+      <div id="stickers"></div>
+      <div id="textiles"></div>
+      <div id="small-format"></div>
+    </div>
+  </main>
+
+  <div data-marand-shell-footer></div>
+</div>
+<script src="./assets/marand-shell.js"></script>
+<script>
+  (() => {
+    const jump = document.querySelector('[data-products-jump]');
+    if (!jump) return;
+
+    const trigger = jump.querySelector('.products-overview-trigger');
+    const label = jump.querySelector('[data-products-jump-label]');
+    const options = Array.from(jump.querySelectorAll('.products-overview-option'));
+
+    const closeMenu = () => {
+      jump.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
+      jump.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+
+    trigger.addEventListener('click', () => {
+      if (jump.classList.contains('is-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const value = option.dataset.target || '';
+
+        options.forEach((item) => {
+          item.classList.toggle('is-current', item === option);
+          item.setAttribute('aria-selected', item === option ? 'true' : 'false');
+        });
+
+        label.textContent = option.textContent.trim();
+        closeMenu();
+
+        if (!value) return;
+        const target = document.querySelector(value);
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!jump.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+<script src="./assets/chatbot.js"></script>
+</body>
+</html>
