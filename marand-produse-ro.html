@@ -456,7 +456,9 @@
   .products-divider-media {
     width: 100%;
     margin: 64px 0 0;
-    height: 446px;
+    height: 470px;
+    padding: 12px;
+    background: var(--surface-2);
     border-radius: 32px;
     overflow: hidden;
     box-shadow: var(--shadow-card);
@@ -468,6 +470,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
   }
 
   @media (max-width: 960px) {
@@ -536,7 +539,7 @@
     }
 
     .products-divider-media {
-      height: 320px;
+      height: 340px;
       margin-top: 48px;
     }
   }
@@ -658,9 +661,13 @@
     }
 
     .products-divider-media {
-      height: 220px;
+      height: 240px;
       border-radius: 24px;
       margin-top: 32px;
+    }
+
+    .products-divider-media img {
+      border-radius: 12px;
     }
   }
 </style>
@@ -861,9 +868,12 @@
         </article>
       </div>
 
-      <section class="products-divider-media" aria-label="Showcase produse">
-        <img src="https://www.figma.com/api/mcp/asset/0f4db881-a4ff-4b07-bdd4-e410e959f610" alt="Interior cu artă murală și lucrări printate" />
-      </section>
+    </section>
+
+    <section class="products-layout" aria-label="Showcase produse">
+      <div class="products-divider-media">
+        <img src="https://www.figma.com/api/mcp/asset/e8b915cf-36ca-42c6-9c1a-e7218a0cf2aa" alt="Spațiu cu lucrări printate și postere expuse" />
+      </div>
     </section>
 
     <section class="products-layout" id="banners">
@@ -1007,12 +1017,593 @@
       </div>
     </section>
 
-    <div class="catalog-anchors" aria-hidden="true">
-      <div id="canvas"></div>
-      <div id="stickers"></div>
-      <div id="textiles"></div>
-      <div id="small-format"></div>
-    </div>
+    <section class="products-layout" aria-label="Canvas și lucrări artistice">
+      <div class="products-divider-media">
+        <img src="https://www.figma.com/api/mcp/asset/43f53171-f8ca-4715-86d7-f234776768a5" alt="Canvas și lucrare artistică expusă" />
+      </div>
+    </section>
+
+    <section class="products-layout" id="canvas">
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Printuri pe canvas</h1>
+        <p class="products-copy">Canvas premium din bumbac, întins pe șasiu din lemn și finisat pentru decor interior, artă și cadouri. Potrivit pentru lucrări unice, seturi multipanou și formate panoramice cu aspect de galerie.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Canvas simplu">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/43f53171-f8ca-4715-86d7-f234776768a5" alt="Canvas simplu" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Canvas simplu</h2>
+                <p class="product-detail-description">Print pe canvas premium, întins pe ramă din lemn, pregătit pentru interior și decor contemporan.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">CANVAS DIN BUMBAC + ȘASIU DIN LEMN</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Rezoluție</div>
+                  <div class="product-spec-value">1440 DPI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / DECOR</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">40×60</span>
+                <span class="product-size-pill">60×90</span>
+                <span class="product-size-pill">70×100</span>
+                <span class="product-size-pill">100×150</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €25</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Canvas multipanou">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/43f53171-f8ca-4715-86d7-f234776768a5" alt="Canvas multipanou" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Canvas multipanou</h2>
+                <p class="product-detail-description">Imagine împărțită în 2–5 panouri, cu spacing controlat și compoziție gândită pentru pereți mari.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Configurație</div>
+                  <div class="product-spec-value">2, 3 SAU 5 PANOURI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">CANVAS PREMIUM + ȘASIURI INDIVIDUALE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Montaj</div>
+                  <div class="product-spec-value">PREGĂTIT PENTRU PRINDERE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / SHOWROOM / BIROU</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">3×40×60</span>
+                <span class="product-size-pill">3×50×70</span>
+                <span class="product-size-pill">5×30×40</span>
+                <span class="product-size-pill is-custom">Layout personalizat</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €55</strong>&nbsp;/ set</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Canvas panoramic">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/43f53171-f8ca-4715-86d7-f234776768a5" alt="Canvas panoramic" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Canvas panoramic</h2>
+                <p class="product-detail-description">Format lung, ideal pentru fotografie landscape, hospitality și decor minimalist cu impact vizual mare.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Format</div>
+                  <div class="product-spec-value">PANORAMIC / ULTRA-WIDE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">CANVAS DIN BUMBAC</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cadru</div>
+                  <div class="product-spec-value">LEMn MASIV, PROFIL SUBȚIRE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / HORECA / BIROU</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">120×40</span>
+                <span class="product-size-pill">150×50</span>
+                <span class="product-size-pill">180×60</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €38</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="products-layout" id="stickers">
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Stickere și vinyl</h1>
+        <p class="products-copy">Adezive printate și tăiate pentru vitrine, branding interior, semnalistică și campanii promoționale. Finisaje mate, lucioase sau transparente, cu opțiuni pentru contur personalizat și laminare.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Sticker vinyl printat">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Sticker vinyl printat" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Sticker vinyl printat</h2>
+                <p class="product-detail-description">Sticker printat full-color pentru vitrine, mobilier, panouri sau branding promo, cu laminare opțională.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">VINYL ALB / TRANSPARENT</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Finisaj</div>
+                  <div class="product-spec-value">MAT / LUCIOS / LAMINAT</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">INTERIOR / EXTERIOR</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A4</span>
+                <span class="product-size-pill">A3</span>
+                <span class="product-size-pill">50×70</span>
+                <span class="product-size-pill is-custom">Dimensiune personalizată</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €8</strong>&nbsp;/ m²</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Sticker tăiat pe contur">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Sticker tăiat pe contur" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Sticker tăiat pe contur</h2>
+                <p class="product-detail-description">Etichete și stickere decupate după formă, ideale pentru packaging, campanii și branding personalizat.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Tăiere</div>
+                  <div class="product-spec-value">KISS-CUT / DIE-CUT</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">VINYL POLIMERIC</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Foaie / buc</div>
+                  <div class="product-spec-value">PE COLI SAU BUCĂȚI INDIVIDUALE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">PROMO / PACKAGING / BRANDING</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">5×5</span>
+                <span class="product-size-pill">8×8</span>
+                <span class="product-size-pill">10×10</span>
+                <span class="product-size-pill is-custom">Contur personalizat</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €0.40</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Grafică pentru vitrine">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Grafică pentru vitrine" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Grafică pentru vitrine</h2>
+                <p class="product-detail-description">Aplicări mari pentru vitrine, geamuri și suprafețe plane, cu opțiuni opace, translucide sau perforate.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">VINYL / ONE-WAY VISION</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Montaj</div>
+                  <div class="product-spec-value">APLICARE UMEDĂ SAU USCATĂ</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Lățime maximă</div>
+                  <div class="product-spec-value">134 CM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">RETAIL / SPAȚII COMERCIALE</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €18</strong>&nbsp;/ m²</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="products-layout" id="textiles">
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Tricouri și textile</h1>
+        <p class="products-copy">Personalizare textile cu print DTF pentru tricouri, workwear, tote bags și alte articole promo. Culori vii, transfer rezistent și execuție flexibilă de la o bucată la serii mari.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Tricou personalizat">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Tricou personalizat" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Tricou personalizat</h2>
+                <p class="product-detail-description">Tricouri din bumbac sau mix, personalizate cu transfer DTF pentru merch, uniforme sau promo.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Tehnologie</div>
+                  <div class="product-spec-value">PRINT DTF + PRESĂ TERMICĂ</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">BUMBAC / POLI-BUMBAC</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cantitate</div>
+                  <div class="product-spec-value">DE LA 1 BUC LA SERII</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">MERCH / ECHIPE / EVENIMENTE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">S</span>
+                <span class="product-size-pill">M</span>
+                <span class="product-size-pill">L</span>
+                <span class="product-size-pill">XL</span>
+                <span class="product-size-pill is-custom">Print personalizat</span>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €12</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Workwear personalizat">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Workwear personalizat" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Workwear personalizat</h2>
+                <p class="product-detail-description">Hanorace, veste și jachete marcate pentru echipe, showroom și activități profesionale.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Articole</div>
+                  <div class="product-spec-value">HANORACE / JACHETE / VESTE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Tehnologie</div>
+                  <div class="product-spec-value">DTF / TRANSFER TERMIC</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Durabilitate</div>
+                  <div class="product-spec-value">REZISTENT LA SPĂLARE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">UNIFORME / TEAM WEAR</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €18</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Tote bag personalizat">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/2e8ae086-c7e5-4a18-bf74-2319a11539ec" alt="Tote bag personalizat" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Tote bag personalizat</h2>
+                <p class="product-detail-description">Sacoșe textile pentru retail, gifting și activări de brand, cu print simplu sau full-coverage.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Material</div>
+                  <div class="product-spec-value">BUMBAC / CANVAS TEXTIL</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Print</div>
+                  <div class="product-spec-value">DTF / O SINGURĂ FAȚĂ SAU DOUĂ</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cantitate</div>
+                  <div class="product-spec-value">MICĂ SAU MEDIE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Utilizare</div>
+                  <div class="product-spec-value">PROMO / RETAIL / EVENT</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €9</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="products-layout" id="small-format">
+      <header class="products-header">
+        <span class="section-chip">proces simplu</span>
+        <h1 class="products-title">Printuri format mic</h1>
+        <p class="products-copy">Produse comerciale de zi cu zi pentru retail, horeca și materiale de brand: cărți de vizită, flyere, pliante și broșuri, executate curat și rapid.</p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-detail-card" aria-label="Cărți de vizită">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/eec0a2a3-345b-4ff2-ade5-0e3dc8fd602d" alt="Cărți de vizită" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Cărți de vizită</h2>
+                <p class="product-detail-description">Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Format</div>
+                  <div class="product-spec-value">90×50 / 85×55 MM</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Hârtie</div>
+                  <div class="product-spec-value">300G / 350G / SPECIALTY</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Finisaj</div>
+                  <div class="product-spec-value">MAT / LUCIOS / SOFT TOUCH</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cantitate</div>
+                  <div class="product-spec-value">DE LA 100 BUC</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €25</strong>&nbsp;/ 100 buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Flyere">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/eec0a2a3-345b-4ff2-ade5-0e3dc8fd602d" alt="Flyere" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Flyere</h2>
+                <p class="product-detail-description">Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scurte sau medii.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Format</div>
+                  <div class="product-spec-value">A6 / A5 / A4 / DL</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Hârtie</div>
+                  <div class="product-spec-value">130G / 170G / 200G</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Print</div>
+                  <div class="product-spec-value">1 FAȚĂ / 2 FEȚE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cantitate</div>
+                  <div class="product-spec-value">DE LA 100 BUC</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €35</strong>&nbsp;/ 250 buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" aria-label="Broșuri">
+          <div class="product-detail-media">
+            <img src="https://www.figma.com/api/mcp/asset/eec0a2a3-345b-4ff2-ade5-0e3dc8fd602d" alt="Broșuri" />
+          </div>
+
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h2 class="product-detail-title">Broșuri</h2>
+                <p class="product-detail-description">Broșuri capsate pentru prezentări corporate, meniuri, cataloage compacte și materiale de vânzare.</p>
+              </div>
+
+              <div class="product-specs">
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Format</div>
+                  <div class="product-spec-value">A5 / A4 ÎNCHIS</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Pagini</div>
+                  <div class="product-spec-value">8–40 PAGINI</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Finisare</div>
+                  <div class="product-spec-value">CAPSARE / PLIERE</div>
+                </div>
+                <div class="product-spec-row">
+                  <div class="product-spec-label">Cantitate</div>
+                  <div class="product-spec-value">DE LA 25 BUC</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="product-price"><strong>de la €1.8</strong>&nbsp;/ buc</p>
+
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="./marand-oferta-ro.html">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <div data-marand-shell-footer></div>
