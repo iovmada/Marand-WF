@@ -655,7 +655,7 @@ body::after {
   }
 
   .site-header .container {
-    width: min(calc(100% - 20px), var(--module-grid-width));
+    width: min(calc(100% - 32px), var(--module-grid-width));
   }
 
   .nav-burger {
@@ -693,7 +693,7 @@ body::after {
   }
 
   .site-footer-inner {
-    width: min(calc(100% - 20px), 1341px);
+    width: min(calc(100% - 32px), 1341px);
     gap: 40px;
   }
 
