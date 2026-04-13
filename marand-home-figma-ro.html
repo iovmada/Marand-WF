@@ -1796,6 +1796,12 @@
       width: min(calc(100% - 32px), var(--module-grid-width));
     }
 
+    .showcase-wrap {
+      width: min(calc(100% - 32px), var(--module-grid-width));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 12px;
+    }
+
     .hero {
       padding: 132px 0 72px;
     }
@@ -1863,13 +1869,16 @@
       padding-inline: 20px;
     }
 
-    .showcase-media {
-      height: 240px;
-    }
-
     .showcase-image {
+      grid-column: 1 / -1;
       transform: none !important;
       border-radius: 24px !important;
+    }
+
+    .showcase-media {
+      height: 50vh;
+      min-height: 280px;
+      max-height: 420px;
     }
 
     .hero-title-wrap {
