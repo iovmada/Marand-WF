@@ -1,35 +1,38 @@
 (() => {
   const page = document.body.dataset.marandPage || "home";
   const navActive = document.body.dataset.marandNavActive || page;
+  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname);
+  const routeRoot = isNestedPage ? ".." : ".";
+  const toRoute = (path) => `${routeRoot}${path}`;
 
   const navItems = [
-    { key: "products", label: "Produse", href: "./marand-produse-ro.html" },
-    { key: "design", label: "Design", href: "./marand-home-figma-ro.html#design" },
-    { key: "process", label: "Cum Lucram", href: "./marand-home-figma-ro.html#cum-functioneaza" },
-    { key: "production", label: "Productie", href: "./marand-template-ro.html" },
-    { key: "equipment", label: "Echipamente", href: "./marand-echipamente-ro.html" },
-    { key: "contact", label: "Contact", href: "./marand-contact-ro.html" }
+    { key: "products", label: "Produse", href: toRoute("/produse/") },
+    { key: "design", label: "Design", href: toRoute("/#design") },
+    { key: "process", label: "Cum Lucram", href: toRoute("/#cum-functioneaza") },
+    { key: "production", label: "Productie", href: toRoute("/productie/") },
+    { key: "equipment", label: "Echipamente", href: toRoute("/echipamente/") },
+    { key: "contact", label: "Contact", href: toRoute("/contact/") }
   ];
 
   const footerGroups = [
     {
       title: "Produse",
       links: [
-        { label: "Large format", href: "./marand-produse-ro.html#large-format" },
-        { label: "Bannere și mesh", href: "./marand-produse-ro.html#banners" },
-        { label: "Printuri pe canvas", href: "./marand-produse-ro.html#canvas" },
-        { label: "Stickere și vinyl", href: "./marand-produse-ro.html#stickers" },
-        { label: "Tricouri și textile", href: "./marand-produse-ro.html#textiles" },
-        { label: "Small Format", href: "./marand-produse-ro.html#small-format" }
+        { label: "Large format", href: toRoute("/produse/#large-format") },
+        { label: "Bannere și mesh", href: toRoute("/produse/#banners") },
+        { label: "Printuri pe canvas", href: toRoute("/produse/#canvas") },
+        { label: "Stickere și vinyl", href: toRoute("/produse/#stickers") },
+        { label: "Tricouri și textile", href: toRoute("/produse/#textiles") },
+        { label: "Small Format", href: toRoute("/produse/#small-format") }
       ]
     },
     {
       title: "Company",
       links: [
-        { label: "Homepage", href: "./marand-home-figma-ro.html#design" },
-        { label: "Proces", href: "./marand-home-figma-ro.html#cum-functioneaza" },
-        { label: "Galerie", href: "./marand-gallery-ro.html" },
-        { label: "Ofertă", href: "./marand-oferta-ro.html" }
+        { label: "Homepage", href: toRoute("/#design") },
+        { label: "Proces", href: toRoute("/#cum-functioneaza") },
+        { label: "Galerie", href: toRoute("/#galerie") },
+        { label: "Ofertă", href: toRoute("/oferta/") }
       ]
     },
     {
@@ -37,7 +40,7 @@
       links: [
         { label: "hello@marand.ro", href: "mailto:hello@marand.ro" },
         { label: "+40 (XXX) XXX-XXX", href: "tel:+40000000000" },
-        { label: "Cere ofertă", href: "./marand-oferta-ro.html" },
+        { label: "Cere ofertă", href: toRoute("/oferta/") },
         { label: "Lun-Vin: 9-18", href: "#contact" }
       ]
     }
@@ -50,7 +53,7 @@
     headerTarget.innerHTML = `
       <header class="site-header">
         <div class="container">
-          <a class="logo" href="./marand-home-figma-ro.html" aria-label="Marand — Acasă"><img class="logo-icon" src="https://www.figma.com/api/mcp/asset/8b2090a2-5a19-419e-9cf0-05f4b3eb92cb" alt="" /><img class="logo-wordmark" src="https://www.figma.com/api/mcp/asset/b75900d8-2cb3-4139-b47c-08ddf6c87776" alt="Marand" /></a>
+          <a class="logo" href="${toRoute("/")}" aria-label="Marand — Acasă"><img class="logo-icon" src="https://www.figma.com/api/mcp/asset/8b2090a2-5a19-419e-9cf0-05f4b3eb92cb" alt="" /><img class="logo-wordmark" src="https://www.figma.com/api/mcp/asset/b75900d8-2cb3-4139-b47c-08ddf6c87776" alt="Marand" /></a>
           <nav class="nav-pill" aria-label="Navigare principală">
             ${navItems.map((item) => `<a class="${navActive === item.key ? "is-active" : ""}" href="${item.href}">${item.label}</a>`).join("")}
           </nav>
@@ -59,7 +62,7 @@
             <span></span>
             <span></span>
           </button>
-          <a class="cta cta-primary cta-pill header-cta" href="./marand-oferta-ro.html">Cere Oferta</a>
+          <a class="cta cta-primary cta-pill header-cta" href="${toRoute("/oferta/")}">Cere Oferta</a>
         </div>
         <div class="mobile-nav" id="mobile-nav" hidden>
           <button class="mobile-nav-close" type="button" aria-label="Închide meniul">×</button>
@@ -67,7 +70,7 @@
             <nav class="mobile-nav-links" aria-label="Navigare principală pe mobil">
               ${navItems.map((item) => `<a class="${navActive === item.key ? "is-active" : ""}" href="${item.href}">${item.label}</a>`).join("")}
             </nav>
-            <a class="cta cta-primary cta-pill mobile-nav-cta" href="./marand-oferta-ro.html">Cere Oferta</a>
+            <a class="cta cta-primary cta-pill mobile-nav-cta" href="${toRoute("/oferta/")}">Cere Oferta</a>
           </div>
         </div>
       </header>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marand — Echipamente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/marand-shell.css" />
+<link rel="stylesheet" href="../assets/chatbot.css" />
+<style>
+  :root {
+    --bg: #f7f7f7;
+    --surface: #fcfcfc;
+    --blue: #0c24c2;
+    --lime: #9dfd43;
+    --container: 1165px;
+    --module-grid-width: 1376px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 110px; }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    background: var(--bg);
+    color: #333;
+    line-height: 1.4;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .page {
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+
+  /* ── Hero banner ── */
+  .equip-hero {
+    padding: 130px 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .equip-hero-img {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 0 auto;
+    height: 485px;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  .equip-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ── Section header ── */
+  .equip-section-header {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 64px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .equip-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--lime);
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .equip-heading {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .equip-subtitle {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+  }
+
+  /* ── Equipment grid ── */
+  .equip-grid {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 48px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .equip-card {
+    background: var(--surface);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .equip-card-media {
+    width: 100%;
+    height: 431px;
+    object-fit: cover;
+  }
+
+  .equip-card-body {
+    padding: 24px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .equip-card-title {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 37px;
+    line-height: 45px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: #1a1a1a;
+    text-transform: capitalize;
+  }
+
+  .equip-card-specs {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #232323;
+  }
+
+  /* ── About module ── */
+  .equip-about {
+    width: min(calc(100% - 60px), 1146px);
+    margin: 96px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .equip-about-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .equip-about-heading {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #020202;
+  }
+
+  .equip-about-copy {
+    margin: 0;
+    max-width: 678px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+    text-align: center;
+  }
+
+  .equip-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .equip-stat-card {
+    padding: 64px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 32px;
+    background: var(--surface);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  .equip-stat-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 32px;
+    background: #171310;
+    overflow: hidden;
+  }
+
+  .equip-stat-icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .equip-stat-value {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .equip-stat-label {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #000;
+  }
+
+  /* ── CTA banner ── */
+  .equip-cta-banner {
+    width: min(calc(100% - 60px), var(--module-grid-width));
+    margin: 96px auto 0;
+    padding: 64px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background: #000;
+    border-radius: 32px;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+    text-align: center;
+  }
+
+  .equip-cta-heading {
+    margin: 0;
+    max-width: 904px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 52px;
+    line-height: 55px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #fff;
+  }
+
+  .equip-cta-copy {
+    margin: 0;
+    max-width: 904px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #fff;
+  }
+
+  .equip-cta-btn {
+    min-width: 215px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .equip-hero-img {
+      height: 340px;
+    }
+
+    .equip-section-header {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+    }
+
+    .equip-heading,
+    .equip-about-heading,
+    .equip-cta-heading {
+      font-size: 44px;
+      line-height: 1.08;
+    }
+
+    .equip-grid {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .equip-card-media {
+      height: 320px;
+    }
+
+    .equip-about {
+      width: min(calc(100% - 40px), 1146px);
+      margin-top: 72px;
+      gap: 48px;
+    }
+
+    .equip-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .equip-stat-card {
+      padding: 48px 24px;
+    }
+
+    .equip-cta-banner {
+      width: min(calc(100% - 40px), var(--module-grid-width));
+      margin-top: 72px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .equip-hero {
+      padding-top: 100px;
+    }
+
+    .equip-hero-img {
+      width: min(calc(100% - 32px), var(--module-grid-width));
+      height: 220px;
+      border-radius: 24px;
+    }
+
+    .equip-section-header {
+      width: min(calc(100% - 32px), var(--module-grid-width));
+      margin-top: 40px;
+      gap: 24px;
+    }
+
+    .equip-heading,
+    .equip-about-heading,
+    .equip-cta-heading {
+      font-size: 36px;
+      line-height: 1.08;
+    }
+
+    .equip-subtitle,
+    .equip-about-copy,
+    .equip-cta-copy {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .equip-grid {
+      width: min(calc(100% - 32px), var(--module-grid-width));
+      grid-template-columns: 1fr;
+      margin-top: 32px;
+      gap: 16px;
+    }
+
+    .equip-card-media {
+      height: 260px;
+    }
+
+    .equip-card-title {
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .equip-about {
+      width: min(calc(100% - 32px), 1146px);
+      margin-top: 56px;
+      gap: 40px;
+    }
+
+    .equip-about-header {
+      gap: 24px;
+    }
+
+    .equip-stats {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .equip-stat-card {
+      padding: 32px 24px;
+      gap: 24px;
+    }
+
+    .equip-stat-value {
+      font-size: 28px;
+    }
+
+    .equip-cta-banner {
+      width: min(calc(100% - 32px), var(--module-grid-width));
+      margin-top: 56px;
+      padding: 48px 24px;
+      border-radius: 24px;
+      gap: 24px;
+    }
+  }
+</style>
+</head>
+<body data-marand-page="equipment" data-marand-nav-active="equipment">
+<div class="page">
+  <div data-marand-shell-header></div>
+
+  <main>
+    <section class="equip-hero">
+      <div class="equip-hero-img">
+        <img src="https://www.figma.com/api/mcp/asset/128ed4bf-b529-4385-8fd3-011b2d44d845" alt="Echipamente de print profesionale Marand" />
+      </div>
+    </section>
+
+    <section class="equip-section-header" id="echipamente">
+      <span class="equip-chip">Tehnologia noastră</span>
+      <h1 class="equip-heading">Echipamente profesionale.</h1>
+      <p class="equip-subtitle">Investim în echipamente de top pentru a oferi cea mai bună calitate, consistență și viteză de producție.</p>
+    </section>
+
+    <div class="equip-grid">
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/951902ef-1a92-4e4f-9f84-8a61ad278e8d" alt="MUTOH XPJ-1341 SR PRO" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">MUTOH XPJ-1341 SR PRO</h2>
+          <ul class="equip-card-specs">
+            <li>Lățime maximă: 1341 mm (134 cm)</li>
+            <li>Cerneluri eco-solvent</li>
+            <li>Mod de producție rapid</li>
+            <li>Printuri pentru interior și exterior</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/00411720-e00b-4a9e-bbcf-4b1e929bd0e8" alt="Mutoh ValueCut II 1300" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">Mutoh ValueCut II 1300</h2>
+          <ul class="equip-card-specs">
+            <li>Tăiere de contur precisă</li>
+            <li>Lățime de tăiere 1300 mm</li>
+            <li>Vinyl, stickere, decaluri</li>
+            <li>Flux integrat print și tăiere</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/5ddaa625-5af7-4fa2-bc35-6b669c1be9a0" alt="Flexa X-Pro 160" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">Flexa X-Pro 160</h2>
+          <ul class="equip-card-specs">
+            <li>160cm lățime de laminare</li>
+            <li>Laminare la cald și la rece</li>
+            <li>Protecție UV și anti-zgâriere</li>
+            <li>Finisaj mat sau lucios</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/622a6fa9-359e-4ccc-835d-17cdd34389f9" alt="DTF XPD 924" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">DTF XPD 924</h2>
+          <ul class="equip-card-specs">
+            <li>Tehnologie direct-to-film</li>
+            <li>Print textil vibrant</li>
+            <li>Orice culoare de material</li>
+            <li>Rezultate rezistente la spălare</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/2d199493-5d78-40dc-99da-98bd0c2cce98" alt="LOPTUS LTS 38" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">LOPTUS LTS 38</h2>
+          <ul class="equip-card-specs">
+            <li>38×38cm suprafață de presare</li>
+            <li>Aplicare transfer DTF</li>
+            <li>Tricouri, genți, șepci</li>
+            <li>Căldură și presiune constante</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="equip-card">
+        <img class="equip-card-media" src="https://www.figma.com/api/mcp/asset/8fb4f1c2-822e-4819-82c8-0bfe73a898d0" alt="Ricoh MC2000 A3" />
+        <div class="equip-card-body">
+          <h2 class="equip-card-title">Ricoh MC2000 A3</h2>
+          <ul class="equip-card-specs">
+            <li>Imprimare color laser A3</li>
+            <li>Cărți de vizită și flyere</li>
+            <li>Viteză mare de printare</li>
+            <li>Text și grafică clare</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <section class="equip-about" id="despre">
+      <div class="equip-about-header">
+        <span class="equip-chip">Despre Marand</span>
+        <h2 class="equip-about-heading">Partenerul tău local pentru print.</h2>
+        <p class="equip-about-copy">Marand este un print shop profesionist, echipat cu tehnologie modernă pentru print large format și textile. Fie că ai nevoie de un singur canvas sau de o mie de stickere, livrăm rezultate de calitate, rapid.</p>
+        <p class="equip-about-copy">Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.</p>
+      </div>
+
+      <div class="equip-stats">
+        <article class="equip-stat-card">
+          <div class="equip-stat-icon" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/a156fbfb-6d3c-45b3-994b-c62dad6f795e" alt="" />
+          </div>
+          <h3 class="equip-stat-value">134cm</h3>
+          <p class="equip-stat-label">Lățime maximă de print</p>
+        </article>
+
+        <article class="equip-stat-card">
+          <div class="equip-stat-icon" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/863dbeb8-8a7c-44dc-9041-5728f2f3c360" alt="" />
+          </div>
+          <h3 class="equip-stat-value">6</h3>
+          <p class="equip-stat-label">Echipamente profesionale</p>
+        </article>
+
+        <article class="equip-stat-card">
+          <div class="equip-stat-icon" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/859c5120-3489-4293-b4bc-adb75662483a" alt="" />
+          </div>
+          <h3 class="equip-stat-value">24h</h3>
+          <p class="equip-stat-label">Timp mediu de execuție</p>
+        </article>
+
+        <article class="equip-stat-card">
+          <div class="equip-stat-icon" aria-hidden="true">
+            <img src="https://www.figma.com/api/mcp/asset/6e8e2707-dad0-4934-a5ed-6e6200a82bbc" alt="" />
+          </div>
+          <h3 class="equip-stat-value">Fără minim</h3>
+          <p class="equip-stat-label">Cantitate minimă</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="equip-cta-banner">
+      <h2 class="equip-cta-heading">Ai nevoie de mai multe detalii?</h2>
+      <p class="equip-cta-copy">Trimite-ne detaliile proiectului și îți recomandăm produsul, materialul și dimensiunea potrivită pentru bugetul tău.</p>
+      <a class="cta cta-primary equip-cta-btn" href="../oferta/">Cere oferta</a>
+    </section>
+  </main>
+
+  <div data-marand-shell-footer></div>
+</div>
+<script src="../assets/marand-shell.js"></script>
+<script src="../assets/chatbot.js"></script>
+</body>
+</html>

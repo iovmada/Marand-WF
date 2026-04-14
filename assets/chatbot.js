@@ -52,10 +52,10 @@
 
   const routes = locale === "ro"
     ? {
-        home: "marand-wireframes-ro.html",
-        products: "marand-products-ro.html",
-        gallery: "marand-gallery-ro.html",
-        quote: "marand-oferta-ro.html"
+        home: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../" : "./",
+        products: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../produse/" : "./produse/",
+        gallery: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../#galerie" : "./#galerie",
+        quote: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../oferta/" : "./oferta/"
       }
     : {
         home: "marand-wireframes.html",
