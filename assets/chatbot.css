@@ -5,6 +5,8 @@
   z-index: 997;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --marand-chat-mobile-top: 0px;
+  --marand-chat-mobile-left: 0px;
+  --marand-chat-mobile-width: 100vw;
   --marand-chat-mobile-height: 100dvh;
   max-width: 100%;
   overflow-x: clip;
@@ -254,10 +256,10 @@
   .marand-chat-panel {
     position: fixed;
     top: var(--marand-chat-mobile-top);
-    right: 0;
-    left: 0;
+    left: var(--marand-chat-mobile-left);
+    right: auto;
     bottom: auto;
-    width: 100%;
+    width: var(--marand-chat-mobile-width);
     max-width: 100%;
     height: var(--marand-chat-mobile-height);
     max-height: none;
@@ -366,6 +368,7 @@
     border-radius: 22px;
     padding: 12px 14px;
     background: #fff;
+    font-size: 16px;
   }
 
   .marand-chat-send {

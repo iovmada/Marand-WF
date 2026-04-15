@@ -201,14 +201,20 @@
     function syncViewport() {
       if (!media.matches) {
         root.style.removeProperty("--marand-chat-mobile-top");
+        root.style.removeProperty("--marand-chat-mobile-left");
+        root.style.removeProperty("--marand-chat-mobile-width");
         root.style.removeProperty("--marand-chat-mobile-height");
         return;
       }
 
       const viewport = window.visualViewport;
       const top = viewport ? viewport.offsetTop : 0;
+      const left = viewport ? viewport.offsetLeft : 0;
+      const width = viewport ? viewport.width : window.innerWidth;
       const height = viewport ? viewport.height : window.innerHeight;
       root.style.setProperty("--marand-chat-mobile-top", `${Math.max(0, top)}px`);
+      root.style.setProperty("--marand-chat-mobile-left", `${Math.max(0, left)}px`);
+      root.style.setProperty("--marand-chat-mobile-width", `${Math.max(280, width)}px`);
       root.style.setProperty("--marand-chat-mobile-height", `${Math.max(320, height)}px`);
       messages.scrollTop = messages.scrollHeight;
     }
