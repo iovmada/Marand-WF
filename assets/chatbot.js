@@ -50,12 +50,14 @@
     }
   };
 
+  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale)(\/|index\.html$)/.test(window.location.pathname);
+
   const routes = locale === "ro"
     ? {
-        home: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../" : "./",
-        products: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../produse/" : "./produse/",
-        gallery: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../#galerie" : "./#galerie",
-        quote: /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname) ? "../oferta/" : "./oferta/"
+        home: isNestedPage ? "../" : "./",
+        products: isNestedPage ? "../produse/" : "./produse/",
+        gallery: isNestedPage ? "../#galerie" : "./#galerie",
+        quote: isNestedPage ? "../oferta/" : "./oferta/"
       }
     : {
         home: "marand-wireframes.html",

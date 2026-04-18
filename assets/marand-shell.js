@@ -1,13 +1,14 @@
 (() => {
   const page = document.body.dataset.marandPage || "home";
   const navActive = document.body.dataset.marandNavActive || page;
-  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie)(\/|index\.html$)/.test(window.location.pathname);
+  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale)(\/|index\.html$)/.test(window.location.pathname);
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
   const whatsappHref = "https://wa.me/40743827181?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
 
   const navItems = [
     { key: "products", label: "Produse", href: toRoute("/produse/") },
+    { key: "materials", label: "Materiale", href: toRoute("/materiale/") },
     { key: "design", label: "Design", href: toRoute("/#design") },
     { key: "process", label: "Cum Lucram", href: toRoute("/#cum-functioneaza") },
     { key: "production", label: "Productie", href: toRoute("/productie/") },
@@ -24,7 +25,8 @@
         { label: "Printuri pe canvas", href: toRoute("/produse/#canvas") },
         { label: "Stickere și vinyl", href: toRoute("/produse/#stickers") },
         { label: "Tricouri și textile", href: toRoute("/produse/#textiles") },
-        { label: "Small Format", href: toRoute("/produse/#small-format") }
+        { label: "Small Format", href: toRoute("/produse/#small-format") },
+        { label: "Materiale", href: toRoute("/materiale/") }
       ]
     },
     {
