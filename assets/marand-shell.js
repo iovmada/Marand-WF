@@ -56,7 +56,13 @@
     headerTarget.innerHTML = `
       <header class="site-header">
         <div class="container">
-          <a class="logo" href="${toRoute("/")}" aria-label="Marand — Acasă"><img class="logo-icon" src="https://www.figma.com/api/mcp/asset/8b2090a2-5a19-419e-9cf0-05f4b3eb92cb" alt="" /><img class="logo-wordmark" src="https://www.figma.com/api/mcp/asset/b75900d8-2cb3-4139-b47c-08ddf6c87776" alt="Marand" /></a>
+          <a class="logo" href="${toRoute("/")}" aria-label="Marand — Acasă">
+            <span class="logo-mark" aria-hidden="true">m</span>
+            <span class="logo-copy">
+              <span class="logo-title">marand</span>
+              <span class="logo-subtitle">design &amp; print shop</span>
+            </span>
+          </a>
           <nav class="nav-pill" aria-label="Navigare principală">
             ${navItems.map((item) => `<a class="${navActive === item.key ? "is-active" : ""}" href="${item.href}">${item.label}</a>`).join("")}
           </nav>
@@ -151,11 +157,10 @@
           </div>
           <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate.</p>
           <div class="site-footer-lockup" aria-hidden="true">
-            <div class="site-footer-mark">
-              <img src="https://www.figma.com/api/mcp/asset/6cb3be78-f6e9-4abb-9a91-1e7e48d4ef8a" alt="" />
-            </div>
-            <div class="site-footer-wordmark">
-              <img src="https://www.figma.com/api/mcp/asset/1dfd1c09-b39f-46af-bb9d-5da7e9cecc59" alt="" />
+            <div class="site-footer-mark site-footer-mark-text">m</div>
+            <div class="site-footer-wordmark site-footer-wordmark-text">
+              <span>marand</span>
+              <small>design &amp; print shop</small>
             </div>
           </div>
         </div>
@@ -185,4 +190,42 @@
       `
     );
   }
+
+  const assetFallbackSrc = new URL(`${routeRoot}/assets/social/marand-print-shop-print-digital-servicii-de-printate.jpg`, window.location.href).href;
+  document.querySelectorAll('img[src*="figma.com/api/mcp/asset"]').forEach((img) => {
+    const handleBrokenAsset = () => {
+      if (img.dataset.assetFallbackApplied === "1") {
+        return;
+      }
+
+      const partner = img.closest(".partner-logo");
+      if (partner) {
+        img.dataset.assetFallbackApplied = "1";
+        partner.innerHTML = `<span class="partner-logo-text">${img.alt || "Marand"}</span>`;
+        return;
+      }
+
+      if (
+        img.closest(".bg-blob-site") ||
+        img.closest(".process-card-icon") ||
+        img.closest(".equip-stat-icon") ||
+        img.closest(".site-footer-lockup") ||
+        img.closest(".logo")
+      ) {
+        img.dataset.assetFallbackApplied = "1";
+        img.style.display = "none";
+        return;
+      }
+
+      img.dataset.assetFallbackApplied = "1";
+      img.classList.add("asset-fallback-image");
+      img.src = assetFallbackSrc;
+    };
+
+    img.addEventListener("error", handleBrokenAsset);
+
+    if (img.complete && img.naturalWidth === 0) {
+      handleBrokenAsset();
+    }
+  });
 })();
