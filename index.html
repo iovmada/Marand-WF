@@ -749,18 +749,19 @@
   }
 
   .equip-stat-icon {
-    width: 64px;
+    width: 88px;
     height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 32px;
-    background: #171310;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .equip-stat-icon img {
-    width: 36px;
-    height: 36px;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
   }
 
   .equip-stat-value {
@@ -925,41 +926,27 @@
   }
 
   .process-card-head {
-    width: 209px;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    align-items: flex-start;
   }
 
   .process-card-icon {
-    position: relative;
-    width: 64px;
+    width: 88px;
     height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 32px;
-    background: #171310;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .process-card-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     display: block;
-    max-width: none;
-  }
-
-  .process-card-icon--select img:nth-child(1) { position: absolute; inset: 14px 20px 14px 20px; width: calc(100% - 40px); height: calc(100% - 28px); }
-  .process-card-icon--select img:nth-child(2) { position: absolute; inset: 19px 29px 44px 29px; width: calc(100% - 58px); height: calc(100% - 63px); }
-  .process-card-icon--select img:nth-child(3) { position: absolute; inset: 26px 26px 38px 26px; width: calc(100% - 52px); height: calc(100% - 64px); }
-  .process-card-icon--select img:nth-child(4) { position: absolute; inset: 31px 26px 31px 26px; width: calc(100% - 52px); height: calc(100% - 62px); }
-  .process-card-icon--select img:nth-child(5) { position: absolute; inset: 37px 26px 22px 30px; width: calc(100% - 56px); height: calc(100% - 59px); }
-  .process-card-icon--select img:nth-child(6) { position: absolute; inset: 44px 30px 14px 31px; width: calc(100% - 61px); height: calc(100% - 58px); }
-
-  .process-card-icon--upload img,
-  .process-card-icon--print img,
-  .process-card-icon--delivery img {
-    width: 36px;
-    height: 36px;
   }
 
   .process-card-title {
@@ -1238,7 +1225,7 @@
   .partner-logo {
     flex: 1 1 0;
     min-width: 0;
-    height: 55px;
+    height: 88px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1246,7 +1233,7 @@
 
   .partner-logo img {
     max-width: 100%;
-    max-height: 55px;
+    max-height: 88px;
     width: auto;
     height: auto;
     display: block;
@@ -2337,31 +2324,16 @@
       </div>
       <div class="partners-module-logos">
         <div class="partner-logo">
-          <span class="partner-logo-text">Alpiq</span>
+          <img src="./assets/Sustinut/SVG/ADR-VEST-logo.svg" alt="ADR Vest" />
         </div>
         <div class="partner-logo">
-          <span class="partner-logo-text">BKW</span>
+          <img src="./assets/Sustinut/SVG/Guvernul-Romaniei-logo.svg" alt="Guvernul României" />
         </div>
         <div class="partner-logo">
-          <span class="partner-logo-text">Swisssolar</span>
+          <img src="./assets/Sustinut/SVG/Uninea-Europeana-logo.svg" alt="Uniunea Europeană" />
         </div>
         <div class="partner-logo">
-          <span class="partner-logo-text">VSE
-AES</span>
-        </div>
-        <div class="partner-logo">
-          <span class="partner-logo-text">Swiss
-Cleantech</span>
-        </div>
-        <div class="partner-logo">
-          <span class="partner-logo-text">Plus</span>
-        </div>
-        <div class="partner-logo">
-          <span class="partner-logo-text">Primeo
-Energie</span>
-        </div>
-        <div class="partner-logo">
-          <span class="partner-logo-text">AET</span>
+          <img src="./assets/Sustinut/SVG/programul-regional-vest-logo.svg" alt="Programul Regional Vest" />
         </div>
       </div>
     </section>
@@ -2452,12 +2424,7 @@ Energie</span>
         <article class="process-card">
           <div class="process-card-head">
             <div class="process-card-icon process-card-icon--select" aria-hidden="true">
-              <img src="https://www.figma.com/api/mcp/asset/92f4399d-3af3-413b-bf5f-673a713d7510" alt="" />
-              <img src="https://www.figma.com/api/mcp/asset/d6e27fb9-e568-48bc-86af-d0546a8140bb" alt="" />
-              <img src="https://www.figma.com/api/mcp/asset/2680563a-b071-48fb-86e4-91b6a1ac009e" alt="" />
-              <img src="https://www.figma.com/api/mcp/asset/2680563a-b071-48fb-86e4-91b6a1ac009e" alt="" />
-              <img src="https://www.figma.com/api/mcp/asset/d1ff8584-508b-4db2-8ed2-1a5e8d33890a" alt="" />
-              <img src="https://www.figma.com/api/mcp/asset/1deb1766-35e7-4edd-b02d-e521e9b9c627" alt="" />
+              <img src="./assets/Parteneri/SVG/process-select.svg" alt="" />
             </div>
             <h3 class="process-card-title">Alege<br />Produsul</h3>
           </div>
@@ -2467,7 +2434,7 @@ Energie</span>
         <article class="process-card">
           <div class="process-card-head">
             <div class="process-card-icon process-card-icon--upload" aria-hidden="true">
-              <img src="https://www.figma.com/api/mcp/asset/bca95ae8-355e-40cd-a591-30bbce6144aa" alt="" />
+              <img src="./assets/Parteneri/SVG/process-upload.svg" alt="" />
             </div>
             <h3 class="process-card-title">Încarcă<br />Designul</h3>
           </div>
@@ -2477,7 +2444,7 @@ Energie</span>
         <article class="process-card">
           <div class="process-card-head">
             <div class="process-card-icon process-card-icon--print" aria-hidden="true">
-              <img src="https://www.figma.com/api/mcp/asset/8a1888ca-86d9-461e-88cb-e9df1fdc7897" alt="" />
+              <img src="./assets/Parteneri/SVG/process-print.svg" alt="" />
             </div>
             <h3 class="process-card-title">Printăm Și<br />Finisăm</h3>
           </div>
@@ -2487,7 +2454,7 @@ Energie</span>
         <article class="process-card">
           <div class="process-card-head">
             <div class="process-card-icon process-card-icon--delivery" aria-hidden="true">
-              <img src="https://www.figma.com/api/mcp/asset/53a86d1a-e1fe-47bb-a209-c99ecd9eafd4" alt="" />
+              <img src="./assets/Parteneri/SVG/process-delivery.svg" alt="" />
             </div>
             <h3 class="process-card-title">Ridicare Sau<br />Livrare</h3>
           </div>
@@ -2547,28 +2514,28 @@ Energie</span>
       <div class="equip-stats">
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/a156fbfb-6d3c-45b3-994b-c62dad6f795e" alt="" />
+            <img src="./assets/despre-marand/SVG/1.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">134cm</h3>
           <p class="equip-stat-label">Lățime maximă de print</p>
         </article>
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/863dbeb8-8a7c-44dc-9041-5728f2f3c360" alt="" />
+            <img src="./assets/despre-marand/SVG/2.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">6</h3>
           <p class="equip-stat-label">Echipamente profesionale</p>
         </article>
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/859c5120-3489-4293-b4bc-adb75662483a" alt="" />
+            <img src="./assets/despre-marand/SVG/3.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">24h</h3>
           <p class="equip-stat-label">Timp mediu de execuție</p>
         </article>
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/6e8e2707-dad0-4934-a5ed-6e6200a82bbc" alt="" />
+            <img src="./assets/despre-marand/SVG/4.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">Fără minim</h3>
           <p class="equip-stat-label">Cantitate minimă</p>

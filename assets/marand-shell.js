@@ -5,11 +5,11 @@
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
   const whatsappHref = "https://wa.me/40743827181?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
+  const brandLogo = toRoute("/assets/brand/logo.svg");
 
   const navItems = [
     { key: "products", label: "Produse", href: toRoute("/produse/") },
     { key: "materials", label: "Materiale", href: toRoute("/materiale/") },
-    { key: "design", label: "Design", href: toRoute("/#design") },
     { key: "process", label: "Cum Lucram", href: toRoute("/#cum-functioneaza") },
     { key: "production", label: "Productie", href: toRoute("/productie/") },
     { key: "equipment", label: "Echipamente", href: toRoute("/echipamente/") },
@@ -57,11 +57,7 @@
       <header class="site-header">
         <div class="container">
           <a class="logo" href="${toRoute("/")}" aria-label="Marand — Acasă">
-            <span class="logo-mark" aria-hidden="true">m</span>
-            <span class="logo-copy">
-              <span class="logo-title">marand</span>
-              <span class="logo-subtitle">design &amp; print shop</span>
-            </span>
+            <img class="logo-full" src="${brandLogo}" alt="Marand" />
           </a>
           <nav class="nav-pill" aria-label="Navigare principală">
             ${navItems.map((item) => `<a class="${navActive === item.key ? "is-active" : ""}" href="${item.href}">${item.label}</a>`).join("")}
@@ -157,11 +153,7 @@
           </div>
           <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate.</p>
           <div class="site-footer-lockup" aria-hidden="true">
-            <div class="site-footer-mark site-footer-mark-text">m</div>
-            <div class="site-footer-wordmark site-footer-wordmark-text">
-              <span>marand</span>
-              <small>design &amp; print shop</small>
-            </div>
+            <img class="site-footer-logo" src="${brandLogo}" alt="" />
           </div>
         </div>
       </footer>
