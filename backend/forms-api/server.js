@@ -10,7 +10,10 @@ const app = express();
 
 const config = {
   port: Number(process.env.PORT || 8080),
-  appOrigin: process.env.APP_ORIGIN || 'http://localhost:3000',
+  appOrigins: String(process.env.APP_ORIGIN || 'http://localhost:3000')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean),
   mailTo: process.env.MAIL_TO || 'office@marand-print.ro',
   smtp: {
     host: process.env.ZOHO_SMTP_HOST || 'smtppro.zoho.com',
@@ -99,7 +102,12 @@ const mailer = nodemailer.createTransport({
 });
 
 app.use(cors({
-  origin: config.appOrigin,
+  origin: (origin, callback) => {
+    if (!origin || config.appOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`Origin not allowed: ${origin}`));
+  },
   methods: ['GET', 'POST', 'OPTIONS']
 }));
 app.use(express.json({ limit: '1mb' }));

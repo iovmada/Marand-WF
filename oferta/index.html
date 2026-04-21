@@ -1105,6 +1105,18 @@
 
     if (!form) return;
 
+    const readJsonError = async (response, fallback) => {
+      try {
+        const payload = await response.json();
+        if (payload && typeof payload.error === 'string' && payload.error.trim()) {
+          return payload.error.trim();
+        }
+      } catch (_error) {
+        // Ignore JSON parsing failures and use fallback below.
+      }
+      return fallback;
+    };
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       clearStatus();
@@ -1139,7 +1151,7 @@
           });
 
           if (!presignResponse.ok) {
-            throw new Error('Nu am putut pregăti uploadul fișierelor.');
+            throw new Error(await readJsonError(presignResponse, 'Nu am putut pregăti uploadul fișierelor.'));
           }
 
           const presignPayload = await presignResponse.json();
@@ -1193,7 +1205,7 @@
         });
 
         if (!ofertaResponse.ok) {
-          throw new Error('Cererea nu a putut fi trimisă.');
+          throw new Error(await readJsonError(ofertaResponse, 'Cererea nu a putut fi trimisă.'));
         }
 
         form.reset();
