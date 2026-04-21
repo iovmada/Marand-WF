@@ -104,11 +104,11 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '1mb' }));
 
-app.get('/health', (_req, res) => {
+app.get(['/health', '/api/health'], (_req, res) => {
   res.json({ ok: true });
 });
 
-app.post('/api/uploads/presign', async (req, res) => {
+app.post(['/uploads/presign', '/api/uploads/presign'], async (req, res) => {
   try {
     const files = Array.isArray(req.body?.files) ? req.body.files : [];
     const scope = req.body?.scope === 'quotes' ? 'quotes' : 'uploads';
@@ -166,7 +166,7 @@ app.post('/api/uploads/presign', async (req, res) => {
   }
 });
 
-app.post('/api/oferta', async (req, res) => {
+app.post(['/oferta', '/api/oferta'], async (req, res) => {
   try {
     const payload = req.body || {};
     const name = String(payload.name || '').trim();
