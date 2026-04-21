@@ -1,0 +1,17 @@
+{
+  "name": "marand-forms-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.790.0",
+    "@aws-sdk/s3-request-presigner": "^3.790.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1"
+  }
+}

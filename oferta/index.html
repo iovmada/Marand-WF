@@ -395,10 +395,16 @@
     padding: 32px;
     text-align: center;
     background: #fff;
-    transition: border-color 180ms ease;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    cursor: pointer;
   }
 
   .offer-upload:hover { border-color: var(--blue); }
+  .offer-upload.is-dragover {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(12, 36, 194, 0.12);
+    background: rgba(12, 36, 194, 0.03);
+  }
 
   .offer-upload strong {
     display: block;
@@ -413,6 +419,89 @@
     font-size: 14px;
     color: var(--muted);
     line-height: 1.6;
+  }
+
+  .offer-upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .offer-upload-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .offer-upload-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+  }
+
+  .offer-upload-name {
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #0b0b0b;
+    overflow-wrap: anywhere;
+  }
+
+  .offer-upload-meta {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .offer-upload-remove {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    cursor: pointer;
+  }
+
+  .offer-form-status {
+    display: none;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .offer-form-status.is-visible {
+    display: block;
+  }
+
+  .offer-form-status[data-status="success"] {
+    background: rgba(157, 253, 67, 0.18);
+    color: #183800;
+  }
+
+  .offer-form-status[data-status="error"] {
+    background: rgba(224, 79, 70, 0.12);
+    color: #8f231e;
   }
 
   /* ── Buttons ── */
@@ -655,7 +744,7 @@
   }
 </style>
 </head>
-<body data-marand-page="contact" data-marand-nav-active="contact">
+<body data-marand-page="oferta" data-marand-nav-active="contact">
 <div class="page">
   <div data-marand-shell-header></div>
 
@@ -772,10 +861,12 @@
 
           <div>
             <p class="offer-section-label">Upload fișiere</p>
-            <div class="offer-upload">
+            <label class="offer-upload" for="offer-files" data-offer-upload>
               <strong>Trage fișierele aici sau dă click pentru upload</strong>
               <p>PDF, AI, EPS, PSD, TIFF, PNG, JPG, SVG, CDR</p>
-            </div>
+              <input class="offer-upload-input" type="file" id="offer-files" name="files" multiple data-offer-file-input />
+            </label>
+            <div class="offer-upload-list" data-offer-upload-list></div>
           </div>
 
           <div class="offer-row">
@@ -804,6 +895,8 @@
             <button class="cta cta-primary offer-submit" type="submit">Trimite cererea de ofertă</button>
             <a class="cta cta-secondary offer-back" href="../produse/">Înapoi la produse</a>
           </div>
+
+          <div class="offer-form-status" data-offer-form-status aria-live="polite"></div>
 
         </form>
       </div>
@@ -866,8 +959,63 @@
 <script src="../assets/marand-shell.js"></script>
 <script>
   (() => {
+    const API_BASE = '/api';
     const dropdowns = Array.from(document.querySelectorAll('[data-offer-dropdown]'));
     const form = document.querySelector('.offer-form');
+    const uploadZone = document.querySelector('[data-offer-upload]');
+    const fileInput = document.querySelector('[data-offer-file-input]');
+    const uploadList = document.querySelector('[data-offer-upload-list]');
+    const statusBox = document.querySelector('[data-offer-form-status]');
+    const acceptedUploadExtensions = new Set(['pdf', 'ai', 'eps', 'psd', 'tiff', 'png', 'jpg', 'jpeg', 'svg', 'cdr', 'zip', 'rar']);
+    let queuedFiles = [];
+
+    const formatFileSize = (size) => {
+      if (size < 1024 * 1024) return `${Math.max(1, Math.round(size / 1024))} KB`;
+      return `${(size / (1024 * 1024)).toFixed(1)} MB`;
+    };
+
+    const showStatus = (type, message) => {
+      if (!statusBox) return;
+      statusBox.dataset.status = type;
+      statusBox.textContent = message;
+      statusBox.classList.add('is-visible');
+    };
+
+    const clearStatus = () => {
+      if (!statusBox) return;
+      statusBox.classList.remove('is-visible');
+      statusBox.textContent = '';
+      statusBox.dataset.status = '';
+    };
+
+    const renderUploadList = () => {
+      if (!uploadList) return;
+      uploadList.innerHTML = queuedFiles.map((file, index) => `
+        <div class="offer-upload-item">
+          <div>
+            <div class="offer-upload-name">${file.name}</div>
+            <div class="offer-upload-meta">${formatFileSize(file.size)}</div>
+          </div>
+          <button class="offer-upload-remove" type="button" data-offer-remove-file="${index}">Șterge</button>
+        </div>
+      `).join('');
+    };
+
+    const mergeFiles = (incomingFiles) => {
+      const nextFiles = [];
+
+      incomingFiles.forEach((file) => {
+        const extension = file.name.split('.').pop()?.toLowerCase() || '';
+        if (!acceptedUploadExtensions.has(extension)) return;
+        if (queuedFiles.some((existing) => existing.name === file.name && existing.size === file.size && existing.lastModified === file.lastModified)) return;
+        nextFiles.push(file);
+      });
+
+      if (nextFiles.length) {
+        queuedFiles = [...queuedFiles, ...nextFiles];
+        renderUploadList();
+      }
+    };
 
     const closeAll = () => {
       dropdowns.forEach((dropdown) => {
@@ -923,39 +1071,155 @@
       });
     }
 
+    if (uploadZone && fileInput) {
+      uploadZone.addEventListener('dragenter', () => uploadZone.classList.add('is-dragover'));
+      uploadZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        uploadZone.classList.add('is-dragover');
+      });
+      uploadZone.addEventListener('dragleave', (event) => {
+        if (!uploadZone.contains(event.relatedTarget)) {
+          uploadZone.classList.remove('is-dragover');
+        }
+      });
+      uploadZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        uploadZone.classList.remove('is-dragover');
+        mergeFiles(Array.from(event.dataTransfer?.files || []));
+      });
+
+      fileInput.addEventListener('change', () => {
+        mergeFiles(Array.from(fileInput.files || []));
+        fileInput.value = '';
+      });
+    }
+
+    uploadList?.addEventListener('click', (event) => {
+      const trigger = event.target.closest('[data-offer-remove-file]');
+      if (!trigger) return;
+      const index = Number(trigger.dataset.offerRemoveFile);
+      if (Number.isNaN(index)) return;
+      queuedFiles = queuedFiles.filter((_, fileIndex) => fileIndex !== index);
+      renderUploadList();
+    });
+
     if (!form) return;
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      clearStatus();
 
       const data = new FormData(form);
       const stadiu = form.querySelector('input[name="stadiu"]:checked')?.value || 'nespecificat';
       const read = (name) => (data.get(name) || '').toString().trim();
       const normalize = (value, fallback = 'Nespecificat') => value || fallback;
 
-      const subject = `Cerere ofertă Marand - ${normalize(read('nume'), 'client nou')}`;
-      const body = [
-        'Cerere ofertă nouă',
-        '',
-        `Nume: ${normalize(read('nume'))}`,
-        `Companie: ${normalize(read('companie'))}`,
-        `Email: ${normalize(read('email'))}`,
-        `Telefon: ${normalize(read('telefon'))}`,
-        '',
-        `Categorie produs: ${normalize(read('categorie'))}`,
-        `Termen dorit: ${normalize(read('termen'))}`,
-        `Cantitate estimată: ${normalize(read('cantitate'))}`,
-        `Buget estimat: ${normalize(read('buget'))}`,
-        `Stadiul graficii: ${stadiu}`,
-        '',
-        'Detalii proiect:',
-        normalize(read('detalii')),
-        '',
-        'Fișiere:',
-        'Uploadul de fișiere nu este încă trimis automat prin site. Atașează manual fișierele în email.',
-      ].join('\n');
+      const submitButton = form.querySelector('.offer-submit');
+      const originalButtonText = submitButton?.textContent || '';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Se trimite...';
+      }
 
-      window.location.href = `mailto:office@marand-print.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      try {
+        let uploadedFiles = [];
+
+        if (queuedFiles.length) {
+          const presignResponse = await fetch(`${API_BASE}/uploads/presign`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              scope: 'quotes',
+              files: queuedFiles.map((file) => ({
+                name: file.name,
+                type: file.type || 'application/octet-stream',
+                size: file.size
+              }))
+            })
+          });
+
+          if (!presignResponse.ok) {
+            throw new Error('Nu am putut pregăti uploadul fișierelor.');
+          }
+
+          const presignPayload = await presignResponse.json();
+          const uploadTargets = Array.isArray(presignPayload.uploads) ? presignPayload.uploads : [];
+
+          if (uploadTargets.length !== queuedFiles.length) {
+            throw new Error('Răspuns invalid pentru uploadul fișierelor.');
+          }
+
+          uploadedFiles = [];
+
+          for (let index = 0; index < uploadTargets.length; index += 1) {
+            const target = uploadTargets[index];
+            const file = queuedFiles[index];
+            const uploadResponse = await fetch(target.uploadUrl, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': file.type || 'application/octet-stream'
+              },
+              body: file
+            });
+
+            if (!uploadResponse.ok) {
+              throw new Error(`Upload eșuat pentru ${file.name}.`);
+            }
+
+            uploadedFiles.push({
+              name: file.name,
+              key: target.key,
+              url: target.publicUrl || ''
+            });
+          }
+        }
+
+        const ofertaResponse = await fetch(`${API_BASE}/oferta`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: normalize(read('nume')),
+            company: normalize(read('companie')),
+            email: normalize(read('email')),
+            phone: normalize(read('telefon')),
+            category: normalize(read('categorie')),
+            deadline: normalize(read('termen')),
+            quantity: normalize(read('cantitate')),
+            budget: normalize(read('buget')),
+            designStatus: stadiu,
+            details: normalize(read('detalii')),
+            files: uploadedFiles
+          })
+        });
+
+        if (!ofertaResponse.ok) {
+          throw new Error('Cererea nu a putut fi trimisă.');
+        }
+
+        form.reset();
+        dropdowns.forEach((dropdown) => {
+          const label = dropdown.querySelector('[data-offer-dropdown-label]');
+          const input = dropdown.querySelector('input[type="hidden"]');
+          const options = Array.from(dropdown.querySelectorAll('.offer-dropdown-option'));
+          if (label) label.textContent = options[0]?.textContent.trim() || '';
+          if (input) input.value = '';
+          options.forEach((option, optionIndex) => {
+            const isCurrent = optionIndex === 0;
+            option.classList.toggle('is-current', isCurrent);
+            option.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+          });
+        });
+        queuedFiles = [];
+        renderUploadList();
+        showStatus('success', 'Cererea a fost trimisă. Revenim cât mai curând cu oferta.');
+      } catch (error) {
+        showStatus('error', error instanceof Error ? error.message : 'A apărut o eroare la trimitere.');
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
     });
   })();
 </script>
