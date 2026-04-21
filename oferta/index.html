@@ -867,7 +867,7 @@
 <script>
   (() => {
     const dropdowns = Array.from(document.querySelectorAll('[data-offer-dropdown]'));
-    if (!dropdowns.length) return;
+    const form = document.querySelector('.offer-form');
 
     const closeAll = () => {
       dropdowns.forEach((dropdown) => {
@@ -877,48 +877,85 @@
       });
     };
 
-    dropdowns.forEach((dropdown) => {
-      const trigger = dropdown.querySelector('.offer-dropdown-trigger');
-      const label = dropdown.querySelector('[data-offer-dropdown-label]');
-      const input = dropdown.querySelector('input[type="hidden"]');
-      const options = Array.from(dropdown.querySelectorAll('.offer-dropdown-option'));
+    if (dropdowns.length) {
+      dropdowns.forEach((dropdown) => {
+        const trigger = dropdown.querySelector('.offer-dropdown-trigger');
+        const label = dropdown.querySelector('[data-offer-dropdown-label]');
+        const input = dropdown.querySelector('input[type="hidden"]');
+        const options = Array.from(dropdown.querySelectorAll('.offer-dropdown-option'));
 
-      if (!trigger || !label || !input || !options.length) return;
+        if (!trigger || !label || !input || !options.length) return;
 
-      trigger.addEventListener('click', () => {
-        const isOpen = dropdown.classList.contains('is-open');
-        closeAll();
-        if (!isOpen) {
-          dropdown.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
+        trigger.addEventListener('click', () => {
+          const isOpen = dropdown.classList.contains('is-open');
+          closeAll();
+          if (!isOpen) {
+            dropdown.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        options.forEach((option) => {
+          option.addEventListener('click', () => {
+            const value = option.dataset.value ?? '';
+            input.value = value;
+            label.textContent = option.textContent.trim();
+
+            options.forEach((item) => {
+              const isCurrent = item === option;
+              item.classList.toggle('is-current', isCurrent);
+              item.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+            });
+
+            closeAll();
+          });
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!dropdowns.some((dropdown) => dropdown.contains(event.target))) {
+          closeAll();
         }
       });
 
-      options.forEach((option) => {
-        option.addEventListener('click', () => {
-          const value = option.dataset.value ?? '';
-          input.value = value;
-          label.textContent = option.textContent.trim();
-
-          options.forEach((item) => {
-            const isCurrent = item === option;
-            item.classList.toggle('is-current', isCurrent);
-            item.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
-          });
-
-          closeAll();
-        });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeAll();
       });
-    });
+    }
 
-    document.addEventListener('click', (event) => {
-      if (!dropdowns.some((dropdown) => dropdown.contains(event.target))) {
-        closeAll();
-      }
-    });
+    if (!form) return;
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeAll();
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const data = new FormData(form);
+      const stadiu = form.querySelector('input[name="stadiu"]:checked')?.value || 'nespecificat';
+      const read = (name) => (data.get(name) || '').toString().trim();
+      const normalize = (value, fallback = 'Nespecificat') => value || fallback;
+
+      const subject = `Cerere ofertă Marand - ${normalize(read('nume'), 'client nou')}`;
+      const body = [
+        'Cerere ofertă nouă',
+        '',
+        `Nume: ${normalize(read('nume'))}`,
+        `Companie: ${normalize(read('companie'))}`,
+        `Email: ${normalize(read('email'))}`,
+        `Telefon: ${normalize(read('telefon'))}`,
+        '',
+        `Categorie produs: ${normalize(read('categorie'))}`,
+        `Termen dorit: ${normalize(read('termen'))}`,
+        `Cantitate estimată: ${normalize(read('cantitate'))}`,
+        `Buget estimat: ${normalize(read('buget'))}`,
+        `Stadiul graficii: ${stadiu}`,
+        '',
+        'Detalii proiect:',
+        normalize(read('detalii')),
+        '',
+        'Fișiere:',
+        'Uploadul de fișiere nu este încă trimis automat prin site. Atașează manual fișierele în email.',
+      ].join('\n');
+
+      window.location.href = `mailto:office@marand-print.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   })();
 </script>
