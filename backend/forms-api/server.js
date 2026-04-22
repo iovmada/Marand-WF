@@ -115,6 +115,16 @@ const createDownloadUrl = async (key) => {
   });
 };
 
+const sendTextMail = async ({ replyTo, subject, lines }) => {
+  await mailer.sendMail({
+    from: config.smtp.from,
+    to: config.mailTo,
+    replyTo,
+    subject,
+    text: lines.join('\n')
+  });
+};
+
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || config.appOrigins.includes(origin)) {
@@ -240,18 +250,54 @@ app.post(['/oferta', '/api/oferta'], async (req, res) => {
       lines.push('- Niciun fișier încărcat');
     }
 
-    await mailer.sendMail({
-      from: config.smtp.from,
-      to: config.mailTo,
+    await sendTextMail({
       replyTo: email,
       subject,
-      text: lines.join('\n')
+      lines
     });
 
     return res.json({ ok: true });
   } catch (error) {
     return res.status(500).json({
       error: error instanceof Error ? error.message : 'Could not send offer.'
+    });
+  }
+});
+
+app.post(['/contact', '/api/contact'], async (req, res) => {
+  try {
+    const payload = req.body || {};
+    const name = String(payload.name || '').trim();
+    const email = String(payload.email || '').trim();
+    const phone = String(payload.phone || '').trim();
+    const details = String(payload.details || '').trim();
+
+    if (!name || !email || !details) {
+      return res.status(400).json({ error: 'Missing required fields.' });
+    }
+
+    const subject = `Mesaj contact Marand - ${name}`;
+    const lines = [
+      'Mesaj nou din formularul de contact',
+      '',
+      `Nume: ${name}`,
+      `Email: ${email}`,
+      `Telefon: ${phone || 'Nespecificat'}`,
+      '',
+      'Mesaj:',
+      details
+    ];
+
+    await sendTextMail({
+      replyTo: email,
+      subject,
+      lines
+    });
+
+    return res.json({ ok: true });
+  } catch (error) {
+    return res.status(500).json({
+      error: error instanceof Error ? error.message : 'Could not send contact message.'
     });
   }
 });
