@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import cors from 'cors';
 import express from 'express';
 import nodemailer from 'nodemailer';
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 const app = express();
@@ -34,7 +34,8 @@ const config = {
   upload: {
     maxFileBytes: Number(process.env.UPLOAD_MAX_FILE_BYTES || 262144000),
     maxTotalBytes: Number(process.env.UPLOAD_MAX_TOTAL_BYTES || 1073741824),
-    maxFiles: Number(process.env.UPLOAD_MAX_FILES || 10)
+    maxFiles: Number(process.env.UPLOAD_MAX_FILES || 10),
+    downloadUrlExpiresSeconds: Math.min(Number(process.env.UPLOAD_DOWNLOAD_URL_EXPIRES_SECONDS || 604800), 604800)
   }
 };
 
@@ -81,6 +82,8 @@ const requireConfig = (value, key) => {
   return value;
 };
 
+const isAllowedUploadKey = (key) => /^(quotes|uploads)\//.test(key);
+
 const s3 = new S3Client({
   region: config.spaces.region,
   endpoint: requireConfig(config.spaces.endpoint, 'SPACES_ENDPOINT'),
@@ -100,6 +103,17 @@ const mailer = nodemailer.createTransport({
     pass: requireConfig(config.smtp.pass, 'ZOHO_SMTP_PASS')
   }
 });
+
+const createDownloadUrl = async (key) => {
+  if (!key || !isAllowedUploadKey(key)) return '';
+
+  return getSignedUrl(s3, new GetObjectCommand({
+    Bucket: config.spaces.bucket,
+    Key: key
+  }), {
+    expiresIn: config.upload.downloadUrlExpiresSeconds
+  });
+};
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -154,16 +168,12 @@ app.post(['/uploads/presign', '/api/uploads/presign'], async (req, res) => {
       const command = new PutObjectCommand({
         Bucket: config.spaces.bucket,
         Key: key,
-        ContentType: file.type || 'application/octet-stream',
-        ACL: 'private'
+        ContentType: file.type || 'application/octet-stream'
       });
 
       const uploadUrl = await getSignedUrl(s3, command, { expiresIn: 900 });
-      const publicUrl = config.spaces.cdnBaseUrl
-        ? `${config.spaces.cdnBaseUrl.replace(/\/$/, '')}/${key}`
-        : `${config.spaces.endpoint.replace(/\/$/, '')}/${config.spaces.bucket}/${key}`;
 
-      return { key, uploadUrl, publicUrl };
+      return { key, uploadUrl };
     }));
 
     return res.json({ uploads });
@@ -215,8 +225,16 @@ app.post(['/oferta', '/api/oferta'], async (req, res) => {
     ];
 
     if (files.length) {
-      files.forEach((file) => {
-        lines.push(`- ${file.name || 'Fișier'}${file.url ? `: ${file.url}` : ''}`);
+      const resolvedFiles = await Promise.all(files.map(async (file) => {
+        const name = String(file?.name || '').trim() || 'Fișier';
+        const key = String(file?.key || '').trim();
+        const url = await createDownloadUrl(key);
+        return { name, key, url };
+      }));
+
+      resolvedFiles.forEach((file) => {
+        const suffix = file.url || file.key ? `: ${file.url || file.key}` : '';
+        lines.push(`- ${file.name}${suffix}`);
       });
     } else {
       lines.push('- Niciun fișier încărcat');
