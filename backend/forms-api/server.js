@@ -8,12 +8,45 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 const app = express();
 
+const expandAppOrigins = (origins) => {
+  const expanded = new Set();
+
+  origins.forEach((origin) => {
+    if (!origin) return;
+    expanded.add(origin);
+
+    try {
+      const url = new URL(origin);
+      const hostname = url.hostname.toLowerCase();
+
+      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        return;
+      }
+
+      if (hostname.startsWith('www.')) {
+        url.hostname = hostname.slice(4);
+        expanded.add(url.toString().replace(/\/$/, ''));
+        return;
+      }
+
+      url.hostname = `www.${hostname}`;
+      expanded.add(url.toString().replace(/\/$/, ''));
+    } catch (_error) {
+      // Ignore malformed origins and keep the raw value only.
+    }
+  });
+
+  return Array.from(expanded);
+};
+
 const config = {
   port: Number(process.env.PORT || 8080),
-  appOrigins: String(process.env.APP_ORIGIN || 'http://localhost:3000')
-    .split(',')
-    .map((origin) => origin.trim())
-    .filter(Boolean),
+  appOrigins: expandAppOrigins(
+    String(process.env.APP_ORIGIN || 'http://localhost:3000')
+      .split(',')
+      .map((origin) => origin.trim().replace(/\/$/, ''))
+      .filter(Boolean)
+  ),
   mailTo: process.env.MAIL_TO || 'office@marand-print.ro',
   smtp: {
     host: process.env.ZOHO_SMTP_HOST || 'smtppro.zoho.com',
@@ -130,11 +163,19 @@ app.use(cors({
     if (!origin || config.appOrigins.includes(origin)) {
       return callback(null, true);
     }
-    return callback(new Error(`Origin not allowed: ${origin}`));
+    return callback(null, false);
   },
   methods: ['GET', 'POST', 'OPTIONS']
 }));
 app.use(express.json({ limit: '1mb' }));
+
+app.use((req, res, next) => {
+  const origin = req.get('origin');
+  if (origin && !config.appOrigins.includes(origin)) {
+    return res.status(403).json({ error: `Origin not allowed: ${origin}` });
+  }
+  return next();
+});
 
 app.get(['/health', '/api/health'], (_req, res) => {
   res.json({ ok: true });
