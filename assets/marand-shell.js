@@ -16,6 +16,24 @@
     { key: "contact", label: "Contact", href: toRoute("/contact/") }
   ];
 
+  const socialLinks = [
+    {
+      label: "Instagram",
+      href: "#",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2 .3-.5.2-.9.4-1.2.7-.3.3-.5.7-.7 1.2-.1.3-.2.9-.3 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2 .2.5.4.9.7 1.2.3.3.7.5 1.2.7.3.1.9.2 2 .3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2-.3.5-.2.9-.4 1.2-.7.3-.3.5-.7.7-1.2.1-.3.2-.9.3-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2-.2-.5-.4-.9-.7-1.2-.3-.3-.7-.5-1.2-.7-.3-.1-.9-.2-2-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>`
+    },
+    {
+      label: "Facebook",
+      href: "#",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.4c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/></svg>`
+    },
+    {
+      label: "TikTok",
+      href: "#",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.6 6.3a4.6 4.6 0 0 1-3.2-1.4 4.6 4.6 0 0 1-1.3-2.6V2h-3.4v13a2.6 2.6 0 1 1-1.9-2.5V9a6 6 0 1 0 5.3 5.9V8.5a8 8 0 0 0 4.7 1.5V6.6a4.7 4.7 0 0 1-.2-.3z"/></svg>`
+    }
+  ];
+
   const footerGroups = [
     {
       title: "Produse",
@@ -133,10 +151,8 @@
         <div class="site-footer-inner">
           <div class="site-footer-top">
             <div class="site-footer-brand">
-              <div class="site-footer-social" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+              <div class="site-footer-social" aria-label="Retele sociale Marand">
+                ${socialLinks.map((item) => `<a class="site-footer-social-link" href="${item.href}" aria-label="${item.label}" target="_blank" rel="noopener noreferrer">${item.icon}</a>`).join("")}
               </div>
               <p class="site-footer-intro">Print shop profesionist — large format, bannere, canvas, stickere, textile și multe altele. Calitate și execuție rapidă.</p>
             </div>
