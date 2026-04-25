@@ -180,7 +180,8 @@
   /* ── About module ── */
   .equip-about {
     width: min(calc(100% - 60px), 1146px);
-    margin: 96px auto 0;
+    margin: 0 auto;
+    padding: 64px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,23 +232,24 @@
     flex-direction: column;
     gap: 32px;
     border-radius: 32px;
-    background: var(--surface);
+    background: #fcfcfc;
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
   }
 
   .equip-stat-icon {
-    width: 64px;
+    width: 88px;
     height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 32px;
-    background: #171310;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .equip-stat-icon img {
-    width: 36px;
-    height: 36px;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
   }
 
   .equip-stat-value {
@@ -268,7 +270,6 @@
     line-height: 21px;
     font-weight: 400;
     letter-spacing: -0.02em;
-    text-transform: lowercase;
     color: #000;
   }
 
@@ -341,8 +342,12 @@
 
     .equip-about {
       width: min(calc(100% - 40px), 1146px);
-      margin-top: 72px;
-      gap: 48px;
+      padding: 64px 0;
+    }
+
+    .equip-about-heading {
+      font-size: 44px;
+      line-height: 1.08;
     }
 
     .equip-stats {
@@ -408,7 +413,7 @@
 
     .equip-about {
       width: min(calc(100% - 32px), 1146px);
-      margin-top: 56px;
+      padding: 40px 0;
       gap: 40px;
     }
 
@@ -447,7 +452,7 @@
   <main>
     <section class="equip-hero">
       <div class="equip-hero-img">
-        <img src="https://www.figma.com/api/mcp/asset/128ed4bf-b529-4385-8fd3-011b2d44d845" alt="Echipamente de print profesionale Marand" />
+        <img src="../assets/images/echipamente/Echipamente-Header/marand-echipamente-header.webp" alt="Echipamente de print profesionale Marand" />
       </div>
     </section>
 
@@ -537,42 +542,38 @@
       </article>
     </div>
 
-    <section class="equip-about" id="despre">
+    <section class="equip-about homepage-reveal" data-reveal-delay="2" id="despre">
       <div class="equip-about-header">
         <span class="equip-chip">Despre Marand</span>
         <h2 class="equip-about-heading">Partenerul tău local pentru print.</h2>
         <p class="equip-about-copy">Marand este un print shop profesionist, echipat cu tehnologie modernă pentru print large format și textile. Fie că ai nevoie de un singur canvas sau de o mie de stickere, livrăm rezultate de calitate, rapid.</p>
         <p class="equip-about-copy">Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.</p>
       </div>
-
       <div class="equip-stats">
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/a156fbfb-6d3c-45b3-994b-c62dad6f795e" alt="" />
+            <img src="../assets/despre-marand/SVG/1.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">134cm</h3>
           <p class="equip-stat-label">Lățime maximă de print</p>
         </article>
-
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/863dbeb8-8a7c-44dc-9041-5728f2f3c360" alt="" />
+            <img src="../assets/despre-marand/SVG/2.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">6</h3>
           <p class="equip-stat-label">Echipamente profesionale</p>
         </article>
-
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/859c5120-3489-4293-b4bc-adb75662483a" alt="" />
+            <img src="../assets/despre-marand/SVG/3.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">24h</h3>
           <p class="equip-stat-label">Timp mediu de execuție</p>
         </article>
-
         <article class="equip-stat-card">
           <div class="equip-stat-icon" aria-hidden="true">
-            <img src="https://www.figma.com/api/mcp/asset/6e8e2707-dad0-4934-a5ed-6e6200a82bbc" alt="" />
+            <img src="../assets/despre-marand/SVG/4.svg" alt="" />
           </div>
           <h3 class="equip-stat-value">Fără minim</h3>
           <p class="equip-stat-label">Cantitate minimă</p>
