@@ -25,7 +25,9 @@
         gallery: "See gallery",
         quote: "Open quote page",
         home: "Back to homepage"
-      }
+      },
+      greeting: "Hi, I'm Andra, your virtual assistant.",
+      greetingClose: "Dismiss greeting"
     },
     ro: {
       openLabel: "Deschide asistentul",
@@ -50,7 +52,9 @@
         gallery: "Vezi galeria",
         quote: "Deschide pagina de ofertă",
         home: "Înapoi la homepage"
-      }
+      },
+      greeting: "Salut, sunt Andra, asistentul tau virtual.",
+      greetingClose: "Inchide salutul"
     }
   };
 
@@ -101,6 +105,10 @@
           <input class="marand-chat-input" type="text" placeholder="${t.inputPlaceholder}" />
           <button class="marand-chat-send" type="submit">${t.send}</button>
         </form>
+      </div>
+      <div class="marand-chat-teaser" role="button" tabindex="0" aria-label="${t.greeting}">
+        <button class="marand-chat-teaser-close" type="button" aria-label="${t.greetingClose}">×</button>
+        <span class="marand-chat-teaser-text">${t.greeting}</span>
       </div>
       <button class="marand-chat-button" type="button" aria-label="${t.openLabel}">${assistantIcon}</button>
     `;
@@ -307,7 +315,50 @@
       quick.appendChild(chip);
     });
 
-    openBtn.addEventListener("click", () => setOpen(!root.classList.contains("is-open")));
+    const teaser = root.querySelector(".marand-chat-teaser");
+    const teaserClose = root.querySelector(".marand-chat-teaser-close");
+    const teaserKey = "marand-chat-greeting-dismissed";
+    let teaserDismissed = false;
+    try { teaserDismissed = sessionStorage.getItem(teaserKey) === "1"; } catch (_) {}
+
+    function hideTeaser(persist) {
+      teaser.classList.remove("is-visible");
+      teaser.classList.add("is-hidden");
+      if (persist) {
+        try { sessionStorage.setItem(teaserKey, "1"); } catch (_) {}
+      }
+    }
+
+    if (!teaserDismissed) {
+      window.setTimeout(() => {
+        if (!root.classList.contains("is-open")) teaser.classList.add("is-visible");
+      }, 1200);
+    } else {
+      teaser.classList.add("is-hidden");
+    }
+
+    teaserClose.addEventListener("click", (event) => {
+      event.stopPropagation();
+      hideTeaser(true);
+    });
+
+    teaser.addEventListener("click", () => {
+      hideTeaser(true);
+      setOpen(true);
+    });
+
+    teaser.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        hideTeaser(true);
+        setOpen(true);
+      }
+    });
+
+    openBtn.addEventListener("click", () => {
+      hideTeaser(true);
+      setOpen(!root.classList.contains("is-open"));
+    });
     closeBtn.addEventListener("click", () => setOpen(false));
     form.addEventListener("submit", async (event) => {
       event.preventDefault();

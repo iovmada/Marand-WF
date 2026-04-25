@@ -67,6 +67,83 @@ body.marand-chat-open .marand-chat::before {
   place-items: center;
 }
 
+.marand-chat-teaser {
+  position: fixed;
+  right: 24px;
+  bottom: 100px;
+  z-index: 1;
+  max-width: 260px;
+  padding: 12px 32px 12px 16px;
+  background: #fff;
+  color: #171717;
+  border: 1px solid #ebe6df;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+.marand-chat-teaser::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 1px solid #ebe6df;
+  border-bottom: 1px solid #ebe6df;
+  transform: rotate(45deg);
+}
+
+.marand-chat-teaser.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.marand-chat-teaser.is-hidden {
+  opacity: 0 !important;
+  transform: translateY(8px) !important;
+  pointer-events: none !important;
+}
+
+.marand-chat.is-open .marand-chat-teaser,
+body.marand-chat-open .marand-chat-teaser {
+  display: none;
+}
+
+.marand-chat-teaser-text {
+  display: block;
+}
+
+.marand-chat-teaser-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  background: transparent;
+  color: #888;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.marand-chat-teaser-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #171717;
+}
+
 .marand-chat-panel {
   position: fixed;
   right: 24px;
@@ -319,6 +396,18 @@ body.marand-chat-open .marand-chat-button {
     margin-left: 0;
     display: block;
     z-index: 2;
+  }
+
+  .marand-chat-teaser {
+    right: 16px;
+    bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 32px);
+    font-size: 13px;
+    padding: 11px 30px 11px 14px;
+  }
+
+  .marand-chat-teaser::after {
+    right: 22px;
   }
 
   .marand-chat-panel {
