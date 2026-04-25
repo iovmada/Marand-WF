@@ -3,8 +3,10 @@ import crypto from 'node:crypto';
 import cors from 'cors';
 import express from 'express';
 import nodemailer from 'nodemailer';
+import OpenAI from 'openai';
 import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import { buildChatInstructions, chatbotCatalog } from './chatbot-knowledge.js';
 
 const app = express();
 
@@ -69,6 +71,10 @@ const config = {
     maxTotalBytes: Number(process.env.UPLOAD_MAX_TOTAL_BYTES || 1073741824),
     maxFiles: Number(process.env.UPLOAD_MAX_FILES || 10),
     downloadUrlExpiresSeconds: Math.min(Number(process.env.UPLOAD_DOWNLOAD_URL_EXPIRES_SECONDS || 604800), 604800)
+  },
+  openai: {
+    apiKey: process.env.OPENAI_API_KEY,
+    model: process.env.OPENAI_CHAT_MODEL || 'gpt-4o-mini'
   }
 };
 
@@ -84,6 +90,17 @@ const acceptedMimePrefixes = [
   'image/',
   'text/xml'
 ];
+
+const allowedChatLinks = new Set([
+  '/',
+  '/produse/',
+  '/materiale/',
+  '/oferta/',
+  '/contact/',
+  '/#galerie',
+  '/galerie',
+  chatbotCatalog.contact.whatsapp
+]);
 
 const sanitizeFilename = (filename) => filename
   .normalize('NFKD')
@@ -116,6 +133,10 @@ const requireConfig = (value, key) => {
 };
 
 const isAllowedUploadKey = (key) => /^(quotes|uploads)\//.test(key);
+
+const openai = config.openai.apiKey
+  ? new OpenAI({ apiKey: config.openai.apiKey })
+  : null;
 
 const s3 = new S3Client({
   region: config.spaces.region,
@@ -158,6 +179,73 @@ const sendTextMail = async ({ replyTo, subject, lines }) => {
   });
 };
 
+const normalizeChatHistory = (history) => {
+  if (!Array.isArray(history)) return [];
+
+  return history
+    .filter((item) => item && (item.role === 'user' || item.role === 'assistant'))
+    .map((item) => ({
+      role: item.role,
+      content: String(item.content || '').trim().slice(0, 2000)
+    }))
+    .filter((item) => item.content)
+    .slice(-8);
+};
+
+const stripCodeFences = (value) => value
+  .replace(/^```(?:json)?\s*/i, '')
+  .replace(/\s*```$/i, '')
+  .trim();
+
+const parseChatJson = (value) => {
+  const cleaned = stripCodeFences(String(value || ''));
+  return JSON.parse(cleaned);
+};
+
+const sanitizeChatLinks = (links, locale = 'ro') => {
+  const fallbackLabels = locale.startsWith('ro')
+    ? {
+        '/produse/': 'Vezi produsele',
+        '/materiale/': 'Vezi materialele',
+        '/oferta/': 'Deschide pagina de ofertă',
+        '/contact/': 'Vezi contact',
+        '/#galerie': 'Vezi galeria',
+        '/galerie': 'Vezi galeria',
+        [chatbotCatalog.contact.whatsapp]: 'WhatsApp'
+      }
+    : {
+        '/produse/': 'Browse products',
+        '/materiale/': 'See materials',
+        '/oferta/': 'Open quote page',
+        '/contact/': 'See contact',
+        '/#galerie': 'See gallery',
+        '/galerie': 'See gallery',
+        [chatbotCatalog.contact.whatsapp]: 'WhatsApp'
+      };
+
+  return (Array.isArray(links) ? links : [])
+    .map((item) => ({
+      href: String(item?.href || '').trim(),
+      label: String(item?.label || '').trim()
+    }))
+    .filter((item) => item.href && allowedChatLinks.has(item.href))
+    .slice(0, 2)
+    .map((item) => ({
+      href: item.href,
+      label: item.label || fallbackLabels[item.href] || item.href
+    }));
+};
+
+const fallbackChatReply = (locale = 'ro') => {
+  const isRomanian = locale.startsWith('ro');
+  return {
+    reply: isRomanian
+      ? 'Te pot ajuta cu alegerea produsului, materialele potrivite si pregatirea unei cereri de oferta. Daca vrei, mergem direct pe pagina de oferta.'
+      : 'I can help with product choice, materials, and preparing a quote request. If you want, we can go straight to the quote page.',
+    links: sanitizeChatLinks(['/produse/', '/oferta/'].map((href) => ({ href })), locale)
+  };
+};
+
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || config.appOrigins.includes(origin)) {
@@ -179,6 +267,62 @@ app.use((req, res, next) => {
 
 app.get(['/health', '/api/health'], (_req, res) => {
   res.json({ ok: true });
+});
+
+app.post(['/chat', '/api/chat'], async (req, res) => {
+  try {
+    const locale = String(req.body?.locale || 'ro').toLowerCase();
+    const message = String(req.body?.message || '').trim();
+    const history = normalizeChatHistory(req.body?.history);
+    const pageTitle = String(req.body?.pageTitle || '').trim().slice(0, 200);
+    const pathname = String(req.body?.pathname || '/').trim().slice(0, 200);
+
+    if (!message) {
+      return res.status(400).json({ error: 'Missing chat message.' });
+    }
+
+    if (!openai) {
+      return res.status(503).json({
+        error: 'Chat assistant is not configured yet. Add OPENAI_API_KEY on the backend service.'
+      });
+    }
+
+    const input = [
+      ...history.map((item) => ({
+        role: item.role,
+        content: item.content
+      })),
+      {
+        role: 'user',
+        content: message
+      }
+    ];
+
+    const response = await openai.responses.create({
+      model: config.openai.model,
+      instructions: buildChatInstructions({ locale, pageTitle, pathname }),
+      input,
+      store: false
+    });
+
+    const payload = parseChatJson(response.output_text || '');
+    const reply = String(payload?.reply || '').trim();
+    const links = sanitizeChatLinks(payload?.links, locale);
+
+    if (!reply) {
+      throw new Error('Empty chatbot response.');
+    }
+
+    return res.json({ reply, links });
+  } catch (error) {
+    const locale = String(req.body?.locale || 'ro').toLowerCase();
+    const fallback = fallbackChatReply(locale);
+    return res.status(200).json({
+      ...fallback,
+      fallback: true,
+      error: error instanceof Error ? error.message : 'Could not generate chat response.'
+    });
+  }
 });
 
 app.post(['/uploads/presign', '/api/uploads/presign'], async (req, res) => {

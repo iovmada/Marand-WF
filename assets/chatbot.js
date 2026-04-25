@@ -4,14 +4,16 @@
   const copy = {
     en: {
       openLabel: "Open chat assistant",
-      title: "Marand Assistant",
-      subtitle: "Scripted product and quote helper",
-      status: "Online demo assistant",
+      title: "Andra",
+      subtitle: "Marand AI assistant for products and quotes",
+      status: "AI assistant online",
+      statusThinking: "Writing a reply...",
+      statusFallback: "Fallback guidance mode",
       closeLabel: "Close chat",
       inputPlaceholder: "Ask about products, materials, or quotes",
       send: "Send",
       intro:
-        "Hi. I’m the Marand site assistant.\nI can help you choose a product, explain materials, or guide you to the quote page.",
+        "Hi. I’m Andra, Marand's AI assistant.\nI can help you choose a product, explain materials, or guide you to the quote page.",
       quick: [
         "Help me choose a product",
         "Which material should I use?",
@@ -27,14 +29,16 @@
     },
     ro: {
       openLabel: "Deschide asistentul",
-      title: "Asistent Marand",
-      subtitle: "Asistent demonstrativ pentru produse și oferte",
-      status: "Asistent demo online",
+      title: "Andra",
+      subtitle: "Asistent AI Marand pentru produse si oferte",
+      status: "Asistent AI online",
+      statusThinking: "Scriu un raspuns...",
+      statusFallback: "Mod de ghidaj de rezerva",
       closeLabel: "Închide chatul",
       inputPlaceholder: "Întreabă despre produse, materiale sau oferte",
       send: "Trimite",
       intro:
-        "Salut. Sunt asistentul site-ului Marand.\nTe pot ajuta să alegi un produs, să înțelegi materialele sau să ajungi mai repede la pagina de ofertă.",
+        "Salut. Sunt Andra, asistenta AI Marand.\nTe pot ajuta sa alegi un produs, sa intelegi materialele sau sa ajungi mai repede la pagina de oferta.",
       quick: [
         "Ajută-mă să aleg un produs",
         "Ce material mi se potrivește?",
@@ -51,6 +55,7 @@
   };
 
   const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale)(\/|index\.html$)/.test(window.location.pathname);
+  const API_BASE = "/api";
 
   const routes = locale === "ro"
     ? {
@@ -67,51 +72,12 @@
       };
 
   const t = copy[locale];
-
-  const responses = [
-    {
-      match: /(choose|product|need print|banner|sticker|canvas|shirt|tricou|produs|aleg|alege|banner|canvas|sticker|textil)/i,
-      get: () => ({
-        text: locale === "ro"
-          ? "Pentru alegerea produsului, regula simplă este:\n- banner sau mesh pentru exterior\n- vinyl autocolant pentru vitrine și stickere\n- canvas pentru decor și art print\n- textile pentru tricouri și merch\n- print mic pentru cărți de vizită, flyere și meniuri"
-          : "A simple way to choose the right product is:\n- banner or mesh for outdoor display\n- adhesive vinyl for windows and stickers\n- canvas for decor and art prints\n- textile printing for shirts and merch\n- small-format print for cards, flyers, and menus",
-        links: [
-          { href: routes.products, label: t.links.products },
-          { href: routes.gallery, label: t.links.gallery }
-        ]
-      })
-    },
-    {
-      match: /(material|vinyl|mesh|canvas|paper|hartie|hârtie|materiale|material)/i,
-      get: () => ({
-        text: locale === "ro"
-          ? "Pe scurt:\n- PVC banner: rezistent și bun pentru exterior\n- Mesh: potrivit când bate vântul sau pentru fațade mari\n- Vinyl autoadeziv: pentru vitrine, wall graphics și etichete\n- Canvas: pentru look premium de interior\n- Hârtie/carton: pentru printuri promoționale și corporate"
-          : "Quick material guide:\n- PVC banner: durable and good for outdoor use\n- mesh: better for windy areas and large facade coverage\n- adhesive vinyl: for windows, wall graphics, and labels\n- canvas: for premium indoor presentation\n- paper/card stock: for promo and corporate print",
-        links: [{ href: routes.products, label: t.links.products }]
-      })
-    },
-    {
-      match: /(quote|offer|oferta|ofertă|price|pret|preț|cost|buget)/i,
-      get: () => ({
-        text: locale === "ro"
-          ? "Ca să primești o ofertă bună mai repede, pregătește: dimensiuni, cantitate, termen, material dorit și dacă ai deja grafica pregătită. Pagina de ofertă de pe site este gândită exact pentru asta."
-          : "To get a solid quote faster, prepare: dimensions, quantity, deadline, preferred material, and whether the artwork is ready. The quote page is set up exactly for that flow.",
-        links: [{ href: routes.quote, label: t.links.quote }]
-      })
-    },
-    {
-      match: /(human|phone|email|contact|om|telefon|mail|email|contact)/i,
-      get: () => ({
-        text: locale === "ro"
-          ? "Pentru contact direct, cel mai bun pas este pagina de ofertă sau secțiunea de contact. Acolo poți lăsa toate detaliile proiectului într-un singur loc."
-          : "For direct contact, the best next step is the quote page or contact section, where you can leave all project details in one place.",
-        links: [
-          { href: routes.quote, label: t.links.quote },
-          { href: routes.home + "#contact", label: locale === "ro" ? "Vezi contact" : "See contact" }
-        ]
-      })
-    }
-  ];
+  const assistantIcon = `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 3.25a6.75 6.75 0 0 0-6.75 6.75v.5A3.75 3.75 0 0 0 2.5 14v1.25A2.75 2.75 0 0 0 5.25 18h1.5v-5.5h-1a6.25 6.25 0 1 1 12.5 0h-1V18h-4.5a.75.75 0 0 0 0 1.5h4.5A2.75 2.75 0 0 0 20 16.75V14a3.75 3.75 0 0 0-2.75-3.5V10A6.75 6.75 0 0 0 12 3.25Z" fill="currentColor"/>
+      <path d="M9.25 13.25a1 1 0 1 0 0 2h.5a1 1 0 1 0 0-2h-.5ZM14.25 13.25a1 1 0 1 0 0 2h.5a1 1 0 1 0 0-2h-.5ZM10 17.25a2.5 2.5 0 0 0 4 0h-4Z" fill="currentColor"/>
+    </svg>
+  `;
 
   function createWidget() {
     const host = document.createElement("div");
@@ -121,7 +87,7 @@
         <div class="marand-chat-header">
           <div class="marand-chat-header-top">
             <div class="marand-chat-title">
-              <div class="marand-chat-avatar">M</div>
+              <div class="marand-chat-avatar">${assistantIcon}</div>
               <div>
                 <span class="marand-chat-label">${t.title}</span>
                 <span class="marand-chat-subtitle">${t.subtitle}</span>
@@ -138,7 +104,7 @@
           <button class="marand-chat-send" type="submit">${t.send}</button>
         </form>
       </div>
-      <button class="marand-chat-button" type="button" aria-label="${t.openLabel}">?</button>
+      <button class="marand-chat-button" type="button" aria-label="${t.openLabel}">${assistantIcon}</button>
     `;
     document.body.appendChild(host);
     return host;
@@ -172,33 +138,61 @@
 
     messages.appendChild(bubble);
     messages.scrollTop = messages.scrollHeight;
+    return bubble;
   }
 
-  function findResponse(message) {
-    const hit = responses.find((entry) => entry.match.test(message));
-    if (hit) return hit.get();
-
-    return {
-      text: locale === "ro"
-        ? "Pot să te ajut cel mai bine cu alegerea produsului, materialele, timpul de execuție sau pregătirea unei cereri de ofertă."
-        : "I can help best with product choice, materials, turnaround guidance, or preparing a quote request.",
-      links: [
-        { href: routes.products, label: t.links.products },
-        { href: routes.quote, label: t.links.quote }
-      ]
-    };
+  function resolveLink(href) {
+    if (!href) return "";
+    if (/^https?:\/\//i.test(href)) return href;
+    if (href === "/" || href === "/#galerie" || href === "/galerie") return routes.home + (href.includes("#galerie") ? "#galerie" : "");
+    if (href === "/produse/") return routes.products;
+    if (href === "/materiale/") return isNestedPage ? "../materiale/" : "./materiale/";
+    if (href === "/oferta/") return routes.quote;
+    if (href === "/contact/") return isNestedPage ? "../contact/" : "./contact/";
+    return href;
   }
 
   function mount() {
     const root = createWidget();
-    const panel = root.querySelector(".marand-chat-panel");
     const openBtn = root.querySelector(".marand-chat-button");
     const closeBtn = root.querySelector(".marand-chat-close");
     const messages = root.querySelector(".marand-chat-messages");
     const quick = root.querySelector(".marand-chat-quick");
     const form = root.querySelector(".marand-chat-form");
     const input = root.querySelector(".marand-chat-input");
+    const send = root.querySelector(".marand-chat-send");
+    const status = root.querySelector(".marand-chat-status");
     const media = window.matchMedia("(max-width: 760px)");
+    const touchOverlay = window.matchMedia("(pointer: coarse)");
+    const page = document.documentElement;
+    const body = document.body;
+    const originalPageOverflow = page.style.overflow;
+    const originalBodyOverflow = body.style.overflow;
+    const history = [];
+    let isPending = false;
+
+    function setStatus(label) {
+      status.textContent = label;
+    }
+
+    function setPending(next) {
+      isPending = next;
+      input.disabled = next;
+      send.disabled = next;
+      send.textContent = next ? "..." : t.send;
+      setStatus(next ? t.statusThinking : t.status);
+    }
+
+    function shouldUseOverlayMode() {
+      return media.matches && touchOverlay.matches;
+    }
+
+    function syncPageLock() {
+      const shouldLock = root.classList.contains("is-open") && shouldUseOverlayMode();
+      page.style.overflow = shouldLock ? "hidden" : originalPageOverflow;
+      body.style.overflow = shouldLock ? "hidden" : originalBodyOverflow;
+      body.classList.toggle("marand-chat-open", shouldLock);
+    }
 
     function syncViewport() {
       if (!media.matches) {
@@ -224,19 +218,81 @@
     function setOpen(next) {
       root.classList.toggle("is-open", next);
       openBtn.setAttribute("aria-expanded", next ? "true" : "false");
+      syncPageLock();
       if (next) {
         syncViewport();
-        input.focus();
         messages.scrollTop = messages.scrollHeight;
+        if (!shouldUseOverlayMode()) {
+          input.focus();
+        }
+      } else if (document.activeElement === input) {
+        input.blur();
       }
     }
 
-    function submitMessage(text) {
+    async function requestReply(message) {
+      const response = await fetch(`${API_BASE}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          locale,
+          message,
+          pageTitle: document.title,
+          pathname: window.location.pathname,
+          history
+        })
+      });
+
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(payload?.error || "Chat request failed.");
+      }
+
+      return {
+        reply: String(payload?.reply || "").trim(),
+        links: Array.isArray(payload?.links)
+          ? payload.links.map((item) => ({
+              href: resolveLink(item?.href),
+              label: String(item?.label || "").trim()
+            })).filter((item) => item.href && item.label)
+          : [],
+        fallback: Boolean(payload?.fallback)
+      };
+    }
+
+    async function submitMessage(text) {
       const cleaned = text.trim();
-      if (!cleaned) return;
+      if (!cleaned || isPending) return;
       addMessage(messages, "user", cleaned);
-      const reply = findResponse(cleaned);
-      window.setTimeout(() => addMessage(messages, "bot", reply.text.split("\n"), reply.links), 220);
+      history.push({ role: "user", content: cleaned });
+
+      const loadingBubble = addMessage(messages, "bot", locale === "ro" ? "..." : "...");
+      setPending(true);
+
+      try {
+        const reply = await requestReply(cleaned);
+        loadingBubble.remove();
+        addMessage(messages, "bot", reply.reply.split("\n"), reply.links);
+        history.push({ role: "assistant", content: reply.reply });
+        if (reply.fallback) {
+          setStatus(t.statusFallback);
+          window.setTimeout(() => setStatus(t.status), 2400);
+        }
+      } catch (_error) {
+        loadingBubble.remove();
+        const fallbackText = locale === "ro"
+          ? "Momentan nu pot raspunde automat. Cel mai bun pas este sa deschizi pagina de oferta sau sa ceri contact direct."
+          : "I cannot answer automatically right now. The best next step is the quote page or direct contact.";
+        addMessage(messages, "bot", fallbackText.split("\n"), [
+          { href: routes.quote, label: t.links.quote },
+          { href: routes.home + "#contact", label: locale === "ro" ? "Vezi contact" : "See contact" }
+        ]);
+        history.push({ role: "assistant", content: fallbackText });
+        setStatus(t.statusFallback);
+        window.setTimeout(() => setStatus(t.status), 2400);
+      } finally {
+        setPending(false);
+      }
     }
 
     addMessage(messages, "bot", t.intro.split("\n"), [
@@ -255,11 +311,14 @@
 
     openBtn.addEventListener("click", () => setOpen(!root.classList.contains("is-open")));
     closeBtn.addEventListener("click", () => setOpen(false));
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      submitMessage(input.value);
+      const value = input.value;
       input.value = "";
-      input.focus();
+      await submitMessage(value);
+      if (!shouldUseOverlayMode()) {
+        input.focus();
+      }
     });
 
     input.addEventListener("focus", () => {
@@ -267,7 +326,13 @@
       window.setTimeout(() => { messages.scrollTop = messages.scrollHeight; }, 120);
     });
 
-    media.addEventListener("change", syncViewport);
+    const onViewportModeChange = () => {
+      syncViewport();
+      syncPageLock();
+    };
+
+    media.addEventListener("change", onViewportModeChange);
+    touchOverlay.addEventListener("change", onViewportModeChange);
     window.addEventListener("resize", syncViewport);
     window.visualViewport?.addEventListener("resize", syncViewport);
     window.visualViewport?.addEventListener("scroll", syncViewport);
