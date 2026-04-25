@@ -1019,15 +1019,22 @@
     height: 644px;
     overflow: hidden;
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+    cursor: grab;
+    touch-action: pan-y;
   }
 
   .gallery-track {
-    width: 2312px;
+    width: 2895px;
     height: 644px;
     display: flex;
     gap: 20px;
     will-change: transform;
-    animation: gallery-drift 26s ease-in-out infinite alternate;
+    transform: translate3d(var(--gallery-offset, 0px), 0, 0);
+  }
+
+  .gallery-stage.is-dragging {
+    cursor: grabbing;
+    user-select: none;
   }
 
   .gallery-item {
@@ -1043,15 +1050,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  @keyframes gallery-drift {
-    from {
-      transform: translate3d(-583px, 0, 0);
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-    }
   }
 
   .products-module {
@@ -1595,7 +1593,7 @@
     }
 
     .gallery-track {
-      width: 1868px;
+      width: 2350px;
       height: 520px;
       animation-duration: 22s;
     }
@@ -2015,7 +2013,7 @@
     }
 
     .gallery-track {
-      width: 1292px;
+      width: 1628px;
       height: 360px;
       gap: 12px;
       animation-duration: 18s;
@@ -2381,16 +2379,19 @@
       <div class="gallery-stage">
         <div class="gallery-track">
           <div class="gallery-item">
-            <img src="https://www.figma.com/api/mcp/asset/f40de589-2b89-437f-913d-3a820b1b2ba7" alt="Lucrare portofoliu Marand" />
+            <img src="./assets/images/home/Gallery-Carousel/marand-1.webp" alt="Lucrare portofoliu Marand in atelierul de print" />
           </div>
           <div class="gallery-item">
-            <img src="https://www.figma.com/api/mcp/asset/f40de589-2b89-437f-913d-3a820b1b2ba7" alt="Lucrare portofoliu Marand" />
+            <img src="./assets/images/home/Gallery-Carousel/manar-2.webp" alt="Proiect print realizat de Marand Print Shop" />
           </div>
           <div class="gallery-item">
-            <img src="https://www.figma.com/api/mcp/asset/f40de589-2b89-437f-913d-3a820b1b2ba7" alt="Lucrare portofoliu Marand" />
+            <img src="./assets/images/home/Gallery-Carousel/marand-1.jpg" alt="Lucrare vizuala expusa in portofoliul Marand" />
           </div>
           <div class="gallery-item">
-            <img src="https://www.figma.com/api/mcp/asset/f40de589-2b89-437f-913d-3a820b1b2ba7" alt="Lucrare portofoliu Marand" />
+            <img src="./assets/images/home/Gallery-Carousel/marand-4.webp" alt="Proiect de print expus in galeria Marand" />
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/images/home/Gallery-Carousel/marand-5.webp" alt="Lucrare finala din portofoliul vizual Marand" />
           </div>
         </div>
       </div>
@@ -2536,6 +2537,146 @@
 
         revealModules.forEach((module) => moduleObserver.observe(module));
       }
+    }
+
+    const galleryStage = document.querySelector('.gallery-stage');
+    const galleryTrack = document.querySelector('.gallery-track');
+
+    if (galleryStage && galleryTrack) {
+      const galleryState = {
+        offset: 0,
+        minOffset: 0,
+        maxOffset: 0,
+        velocity: 0,
+        direction: -1,
+        dragging: false,
+        pointerId: null,
+        lastPointerX: 0,
+        lastPointerTime: 0,
+        lastFrameTime: 0,
+        resumeAt: 0,
+        raf: 0,
+        measured: false
+      };
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const applyGalleryOffset = () => {
+        galleryTrack.style.setProperty('--gallery-offset', `${galleryState.offset.toFixed(2)}px`);
+      };
+
+      const measureGallery = () => {
+        galleryState.minOffset = Math.min(0, galleryStage.clientWidth - galleryTrack.scrollWidth);
+        galleryState.maxOffset = 0;
+
+        if (!galleryState.measured) {
+          galleryState.offset = galleryState.minOffset * 0.32;
+          galleryState.measured = true;
+        } else {
+          galleryState.offset = clamp(galleryState.offset, galleryState.minOffset, galleryState.maxOffset);
+        }
+
+        applyGalleryOffset();
+      };
+
+      const releaseGalleryDrag = () => {
+        if (!galleryState.dragging) return;
+        galleryState.dragging = false;
+        galleryState.pointerId = null;
+        galleryStage.classList.remove('is-dragging');
+        galleryState.resumeAt = performance.now() + 2400;
+      };
+
+      const updateGallery = (timestamp) => {
+        if (!galleryState.lastFrameTime) {
+          galleryState.lastFrameTime = timestamp;
+        }
+
+        const deltaSeconds = Math.min((timestamp - galleryState.lastFrameTime) / 1000, 0.05);
+        galleryState.lastFrameTime = timestamp;
+
+        if (!galleryState.dragging) {
+          const friction = Math.pow(0.92, deltaSeconds * 60);
+
+          if (Math.abs(galleryState.velocity) > 1) {
+            galleryState.offset += galleryState.velocity * deltaSeconds;
+            galleryState.velocity *= friction;
+          } else {
+            galleryState.velocity = 0;
+          }
+
+          if (!reduceMotion.matches && timestamp >= galleryState.resumeAt) {
+            const autoSpeed = 30;
+            galleryState.offset += galleryState.direction * autoSpeed * deltaSeconds;
+          }
+
+          if (galleryState.offset <= galleryState.minOffset) {
+            galleryState.offset = galleryState.minOffset;
+            galleryState.direction = 1;
+            galleryState.velocity = Math.max(0, galleryState.velocity * -0.18);
+          } else if (galleryState.offset >= galleryState.maxOffset) {
+            galleryState.offset = galleryState.maxOffset;
+            galleryState.direction = -1;
+            galleryState.velocity = Math.min(0, galleryState.velocity * -0.18);
+          }
+
+          applyGalleryOffset();
+        }
+
+        galleryState.raf = window.requestAnimationFrame(updateGallery);
+      };
+
+      const onGalleryPointerDown = (event) => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        if (galleryState.minOffset === 0 && galleryState.maxOffset === 0) return;
+
+        galleryState.dragging = true;
+        galleryState.pointerId = event.pointerId;
+        galleryState.lastPointerX = event.clientX;
+        galleryState.lastPointerTime = event.timeStamp;
+        galleryState.velocity = 0;
+        galleryState.resumeAt = performance.now() + 2800;
+        galleryStage.classList.add('is-dragging');
+        galleryStage.setPointerCapture(event.pointerId);
+      };
+
+      const onGalleryPointerMove = (event) => {
+        if (!galleryState.dragging || event.pointerId !== galleryState.pointerId) return;
+
+        const deltaX = event.clientX - galleryState.lastPointerX;
+        const deltaTime = Math.max((event.timeStamp - galleryState.lastPointerTime) / 1000, 0.016);
+
+        galleryState.offset = clamp(
+          galleryState.offset + deltaX,
+          galleryState.minOffset,
+          galleryState.maxOffset
+        );
+        galleryState.velocity = deltaX / deltaTime;
+        galleryState.direction = galleryState.velocity > 0 ? 1 : -1;
+        galleryState.lastPointerX = event.clientX;
+        galleryState.lastPointerTime = event.timeStamp;
+
+        applyGalleryOffset();
+      };
+
+      const onGalleryPointerUp = (event) => {
+        if (event.pointerId !== galleryState.pointerId) return;
+        releaseGalleryDrag();
+      };
+
+      const onGalleryResize = () => {
+        measureGallery();
+      };
+
+      measureGallery();
+      galleryState.raf = window.requestAnimationFrame(updateGallery);
+
+      galleryStage.addEventListener('pointerdown', onGalleryPointerDown);
+      galleryStage.addEventListener('pointermove', onGalleryPointerMove);
+      galleryStage.addEventListener('pointerup', onGalleryPointerUp);
+      galleryStage.addEventListener('pointercancel', onGalleryPointerUp);
+      galleryStage.addEventListener('lostpointercapture', releaseGalleryDrag);
+      window.addEventListener('resize', onGalleryResize, { passive: true });
     }
 
     const followAnchor = partnersModule || productsModule;

@@ -6,6 +6,7 @@ Folders:
 - `Tricouri-si-textile`
 - `Bannere-si-mesh`
 - `Showcase-Image`
+- `Gallery-Carousel`
 
 Manual upload workflow:
 1. Put the image file into the matching folder.
@@ -14,6 +15,7 @@ Manual upload workflow:
 
 Current homepage image paths:
 - `Showcase image` -> `./assets/images/home/Showcase-Image/hero-img.webp`
+- `Gallery carousel` -> upload files to `./assets/images/home/Gallery-Carousel/` and update the homepage gallery `<img src>` entries in `index.html`
 - `Printuri Large Format` -> `./assets/images/home/Printuri-Large-Format/...`
 - `Canvas întins pe ramă` -> check `index.html`
 - `Tricouri și textile` -> check `index.html`
