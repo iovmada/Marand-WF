@@ -41,7 +41,7 @@
     {
       title: "Contact",
       links: [
-        { label: "hello@marand.ro", href: "mailto:hello@marand.ro" },
+        { label: "office@marand-print.ro", href: "mailto:office@marand-print.ro" },
         { label: "+40 (XXX) XXX-XXX", href: "tel:+40000000000" },
         { label: "Cere ofertă", href: toRoute("/oferta/") },
         { label: "Lun-Vin: 9-18", href: "#contact" }
