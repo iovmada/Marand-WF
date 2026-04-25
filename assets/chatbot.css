@@ -290,7 +290,7 @@ body.marand-chat-open .marand-chat-button {
 }
 
 @media (max-width: 760px) and (pointer: coarse) {
-  .marand-chat {
+  body.marand-chat-open .marand-chat {
     inset: 0;
     right: auto;
     left: auto;
