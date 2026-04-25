@@ -72,11 +72,9 @@
       };
 
   const t = copy[locale];
+  const assetBase = isNestedPage ? "../assets/" : "./assets/";
   const assistantIcon = `
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M12 3.25a6.75 6.75 0 0 0-6.75 6.75v.5A3.75 3.75 0 0 0 2.5 14v1.25A2.75 2.75 0 0 0 5.25 18h1.5v-5.5h-1a6.25 6.25 0 1 1 12.5 0h-1V18h-4.5a.75.75 0 0 0 0 1.5h4.5A2.75 2.75 0 0 0 20 16.75V14a3.75 3.75 0 0 0-2.75-3.5V10A6.75 6.75 0 0 0 12 3.25Z" fill="currentColor"/>
-      <path d="M9.25 13.25a1 1 0 1 0 0 2h.5a1 1 0 1 0 0-2h-.5ZM14.25 13.25a1 1 0 1 0 0 2h.5a1 1 0 1 0 0-2h-.5ZM10 17.25a2.5 2.5 0 0 0 4 0h-4Z" fill="currentColor"/>
-    </svg>
+    <img class="marand-chat-icon-img" src="${assetBase}andra-chatbot-avatar.png" alt="${t.title}" />
   `;
 
   function createWidget() {
