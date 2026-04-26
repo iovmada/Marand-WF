@@ -176,57 +176,25 @@
   }
 
   .contact-map {
-    min-height: 240px;
     padding: 0;
     overflow: hidden;
-    position: relative;
-  }
-
-  .contact-map-visual {
-    min-height: 240px;
-    padding: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 12px;
-    background:
-      radial-gradient(circle at 18% 20%, rgba(157, 253, 67, 0.22), transparent 24%),
-      radial-gradient(circle at 78% 28%, rgba(12, 36, 194, 0.14), transparent 28%),
-      linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,247,247,0.92));
   }
 
-  .contact-map-grid {
-    position: absolute;
-    inset: 0;
-    opacity: 0.38;
-    background-image:
-      linear-gradient(rgba(12, 36, 194, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(12, 36, 194, 0.08) 1px, transparent 1px);
-    background-size: 36px 36px;
-    pointer-events: none;
+  .contact-map-iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    display: block;
   }
 
-  .contact-map-pin {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: rgba(12, 36, 194, 0.08);
-    border: 1px solid rgba(12, 36, 194, 0.14);
-    backdrop-filter: blur(8px);
+  .contact-map-caption {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
   }
 
-  .contact-map-pin::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--blue);
-    box-shadow: 0 0 0 10px rgba(12, 36, 194, 0.12);
-  }
-
-  .contact-map-copy strong {
+  .contact-map-caption strong {
     display: block;
     margin-bottom: 4px;
     font-family: "Acrom", "Roboto Flex", sans-serif;
@@ -237,7 +205,7 @@
     color: #0b0b0b;
   }
 
-  .contact-map-copy p {
+  .contact-map-caption p {
     margin: 0;
     font-size: 14px;
     line-height: 1.6;
@@ -440,13 +408,12 @@
       border-radius: 26px;
     }
 
-    .contact-map {
-      min-height: 220px;
+    .contact-map-iframe {
+      height: 240px;
     }
 
-    .contact-map-visual {
-      min-height: 220px;
-      padding: 24px;
+    .contact-map-caption {
+      padding: 16px 20px;
     }
 
     .contact-buttons {
@@ -500,13 +467,16 @@
         </div>
 
         <div class="contact-card contact-map">
-          <div class="contact-map-grid" aria-hidden="true"></div>
-          <div class="contact-map-visual">
-            <div class="contact-map-pin" aria-hidden="true"></div>
-            <div class="contact-map-copy">
-              <strong>Vizitează shopul</strong>
-              <p>Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.</p>
-            </div>
+          <iframe
+            class="contact-map-iframe"
+            src="https://maps.google.com/maps?q=Strada+Libert%C4%83%C8%9Bii+A2,+320003+Re%C8%99i%C8%9Ba,+Romania&hl=ro&output=embed"
+            title="Locatia Marand Print Shop pe Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+          <div class="contact-map-caption">
+            <strong>Vizitează shopul</strong>
+            <p>Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.</p>
           </div>
         </div>
       </div>
