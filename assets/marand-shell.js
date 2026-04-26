@@ -1,7 +1,7 @@
 (() => {
   const page = document.body.dataset.marandPage || "home";
   const navActive = document.body.dataset.marandNavActive || page;
-  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale)(\/|index\.html$)/.test(window.location.pathname);
+  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
   const whatsappHref = "https://wa.me/40743827181?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
@@ -53,7 +53,8 @@
         { label: "Homepage", href: toRoute("/#design") },
         { label: "Proces", href: toRoute("/#cum-functioneaza") },
         { label: "Galerie", href: toRoute("/#galerie") },
-        { label: "Ofertă", href: toRoute("/oferta/") }
+        { label: "Ofertă", href: toRoute("/oferta/") },
+        { label: "Comunicat de presă", href: toRoute("/comunicat-de-presa/") }
       ]
     },
     {
