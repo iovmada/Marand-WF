@@ -11,7 +11,6 @@
     { key: "products", label: "Produse", href: toRoute("/produse/") },
     { key: "materials", label: "Materiale", href: toRoute("/materiale/") },
     { key: "process", label: "Cum Lucram", href: toRoute("/#cum-functioneaza") },
-    { key: "production", label: "Productie", href: toRoute("/productie/") },
     { key: "equipment", label: "Echipamente", href: toRoute("/echipamente/") },
     { key: "contact", label: "Contact", href: toRoute("/contact/") }
   ];
