@@ -58,7 +58,7 @@
     }
   };
 
-  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale)(\/|index\.html$)/.test(window.location.pathname);
+  const isNestedPage = /\/(produse|oferta|echipamente|contact|productie|materiale|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
   const API_BASE = "/api";
 
   const routes = locale === "ro"
