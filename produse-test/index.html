@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marand — Produse (test)</title>
+<meta name="description" content="Pagină de test pentru noua structură a catalogului Marand — 9 categorii cu specificații tehnice complete." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/marand-shell.css" />
+<link rel="stylesheet" href="../assets/chatbot.css" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f7f7;
+    --surface-2: #fcfcfc;
+    --soft-cream: #f8f0e3;
+    --text: #1a1a1a;
+    --muted: #333333;
+    --blue: #0c24c2;
+    --lime: #9dfd43;
+    --container: 1380px;
+    --content-width: 1377px;
+    --radius-card: 32px;
+    --shadow-card: 0 7px 14px rgba(0, 0, 0, 0.06);
+    --header-offset: 118px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: calc(var(--header-offset) + 60px); }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  .page { position: relative; min-height: 100vh; overflow-x: hidden; }
+
+  .test-banner {
+    width: 100%;
+    background: var(--lime);
+    color: #000;
+    padding: 12px 24px;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 2px solid #000;
+  }
+
+  .products-page { padding: 210px 0 0; }
+
+  .products-overview,
+  .products-layout {
+    width: min(calc(100% - 60px), var(--content-width));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .products-overview {
+    margin: 0 auto;
+    position: sticky;
+    top: calc(var(--header-offset) + 44px);
+    z-index: 6;
+  }
+
+  .products-overview-inner { width: 100%; position: relative; }
+
+  .products-overview-trigger {
+    width: 100%;
+    height: 56px;
+    padding: 0 56px 0 24px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 180ms ease, border-color 180ms ease;
+  }
+  .products-overview-trigger::after {
+    content: "";
+    width: 12px;
+    height: 8px;
+    flex: 0 0 auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%230c24c2' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 180ms ease;
+  }
+  .products-overview-dropdown.is-open .products-overview-trigger::after { transform: rotate(180deg); }
+  .products-overview-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 2px solid var(--blue);
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(12, 36, 194, 0.12);
+    max-height: 480px;
+    overflow-y: auto;
+  }
+  .products-overview-dropdown.is-open .products-overview-menu { display: flex; }
+  .products-overview-option {
+    min-height: 48px;
+    border: 0;
+    border-radius: 24px;
+    background: transparent;
+    padding: 0 18px;
+    text-align: left;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .products-overview-option:hover,
+  .products-overview-option:focus-visible,
+  .products-overview-option.is-current {
+    outline: none;
+    background: rgba(12, 36, 194, 0.08);
+    color: var(--blue);
+  }
+
+  .products-layout { margin: 64px auto 0; position: relative; z-index: 2; }
+
+  .products-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  .section-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    padding: 4px 16px;
+    border-radius: 24px;
+    background: var(--lime);
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  .products-title {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    color: #0b0b0b;
+  }
+
+  .products-copy {
+    margin: 0;
+    width: min(100%, 1100px);
+    font-size: 19px;
+    line-height: 26px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #020202;
+  }
+
+  .products-copy a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+  }
+
+  .subgroup-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0 -8px;
+    padding-top: 16px;
+    border-top: 1px dashed #ccc;
+  }
+  .subgroup-divider span {
+    font-family: "Roboto Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+  }
+
+  .products-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 32px;
+  }
+
+  .product-detail-card {
+    grid-column: span 4;
+    width: 100%;
+    background: var(--surface-2);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 12px 0 28px;
+  }
+
+  .product-detail-media {
+    width: calc(100% - 24px);
+    height: 240px;
+    overflow: hidden;
+    border-radius: 28px;
+    background: linear-gradient(135deg, var(--soft-cream) 0%, #fff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .product-detail-media-placeholder {
+    font-family: "Roboto Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.45);
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .product-detail-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .product-detail-main {
+    padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .product-copy-group { display: flex; flex-direction: column; gap: 12px; }
+
+  .product-detail-title {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: #1a1a1a;
+  }
+
+  .product-detail-description {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 12px;
+    line-height: 22px;
+    color: #585858;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .product-specs {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .product-specs > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #c6b8b8;
+  }
+  .product-specs > div + div { margin-top: 12px; }
+
+  .product-specs dt {
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #000;
+    text-transform: capitalize;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .product-specs dd {
+    flex: 1;
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 11px;
+    line-height: 16px;
+    color: #282828;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: right;
+  }
+  .product-specs dd a {
+    color: #282828;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+  .product-specs dd a:hover { color: var(--blue); }
+
+  .product-sizes {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .product-sizes-label {
+    margin: 0;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+  }
+  .product-size-pills { display: flex; flex-wrap: wrap; gap: 10px 8px; }
+  .product-size-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 4px 12px;
+    border-radius: 24px;
+    background: var(--soft-cream);
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.02em;
+  }
+  .product-size-pill.is-custom {
+    background: #fff;
+    border: 1px solid #e2dac6;
+  }
+
+  .product-card-actions { padding: 0 16px; }
+  .product-card-actions .cta-secondary {
+    width: 100%;
+    height: 50px;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .test-controls {
+    margin: 80px auto 64px;
+    width: min(calc(100% - 60px), var(--content-width));
+    padding: 32px;
+    border: 2px dashed var(--blue);
+    border-radius: 24px;
+    background: rgba(12, 36, 194, 0.04);
+  }
+  .test-controls h3 {
+    margin: 0 0 12px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--blue);
+  }
+  .test-controls p { margin: 0 0 8px; font-size: 15px; line-height: 1.5; color: #333; }
+  .test-controls ul { margin: 8px 0 0 24px; padding: 0; font-size: 14px; color: #333; }
+  .test-controls li { margin-bottom: 4px; }
+
+  @media (max-width: 960px) {
+    :root { --header-offset: 104px; }
+    .products-page { padding-top: 200px; }
+    .products-overview,
+    .products-layout {
+      width: min(calc(100% - 40px), var(--content-width));
+    }
+    .products-layout { margin-top: 48px; }
+    .products-title { font-size: 38px; line-height: 1.04; }
+    .products-copy { font-size: 17px; line-height: 24px; }
+    .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .product-detail-card { grid-column: span 1; }
+    .product-detail-media { height: 220px; }
+    .test-controls { width: min(calc(100% - 40px), var(--content-width)); }
+  }
+
+  @media (max-width: 640px) {
+    :root { --header-offset: 92px; }
+    .test-banner { font-size: 11px; padding: 10px 16px; }
+    .products-page { padding-top: 180px; }
+    .products-overview,
+    .products-layout {
+      width: min(calc(100% - 32px), var(--content-width));
+    }
+    .products-overview { top: calc(var(--header-offset) + 38px); }
+    .products-overview-inner { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
+    .products-overview-menu { border-radius: 24px; padding: 10px; }
+    .products-layout { margin-top: 32px; }
+    .products-header { gap: 16px; margin-bottom: 32px; }
+    .products-title { font-size: 30px; line-height: 1.03; }
+    .products-copy { font-size: 15px; line-height: 22px; }
+    .product-detail-card { grid-column: 1 / -1; border-radius: 24px; padding-bottom: 24px; }
+    .product-detail-media { height: 180px; border-radius: 22px; }
+    .product-detail-main { padding: 0 22px; }
+    .product-detail-title { font-size: 24px; line-height: 1.1; }
+    .product-specs > div { flex-direction: column; gap: 6px; }
+    .product-specs dd { text-align: left; }
+    .test-controls { padding: 24px; width: min(calc(100% - 32px), var(--content-width)); }
+  }
+</style>
+</head>
+<body data-marand-page="products" data-marand-nav-active="products">
+<div class="page">
+  <div data-marand-shell-header></div>
+  <div class="test-banner">⚠️ Pagină test — structură nouă propusă pentru catalog · accesibilă doar prin link direct</div>
+
+  <main class="products-page">
+
+    <!-- ===== INTRO ===== -->
+    <section class="products-layout">
+      <header class="products-header">
+        <span class="section-chip">test catalog · v3</span>
+        <h1 class="products-title">Catalog produse Marand — structură nouă propusă.</h1>
+        <p class="products-copy">9 categorii reorganizate după lista finală agreată. Specificații tehnice reale: lățime printare 1361 mm, lățime decupare pe contur 1320 mm pentru tot ce iese din <a href="../echipamente/">MUTOH XPJ-1341 SR PRO</a>. Toate <a href="../materiale/">materialele referențiate</a> sunt în stoc. Pagina nu e link-uită din meniul principal — accesibilă doar prin link direct.</p>
+      </header>
+    </section>
+
+    <!-- ===== DROPDOWN ===== -->
+    <section class="products-overview" aria-label="Selector rapid produse">
+      <div class="products-overview-inner">
+        <div class="products-overview-dropdown" data-products-jump>
+          <button class="products-overview-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span data-products-jump-label>Alege categoria</span>
+          </button>
+          <div class="products-overview-menu" role="listbox">
+            <button class="products-overview-option is-current" type="button" role="option" data-target="" aria-selected="true">Toate categoriile</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#large-format" aria-selected="false">1. Printuri large format</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#canvas" aria-selected="false">2. Printuri pe canvas</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#poster-foto" aria-selected="false">3. Poster pe hârtie foto</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#fotografii-mari" aria-selected="false">4. Fotografii de mari dimensiuni</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#vitrine" aria-selected="false">5. Grafică geamuri / vitrine</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#panouri-rigide" aria-selected="false">6. Panouri rigide printate</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#format-mic" aria-selected="false">7. Printuri format mic</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#semnalistica" aria-selected="false">8. Semnalistică</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#textile" aria-selected="false">9. Printuri pe textile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 1. LARGE FORMAT ===== -->
+    <section class="products-layout" id="large-format">
+      <header class="products-header">
+        <span class="section-chip">1. printuri large format</span>
+        <h2 class="products-title">Printuri large format</h2>
+        <p class="products-copy">Bannere PVC, mesh perforat și billboard urban — toate printate cu cerneluri eco-solvent pe MUTOH XPJ-1341 SR PRO. Lățime maximă printare 1361 mm, lățime maximă decupare pe contur 1320 mm.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="banner-blockout">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner blockout</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Banner Blockout</h3>
+                <p class="product-detail-description">Banner heavy-duty cu strat blockout — se imprimă pe ambele părți, fără transparență între fețe.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#banner-media">Starflex Blockout 16 oz · 560 g/m²</a></dd></div>
+                <div><dt>Print</dt><dd>ambele părți · full color</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Finisare</dt><dd>tiv + capse la 50 cm</dd></div>
+                <div><dt>Aplicații</dt><dd>bannere față-verso, displays, evenimente</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100×200 cm</span>
+                <span class="product-size-pill">200×300 cm</span>
+                <span class="product-size-pill">300×500 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=banner-blockout">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="banner-frontlit">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner frontlit</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Banner Frontlit</h3>
+                <p class="product-detail-description">Bannerul standard pentru fațade, evenimente și semnalistică exterioară — printare pe o singură parte.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#banner-media">Star Coated Frontlit 440 · 440 g/m²</a></dd></div>
+                <div><dt>Print</dt><dd>o singură parte · full color</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Finisare</dt><dd>tiv + capse la 50 cm</dd></div>
+                <div><dt>Durabilitate</dt><dd>exterior 2–3 ani</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100×50 cm</span>
+                <span class="product-size-pill">200×100 cm</span>
+                <span class="product-size-pill">300×100 cm</span>
+                <span class="product-size-pill">400×150 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=banner-frontlit">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="mesh">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner mesh</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Mesh</h3>
+                <p class="product-detail-description">PVC perforat care lasă vântul să treacă — perfect pentru garduri, schele și fațade expuse.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd>PVC mesh perforat</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Vânt</dt><dd>permite trecerea aerului</dd></div>
+                <div><dt>Finisare</dt><dd>tiv + capse la 50 cm</dd></div>
+                <div><dt>Durabilitate</dt><dd>exterior 1–2 ani</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">200×100 cm</span>
+                <span class="product-size-pill">300×200 cm</span>
+                <span class="product-size-pill">500×300 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=mesh">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="billboard">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>billboard</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Billboard</h3>
+                <p class="product-detail-description">Print pe hârtie blueback pentru afișaj urban, panouri stradale și billboarduri exterioare.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#paper-canvas">Visual Blueback 120 g/m² mat</a></dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Aplicare</dt><dd>lipire pe panou stradal</dd></div>
+                <div><dt>Lungime rolă</dt><dd>200 / 300 m</dd></div>
+                <div><dt>Aplicații</dt><dd>billboard, afișaj urban, campanii outdoor</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">Standard 504×238 cm</span>
+                <span class="product-size-pill">100×140 cm</span>
+                <span class="product-size-pill">200×300 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=billboard">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 2. CANVAS ===== -->
+    <section class="products-layout" id="canvas">
+      <header class="products-header">
+        <span class="section-chip">2. printuri pe canvas</span>
+        <h2 class="products-title">Printuri pe canvas</h2>
+        <p class="products-copy">Canvas poliester premium întins pe șasiu din lemn — pentru decor interior, reproducere artă și fotografie pe perete. Configurații simple, multipanou (2-5 piese) sau panoramic.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="canvas-printuri">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>canvas pe ramă</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Canvas pe ramă</h3>
+                <p class="product-detail-description">Print pe canvas poliester, întins pe șasiu din lemn — disponibil în 210 sau 260 g/m², mat sau lucios.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#paper-canvas">Artex Canvas 100% poliester</a></dd></div>
+                <div><dt>Gramaje</dt><dd>210 / 260 g/m²</dd></div>
+                <div><dt>Finisaje</dt><dd>mat / lucios</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Configurații</dt><dd>simplu · multipanou (2–5) · panoramic</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">40×60 cm</span>
+                <span class="product-size-pill">60×90 cm</span>
+                <span class="product-size-pill">100×150 cm</span>
+                <span class="product-size-pill">3 × 50×70 cm</span>
+                <span class="product-size-pill">180×60 cm panoramic</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=canvas">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 3. POSTER FOTO ===== -->
+    <section class="products-layout" id="poster-foto">
+      <header class="products-header">
+        <span class="section-chip">3. poster pe hârtie foto</span>
+        <h2 class="products-title">Poster pe hârtie foto</h2>
+        <p class="products-copy">Poster comercial pe hârtie foto lucioasă sau mată — ideal pentru retail, decor interior, evenimente și prezentări.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="poster-hartie-foto">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>poster foto</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Poster pe hârtie foto</h3>
+                <p class="product-detail-description">Hârtie foto 200 g/m², finisaj lucios sau mat — pentru postere de interior, retail și grafică promo.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#paper-canvas">Premium Art Photo Paper 200 g/m²</a></dd></div>
+                <div><dt>Finisaje</dt><dd>lucios / mat</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Rezoluție</dt><dd>1440 dpi</dd></div>
+                <div><dt>Utilizare</dt><dd>interior</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A3</span>
+                <span class="product-size-pill">A2</span>
+                <span class="product-size-pill">A1</span>
+                <span class="product-size-pill">A0</span>
+                <span class="product-size-pill">50×70 cm</span>
+                <span class="product-size-pill">70×100 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=poster-hartie-foto">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 4. FOTOGRAFII MARI ===== -->
+    <section class="products-layout" id="fotografii-mari">
+      <header class="products-header">
+        <span class="section-chip">4. fotografii de mari dimensiuni</span>
+        <h2 class="products-title">Fotografii de mari dimensiuni</h2>
+        <p class="products-copy">Print foto fine-art pentru fotografi, artiști și galerii — pe hârtie foto premium sau canvas, cu opțiuni de cașerare pe panou rigid și ramă pentru aspect de galerie.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="foto-fine-art">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>print foto fine-art</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Print foto fine-art</h3>
+                <p class="product-detail-description">Reproduceri fotografice de mari dimensiuni — calibrare culoare profesională, opțiuni cașerare și ramă.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Suport</dt><dd>hârtie foto premium / canvas</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Rezoluție</dt><dd>1440 dpi · profil ICC dedicat</dd></div>
+                <div><dt>Finisare</dt><dd>cașerare pe Stadur / Bond / ramă lemn</dd></div>
+                <div><dt>Audience</dt><dd>fotografi, artiști, galerii, decor premium</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">70×100 cm</span>
+                <span class="product-size-pill">100×150 cm</span>
+                <span class="product-size-pill">130×200 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=foto-fine-art">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 5. VITRINE ===== -->
+    <section class="products-layout" id="vitrine">
+      <header class="products-header">
+        <span class="section-chip">5. grafică pentru geamuri / vitrine</span>
+        <h2 class="products-title">Grafică pentru geamuri și vitrine</h2>
+        <p class="products-copy">Aplicații mari pentru vitrine, uși de sticlă și partiții — vinyl opac, one-way vision pentru vizibilitate dintr-o singură direcție, sau folie sablat decorativă pentru intimitate.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="grafica-vitrine">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>grafică vitrine</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Grafică geamuri / vitrine</h3>
+                <p class="product-detail-description">Vinyl printat, one-way vision sau folie sablat — pentru retail, birouri, săli meeting și vehicule comerciale.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Materiale</dt><dd><a href="../materiale/#window-films">vinyl · OWV · Mirage Frosty Airfree</a></dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Aplicare</dt><dd>umedă sau uscată</dd></div>
+                <div><dt>Durabilitate</dt><dd>5–7 ani (Frosty)</dd></div>
+                <div><dt>Aplicații</dt><dd>retail, birouri, partiții, vitrine premium</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Aplicații tipice</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">Vitrină opacă</span>
+                <span class="product-size-pill">One-way vision</span>
+                <span class="product-size-pill">Sablat decorativ</span>
+                <span class="product-size-pill">Logo decupat</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=grafica-vitrine">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 6. PANOURI RIGIDE ===== -->
+    <section class="products-layout" id="panouri-rigide">
+      <header class="products-header">
+        <span class="section-chip">6. panouri rigide printate</span>
+        <h2 class="products-title">Panouri rigide printate</h2>
+        <p class="products-copy">Print pe panouri compozite rigide — Bond ACM pentru exterior și fațade, plexiglass (PMMA) și PVC pentru displays interior și branding rigid. Dimensiuni standard ale colilor: Bond 1500×3050 mm, PMMA și PVC 2050×3050 mm.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="panou-bond">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>panou Bond ACM</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Panou Bond ACM</h3>
+                <p class="product-detail-description">Aluminiu compozit cu finisaj PVDF — pentru fațade, semnalistică permanentă exterior și placări durabile.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#rigid">Bond PVDF aluminiu compozit</a></dd></div>
+                <div><dt>Grosime</dt><dd>4 mm</dd></div>
+                <div><dt>Coală standard</dt><dd>1500 × 3050 mm</dd></div>
+                <div><dt>Finisaj</dt><dd>PVDF (rezistent UV)</dd></div>
+                <div><dt>Aplicații</dt><dd>fațade, placări, signage exterior permanent</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100×200 cm</span>
+                <span class="product-size-pill">150×300 cm</span>
+                <span class="product-size-pill">200×300 cm</span>
+                <span class="product-size-pill is-custom">Personalizat (max 150×305)</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=panou-bond">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="panou-pmma-pvc">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>panou PMMA / PVC</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Panou plexiglass / PVC</h3>
+                <p class="product-detail-description">Plexiglass (PMMA cast) și PVC compozit pentru displays interior, signage rigid și branding premium.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Materiale</dt><dd><a href="../materiale/#rigid">PMMA cast · Stadur Easyprint PVC</a></dd></div>
+                <div><dt>Coală standard</dt><dd>2050 × 3050 mm</dd></div>
+                <div><dt>Variante PMMA</dt><dd>Metallic IRO · Seta-LED (backlit)</dd></div>
+                <div><dt>Finisaje</dt><dd>mat (PVC) · metalizat / opal (PMMA)</dd></div>
+                <div><dt>Aplicații</dt><dd>POS / POP, displays interior, lightbox, plăcuțe</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A2</span>
+                <span class="product-size-pill">A1</span>
+                <span class="product-size-pill">100×140 cm</span>
+                <span class="product-size-pill">150×200 cm</span>
+                <span class="product-size-pill is-custom">Personalizat (max 205×305)</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=panou-pmma-pvc">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 7. FORMAT MIC ===== -->
+    <section class="products-layout" id="format-mic">
+      <header class="products-header">
+        <span class="section-chip">7. printuri format mic</span>
+        <h2 class="products-title">Printuri format mic</h2>
+        <p class="products-copy">Două grupuri de produse în această secțiune: <strong>adezive printate</strong> (stickere, etichete, autocolante, podea, magnetic) printate pe MUTOH eco-solvent + plotter, și <strong>print pe hârtie</strong> (cărți de vizită, flyere, broșuri) printate pe Ricoh MC2000 A3 laser.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <div class="subgroup-divider"><span>Adezive printate · MUTOH + plotter</span></div>
+
+        <article class="product-detail-card" id="stickere-promo">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>stickere promo</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Stickere promoționale</h3>
+                <p class="product-detail-description">Stickere printate full-color pentru campanii, branding și merch — finisaj mat, lucios sau laminat.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#vinyl">vinyl Avery alb / transparent</a></dd></div>
+                <div><dt>Finisaj</dt><dd>mat · lucios · laminat</dd></div>
+                <div><dt>Tăiere</dt><dd>kiss-cut sau die-cut pe contur</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Decupare contur</dt><dd>1320 mm</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 25 buc</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">5×5 cm</span>
+                <span class="product-size-pill">8×8 cm</span>
+                <span class="product-size-pill">10×10 cm</span>
+                <span class="product-size-pill is-custom">Contur personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=stickere-promo">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="etichete-ambalaje">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>etichete ambalaje</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Etichete pentru ambalaje</h3>
+                <p class="product-detail-description">Etichete autoadezive pentru sticle, borcane, cutii și produse — vânzare pe coli sau bucăți individuale.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#vinyl">vinyl Avery polimeric</a></dd></div>
+                <div><dt>Tăiere</dt><dd>contur personalizat</dd></div>
+                <div><dt>Format vânzare</dt><dd>pe coli sau bucăți individuale</dd></div>
+                <div><dt>Aplicare</dt><dd>sticlă · plastic · carton · metal</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 50 buc</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Forme populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">Dreptunghi</span>
+                <span class="product-size-pill">Oval</span>
+                <span class="product-size-pill">Rotund</span>
+                <span class="product-size-pill is-custom">Formă personalizată</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=etichete-ambalaje">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="autocolante-vitrine">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>autocolante vitrine</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Autocolante pentru vitrine</h3>
+                <p class="product-detail-description">Adezive mici și medii pentru vitrine — ore program, promoții, plăți acceptate, branding mic.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#vinyl">vinyl alb / transparent</a></dd></div>
+                <div><dt>Finisaj</dt><dd>mat · lucios · laminat anti-zgârieturi</dd></div>
+                <div><dt>Aplicare</dt><dd>interior sau exterior pe sticlă</dd></div>
+                <div><dt>Decupare</dt><dd>contur personalizat</dd></div>
+                <div><dt>Durabilitate</dt><dd>2–5 ani exterior</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A5</span>
+                <span class="product-size-pill">A4</span>
+                <span class="product-size-pill">30×30 cm</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=autocolante-vitrine">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="stickere-podea">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>stickere podea</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Stickere pentru podea</h3>
+                <p class="product-detail-description">Vinyl printat cu laminare anti-slip — pentru retail, evenimente, wayfinding și marcaje.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd>vinyl polimeric + laminare anti-slip</dd></div>
+                <div><dt>Aplicare</dt><dd>interior · suprafețe netede</dd></div>
+                <div><dt>Tăiere</dt><dd>kiss-cut sau contur personalizat</dd></div>
+                <div><dt>Aplicații</dt><dd>retail, evenimente, marcaje, wayfinding</dd></div>
+                <div><dt>Durabilitate</dt><dd>3–6 luni trafic intens</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">30×30 cm</span>
+                <span class="product-size-pill">60×60 cm</span>
+                <span class="product-size-pill">100×100 cm</span>
+                <span class="product-size-pill is-custom">Contur personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=stickere-podea">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="folie-magnetica">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>folie magnetică printată</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Folie magnetică printată</h3>
+                <p class="product-detail-description">Folie magnetică albă printabilă, 600 µm — branding repoziționabil pe suprafețe metalice.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Material</dt><dd><a href="../materiale/#magnetic">Folie magnetică albă</a></dd></div>
+                <div><dt>Grosime</dt><dd>600 µm (0.6 mm)</dd></div>
+                <div><dt>Forță</dt><dd>~30 g/cm²</dd></div>
+                <div><dt>Cerneală</dt><dd>print pe bază de apă</dd></div>
+                <div><dt>Aplicații</dt><dd>auto comercial, semnalistică modulară, meniuri, promoții schimbabile</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Dimensiuni populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">A4</span>
+                <span class="product-size-pill">30×60 cm</span>
+                <span class="product-size-pill">40×60 cm</span>
+                <span class="product-size-pill">50×80 cm</span>
+                <span class="product-size-pill is-custom">Contur personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=folie-magnetica">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="subgroup-divider"><span>Print pe hârtie · Ricoh MC2000 A3 laser</span></div>
+
+        <article class="product-detail-card" id="carti-de-vizita">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>cărți de vizită</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Cărți de vizită</h3>
+                <p class="product-detail-description">Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Format</dt><dd>90×50 / 85×55 mm</dd></div>
+                <div><dt>Hârtie</dt><dd>300g / 350g / specialty</dd></div>
+                <div><dt>Finisaj</dt><dd>mat · lucios · soft touch</dd></div>
+                <div><dt>Print</dt><dd>1 față / 2 fețe</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 100 buc</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Tiraje populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100 buc</span>
+                <span class="product-size-pill">250 buc</span>
+                <span class="product-size-pill">500 buc</span>
+                <span class="product-size-pill">1000 buc</span>
+                <span class="product-size-pill is-custom">Tiraj personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=carti-de-vizita">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="flyere">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>flyere</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Flyere</h3>
+                <p class="product-detail-description">Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scurte sau medii.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Format</dt><dd>A6 · A5 · A4 · DL</dd></div>
+                <div><dt>Hârtie</dt><dd>130g · 170g · 200g</dd></div>
+                <div><dt>Print</dt><dd>1 față / 2 fețe</dd></div>
+                <div><dt>Finisaj</dt><dd>mat · lucios</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 100 buc</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Tiraje populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">100 buc</span>
+                <span class="product-size-pill">250 buc</span>
+                <span class="product-size-pill">500 buc</span>
+                <span class="product-size-pill">1000 buc</span>
+                <span class="product-size-pill is-custom">Tiraj personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=flyere">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="brosuri">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>broșuri</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Broșuri</h3>
+                <p class="product-detail-description">Broșuri capsate pentru prezentări corporate, meniuri, cataloage compacte și materiale de vânzare.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Format</dt><dd>A5 · A4 închis</dd></div>
+                <div><dt>Pagini</dt><dd>8–40 pagini</dd></div>
+                <div><dt>Finisare</dt><dd>capsare · pliere</dd></div>
+                <div><dt>Hârtie</dt><dd>interior 130–170g · copertă 250g</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 25 buc</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Tiraje populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">25 buc</span>
+                <span class="product-size-pill">50 buc</span>
+                <span class="product-size-pill">100 buc</span>
+                <span class="product-size-pill">250 buc</span>
+                <span class="product-size-pill is-custom">Tiraj personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=brosuri">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 8. SEMNALISTICĂ ===== -->
+    <section class="products-layout" id="semnalistica">
+      <header class="products-header">
+        <span class="section-chip">8. semnalistică</span>
+        <h2 class="products-title">Semnalistică</h2>
+        <p class="products-copy">Panouri direcționale pentru ghidare și informare — interior pentru birouri, spitale, mall-uri și exterior pentru parcări, complexe și fațade. Realizate pe panouri rigide cu vinyl printat sau lettering decupat.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="semnalistica-interior">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>semnalistică interior</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Panouri direcționale interior</h3>
+                <p class="product-detail-description">Plăcuțe de birou, săli, room signs și panouri direcționale pentru spații interioare comerciale.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Suport</dt><dd><a href="../materiale/#rigid">Stadur PVC · plexiglass · Bond</a></dd></div>
+                <div><dt>Print</dt><dd>vinyl printat sau lettering decupat</dd></div>
+                <div><dt>Lățime print</dt><dd>1361 mm</dd></div>
+                <div><dt>Montaj</dt><dd>perete cu distanțieri sau cu adeziv 3M</dd></div>
+                <div><dt>Aplicații</dt><dd>birouri, mall, spitale, hoteluri, restaurante</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Tipuri populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">Plăcuță birou A5</span>
+                <span class="product-size-pill">Panou direcțional A3</span>
+                <span class="product-size-pill">Room sign</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=semnalistica-interior">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="semnalistica-exterior">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>semnalistică exterior</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Panouri direcționale exterior</h3>
+                <p class="product-detail-description">Panouri pentru parcări, complexe rezidențiale și comerciale, fațade — rezistente la UV și intemperii.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Suport</dt><dd><a href="../materiale/#rigid">Bond ACM 4mm (PVDF UV resistant)</a></dd></div>
+                <div><dt>Print</dt><dd>vinyl exterior + laminare UV</dd></div>
+                <div><dt>Coală standard</dt><dd>1500 × 3050 mm</dd></div>
+                <div><dt>Durabilitate</dt><dd>5+ ani exterior</dd></div>
+                <div><dt>Aplicații</dt><dd>parcări, complexe, fațade, ghidare exterior</dd></div>
+              </dl>
+            </div>
+            <div class="product-sizes">
+              <p class="product-sizes-label">Tipuri populare</p>
+              <div class="product-size-pills">
+                <span class="product-size-pill">Panou stradal 100×70</span>
+                <span class="product-size-pill">Direcțional parcare</span>
+                <span class="product-size-pill">Totem fațadă</span>
+                <span class="product-size-pill is-custom">Personalizat</span>
+              </div>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=semnalistica-exterior">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 9. TEXTILE ===== -->
+    <section class="products-layout" id="textile">
+      <header class="products-header">
+        <span class="section-chip">9. printuri pe textile</span>
+        <h2 class="products-title">Printuri pe textile</h2>
+        <p class="products-copy">Personalizare textile cu print DTF — culori vii, transfer rezistent la spălare, execuție flexibilă de la o singură bucată la serii mari. Printate pe DTF XPD 924 și aplicate cu presa termică LOPTUS LTS 38.</p>
+      </header>
+
+      <div class="products-grid">
+
+        <article class="product-detail-card" id="tricou">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>tricou personalizat</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Tricou personalizat</h3>
+                <p class="product-detail-description">Tricouri din bumbac sau mix poli-bumbac, personalizate cu transfer DTF — pentru merch, uniforme, evenimente.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
+                <div><dt>Material</dt><dd>bumbac · poli-bumbac</dd></div>
+                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 1 buc la serii</dd></div>
+                <div><dt>Aplicații</dt><dd>merch, echipe, evenimente, promo</dd></div>
+              </dl>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=tricou">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="hanorac">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>hanorac personalizat</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Hanorac personalizat</h3>
+                <p class="product-detail-description">Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, merch, workwear casual.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
+                <div><dt>Material</dt><dd>bumbac · fleece poli-bumbac</dd></div>
+                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
+                <div><dt>Print</dt><dd>față / spate / mâneci</dd></div>
+                <div><dt>Cantitate</dt><dd>de la 1 buc la serii</dd></div>
+              </dl>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=hanorac">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="vesta">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>vestă personalizată</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Vestă personalizată</h3>
+                <p class="product-detail-description">Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau fleece.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
+                <div><dt>Variante</dt><dd>softshell · reflectorizantă · fleece</dd></div>
+                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
+                <div><dt>Print</dt><dd>piept · spate · brodare opțional</dd></div>
+                <div><dt>Aplicații</dt><dd>uniforme, team wear, evenimente, promo</dd></div>
+              </dl>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=vesta">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-detail-card" id="sacosa">
+          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>sacoșă (tote bag)</div></div>
+          <div class="product-detail-content">
+            <div class="product-detail-main">
+              <div class="product-copy-group">
+                <h3 class="product-detail-title">Sacoșe personalizate (tote bag)</h3>
+                <p class="product-detail-description">Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print simplu sau full-coverage.</p>
+              </div>
+              <dl class="product-specs">
+                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
+                <div><dt>Material</dt><dd>bumbac · canvas textil</dd></div>
+                <div><dt>Print</dt><dd>o singură față sau două</dd></div>
+                <div><dt>Dimensiuni</dt><dd>standard 38×42 · XL 42×45 cm</dd></div>
+                <div><dt>Aplicații</dt><dd>retail, gifting, evenimente, promo</dd></div>
+              </dl>
+            </div>
+            <div class="product-card-actions">
+              <a class="cta cta-secondary" href="../oferta/?produs=sacosa">Cere oferta</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== TEST CONTROLS ===== -->
+    <div class="test-controls">
+      <h3>Notițe pentru această versiune</h3>
+      <p>Pagina respectă lista de 9 categorii agreată. Specificații tehnice aplicate uniform: <strong>1361 mm lățime printare / 1320 mm decupare contur</strong> oriunde se aplică. Toate trimiterile la materiale duc la pagina <strong>/materiale/</strong>.</p>
+      <ul>
+        <li>Imaginile sunt placeholder — vor fi înlocuite cu fotografii reale când e cazul.</li>
+        <li>Prețurile sunt scoase intenționat din această versiune — discutăm dacă le punem ferm sau "la cerere".</li>
+        <li>CTA-urile preselectează produsul în formularul de ofertă (<code>?produs=...</code>).</li>
+        <li>Pagina e <strong>noindex, nofollow</strong> și <strong>nu</strong> este link-uită din meniul principal — accesibilă doar prin link direct.</li>
+        <li>Două gap-uri în <strong>/materiale/</strong> de adăugat ulterior: <strong>mesh banner</strong> și <strong>laminat anti-slip</strong> pentru floor graphics.</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <div data-marand-shell-footer></div>
+</div>
+<script src="../assets/marand-shell.js"></script>
+<script>
+  (() => {
+    const jump = document.querySelector('[data-products-jump]');
+    if (!jump) return;
+    const trigger = jump.querySelector('.products-overview-trigger');
+    const label = jump.querySelector('[data-products-jump-label]');
+    const options = Array.from(jump.querySelectorAll('.products-overview-option'));
+
+    const closeMenu = () => { jump.classList.remove('is-open'); trigger.setAttribute('aria-expanded', 'false'); };
+    const openMenu = () => { jump.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); };
+
+    trigger.addEventListener('click', () => {
+      jump.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const value = option.dataset.target || '';
+        options.forEach((item) => {
+          item.classList.toggle('is-current', item === option);
+          item.setAttribute('aria-selected', item === option ? 'true' : 'false');
+        });
+        label.textContent = option.textContent.trim();
+        closeMenu();
+        if (!value) return;
+        const target = document.querySelector(value);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!jump.contains(event.target)) closeMenu();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+<script src="../assets/chatbot.js"></script>
+</body>
+</html>
