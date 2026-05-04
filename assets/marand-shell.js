@@ -199,6 +199,44 @@
     );
   }
 
+  const openingDate = new Date(2026, 5, 1);
+  const shouldShowOpeningNotice = Date.now() < openingDate.getTime();
+  const openingNoticeKey = "marand-opening-notice-dismissed";
+  let openingNoticeDismissed = false;
+
+  try {
+    openingNoticeDismissed = sessionStorage.getItem(openingNoticeKey) === "1";
+  } catch (_) {}
+
+  if (shouldShowOpeningNotice && !openingNoticeDismissed && !document.querySelector(".opening-notice")) {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `
+        <aside class="opening-notice" aria-label="Anunt deschidere Marand">
+          <button class="opening-notice-close" type="button" aria-label="Inchide anuntul">×</button>
+          <p class="opening-notice-kicker">Deschidere print shop</p>
+          <p class="opening-notice-title">Ne vedem din 1 iunie.</p>
+          <p class="opening-notice-copy">Pana atunci, ne poti trimite detaliile proiectului si revenim cu o oferta.</p>
+          <a class="opening-notice-link" href="${toRoute("/oferta/")}">Cere oferta</a>
+        </aside>
+      `
+    );
+
+    const notice = document.querySelector(".opening-notice");
+    const closeNotice = notice?.querySelector(".opening-notice-close");
+
+    const dismissNotice = () => {
+      notice?.classList.add("is-hidden");
+      try {
+        sessionStorage.setItem(openingNoticeKey, "1");
+      } catch (_) {}
+      window.setTimeout(() => notice?.remove(), 220);
+    };
+
+    closeNotice?.addEventListener("click", dismissNotice);
+    window.setTimeout(() => notice?.classList.add("is-visible"), 600);
+  }
+
   const assetFallbackSrc = new URL(`${routeRoot}/assets/social/marand-print-shop-print-digital-servicii-de-printate.jpg`, window.location.href).href;
   document.querySelectorAll('img[src*="figma.com/api/mcp/asset"]').forEach((img) => {
     const handleBrokenAsset = () => {

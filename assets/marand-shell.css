@@ -273,6 +273,109 @@ body::after {
   display: block;
 }
 
+.opening-notice {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(360px, calc(100vw - 48px));
+  padding: 20px 20px 18px;
+  box-sizing: border-box;
+  border: 1px solid rgba(12, 36, 194, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 253, 249, 0.96);
+  color: var(--text);
+  box-shadow: 0 22px 54px rgba(24, 22, 18, 0.16);
+  font-family: var(--font-sans);
+  z-index: 1005;
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 12px));
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.opening-notice.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.opening-notice.is-hidden {
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 12px));
+  pointer-events: none;
+}
+
+.opening-notice-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(12, 36, 194, 0.08);
+  color: var(--blue);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.opening-notice-close:hover,
+.opening-notice-close:focus-visible {
+  background: var(--blue);
+  color: #fff;
+  outline: 0;
+}
+
+.opening-notice-kicker {
+  margin: 0 44px 8px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.opening-notice-title {
+  margin: 0 34px 8px 0;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.opening-notice-copy {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.opening-notice-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.opening-notice-link:hover,
+.opening-notice-link:focus-visible {
+  background: #fff;
+  color: var(--blue);
+  outline: 0;
+}
+
 /* ── CTA system ── */
 .cta {
   display: inline-flex;
@@ -760,6 +863,17 @@ body::after {
   .whatsapp-float-icon {
     width: 24px;
     height: 24px;
+  }
+
+  .opening-notice {
+    top: 50%;
+    left: 50%;
+    width: calc(100vw - 24px);
+    padding: 18px 18px 16px;
+  }
+
+  .opening-notice-title {
+    font-size: 23px;
   }
 
   .partner-logo-text {
