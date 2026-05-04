@@ -5,15 +5,15 @@
     en: {
       openLabel: "Open chat assistant",
       title: "Andra",
-      subtitle: "Marand AI assistant for products and quotes",
-      status: "AI assistant online",
+      subtitle: "Marand assistant for products and quotes",
+      status: "Assistant available",
       statusThinking: "Writing a reply...",
-      statusFallback: "Fallback guidance mode",
+      statusFallback: "Opening soon",
       closeLabel: "Close chat",
       inputPlaceholder: "Ask about products, materials, or quotes",
       send: "Send",
       intro:
-        "Hi. I’m Andra, Marand's AI assistant.\nI can help you choose a product, explain materials, or guide you to the quote page.",
+        "Hi. I’m Andra, Marand's virtual assistant.\nI can help you choose a product, explain materials, or guide you to the quote page.",
       quick: [
         "Help me choose a product",
         "Which material should I use?",
@@ -32,15 +32,15 @@
     ro: {
       openLabel: "Deschide asistentul",
       title: "Andra",
-      subtitle: "Asistent AI Marand pentru produse si oferte",
-      status: "Asistent AI online",
+      subtitle: "Asistent Marand pentru produse si oferte",
+      status: "Asistent disponibil",
       statusThinking: "Scriu un raspuns...",
-      statusFallback: "Mod de ghidaj de rezerva",
+      statusFallback: "Deschidem in curand",
       closeLabel: "Închide chatul",
       inputPlaceholder: "Întreabă despre produse, materiale sau oferte",
       send: "Trimite",
       intro:
-        "Salut. Sunt Andra, asistenta AI Marand.\nTe pot ajuta sa alegi un produs, sa intelegi materialele sau sa ajungi mai repede la pagina de oferta.",
+        "Salut. Sunt Andra, asistenta virtuala Marand.\nTe pot ajuta sa alegi un produs, sa intelegi materialele sau sa ajungi mai repede la pagina de oferta.",
       quick: [
         "Ajută-mă să aleg un produs",
         "Ce material mi se potrivește?",
@@ -287,8 +287,8 @@
       } catch (_error) {
         loadingBubble.remove();
         const fallbackText = locale === "ro"
-          ? "Momentan nu pot raspunde automat. Cel mai bun pas este sa deschizi pagina de oferta sau sa ceri contact direct."
-          : "I cannot answer automatically right now. The best next step is the quote page or direct contact.";
+          ? "Print shop-ul nostru se va deschide pe 1 iunie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii."
+          : "Our print shop opens on June 1. Until then, you can send us a quote request and we will follow up with details.";
         addMessage(messages, "bot", fallbackText.split("\n"), [
           { href: routes.quote, label: t.links.quote },
           { href: routes.home + "#contact", label: locale === "ro" ? "Vezi contact" : "See contact" }

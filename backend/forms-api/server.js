@@ -240,8 +240,8 @@ const fallbackChatReply = (locale = 'ro') => {
   const isRomanian = locale.startsWith('ro');
   return {
     reply: isRomanian
-      ? 'Te pot ajuta cu alegerea produsului, materialele potrivite si pregatirea unei cereri de oferta. Daca vrei, mergem direct pe pagina de oferta.'
-      : 'I can help with product choice, materials, and preparing a quote request. If you want, we can go straight to the quote page.',
+      ? 'Print shop-ul nostru se va deschide pe 1 iunie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
+      : 'Our print shop opens on June 1. Until then, you can send us a quote request and we will follow up with details.',
     links: sanitizeChatLinks(['/produse/', '/oferta/'].map((href) => ({ href })), locale)
   };
 };
@@ -282,8 +282,9 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
     }
 
     if (!openai) {
-      return res.status(503).json({
-        error: 'Chat assistant is not configured yet. Add OPENAI_API_KEY on the backend service.'
+      return res.status(200).json({
+        ...fallbackChatReply(locale),
+        fallback: true
       });
     }
 
