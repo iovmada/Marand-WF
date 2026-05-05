@@ -282,14 +282,14 @@ body::after {
   box-sizing: border-box;
   border: 1px solid rgba(12, 36, 194, 0.14);
   border-radius: 8px;
-  background: rgba(255, 253, 249, 0.96);
+  background: #fffdf9;
   color: var(--text);
   box-shadow: 0 22px 54px rgba(24, 22, 18, 0.16);
   font-family: var(--font-sans);
   z-index: 1005;
-  opacity: 0;
-  transform: translate(-50%, calc(-50% + 12px));
-  pointer-events: none;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
@@ -868,12 +868,13 @@ body::after {
   .opening-notice {
     top: 50%;
     left: 50%;
-    width: calc(100vw - 24px);
-    padding: 18px 18px 16px;
+    width: calc(100vw - 28px);
+    padding: 20px 18px 18px;
+    box-shadow: 0 26px 64px rgba(24, 22, 18, 0.22);
   }
 
   .opening-notice-title {
-    font-size: 23px;
+    font-size: 24px;
   }
 
   .partner-logo-text {

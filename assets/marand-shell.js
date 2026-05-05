@@ -4,7 +4,7 @@
   const isNestedPage = /\/(produse|produse-test|oferta|echipamente|contact|productie|materiale|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
-  const whatsappHref = "https://wa.me/40743827181?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
+  const whatsappHref = "https://wa.me/40725894569?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
   const brandLogo = toRoute("/assets/brand/logo.svg");
 
   const navItems = [
@@ -60,7 +60,7 @@
       title: "Contact",
       links: [
         { label: "office@marand-print.ro", href: "mailto:office@marand-print.ro" },
-        { label: "+40 (XXX) XXX-XXX", href: "tel:+40000000000" },
+        { label: "0725894569", href: "tel:+40725894569" },
         { label: "Cere ofertă", href: toRoute("/oferta/") },
         { label: "Lun-Vin: 9-18", href: "#contact" }
       ]
@@ -201,7 +201,8 @@
 
   const openingDate = new Date(2026, 5, 1);
   const shouldShowOpeningNotice = Date.now() < openingDate.getTime();
-  const openingNoticeKey = "marand-opening-notice-dismissed";
+  const isMobileNoticeViewport = window.matchMedia("(max-width: 760px)").matches;
+  const openingNoticeKey = `marand-opening-notice-dismissed-${isMobileNoticeViewport ? "mobile" : "desktop"}`;
   let openingNoticeDismissed = false;
 
   try {
@@ -234,7 +235,7 @@
     };
 
     closeNotice?.addEventListener("click", dismissNotice);
-    window.setTimeout(() => notice?.classList.add("is-visible"), 600);
+    window.requestAnimationFrame(() => notice?.classList.add("is-visible"));
   }
 
   const assetFallbackSrc = new URL(`${routeRoot}/assets/social/marand-print-shop-print-digital-servicii-de-printate.jpg`, window.location.href).href;

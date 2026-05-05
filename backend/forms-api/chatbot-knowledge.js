@@ -7,7 +7,7 @@ export const chatbotCatalog = {
   },
   contact: {
     email: 'office@marand-print.ro',
-    whatsapp: 'https://wa.me/40743827181?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.',
+    whatsapp: 'https://wa.me/40725894569?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.',
     quotePage: '/oferta/',
     productsPage: '/produse/',
     materialsPage: '/materiale/',
