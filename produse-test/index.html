@@ -250,7 +250,7 @@
 
   .product-detail-media {
     width: calc(100% - 24px);
-    height: 240px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 28px;
     background: linear-gradient(135deg, var(--soft-cream) 0%, #fff 100%);
@@ -260,15 +260,15 @@
     position: relative;
   }
 
-  .product-detail-media-placeholder {
-    font-family: "Roboto Mono", monospace;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(0, 0, 0, 0.45);
-    padding: 0 24px;
-    text-align: center;
+  .product-detail-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .product-detail-card:hover .product-detail-media img {
+    transform: scale(1.05);
   }
 
   .product-detail-content {
@@ -429,7 +429,6 @@
     .products-copy { font-size: 17px; line-height: 24px; }
     .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .product-detail-card { grid-column: span 1; }
-    .product-detail-media { height: 220px; }
     .test-controls { width: min(calc(100% - 40px), var(--content-width)); }
   }
 
@@ -449,7 +448,7 @@
     .products-title { font-size: 30px; line-height: 1.03; }
     .products-copy { font-size: 15px; line-height: 22px; }
     .product-detail-card { grid-column: 1 / -1; border-radius: 24px; padding-bottom: 24px; }
-    .product-detail-media { height: 180px; border-radius: 22px; }
+    .product-detail-media { border-radius: 22px; }
     .product-detail-main { padding: 0 22px; }
     .product-detail-title { font-size: 24px; line-height: 1.1; }
     .product-specs > div { flex-direction: column; gap: 6px; }
@@ -508,7 +507,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="banner-blockout">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner blockout</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/banner-blockout.webp" width="1448" height="1086" alt="Banner blockout față-verso pentru evenimente, display-uri și semnalistică exterior" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -540,7 +539,7 @@
         </article>
 
         <article class="product-detail-card" id="banner-frontlit">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner frontlit</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/banner-frontlit.webp" width="1448" height="1086" alt="Banner frontlit PVC printat pentru fațade, evenimente și semnalistică exterior" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -573,7 +572,7 @@
         </article>
 
         <article class="product-detail-card" id="mesh">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>banner mesh</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/mesh.webp" width="1448" height="1086" alt="Banner mesh perforat pentru garduri, schele și fațade expuse la vânt" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -605,7 +604,7 @@
         </article>
 
         <article class="product-detail-card" id="billboard">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>billboard</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/billboard.webp" width="1448" height="1086" alt="Print billboard pe hârtie blueback pentru afișaj urban și panouri stradale" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -650,7 +649,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="canvas-printuri">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>canvas pe ramă</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/canvas-printuri.webp" width="1448" height="1086" alt="Canvas printat și întins pe ramă pentru decor interior și fotografie pe perete" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -697,7 +696,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="poster-hartie-foto">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>poster foto</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/poster-hartie-foto.webp" width="1448" height="1086" alt="Poster pe hârtie foto lucioasă sau mată pentru retail și decor interior" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -745,7 +744,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="foto-fine-art">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>print foto fine-art</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/foto-fine-art.webp" width="1448" height="1086" alt="Print foto fine-art pentru fotografii de mari dimensiuni, galerii și decor premium" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -790,7 +789,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="grafica-vitrine">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>grafică vitrine</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/grafica-vitrine.webp" width="1448" height="1086" alt="Grafică pentru geamuri și vitrine cu vinyl printat, one-way vision sau folie sablată" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -836,7 +835,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="panou-bond">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>panou Bond ACM</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/panou-bond.webp" width="1448" height="1086" alt="Panou Bond ACM printat pentru fațade, placări și semnalistică exterior" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -867,7 +866,7 @@
         </article>
 
         <article class="product-detail-card" id="panou-pmma-pvc">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>panou PMMA / PVC</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/panou-pmma-pvc.webp" width="1448" height="1086" alt="Panou plexiglass sau PVC printat pentru display-uri interior și branding rigid" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -914,7 +913,7 @@
         <div class="subgroup-divider"><span>Adezive printate · MUTOH + plotter</span></div>
 
         <article class="product-detail-card" id="stickere-promo">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>stickere promo</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/stickere-promo.webp" width="1448" height="1086" alt="Stickere promoționale tăiate pe contur pentru campanii și branding" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -946,7 +945,7 @@
         </article>
 
         <article class="product-detail-card" id="etichete-ambalaje">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>etichete ambalaje</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/etichete-ambalaje.webp" width="1448" height="1086" alt="Etichete autoadezive pentru ambalaje, sticle, borcane și cutii" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -977,7 +976,7 @@
         </article>
 
         <article class="product-detail-card" id="autocolante-vitrine">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>autocolante vitrine</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/autocolante-vitrine.webp" width="1448" height="1086" alt="Autocolante pentru vitrine, promoții, program și branding comercial" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1008,7 +1007,7 @@
         </article>
 
         <article class="product-detail-card" id="stickere-podea">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>stickere podea</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/stickere-podea.webp" width="1448" height="1086" alt="Stickere pentru podea cu vinyl printat și laminare anti-slip" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1039,7 +1038,7 @@
         </article>
 
         <article class="product-detail-card" id="folie-magnetica">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>folie magnetică printată</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/folie-magnetica.webp" width="1448" height="1086" alt="Folie magnetică printată pentru branding repoziționabil pe suprafețe metalice" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1073,7 +1072,7 @@
         <div class="subgroup-divider"><span>Print pe hârtie · Ricoh MC2000 A3 laser</span></div>
 
         <article class="product-detail-card" id="carti-de-vizita">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>cărți de vizită</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/carti-de-vizita.webp" width="1448" height="1086" alt="Cărți de vizită printate pe carton premium cu finisaj mat sau lucios" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1105,7 +1104,7 @@
         </article>
 
         <article class="product-detail-card" id="flyere">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>flyere</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/flyere.webp" width="1448" height="1086" alt="Flyere promoționale printate pentru campanii, restaurante, evenimente și retail" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1137,7 +1136,7 @@
         </article>
 
         <article class="product-detail-card" id="brosuri">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>broșuri</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/brosuri.webp" width="1448" height="1086" alt="Broșuri capsate pentru prezentări corporate, meniuri și cataloage compacte" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1182,7 +1181,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="semnalistica-interior">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>semnalistică interior</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/semnalistica-interior.webp" width="1448" height="1086" alt="Panouri direcționale interior pentru birouri, mall-uri, hoteluri și spații comerciale" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1213,7 +1212,7 @@
         </article>
 
         <article class="product-detail-card" id="semnalistica-exterior">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>semnalistică exterior</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/semnalistica-exterior.webp" width="1448" height="1086" alt="Panouri direcționale exterior pentru parcări, fațade și ghidare în spații comerciale" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1257,7 +1256,7 @@
       <div class="products-grid">
 
         <article class="product-detail-card" id="tricou">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>tricou personalizat</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/tricou.webp" width="1448" height="1086" alt="Tricou personalizat cu print DTF pentru merch, uniforme și evenimente" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1279,7 +1278,7 @@
         </article>
 
         <article class="product-detail-card" id="hanorac">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>hanorac personalizat</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/hanorac.webp" width="1448" height="1086" alt="Hanorac personalizat cu print DTF pentru echipe, merch și workwear casual" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1301,7 +1300,7 @@
         </article>
 
         <article class="product-detail-card" id="vesta">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>vestă personalizată</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/vesta.webp" width="1448" height="1086" alt="Vestă personalizată pentru workwear, evenimente, echipe și promo" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
@@ -1323,7 +1322,7 @@
         </article>
 
         <article class="product-detail-card" id="sacosa">
-          <div class="product-detail-media"><div class="product-detail-media-placeholder">imagine viitoare<br>sacoșă (tote bag)</div></div>
+          <div class="product-detail-media"><img src="../assets/images/produse-test/sacosa.webp" width="1448" height="1086" alt="Sacoșă tote bag personalizată pentru retail, gifting, evenimente și activări de brand" loading="lazy" decoding="async" /></div>
           <div class="product-detail-content">
             <div class="product-detail-main">
               <div class="product-copy-group">
