@@ -1111,7 +1111,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 18px;
     text-align: center;
   }
 
@@ -1125,9 +1125,9 @@
     background: var(--lime);
     color: #000;
     font-size: 12px;
-    line-height: 1;
+    line-height: 1.25;
     font-weight: 700;
-    text-transform: lowercase;
+    text-align: center;
   }
 
   .partners-module-logos {
@@ -1142,6 +1142,28 @@
     background: transparent;
     box-shadow: none;
     overflow: hidden;
+  }
+
+  .partners-module-copy {
+    width: min(100%, 760px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .partners-module-heading {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, sans-serif;
+    font-size: clamp(28px, 4vw, 50px);
+    line-height: 1.08;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .partners-module-cta {
+    min-width: 220px;
   }
 
   .partner-logo {
@@ -2203,9 +2225,9 @@
       </section>
     </div>
 
-    <section class="partners-module homepage-reveal" data-reveal-delay="0" id="echipamente" aria-label="Paterneri">
+    <section class="partners-module homepage-reveal" data-reveal-delay="0" id="echipamente" aria-label="Proiect finanțat prin Programul Regional Vest">
       <div class="partners-module-title">
-        <span class="partners-module-chip">paterneri</span>
+        <span class="partners-module-chip">Proiect finanțat prin Programul Regional Vest</span>
       </div>
       <div class="partners-module-logos">
         <div class="partner-logo">
@@ -2220,6 +2242,10 @@
         <div class="partner-logo">
           <img src="./assets/Sustinut/SVG/ADR-VEST-logo.svg" alt="ADR Vest" />
         </div>
+      </div>
+      <div class="partners-module-copy">
+        <h2 class="partners-module-heading">Proiect finanțat prin Programul Regional Vest</h2>
+        <a class="cta cta-primary cta-pill partners-module-cta" href="https://www.marand-print.ro/comunicat-de-presa/">Vezi proiectul</a>
       </div>
     </section>
 
