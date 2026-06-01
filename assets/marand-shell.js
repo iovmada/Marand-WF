@@ -53,7 +53,7 @@
         { label: "Proces", href: toRoute("/#cum-functioneaza") },
         { label: "Galerie", href: toRoute("/#galerie") },
         { label: "Ofertă", href: toRoute("/oferta/") },
-        { label: "Comunicat de presă", href: toRoute("/comunicat-de-presa/") }
+        { label: "Proiect finanțat prin Programul Regional Vest", href: toRoute("/comunicat-de-presa/") }
       ]
     },
     {
