@@ -287,8 +287,8 @@
       } catch (_error) {
         loadingBubble.remove();
         const fallbackText = locale === "ro"
-          ? "Print shop-ul nostru se va deschide pe 1 iunie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii."
-          : "Our print shop opens on June 1. Until then, you can send us a quote request and we will follow up with details.";
+          ? "Print shop-ul nostru se va deschide pe 25 iunie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii."
+          : "Our print shop opens on June 25. Until then, you can send us a quote request and we will follow up with details.";
         addMessage(messages, "bot", fallbackText.split("\n"), [
           { href: routes.quote, label: t.links.quote },
           { href: routes.home + "#contact", label: locale === "ro" ? "Vezi contact" : "See contact" }
