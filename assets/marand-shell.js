@@ -199,10 +199,10 @@
     );
   }
 
-  const openingDate = new Date(2026, 5, 25);
+  const openingDate = new Date(2026, 6, 25);
   const shouldShowOpeningNotice = Date.now() < openingDate.getTime();
   const isMobileNoticeViewport = window.matchMedia("(max-width: 760px)").matches;
-  const openingNoticeKey = `marand-opening-notice-dismissed-june-25-${isMobileNoticeViewport ? "mobile" : "desktop"}`;
+  const openingNoticeKey = `marand-opening-notice-dismissed-july-25-${isMobileNoticeViewport ? "mobile" : "desktop"}`;
   let openingNoticeDismissed = false;
 
   try {
@@ -216,7 +216,7 @@
         <aside class="opening-notice" aria-label="Anunt deschidere Marand">
           <button class="opening-notice-close" type="button" aria-label="Inchide anuntul">×</button>
           <p class="opening-notice-kicker">Deschidere print shop</p>
-          <p class="opening-notice-title">Ne vedem din 25 Iunie.</p>
+          <p class="opening-notice-title">Ne vedem din 25 Iulie.</p>
           <p class="opening-notice-copy">Pana atunci, ne poti trimite detaliile proiectului si revenim cu o oferta.</p>
           <a class="opening-notice-link" href="${toRoute("/oferta/")}">Cere oferta</a>
         </aside>

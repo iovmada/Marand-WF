@@ -240,8 +240,8 @@ const fallbackChatReply = (locale = 'ro') => {
   const isRomanian = locale.startsWith('ro');
   return {
     reply: isRomanian
-      ? 'Print shop-ul nostru se va deschide pe 1 iunie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
-      : 'Our print shop opens on June 1. Until then, you can send us a quote request and we will follow up with details.',
+      ? 'Print shop-ul nostru se va deschide pe 25 iulie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
+      : 'Our print shop opens on July 25. Until then, you can send us a quote request and we will follow up with details.',
     links: sanitizeChatLinks(['/produse/', '/oferta/'].map((href) => ({ href })), locale)
   };
 };
