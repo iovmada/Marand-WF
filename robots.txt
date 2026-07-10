@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /produse-test/
+Disallow: /backend/
+
+Sitemap: https://marand-print.ro/sitemap.xml
