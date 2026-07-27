@@ -199,10 +199,10 @@
     );
   }
 
-  const openingDate = new Date(2026, 6, 25);
+  const openingDate = new Date(2026, 7, 3);
   const shouldShowOpeningNotice = Date.now() < openingDate.getTime();
   const isMobileNoticeViewport = window.matchMedia("(max-width: 760px)").matches;
-  const openingNoticeKey = `marand-opening-notice-dismissed-july-25-${isMobileNoticeViewport ? "mobile" : "desktop"}`;
+  const openingNoticeKey = `marand-opening-notice-dismissed-august-3-${isMobileNoticeViewport ? "mobile" : "desktop"}`;
   let openingNoticeDismissed = false;
 
   try {
