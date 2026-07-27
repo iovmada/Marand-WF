@@ -51,7 +51,7 @@ const config = {
   ),
   mailTo: process.env.MAIL_TO || 'office@marand-print.ro',
   smtp: {
-    host: process.env.ZOHO_SMTP_HOST || 'smtppro.zoho.com',
+    host: process.env.ZOHO_SMTP_HOST || 'smtppro.zoho.eu',
     port: Number(process.env.ZOHO_SMTP_PORT || 465),
     secure: String(process.env.ZOHO_SMTP_SECURE || 'true') === 'true',
     user: process.env.ZOHO_SMTP_USER,
@@ -240,7 +240,7 @@ const fallbackChatReply = (locale = 'ro') => {
   const isRomanian = locale.startsWith('ro');
   return {
     reply: isRomanian
-      ? 'Print shop-ul nostru se va deschide pe 25 iulie. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
+      ? 'Print shop-ul nostru se va deschide pe 03 august. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
       : 'Our print shop opens on July 25. Until then, you can send us a quote request and we will follow up with details.',
     links: sanitizeChatLinks(['/produse/', '/oferta/'].map((href) => ({ href })), locale)
   };

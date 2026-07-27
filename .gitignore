@@ -6,3 +6,6 @@ node_modules/
 
 # Local wireframe archive (not deployed)
 wf/
+
+# Local WordPress dev environment (wp-cli + SQLite, not deployed)
+wp-local/

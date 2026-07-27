@@ -216,7 +216,7 @@
         <aside class="opening-notice" aria-label="Anunt deschidere Marand">
           <button class="opening-notice-close" type="button" aria-label="Inchide anuntul">×</button>
           <p class="opening-notice-kicker">Deschidere print shop</p>
-          <p class="opening-notice-title">Ne vedem din 25 Iulie.</p>
+          <p class="opening-notice-title">Ne vedem din 03 August.</p>
           <p class="opening-notice-copy">Pana atunci, ne poti trimite detaliile proiectului si revenim cu o oferta.</p>
           <a class="opening-notice-link" href="${toRoute("/oferta/")}">Cere oferta</a>
         </aside>
