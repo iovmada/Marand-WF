@@ -26,6 +26,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const navItems = [
   { key: "products", label: "Produse", href: "/produse/" },
   { key: "materials", label: "Materiale", href: "/materiale/" },
+  { key: "studio", label: "Studio", href: "/studio/" },
   { key: "process", label: "Cum Lucram", href: "/#cum-functioneaza" },
   { key: "equipment", label: "Echipamente", href: "/echipamente/" },
   { key: "contact", label: "Contact", href: "/contact/" }
@@ -59,7 +60,8 @@ const footerGroups = [
       { label: "Stickere și vinyl", href: "/produse/#stickers" },
       { label: "Tricouri și textile", href: "/produse/#textiles" },
       { label: "Small Format", href: "/produse/#small-format" },
-      { label: "Materiale", href: "/materiale/" }
+      { label: "Materiale", href: "/materiale/" },
+      { label: "Studio — previzualizare", href: "/studio/" }
     ]
   },
   {
@@ -94,6 +96,7 @@ const pages = [
   { file: "index.html", nested: false },
   { file: "produse/index.html", nested: true },
   { file: "materiale/index.html", nested: true },
+  { file: "studio/index.html", nested: true },
   { file: "echipamente/index.html", nested: true },
   { file: "productie/index.html", nested: true },
   { file: "oferta/index.html", nested: true },

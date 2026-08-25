@@ -9,3 +9,7 @@ wf/
 
 # Local WordPress dev environment (wp-cli + SQLite, not deployed)
 wp-local/
+
+# Studio scene sources: the 14 MB of original PNGs stay on disk so a bad crop
+# is recoverable, but only the normalised JPGs are deployed.
+assets/studio/scenes/_originals/

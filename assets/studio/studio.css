@@ -1,0 +1,889 @@
+/* ==========================================================================
+   Marand Studio
+   Loaded only on /studio/. Design tokens deliberately mirror the rest of the
+   site (blue #0c24c2, lime accent, Acrom + Roboto Flex) so the page reads as
+   part of Marand rather than as a bolted-on tool.
+   ========================================================================== */
+
+.studio {
+  --studio-ink: #16161a;
+  --studio-muted: #6d6d73;
+  --studio-line: #e3e3e3;
+  --studio-surface: #ffffff;
+  --studio-raise: #f2f2f0;
+  --studio-blue: #0c24c2;
+  --studio-lime: #9dfd43;
+  --studio-radius: 28px;
+  --studio-gap: clamp(24px, 4vw, 56px);
+  --studio-shell: min(calc(100% - 48px), 1376px);
+
+  color: var(--studio-ink);
+  font-family: "Roboto Flex", system-ui, sans-serif;
+}
+
+.studio-shell {
+  width: var(--studio-shell);
+  margin: 0 auto;
+}
+
+.studio-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--studio-raise);
+  color: var(--studio-muted);
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.studio-hero {
+  padding: clamp(120px, 14vw, 176px) 0 clamp(48px, 6vw, 80px);
+  text-align: center;
+}
+
+.studio-hero h1 {
+  margin: 22px auto 0;
+  max-width: 15ch;
+  font-family: "Acrom", "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: clamp(40px, 6.6vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.studio-hero-sub {
+  margin: 24px auto 0;
+  max-width: 52ch;
+  color: var(--studio-muted);
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.55;
+}
+
+.studio-hero-actions {
+  margin-top: 38px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.studio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 30px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--studio-ink);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+}
+
+.studio-btn:hover { transform: translateY(-2px); }
+.studio-btn--ghost {
+  background: transparent;
+  color: var(--studio-ink);
+  border-color: var(--studio-line);
+}
+.studio-btn--ghost:hover { border-color: var(--studio-ink); }
+.studio-btn--blue { background: var(--studio-blue); }
+
+.studio-privacy {
+  margin: 30px auto 0;
+  max-width: 46ch;
+  color: var(--studio-muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------- steps */
+
+.studio-step {
+  padding: clamp(40px, 5vw, 72px) 0;
+  border-top: 1px solid var(--studio-line);
+  transition: opacity 0.35s ease;
+}
+
+.studio-step[data-state="locked"] { opacity: 0.42; }
+.studio-step[data-state="locked"] .studio-step-body { pointer-events: none; }
+
+.studio-step-head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.studio-step-index {
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--studio-muted);
+  text-transform: uppercase;
+}
+
+.studio-step-title {
+  margin: 0;
+  font-family: "Acrom", "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: -0.02em;
+}
+
+.studio-step-note {
+  margin: 0;
+  color: var(--studio-muted);
+  font-size: 14.5px;
+  flex: 1 1 240px;
+}
+
+/* ------------------------------------------------------------ dropzone */
+
+.studio-dropzone {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  min-height: 260px;
+  padding: 40px;
+  border: 1.5px dashed #cfcfcf;
+  border-radius: var(--studio-radius);
+  background: var(--studio-raise);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.24s ease, background 0.24s ease;
+}
+
+.studio-dropzone:hover,
+.studio-dropzone:focus-visible {
+  border-color: var(--studio-blue);
+  background: #fff;
+}
+
+.studio-dropzone.is-dragging {
+  border-color: var(--studio-blue);
+  border-style: solid;
+  background: #fff;
+}
+
+.studio-dropzone.is-busy { opacity: 0.6; pointer-events: none; }
+
+.studio-dropzone-icon {
+  width: 46px;
+  height: 46px;
+  color: var(--studio-blue);
+}
+
+.studio-dropzone-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.studio-dropzone-hint {
+  color: var(--studio-muted);
+  font-size: 13.5px;
+}
+
+.studio-file-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* Swap dropzone for the thumbnail card once an image is in. */
+[data-studio-image-state][data-state="ready"] .studio-dropzone,
+[data-studio-space-state][data-state="ready"] .studio-dropzone { display: none; }
+[data-studio-image-state] .studio-loaded,
+[data-studio-space-state] .studio-loaded { display: none; }
+[data-studio-image-state][data-state="ready"] .studio-loaded,
+[data-studio-space-state][data-state="ready"] .studio-loaded { display: flex; }
+
+.studio-loaded {
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--studio-line);
+  border-radius: var(--studio-radius);
+  background: var(--studio-surface);
+  flex-wrap: wrap;
+}
+
+.studio-loaded-thumb {
+  width: 92px;
+  height: 92px;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--studio-raise);
+}
+
+.studio-loaded-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.studio-loaded-text { flex: 1 1 200px; min-width: 0; }
+.studio-loaded-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.studio-loaded-meta {
+  color: var(--studio-muted);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.studio-error {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #fdecea;
+  color: #a32116;
+  font-size: 14px;
+}
+
+/* -------------------------------------------------------- product cards */
+
+.studio-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 18px;
+}
+
+.studio-product-card,
+.studio-scene-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border: 1px solid var(--studio-line);
+  border-radius: 22px;
+  background: var(--studio-surface);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.studio-product-card:hover,
+.studio-scene-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+}
+
+.studio-product-card.is-active,
+.studio-scene-card.is-active {
+  border-color: var(--studio-ink);
+  box-shadow: 0 0 0 1px var(--studio-ink);
+}
+
+.studio-product-name { font-size: 16px; font-weight: 500; }
+.studio-product-blurb { color: var(--studio-muted); font-size: 13px; line-height: 1.45; }
+
+/* Thumbnail host — the illustration itself lives in product-thumbs.js. */
+.studio-product-visual {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #eceae5;
+}
+
+.studio-product-visual svg,
+.studio-product-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Photographs are square or 4:3 into a 16:10 card, so the crop is steered
+   per product from PHOTOS[].position rather than left to chance. */
+.studio-product-photo { object-fit: cover; }
+
+.studio-product-card:hover .studio-product-photo,
+.studio-product-card.is-active .studio-product-photo {
+  transform: scale(1.03);
+}
+
+.studio-product-photo { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* ---------------------------------------------------------- scene cards */
+
+.studio-tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  margin-bottom: 26px;
+  border-radius: 999px;
+  background: var(--studio-raise);
+}
+
+.studio-tab {
+  min-height: 42px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--studio-muted);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.studio-tab.is-active { background: #fff; color: var(--studio-ink); }
+
+.studio-scene-thumb {
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--studio-raise);
+}
+
+.studio-scene-thumb svg,
+.studio-scene-thumb img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.studio-scene-name { font-size: 15px; font-weight: 500; margin-top: 10px; }
+
+/* -------------------------------------------------------------- editor */
+
+.studio-editor { padding: clamp(40px, 5vw, 72px) 0 0; border-top: 1px solid var(--studio-line); }
+
+.studio-editor-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: var(--studio-gap);
+  align-items: start;
+}
+
+.studio-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: sticky;
+  top: 110px;
+}
+
+.studio-control-group { display: flex; flex-direction: column; gap: 12px; }
+
+.studio-control-label {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--studio-muted);
+}
+
+.studio-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.studio-chip {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--studio-line);
+  border-radius: 999px;
+  background: var(--studio-surface);
+  font-family: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.studio-chip:hover { border-color: var(--studio-ink); }
+.studio-chip.is-active { background: var(--studio-ink); border-color: var(--studio-ink); color: #fff; }
+
+.studio-readout {
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  color: var(--studio-muted);
+}
+
+.studio-hint {
+  color: var(--studio-muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------- the stage */
+
+.studio-stage-wrap { position: relative; }
+
+.studio-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--stage-ratio, 1.6);
+  border-radius: var(--studio-radius);
+  overflow: hidden;
+  background: var(--studio-raise);
+  touch-action: none;          /* pinch belongs to us, not to the page */
+  cursor: grab;
+  outline: none;
+}
+
+.studio-stage[data-interacting="true"] { cursor: grabbing; }
+.studio-stage:focus-visible { box-shadow: 0 0 0 3px rgba(12, 36, 194, 0.35); }
+
+.studio-scene-layer { position: absolute; inset: 0; }
+.studio-scene-svg,
+.studio-scene-photo { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+/* The composite is what Before/After clips. */
+.studio-composite { position: absolute; inset: 0; }
+
+/* The surface plane. Children live in wall units; the homography does the rest. */
+.studio-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.studio-art { position: absolute; }
+.studio-art-body { position: relative; width: 100%; height: 100%; }
+.studio-art-face { position: absolute; inset: 0; overflow: hidden; }
+
+.studio-art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.studio-art-image--cover { object-fit: cover; }
+
+/* Shared contact shadow, driven by each product's declared physics. */
+.studio-art-body {
+  box-shadow: 0 var(--shadow-lift, 0px) var(--shadow-blur, 0px)
+    var(--shadow-spread, 0px) rgba(0, 0, 0, var(--shadow-alpha, 0));
+}
+
+/* --- canvas: gallery wrap, visible thickness ------------------------- */
+
+.studio-art--canvas .studio-art-face { z-index: 2; }
+
+.studio-art--canvas .studio-art-edge {
+  position: absolute;
+  top: var(--edge);
+  width: var(--edge);
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.studio-art--canvas[data-view-side="right"] .studio-art-edge { right: calc(-1 * var(--edge)); }
+.studio-art--canvas[data-view-side="left"] .studio-art-edge { left: calc(-1 * var(--edge)); }
+
+.studio-art-edge-image { width: 100%; height: 100%; object-fit: cover; }
+.studio-art--canvas[data-view-side="right"] .studio-art-edge-image { object-position: 100% 50%; }
+.studio-art--canvas[data-view-side="left"] .studio-art-edge-image { object-position: 0 50%; }
+
+.studio-art-edge-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.16));
+}
+
+/* Woven texture — barely there, but it stops the print reading as flat glass. */
+.studio-art-weave {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0 0.5px, transparent 0.5px 2px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0 0.5px, transparent 0.5px 2px);
+}
+
+.studio-art-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(122deg, rgba(255, 255, 255, 0.16), transparent 46%);
+}
+
+/* --- poster --------------------------------------------------------- */
+
+.studio-art-paper {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.2), transparent 40%);
+}
+
+/* --- framed poster -------------------------------------------------- */
+
+.studio-art--framed .studio-art-frame {
+  position: absolute;
+  inset: 0;
+  padding: calc(var(--edge) * 1.15);
+  background: linear-gradient(120deg, #38322c, #221e1a 55%, #423a32);
+  box-sizing: border-box;
+}
+
+.studio-art--framed .studio-art-frame-inner {
+  position: absolute;
+  inset: calc(var(--edge) * 1.15);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5),
+    inset 0 2px 6px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.studio-art--framed .studio-art-mat {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: calc(var(--edge) * 0.9);
+  background: #f6f4ef;
+  box-sizing: border-box;
+}
+
+.studio-art--framed .studio-art-face { position: relative; inset: auto; width: 100%; height: 100%; }
+
+.studio-art-glass {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    118deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    transparent 42%
+  );
+}
+
+/* --- forex / PVC ---------------------------------------------------- */
+
+.studio-art--forex .studio-art-face { z-index: 2; }
+
+.studio-art--forex .studio-art-edge--cut {
+  position: absolute;
+  top: calc(var(--edge) * 0.6);
+  width: var(--edge);
+  height: 100%;
+  background: linear-gradient(90deg, #efefec, #cfcfca);
+  z-index: 1;
+}
+
+.studio-art--forex[data-view-side="right"] .studio-art-edge--cut { right: calc(-1 * var(--edge)); }
+.studio-art--forex[data-view-side="left"] .studio-art-edge--cut { left: calc(-1 * var(--edge)); }
+
+.studio-art-matte {
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 244, 240, 0.14);
+}
+
+/* --- wallpaper ------------------------------------------------------ */
+
+.studio-art--wallpaper .studio-art-face { overflow: hidden; }
+
+.studio-art-seams {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.07) 0 1px,
+    transparent 1px 180px
+  );
+}
+
+/* Sits under the room light rather than over it — the wallpaper IS the wall. */
+.studio-art-ambient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.34),
+    rgba(255, 255, 255, 0.04) 46%,
+    rgba(0, 0, 0, 0.14)
+  );
+}
+
+/* --- banner --------------------------------------------------------- */
+
+.studio-art--banner .studio-art-face {
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* Slack in the material: a hanging banner is never perfectly flat. */
+.studio-art-slack {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.14) 0%,
+    transparent 12%,
+    transparent 84%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+
+.studio-art-grommets { position: absolute; inset: 0; pointer-events: none; }
+
+.studio-art-grommet {
+  position: absolute;
+  width: calc(var(--edge) * 3);
+  height: calc(var(--edge) * 3);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #f2f2f2, #8f8f8f 62%, #5d5d5d);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.studio-art-grommet:nth-child(1) { top: calc(var(--edge) * 1.4); left: calc(var(--edge) * 1.4); }
+.studio-art-grommet:nth-child(2) { top: calc(var(--edge) * 1.4); right: calc(var(--edge) * 1.4); }
+.studio-art-grommet:nth-child(3) { bottom: calc(var(--edge) * 1.4); right: calc(var(--edge) * 1.4); }
+.studio-art-grommet:nth-child(4) { bottom: calc(var(--edge) * 1.4); left: calc(var(--edge) * 1.4); }
+
+/* ------------------------------------------------------------- handles */
+
+.studio-handles { position: absolute; inset: 0; pointer-events: none; }
+.studio-handles > * { pointer-events: auto; }
+
+.studio-frame-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.studio-frame-outline polygon {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.55));
+}
+
+.studio-handle {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--studio-blue);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: transform 0.16s ease;
+}
+
+/* Author `display` beats the UA [hidden] rule, so state it explicitly or the
+   hidden attribute set from JS does nothing at all. */
+.studio-handle[hidden],
+.studio-frame-outline[hidden] { display: none; }
+
+.studio-handle:hover { transform: scale(1.14); }
+.studio-handle--rotate svg { width: 15px; height: 15px; }
+.studio-handle--quad { background: var(--studio-lime); border-color: #14140f; }
+
+/* Fingers need a bigger target than a cursor does. */
+@media (pointer: coarse) {
+  .studio-handle { width: 34px; height: 34px; margin: -17px 0 0 -17px; }
+
+  /* On touch, finger-sized corner and rotate handles swallow a small print
+     whole. Pinch already does both scale and rotate here, so drop them and
+     keep the dashed outline as the only selection cue. The wall-corner
+     handles stay: they sit on the room, not on the artwork. */
+  .studio-handle--corner,
+  .studio-handle--rotate { display: none; }
+}
+
+/* Hide the furniture while comparing — it would sit on top of the "original". */
+.studio-stage[data-ba-state="original"] .studio-handles,
+.studio-stage[data-ba-state="split"] .studio-handles { opacity: 0; pointer-events: none; }
+
+/* -------------------------------------------------------- before/after */
+
+.studio-ba-track {
+  position: absolute;
+  inset: 0;
+  cursor: ew-resize;
+  z-index: 5;
+}
+
+/* Only the divider itself takes the pointer, so dragging the print still works. */
+.studio-ba-track { pointer-events: none; }
+.studio-ba-handle { pointer-events: auto; }
+
+.studio-ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  margin-left: -20px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.studio-ba-handle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.studio-ba-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316161a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-4 6 4 6M15 6l4 6-4 6'/%3E%3C/svg%3E") center / 20px no-repeat;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.studio-stage[data-ba-state="preview"] .studio-ba-handle { opacity: 0; }
+.studio-stage:hover .studio-ba-handle { opacity: 1; }
+
+.studio-ba-labels {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.62);
+  backdrop-filter: blur(8px);
+  z-index: 6;
+}
+
+.studio-ba-labels button {
+  min-height: 34px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.studio-ba-labels button.is-active { background: #fff; color: #16161a; }
+
+/* ----------------------------------------------------------------- CTA */
+
+.studio-cta {
+  margin: clamp(64px, 8vw, 120px) 0 0;
+  padding: clamp(48px, 7vw, 96px) clamp(28px, 5vw, 72px);
+  border-radius: var(--studio-radius);
+  background: var(--studio-ink);
+  color: #fff;
+  text-align: center;
+}
+
+.studio-cta h2 {
+  margin: 0;
+  font-family: "Acrom", "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: clamp(30px, 4.6vw, 56px);
+  letter-spacing: -0.025em;
+}
+
+.studio-cta p {
+  margin: 20px auto 0;
+  max-width: 54ch;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.6;
+}
+
+.studio-cta .studio-btn {
+  margin-top: 34px;
+  background: var(--studio-lime);
+  color: #14140f;
+}
+
+/* ------------------------------------------------------------- mobile */
+
+.studio-sheet-toggle { display: none; }
+
+@media (max-width: 1024px) {
+  .studio-editor-grid { grid-template-columns: minmax(0, 1fr); }
+  .studio-sidebar { position: static; top: auto; }
+}
+
+@media (max-width: 720px) {
+  .studio { --studio-shell: calc(100% - 32px); }
+  .studio-stage { border-radius: 20px; }
+
+  /* Preview first, controls in a bottom sheet — never both competing. */
+  .studio-editor-grid { display: block; }
+
+  .studio-sheet-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 16px;
+    border: 1px solid var(--studio-line);
+    border-radius: 999px;
+    background: var(--studio-surface);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .studio-sidebar {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.34s ease;
+  }
+
+  .studio-sidebar.is-open {
+    max-height: 720px;
+    margin-top: 20px;
+    padding-top: 4px;
+  }
+
+  .studio-sidebar > * + * { margin-top: 24px; }
+  .studio-hero { padding-top: 104px; }
+  .studio-ba-handle { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-btn,
+  .studio-product-card,
+  .studio-scene-card,
+  .studio-handle,
+  .studio-sidebar { transition: none; }
+  .studio-btn:hover,
+  .studio-product-card:hover,
+  .studio-scene-card:hover { transform: none; }
+}
