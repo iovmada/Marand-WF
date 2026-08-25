@@ -6,19 +6,47 @@
    ========================================================================== */
 
 .studio {
-  --studio-ink: #16161a;
-  --studio-muted: #6d6d73;
-  --studio-line: #e3e3e3;
-  --studio-surface: #ffffff;
-  --studio-raise: #f2f2f0;
-  --studio-blue: #0c24c2;
-  --studio-lime: #9dfd43;
-  --studio-radius: 28px;
+  /* Every value here is an existing site token rather than a Studio
+     invention, so the tool inherits the design system instead of running a
+     parallel one: ink #0b0b0b, secondary #776f6f, blue #0c24c2, lime accent,
+     32px outer / 24px inner radii, 1376px module grid, --shadow-card. */
+  --studio-ink: #0b0b0b;
+  --studio-body: #020202;
+  --studio-muted: #776f6f;
+  --studio-line: var(--border, #e1e1e1);
+  --studio-surface: var(--surface, #fcfcfc);
+  --studio-raise: #f0f0f0;
+  --studio-blue: var(--blue, #0c24c2);
+  --studio-lime: var(--lime, #9dfd43);
+  --studio-radius: 32px;
+  --studio-radius-inner: 24px;
+  --studio-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+  --studio-display: "Acrom", "Roboto Flex", sans-serif;
   --studio-gap: clamp(24px, 4vw, 56px);
-  --studio-shell: min(calc(100% - 48px), 1376px);
+  --studio-shell: min(calc(100% - 60px), var(--module-grid-width, 1376px));
 
-  color: var(--studio-ink);
+  color: #333;
   font-family: "Roboto Flex", system-ui, sans-serif;
+}
+
+/* The section marker used on every other page: lime pill, Acrom 700. */
+.studio-eyebrow,
+.studio-step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-height: 35px;
+  padding: 4px 16px;
+  border-radius: 24px;
+  background: var(--studio-lime);
+  color: #000;
+  font-family: var(--studio-display);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: lowercase;
 }
 
 .studio-shell {
@@ -26,87 +54,69 @@
   margin: 0 auto;
 }
 
-.studio-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: var(--studio-raise);
-  color: var(--studio-muted);
-  font-family: "Roboto Mono", monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 /* ---------------------------------------------------------------- hero */
 
+/* Inner pages open at 130px and stack chip / heading / copy left-aligned
+   with a 32px rhythm — /echipamente/ and /materiale/ do exactly this. */
 .studio-hero {
-  padding: clamp(120px, 14vw, 176px) 0 clamp(48px, 6vw, 80px);
-  text-align: center;
+  padding: 130px 0 clamp(48px, 6vw, 80px);
+}
+
+.studio-hero .studio-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
 }
 
 .studio-hero h1 {
-  margin: 22px auto 0;
-  max-width: 15ch;
-  font-family: "Acrom", "Roboto Flex", sans-serif;
-  font-weight: 300;
-  font-size: clamp(40px, 6.6vw, 84px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  margin: 0;
+  max-width: 16ch;
+  font-family: var(--studio-display);
+  font-size: 68px;
+  line-height: 0.96;
+  font-weight: 700;
+  letter-spacing: -0.09em;
+  color: var(--studio-ink);
 }
 
 .studio-hero-sub {
-  margin: 24px auto 0;
-  max-width: 52ch;
-  color: var(--studio-muted);
-  font-size: clamp(16px, 1.7vw, 20px);
-  line-height: 1.55;
+  margin: 0;
+  max-width: 62ch;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  color: var(--studio-body);
 }
 
 .studio-hero-actions {
-  margin-top: 38px;
+  margin: 0;
   display: flex;
-  gap: 14px;
-  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.studio-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 30px;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: var(--studio-ink);
-  color: #fff;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+/* Studio defines no button of its own — the markup uses the shared
+   .cta / .cta-primary / .cta-secondary / .cta-pill classes from
+   marand-shell.css. Only the compact inline variant is local, for the
+   "change image" control that sits inside a card row. */
+.studio-cta-sm.cta {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 12px;
 }
 
-.studio-btn:hover { transform: translateY(-2px); }
-.studio-btn--ghost {
-  background: transparent;
-  color: var(--studio-ink);
-  border-color: var(--studio-line);
-}
-.studio-btn--ghost:hover { border-color: var(--studio-ink); }
-.studio-btn--blue { background: var(--studio-blue); }
-
+/* A reassurance paragraph, not a spec label — the site's uppercase 900 meta
+   style is for two- or three-word specs and turns shouty at this length. */
 .studio-privacy {
-  margin: 30px auto 0;
-  max-width: 46ch;
+  margin: 0;
+  max-width: 62ch;
   color: var(--studio-muted);
-  font-size: 12.5px;
-  line-height: 1.5;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  line-height: 22px;
 }
 
 /* ---------------------------------------------------------------- steps */
@@ -120,35 +130,35 @@
 .studio-step[data-state="locked"] { opacity: 0.42; }
 .studio-step[data-state="locked"] .studio-step-body { pointer-events: none; }
 
+/* Same section header as .equip-section-header: column, 32px gap,
+   left-aligned, chip on top. */
 .studio-step-head {
   display: flex;
-  align-items: baseline;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.studio-step-index {
-  font-family: "Roboto Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--studio-muted);
-  text-transform: uppercase;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 40px;
 }
 
 .studio-step-title {
   margin: 0;
-  font-family: "Acrom", "Roboto Flex", sans-serif;
-  font-weight: 300;
-  font-size: clamp(26px, 3.4vw, 40px);
-  letter-spacing: -0.02em;
+  font-family: var(--studio-display);
+  font-size: 37px;
+  line-height: 45px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: #1a1a1a;
 }
 
 .studio-step-note {
   margin: 0;
-  color: var(--studio-muted);
-  font-size: 14.5px;
-  flex: 1 1 240px;
+  max-width: 62ch;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  color: var(--studio-body);
 }
 
 /* ------------------------------------------------------------ dropzone */
@@ -162,6 +172,7 @@
   border: 1.5px dashed #cfcfcf;
   border-radius: var(--studio-radius);
   background: var(--studio-raise);
+  box-shadow: var(--studio-shadow);
   text-align: center;
   cursor: pointer;
   transition: border-color 0.24s ease, background 0.24s ease;
@@ -188,13 +199,21 @@
 }
 
 .studio-dropzone-title {
-  font-size: 18px;
-  font-weight: 500;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--studio-ink);
 }
 
 .studio-dropzone-hint {
   color: var(--studio-muted);
-  font-size: 13.5px;
+  font-size: 13px;
+  line-height: 27px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .studio-file-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
@@ -214,6 +233,7 @@
   border: 1px solid var(--studio-line);
   border-radius: var(--studio-radius);
   background: var(--studio-surface);
+  box-shadow: var(--studio-shadow);
   flex-wrap: wrap;
 }
 
@@ -221,7 +241,7 @@
   width: 92px;
   height: 92px;
   flex: 0 0 auto;
-  border-radius: 16px;
+  border-radius: var(--studio-radius-inner);
   overflow: hidden;
   background: var(--studio-raise);
 }
@@ -229,7 +249,12 @@
 .studio-loaded-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .studio-loaded-text { flex: 1 1 200px; min-width: 0; }
 .studio-loaded-name {
-  font-weight: 500;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--studio-ink);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -244,7 +269,7 @@
 .studio-error {
   margin-top: 16px;
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: var(--studio-radius-inner);
   background: #fdecea;
   color: #a32116;
   font-size: 14px;
@@ -265,8 +290,9 @@
   gap: 6px;
   padding: 18px;
   border: 1px solid var(--studio-line);
-  border-radius: 22px;
+  border-radius: var(--studio-radius-inner);
   background: var(--studio-surface);
+  box-shadow: var(--studio-shadow);
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -279,13 +305,22 @@
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
 }
 
+/* Selection reads in Marand blue, the site's one active colour. */
 .studio-product-card.is-active,
 .studio-scene-card.is-active {
-  border-color: var(--studio-ink);
-  box-shadow: 0 0 0 1px var(--studio-ink);
+  border-color: var(--studio-blue);
+  box-shadow: 0 0 0 1px var(--studio-blue), 0 8px 24px rgba(12, 36, 194, 0.14);
 }
 
-.studio-product-name { font-size: 16px; font-weight: 500; }
+.studio-product-name {
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--studio-ink);
+}
+
 .studio-product-blurb { color: var(--studio-muted); font-size: 13px; line-height: 1.45; }
 
 /* Thumbnail host — the illustration itself lives in product-thumbs.js. */
@@ -294,7 +329,7 @@
   display: block;
   aspect-ratio: 16 / 10;
   margin-bottom: 10px;
-  border-radius: 14px;
+  border-radius: var(--studio-radius-inner);
   overflow: hidden;
   background: #eceae5;
 }
@@ -328,33 +363,46 @@
   background: var(--studio-raise);
 }
 
+/* Segmented control matching .materials-overview-option: Acrom 700,
+   13px uppercase, blue when selected. */
 .studio-tab {
-  min-height: 42px;
-  padding: 0 22px;
+  min-height: 48px;
+  padding: 0 24px;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: var(--studio-muted);
-  font-family: inherit;
-  font-size: 14.5px;
-  font-weight: 500;
+  color: #4b4b4b;
+  font-family: var(--studio-display);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background 0.22s ease, color 0.22s ease;
 }
 
-.studio-tab.is-active { background: #fff; color: var(--studio-ink); }
+.studio-tab.is-active { background: var(--studio-blue); color: #fff; }
 
 .studio-scene-thumb {
   display: block;
   aspect-ratio: 16 / 10;
-  border-radius: 14px;
+  border-radius: var(--studio-radius-inner);
   overflow: hidden;
   background: var(--studio-raise);
 }
 
 .studio-scene-thumb svg,
 .studio-scene-thumb img { width: 100%; height: 100%; display: block; object-fit: cover; }
-.studio-scene-name { font-size: 15px; font-weight: 500; margin-top: 10px; }
+.studio-scene-name {
+  margin-top: 10px;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--studio-ink);
+}
 
 /* -------------------------------------------------------------- editor */
 
@@ -378,9 +426,10 @@
 .studio-control-group { display: flex; flex-direction: column; gap: 12px; }
 
 .studio-control-label {
-  font-family: "Roboto Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  line-height: 27px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--studio-muted);
 }
@@ -399,8 +448,8 @@
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.studio-chip:hover { border-color: var(--studio-ink); }
-.studio-chip.is-active { background: var(--studio-ink); border-color: var(--studio-ink); color: #fff; }
+.studio-chip:hover { border-color: var(--studio-blue); }
+.studio-chip.is-active { background: var(--studio-blue); border-color: var(--studio-blue); color: #fff; }
 
 .studio-readout {
   font-family: "Roboto Mono", monospace;
@@ -784,47 +833,57 @@
   border-radius: 999px;
   background: transparent;
   color: rgba(255, 255, 255, 0.72);
-  font-family: "Roboto Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-family: var(--studio-display);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.studio-ba-labels button.is-active { background: #fff; color: #16161a; }
+.studio-ba-labels button.is-active { background: #fff; color: var(--studio-ink); }
 
 /* ----------------------------------------------------------------- CTA */
 
+/* The site's closing banner, .tpl-cta-banner, reproduced exactly. */
 .studio-cta {
   margin: clamp(64px, 8vw, 120px) 0 0;
-  padding: clamp(48px, 7vw, 96px) clamp(28px, 5vw, 72px);
+  padding: 64px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
   border-radius: var(--studio-radius);
-  background: var(--studio-ink);
-  color: #fff;
+  background: #000;
+  box-shadow: var(--studio-shadow);
   text-align: center;
+  color: #fff;
 }
 
 .studio-cta h2 {
   margin: 0;
-  font-family: "Acrom", "Roboto Flex", sans-serif;
-  font-weight: 300;
-  font-size: clamp(30px, 4.6vw, 56px);
-  letter-spacing: -0.025em;
+  max-width: 904px;
+  font-family: var(--studio-display);
+  font-size: 52px;
+  line-height: 55px;
+  font-weight: 700;
+  letter-spacing: -0.09em;
+  color: #fff;
 }
 
 .studio-cta p {
-  margin: 20px auto 0;
-  max-width: 54ch;
-  color: rgba(255, 255, 255, 0.66);
-  font-size: clamp(15px, 1.6vw, 18px);
-  line-height: 1.6;
+  margin: 0;
+  max-width: 904px;
+  font-family: var(--studio-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  color: #fff;
 }
 
-.studio-cta .studio-btn {
-  margin-top: 34px;
-  background: var(--studio-lime);
-  color: #14140f;
-}
+.studio-cta .cta { min-width: 215px; }
 
 /* ------------------------------------------------------------- mobile */
 
@@ -835,8 +894,17 @@
   .studio-sidebar { position: static; top: auto; }
 }
 
+@media (max-width: 1024px) {
+  .studio-hero h1 { font-size: 52px; line-height: 55px; }
+  .studio-step-title { font-size: 30px; line-height: 36px; }
+  .studio-cta h2 { font-size: 40px; line-height: 44px; }
+}
+
 @media (max-width: 720px) {
   .studio { --studio-shell: calc(100% - 32px); }
+  .studio-hero h1 { font-size: 40px; line-height: 42px; }
+  .studio-cta { padding: 48px 24px; }
+  .studio-cta h2 { font-size: 32px; line-height: 36px; }
   .studio-stage { border-radius: 20px; }
 
   /* Preview first, controls in a bottom sheet — never both competing. */
@@ -853,9 +921,11 @@
     border: 1px solid var(--studio-line);
     border-radius: 999px;
     background: var(--studio-surface);
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 500;
+    font-family: var(--studio-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     cursor: pointer;
   }
 
@@ -878,12 +948,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .studio-btn,
   .studio-product-card,
   .studio-scene-card,
   .studio-handle,
   .studio-sidebar { transition: none; }
-  .studio-btn:hover,
   .studio-product-card:hover,
   .studio-scene-card:hover { transform: none; }
 }

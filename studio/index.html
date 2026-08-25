@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700;8..144,900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/marand-shell.css?v=opening-notice-mobile-3" />
 <link rel="stylesheet" href="../assets/chatbot.css" />
-<link rel="stylesheet" href="../assets/studio/studio.css?v=studio-1" />
+<link rel="stylesheet" href="../assets/studio/studio.css?v=studio-2" />
 <style>
   :root {
     --bg: #f7f7f7;
@@ -32,6 +32,7 @@
     --lime: #9dfd43;
     --border: #e1e1e1;
     --muted: #717171;
+    --container: 1165px;
     --module-grid-width: 1376px;
     --shadow-card: 0 7px 14px rgba(0, 0, 0, 0.06);
   }
@@ -89,12 +90,12 @@
     <!-- ===================== HERO ===================== -->
     <section class="studio-hero">
       <div class="studio-shell">
-        <span class="studio-eyebrow">Marand Studio</span>
+        <span class="studio-eyebrow">marand studio</span>
         <h1>Vezi cum arată înainte să printezi.</h1>
         <p class="studio-hero-sub">Încarcă imaginea ta și vezi cum ar putea arăta pe canvas, poster sau direct în spațiul tău.</p>
         <div class="studio-hero-actions">
-          <button class="studio-btn" type="button" data-studio-start="image">Încarcă imaginea</button>
-          <button class="studio-btn studio-btn--ghost" type="button" data-studio-start="space">Folosește spațiul meu</button>
+          <button class="cta cta-primary cta-pill" type="button" data-studio-start="image">Încarcă imaginea</button>
+          <button class="cta cta-secondary cta-pill" type="button" data-studio-start="space">Folosește spațiul meu</button>
         </div>
         <p class="studio-privacy">Imaginile încărcate în Studio sunt folosite doar pentru realizarea previzualizării. Rămân în browserul tău și nu se încarcă pe serverele noastre.</p>
       </div>
@@ -104,7 +105,7 @@
     <section class="studio-step" data-studio-step="image" data-state="active" id="imaginea-mea">
       <div class="studio-shell">
         <div class="studio-step-head">
-          <span class="studio-step-index">Pasul 01</span>
+          <span class="studio-step-index">pasul 01</span>
           <h2 class="studio-step-title">Imaginea mea</h2>
           <p class="studio-step-note">JPG, PNG, WebP sau HEIC. Trage fișierul aici sau apasă pentru a-l alege.</p>
         </div>
@@ -125,7 +126,7 @@
               <div class="studio-loaded-name" data-studio-thumb-name></div>
               <div class="studio-loaded-meta" data-studio-thumb-meta></div>
             </div>
-            <button class="studio-btn studio-btn--ghost" type="button" data-studio-change>Schimbă imaginea</button>
+            <button class="cta cta-secondary cta-pill studio-cta-sm" type="button" data-studio-change>Schimbă imaginea</button>
           </div>
 
           <input class="studio-file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" data-studio-file />
@@ -138,7 +139,7 @@
     <section class="studio-step" data-studio-step="product" data-state="locked" id="tipul-de-print">
       <div class="studio-shell">
         <div class="studio-step-head">
-          <span class="studio-step-index">Pasul 02</span>
+          <span class="studio-step-index">pasul 02</span>
           <h2 class="studio-step-title">Tipul de print</h2>
           <p class="studio-step-note">Fiecare produs se comportă diferit — canvasul are grosime, posterul înrămat are ramă și sticlă, bannerul se agață.</p>
         </div>
@@ -152,7 +153,7 @@
     <section class="studio-step" data-studio-step="space" data-state="locked" id="unde-vreau">
       <div class="studio-shell">
         <div class="studio-step-head">
-          <span class="studio-step-index">Pasul 03</span>
+          <span class="studio-step-index">pasul 03</span>
           <h2 class="studio-step-title">Unde vreau să îl văd?</h2>
           <p class="studio-step-note">Alege o scenă Marand sau încarcă o fotografie cu spațiul tău.</p>
         </div>
@@ -185,7 +186,7 @@
                   <div class="studio-loaded-name">Spațiul tău</div>
                   <div class="studio-loaded-meta">Ajustează colțurile peretelui din editor</div>
                 </div>
-                <button class="studio-btn studio-btn--ghost" type="button" data-studio-space-change>Schimbă fotografia</button>
+                <button class="cta cta-secondary cta-pill studio-cta-sm" type="button" data-studio-space-change>Schimbă fotografia</button>
               </div>
 
               <input class="studio-file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" data-studio-space-file />
@@ -199,7 +200,7 @@
     <section class="studio-editor" data-studio-editor hidden id="editor">
       <div class="studio-shell">
         <div class="studio-step-head">
-          <span class="studio-step-index">Editor</span>
+          <span class="studio-step-index">editor</span>
           <h2 class="studio-step-title">Poziționează printul</h2>
           <p class="studio-step-note">Trage pentru a muta, folosește colțurile pentru dimensiune. Pe telefon: pinch cu două degete.</p>
         </div>
@@ -258,7 +259,7 @@
       <div class="studio-cta">
         <h2>Îți place cum arată?</h2>
         <p>Marand poate transforma ideea într-un print real. Trimite-ne proiectul și te ajutăm să alegi materialul potrivit.</p>
-        <a class="studio-btn" href="../oferta/">Cere detalii</a>
+        <a class="cta cta-primary cta-pill" href="../oferta/">Cere detalii</a>
       </div>
     </section>
 
