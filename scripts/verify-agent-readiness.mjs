@@ -323,6 +323,36 @@ await check("sitemap.xml: parses and every URL resolves", async () => {
   return `${locs.length} URLs, all 200`;
 });
 
+/* --------------------------------------------------- repo files on the web */
+
+// The deployed root IS the repo root, so build scripts, backend source and
+// internal notes are all publicly fetchable. No credentials are in them (env
+// vars live in the App Platform dashboard), so this is information
+// disclosure rather than a breach — but robots.txt only asks politely, and
+// the real fix is a build step with an output_dir. Soft check: it reports
+// the true state and does not fail the suite until that lands.
+await check(
+  "[host] repo internals are not publicly served",
+  async () => {
+    const exposed = [];
+    for (const path of [
+      "/scripts/build-shell.mjs",
+      "/backend/forms-api/server.js",
+      "/WORKING-NOTES.md",
+      "/ops/CLOUDFLARE-MIGRATION.md",
+    ]) {
+      const { status } = await get(path);
+      if (status === 200) exposed.push(path);
+    }
+    must(
+      exposed.length === 0,
+      `${exposed.length} internal file(s) fetchable: ${exposed.join(", ")} — robots.txt disallows them, but only a build step with output_dir actually stops it`
+    );
+    return "none served";
+  },
+  true
+);
+
 /* ------------------------------------------------------------------ report */
 
 const pad = Math.max(...results.map((r) => r.name.length));

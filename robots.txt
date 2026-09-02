@@ -2,6 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /produse-test/
 Disallow: /backend/
+Disallow: /scripts/
+Disallow: /ops/
+Disallow: /WORKING-NOTES.md
+Disallow: /DESIGN-SYSTEM-RULES.md
+Disallow: /about/
+Disallow: /privacy/
 
 # Machine-readable mirrors. Every page also exists as markdown at the same
 # path plus index.md — see llms.txt for the index and when-to-use guidance.
