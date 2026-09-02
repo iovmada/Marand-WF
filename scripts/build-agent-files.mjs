@@ -138,10 +138,13 @@ const pages = [
     md: "productie/index.md",
     url: "/productie/",
     title: "Producție — production and execution services",
-    summary: "How a job moves from file to finished print, and what Marand handles in-house.",
+    summary:
+      "How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.",
     whenToUse: [
-      "the user asks about turnaround, workflow or what happens after files are sent",
-      "you need to know which steps are in-house versus outsourced",
+      "the user asks about turnaround (24h average, no minimum quantity)",
+      "you need the artwork requirements before a file is sent: vector PDF/AI/EPS or 300 DPI raster, CMYK",
+      "the user asks what finishing is possible — hemming, eyelets, stretching on a frame, lamination, contour cutting",
+      "you need to know which steps are in-house rather than subcontracted (all of them)",
     ],
   },
   {

@@ -53,7 +53,7 @@ will prepare or fix artwork — but it is arranged case by case through
 - [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
 - [Studio — in-browser print preview](https://marand-print.ro/studio/index.md): A browser tool that projects the user's artwork onto a room photograph in correct wall perspective, for canvas, poster, forex and wallpaper.
 - [Echipamente — production equipment](https://marand-print.ro/echipamente/index.md): The machines on the floor, with their real capability limits — the ceiling on what any quote can promise.
-- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print, and what Marand handles in-house.
+- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.
 - [Cere Ofertă — quote request](https://marand-print.ro/oferta/index.md): The full quote form: project brief plus file upload, routed to office@marand-print.ro.
 - [Contact — address, phone, hours](https://marand-print.ro/contact/index.md): Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
 - [Comunicat de presă — EU-funded project](https://marand-print.ro/comunicat-de-presa/index.md): Press release for the Programul Regional Vest 2021-2027 grant that equipped the workshop.
