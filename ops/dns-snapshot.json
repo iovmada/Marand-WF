@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-09-02T20:43:47.580Z",
+  "domain": "marand-print.ro",
+  "nameservers": [
+    "ns1.romarg.com.",
+    "ns2.romarg.com.",
+    "ns3.romarg.com.",
+    "ns4.romarg.com."
+  ],
+  "records": {
+    "apex A": [
+      "162.159.140.98",
+      "172.66.0.96"
+    ],
+    "www CNAME": [
+      "lobster-app-8rjea.ondigitalocean.app."
+    ],
+    "MX": [
+      "10 mx.zoho.eu.",
+      "20 mx2.zoho.eu.",
+      "30 mx3.zoho.eu."
+    ],
+    "apex TXT": [
+      "\"v=spf1 include:zohomail.eu ~all\"",
+      "\"zoho-verification=zb00054782.zmverify.zoho.eu\""
+    ],
+    "zoho._domainkey TXT": [
+      "\"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwp5SjzQ5AXP/F6mum1XM3b78GM5eyQD2ZzHL/tSkC6WIH+siZcHMh1HhPJD+uRpJ0q58KnmNDbfYjcu9+vZ+vA/LuQ6WmtS56tpCfAXCVY2pPXIZ8mxHnz/7fjW+E+3Q0rje/dIzaqn3droDxebEk3UKYRqvnDxLwlqjds6S/10KJDO0FcJ+o3/bChTl7rAH9\""
+    ],
+    "_dmarc TXT": []
+  }
+}

@@ -18,6 +18,11 @@ status=0
 
 command -v "$NODE" >/dev/null 2>&1 || { echo "node 20 not found at $NODE (override with NODE=...)"; exit 1; }
 
+echo "== unit: Cloudflare Worker negotiation =="
+# Runs without wrangler or an account — pure Node, stubbed origin.
+"$NODE" --test "$ROOT/ops/cloudflare-worker/" || status=1
+
+echo
 echo "== unit: Accept negotiation =="
 if [ -d "$ROOT/backend/forms-api/node_modules" ]; then
   "$NODE" --test "$ROOT/backend/forms-api/" || status=1

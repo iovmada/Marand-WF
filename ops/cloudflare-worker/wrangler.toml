@@ -1,0 +1,17 @@
+# Binds the negotiation Worker to the apex only.
+#
+# www serves identical content; negotiating there too would just double the
+# cache entries. If www ever becomes the canonical host, add its route here.
+#
+# Deploy:  npx wrangler deploy --config ops/cloudflare-worker/wrangler.toml
+# See:     ops/CLOUDFLARE-MIGRATION.md  (do the DNS move first)
+
+name = "marand-accept-negotiation"
+main = "worker.js"
+compatibility_date = "2026-09-02"
+
+workers_dev = false
+
+[[routes]]
+pattern = "marand-print.ro/*"
+zone_name = "marand-print.ro"
