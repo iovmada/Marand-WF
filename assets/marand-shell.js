@@ -1,5 +1,5 @@
 (() => {
-  const isNestedPage = /\/(produse|produse-test|oferta|echipamente|contact|productie|materiale|studio|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
+  const isNestedPage = /\/(produse|produse-test|oferta|echipamente|contact|productie|materiale|studio|despre|confidentialitate|about|privacy|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
   const whatsappHref = "https://wa.me/40725894569?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";

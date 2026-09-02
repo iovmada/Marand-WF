@@ -143,10 +143,25 @@ added to **all four** of:
 4. the nested-page regex in `assets/marand-shell.js` **and**
    `assets/chatbot.js`, or its asset paths and chatbot routes break
 
-Then run both generators and `bash scripts/test.sh`.
+Then run the generators and `bash scripts/test.sh`.
 
 ## Rule 10 — Known deviation
 
 `/productie/` still uses the `tpl-*` template's own smaller type scale rather
 than the scale in Rule 03. Its content is real, but bringing its typography
 onto the system is outstanding work.
+
+## Rule 11 — Generators
+
+Three, all idempotent, run in this order:
+
+```
+node scripts/build-trust-pages.mjs   # /despre/ /confidentialitate/ + aliases
+node scripts/build-shell.mjs         # nav + footer into every page
+node scripts/build-agent-files.mjs   # .md mirrors, llms.txt, JSON-LD, 404.md
+bash scripts/test.sh                 # unit + idempotency + endpoints
+```
+
+Never hand-edit their output. `scripts/serve-local.mjs` serves the site the
+way the host does (error document, `/api` proxy) — use it, not
+`python3 -m http.server`, which does not return `404.html` on a miss.

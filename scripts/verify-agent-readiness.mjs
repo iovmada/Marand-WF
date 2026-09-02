@@ -60,6 +60,14 @@ await check("404: body carries recovery links, not a bare error", async () => {
   return `${body.length} bytes, all pointers present`;
 });
 
+await check("404: recovery markdown is visible, not collapsed", async () => {
+  const { body } = await get("/some-path-that-does-not-exist");
+  must(!/<details/i.test(body), "the recovery block is inside <details> — a parser may treat it as hidden");
+  must(/<pre>[\s\S]*# 404[\s\S]*<\/pre>/.test(body), "no literal markdown block in the 404 body");
+  must(/rel="alternate" type="text\/markdown"/.test(body), "404 does not advertise its .md twin");
+  return "visible <pre> markdown + rel=alternate";
+});
+
 await check("404: markdown recovery document exists", async () => {
   const { status, body } = await get("/404.md");
   must(status === 200, `expected 200, got ${status}`);
@@ -137,7 +145,18 @@ await check("json-ld: homepage carries parseable structured data", async () => {
   }
   must(biz.address.postalCode === "320003", "address postalCode does not match /contact/");
   must(biz.openingHoursSpecification?.length >= 1, "no opening hours in the JSON-LD");
-  return `${types.join(" + ")}, ${biz.openingHoursSpecification.length} hour specs`;
+
+  // Organization completeness: contactPoint AND address, both required.
+  const points = [].concat(biz.contactPoint || []);
+  must(points.length >= 1, "LocalBusiness node has no contactPoint");
+  for (const cp of points) {
+    must(cp["@type"] === "ContactPoint", `contactPoint has @type ${cp["@type"]}`);
+    must(cp.contactType, "a contactPoint is missing contactType");
+    must(cp.telephone || cp.email, `contactPoint "${cp.contactType}" has neither telephone nor email`);
+  }
+  must(biz.address["@type"] === "PostalAddress", "address is not a PostalAddress");
+
+  return `${types.join(" + ")}, ${points.length} contactPoint(s), ${biz.openingHoursSpecification.length} hour specs`;
 });
 
 /* --------------------------------------------- 5. agent instructions / llms.txt */
@@ -181,6 +200,8 @@ const mirrors = [
   "/productie/index.md",
   "/oferta/index.md",
   "/contact/index.md",
+  "/despre/index.md",
+  "/confidentialitate/index.md",
   "/comunicat-de-presa/index.md",
 ];
 
@@ -218,6 +239,64 @@ await check(
   },
   true
 );
+
+/* ------------------------------------------------------- trust anchor pages */
+
+// The audit's bar is 500 characters of real content. Measured on text, not
+// markup, so a page padded with divs cannot pass.
+const textLength = (html) => {
+  const main = html.slice(html.indexOf("<main"), html.lastIndexOf("</main>"));
+  return (main || html)
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<svg[\s\S]*?<\/svg>/gi, "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim().length;
+};
+
+for (const [label, path] of [
+  ["about (/despre/)", "/despre/"],
+  ["privacy (/confidentialitate/)", "/confidentialitate/"],
+  ["contact", "/contact/"],
+]) {
+  await check(`trust page: ${label} is real content`, async () => {
+    const { status, body } = await get(path);
+    must(status === 200, `expected 200, got ${status}`);
+    const chars = textLength(body);
+    must(chars >= 500, `only ${chars} characters of text — the bar is 500`);
+    return `${chars.toLocaleString()} chars`;
+  });
+}
+
+await check("trust page: /about/ and /privacy/ aliases resolve", async () => {
+  const bad = [];
+  for (const [alias, canonical] of [
+    ["/about/", "https://marand-print.ro/despre/"],
+    ["/privacy/", "https://marand-print.ro/confidentialitate/"],
+  ]) {
+    const { status, body } = await get(alias);
+    if (status !== 200) { bad.push(`${alias} -> ${status}`); continue; }
+    if (textLength(body) < 500) bad.push(`${alias} -> thin content`);
+    // The alias must not compete with the canonical Romanian URL.
+    const m = body.match(/<link rel="canonical" href="([^"]+)"/);
+    if (!m || m[1] !== canonical) bad.push(`${alias} -> canonical is ${m?.[1] ?? "missing"}, expected ${canonical}`);
+    if (!/name="robots" content="noindex/.test(body)) bad.push(`${alias} -> alias is not noindex`);
+  }
+  must(bad.length === 0, bad.join("; "));
+  return "both aliases 200, canonical + noindex correct";
+});
+
+await check("trust pages: reachable from the footer on every page", async () => {
+  const bad = [];
+  for (const path of ["/", "/produse/", "/contact/"]) {
+    const { body } = await get(path);
+    if (!/href="[^"]*despre\/"/.test(body)) bad.push(`${path}: no link to /despre/`);
+    if (!/href="[^"]*confidentialitate\/"/.test(body)) bad.push(`${path}: no link to /confidentialitate/`);
+  }
+  must(bad.length === 0, bad.join("; "));
+  return "About + Privacy linked sitewide";
+});
 
 /* --------------------------------------------------------- robots + sitemap */
 

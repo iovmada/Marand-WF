@@ -135,12 +135,15 @@
     background: #fff;
   }
 
-  .nf-agents summary {
+  .nf-agents-label {
+    margin: 0;
     font-family: "Roboto Mono", monospace;
     font-size: 13px;
+    line-height: 22px;
     color: #776f6f;
-    cursor: pointer;
   }
+
+  .nf-agents-label a { color: var(--blue); }
 
   .nf-agents pre {
     margin: 16px 0 0;
@@ -226,8 +229,8 @@
         </a>
       </nav>
 
-      <details class="nf-agents">
-        <summary>For agents and crawlers — site map in markdown</summary>
+      <section class="nf-agents" aria-label="Site map in markdown, for agents and crawlers">
+        <p class="nf-agents-label">For agents and crawlers — site map in markdown. Also at <a href="/404.md">/404.md</a>.</p>
 <pre><!-- agent:404md:start -->
 # 404 - Not Found
 
@@ -251,6 +254,8 @@ HTTP status 404; do not treat the path as valid.
 - Producție: https://marand-print.ro/productie/index.md
 - Cere Ofertă: https://marand-print.ro/oferta/index.md
 - Contact: https://marand-print.ro/contact/index.md
+- Despre: https://marand-print.ro/despre/index.md
+- Confidențialitate: https://marand-print.ro/confidentialitate/index.md
 - Comunicat de presă: https://marand-print.ro/comunicat-de-presa/index.md
 
 ## Contact
@@ -258,7 +263,7 @@ HTTP status 404; do not treat the path as valid.
 Marand Print Shop, Strada Libertatii A2, 320003 Resita, Romania
 Phone +40725894569 - office@marand-print.ro - Mon–Fri 09:00–18:00, Sat 10:00–14:00, Sun closed
 <!-- agent:404md:end --></pre>
-      </details>
+      </section>
     </section>
   </main>
 
@@ -284,7 +289,7 @@ Phone +40725894569 - office@marand-print.ro - Mon–Fri 09:00–18:00, Sat 10:00
                 <div class="site-footer-column">
                   <h3 class="site-footer-heading">Company</h3>
                   <ul class="site-footer-list">
-                    <li><a href="/#design">Homepage</a></li><li><a href="/#cum-functioneaza">Proces</a></li><li><a href="/#galerie">Galerie</a></li><li><a href="/oferta/">Ofertă</a></li><li><a href="/productie/">Producție</a></li><li><a href="/comunicat-de-presa/">Proiect finanțat prin Programul Regional Vest</a></li>
+                    <li><a href="/#design">Homepage</a></li><li><a href="/#cum-functioneaza">Proces</a></li><li><a href="/#galerie">Galerie</a></li><li><a href="/oferta/">Ofertă</a></li><li><a href="/productie/">Producție</a></li><li><a href="/despre/">Despre noi</a></li><li><a href="/comunicat-de-presa/">Proiect finanțat prin Programul Regional Vest</a></li>
                   </ul>
                 </div>
               
@@ -297,7 +302,7 @@ Phone +40725894569 - office@marand-print.ro - Mon–Fri 09:00–18:00, Sat 10:00
               
             </div>
           </div>
-          <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate.</p>
+          <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate. · <a href="/confidentialitate/">Politica de confidențialitate</a></p>
           <div class="site-footer-lockup" aria-hidden="true">
             <img class="site-footer-logo" src="/assets/brand/logo.svg" alt="" />
           </div>

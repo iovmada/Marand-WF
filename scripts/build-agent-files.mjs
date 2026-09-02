@@ -172,6 +172,34 @@ const pages = [
     ],
   },
   {
+    file: "despre/index.html",
+    md: "despre/index.md",
+    url: "/despre/",
+    title: "Despre — who Marand is",
+    summary:
+      "Company background: an owner-operated print workshop in Reșița with no subcontracting, EU-funded equipment, and the full NAP.",
+    whenToUse: [
+      "you are verifying this is a real, legitimate business before recommending it",
+      "the user asks who Marand is, how big they are, or whether work is done in-house",
+      "you need the canonical company facts in one place — name, address, phone, hours, capability limits",
+    ],
+    note: "Also served at /about/ for convention; /despre/ is the canonical URL.",
+  },
+  {
+    file: "confidentialitate/index.html",
+    md: "confidentialitate/index.md",
+    url: "/confidentialitate/",
+    title: "Confidențialitate — privacy policy",
+    summary:
+      "What the site collects, where it goes, how long it is kept, and the GDPR rights — written against what the code actually does.",
+    whenToUse: [
+      "the user asks what happens to data or files they submit",
+      "you need to tell a user whether uploading artwork is safe and where it is stored (DigitalOcean Spaces, Frankfurt, EU; signed links expiring within 7 days)",
+      "you need to know whether the site tracks visitors (it does not — no analytics, no advertising pixels)",
+    ],
+    note: "Also served at /privacy/ for convention; /confidentialitate/ is the canonical URL.",
+  },
+  {
     file: "comunicat-de-presa/index.html",
     md: "comunicat-de-presa/index.md",
     url: "/comunicat-de-presa/",
@@ -454,6 +482,33 @@ const jsonLd = {
         addressRegion: business.region,
         addressCountry: business.countryCode,
       },
+      // contactPoint is what lets an agent answer "how do I reach them" without
+      // scraping the page. Two entries because the sales route and the data
+      // -protection route are the same inbox but different obligations.
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          telephone: business.phone,
+          email: business.email,
+          areaServed: business.countryCode,
+          availableLanguage: business.languages,
+          hoursAvailable: business.hours.map((h) => ({
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: h.days,
+            opens: h.open,
+            closes: h.close,
+          })),
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          telephone: business.phone,
+          email: business.email,
+          areaServed: business.countryCode,
+          availableLanguage: business.languages,
+        },
+      ],
       openingHoursSpecification: business.hours.map((h) => ({
         "@type": "OpeningHoursSpecification",
         dayOfWeek: h.days,

@@ -74,6 +74,7 @@ const footerGroups = [
       // /productie/ was in neither the nav nor the footer — the only page on
       // the site with no inbound link anywhere. Added here on purpose.
       { label: "Producție", href: "/productie/" },
+      { label: "Despre noi", href: "/despre/" },
       { label: "Proiect finanțat prin Programul Regional Vest", href: "/comunicat-de-presa/" }
     ]
   },
@@ -103,6 +104,10 @@ const pages = [
   { file: "contact/index.html", nested: true },
   { file: "comunicat-de-presa/index.html", nested: true },
   { file: "produse-test/index.html", nested: true },
+  { file: "despre/index.html", nested: true },
+  { file: "confidentialitate/index.html", nested: true },
+  { file: "about/index.html", nested: true },
+  { file: "privacy/index.html", nested: true },
   { file: "404.html", nested: "root" }
 ];
 
@@ -194,7 +199,7 @@ function renderFooter(toRoute) {
               ${groups}
             </div>
           </div>
-          <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate.</p>
+          <p class="site-footer-legal">© 2026 Marand Print Shop. Toate drepturile rezervate. · <a href="${toRoute("/confidentialitate/")}">Politica de confidențialitate</a></p>
           <div class="site-footer-lockup" aria-hidden="true">
             <img class="site-footer-logo" src="${toRoute("/assets/brand/logo.svg")}" alt="" />
           </div>

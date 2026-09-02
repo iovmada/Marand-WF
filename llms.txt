@@ -56,6 +56,8 @@ will prepare or fix artwork — but it is arranged case by case through
 - [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.
 - [Cere Ofertă — quote request](https://marand-print.ro/oferta/index.md): The full quote form: project brief plus file upload, routed to office@marand-print.ro.
 - [Contact — address, phone, hours](https://marand-print.ro/contact/index.md): Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
+- [Despre — who Marand is](https://marand-print.ro/despre/index.md): Company background: an owner-operated print workshop in Reșița with no subcontracting, EU-funded equipment, and the full NAP.
+- [Confidențialitate — privacy policy](https://marand-print.ro/confidentialitate/index.md): What the site collects, where it goes, how long it is kept, and the GDPR rights — written against what the code actually does.
 - [Comunicat de presă — EU-funded project](https://marand-print.ro/comunicat-de-presa/index.md): Press release for the Programul Regional Vest 2021-2027 grant that equipped the workshop.
 
 ## Business facts

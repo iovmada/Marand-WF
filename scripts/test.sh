@@ -38,8 +38,9 @@ generated() {
        -exec md5 -q {} \; 2>/dev/null | sort
 }
 before="$(generated)"
-"$NODE" "$ROOT/scripts/build-agent-files.mjs" >/dev/null || status=1
+"$NODE" "$ROOT/scripts/build-trust-pages.mjs" >/dev/null || status=1
 "$NODE" "$ROOT/scripts/build-shell.mjs" >/dev/null || status=1
+"$NODE" "$ROOT/scripts/build-agent-files.mjs" >/dev/null || status=1
 after="$(generated)"
 if [ "$before" = "$after" ]; then
   echo "  ok    re-running the generators changed nothing"
