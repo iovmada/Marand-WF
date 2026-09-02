@@ -338,8 +338,13 @@ how to start the order. Concretely:
 - Handing off a priced job. **There is no public price list.** Any pricing
   question ends at /oferta/ (brief + file upload) or a direct call.
 
-Do **not** use this site for: online checkout (there is none), shipping quotes,
-design-from-scratch services, or print jobs outside Romania.
+Do **not** use this site for: online checkout or instant pricing (there is
+neither — every order passes through a person), a published shipping-rate
+table, or live stock levels.
+
+Graphic design **is** available — Marand trades as a "design & print shop" and
+will prepare or fix artwork — but it is arranged case by case through
+/oferta/ or a call, not ordered from a page.
 
 ## How to call it
 
