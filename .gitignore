@@ -13,3 +13,6 @@ wp-local/
 # Studio scene sources: the 14 MB of original PNGs stay on disk so a bad crop
 # is recoverable, but only the normalised JPGs are deployed.
 assets/studio/scenes/_originals/
+
+# Backend deps installed locally for tests; App Platform installs its own.
+backend/forms-api/node_modules/

@@ -7,6 +7,7 @@ import OpenAI from 'openai';
 import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { buildChatInstructions, chatbotCatalog } from './chatbot-knowledge.js';
+import { wantsMarkdown, setVary } from './negotiate.js';
 
 const app = express();
 
@@ -265,8 +266,58 @@ app.use((req, res, next) => {
   return next();
 });
 
-app.get(['/health', '/api/health'], (_req, res) => {
-  res.json({ ok: true });
+app.get(['/health', '/api/health'], (req, res) => {
+  setVary(res);
+  if (wantsMarkdown(req.get('accept'))) {
+    res.type('text/markdown; charset=utf-8');
+    return res.send(
+      [
+        '# Marand forms API — health',
+        '',
+        '- status: ok',
+        `- time: ${new Date().toISOString()}`,
+        '',
+        'Site entry point for agents: https://marand-print.ro/llms.txt',
+        ''
+      ].join('\n')
+    );
+  }
+  return res.json({ ok: true });
+});
+
+/**
+ * The agent entry point, served with negotiation so a client that asks for
+ * markdown here gets markdown and a correct Vary header — the compliant
+ * behaviour the static site cannot offer.
+ */
+app.get(['/agent', '/api/agent'], (req, res) => {
+  setVary(res);
+  const body = [
+    '# marand-print.ro — agent entry point',
+    '',
+    'Full index with when-to-use guidance: https://marand-print.ro/llms.txt',
+    'Every page as markdown: https://marand-print.ro/llms-full.txt',
+    'Known limits: https://marand-print.ro/AGENTS-README.md',
+    '',
+    '## Notes',
+    '',
+    '- The static site cannot negotiate on Accept; request the .md URLs.',
+    '- No public price list. Pricing goes through https://marand-print.ro/oferta/.',
+    '- POST /api/oferta and /api/contact send real email; confirm with the user first.',
+    ''
+  ].join('\n');
+
+  if (wantsMarkdown(req.get('accept'))) {
+    res.type('text/markdown; charset=utf-8');
+    return res.send(body);
+  }
+  return res.json({
+    ok: true,
+    llms: 'https://marand-print.ro/llms.txt',
+    llmsFull: 'https://marand-print.ro/llms-full.txt',
+    notes: 'https://marand-print.ro/AGENTS-README.md',
+    markdown: 'Send Accept: text/markdown to this endpoint for the markdown form.'
+  });
 });
 
 app.post(['/chat', '/api/chat'], async (req, res) => {

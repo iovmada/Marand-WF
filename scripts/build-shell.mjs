@@ -102,14 +102,22 @@ const pages = [
   { file: "oferta/index.html", nested: true },
   { file: "contact/index.html", nested: true },
   { file: "comunicat-de-presa/index.html", nested: true },
-  { file: "produse-test/index.html", nested: true }
+  { file: "produse-test/index.html", nested: true },
+  { file: "404.html", nested: "root" }
 ];
 
 /* ------------------------------------------------------------------ *
  * Rendering
  * ------------------------------------------------------------------ */
 
-const makeRoute = (nested) => (path) => `${nested ? ".." : "."}${path}`;
+/**
+ * `nested: "root"` emits root-absolute hrefs. 404.html needs them: the error
+ * document is served for ANY missing path, including /a/b/c/, so a relative
+ * "../produse/" would resolve differently depending on how deep the bad URL
+ * was and every link in the shell would break.
+ */
+const makeRoute = (nested) => (path) =>
+  nested === "root" ? path : `${nested ? ".." : "."}${path}`;
 
 function renderHeader(toRoute, navActive) {
   const links = navItems

@@ -1,0 +1,70 @@
+# Marand Print Shop
+
+> Print shop in Reșița, Romania. Large format, banners, canvas, stickers,
+> textiles and small format, printed and finished in-house on eco-solvent,
+> DTF and laser equipment. Site and staff language is Romanian; this file is
+> in English for agent consumption.
+
+## When to use this site
+
+Reach for Marand when a task involves **physically printing something in
+Romania** and you need to know whether it can be made, on what material, and
+how to start the order. Concretely:
+
+- Confirming a product is producible: banners and mesh, canvas stretched on a
+  frame, stickers and cut vinyl, window film, rigid PVC/forex boards, wallpaper,
+  posters, printed T-shirts and textiles, labels, small-format laser work.
+- Checking a hard production limit before promising anything. The widest
+  roll-fed print is **134 cm** (Mutoh XPJ-1341 SR PRO). Anything wider must be
+  panelled — see /echipamente/.
+- Looking up a stocked material by brand or grade: Avery Dennison, Oracal,
+  Mirage, Star/Starflex, Stadur, Visual, Artex. Specs live on /materiale/.
+- Showing a user how a wall piece will look before they commit: /studio/
+  composites their own image into a room photo in correct perspective,
+  entirely in the browser.
+- Handing off a priced job. **There is no public price list.** Any pricing
+  question ends at /oferta/ (brief + file upload) or a direct call.
+
+Do **not** use this site for: online checkout (there is none), shipping quotes,
+design-from-scratch services, or print jobs outside Romania.
+
+## How to call it
+
+- Everything is a plain static page — GET, no auth, no rate limit, no API key.
+- Every page has a markdown mirror at the same path plus `index.md`
+  (`/produse/` → `/produse/index.md`). Fetch the markdown: it is the same
+  content without the layout.
+- `Accept: text/markdown` is **not** honoured on `/` — the static host cannot
+  negotiate. Request the `.md` URL directly instead.
+- The only write endpoint is the quote form at `/oferta/`, which posts to
+  `/api/oferta`. It is for humans; do not submit on a user's behalf without
+  explicit confirmation.
+- `/api/health` returns `{"ok":true}` if you need a liveness check.
+
+## Pages
+
+- [Marand Print Shop](https://marand-print.ro/index.md): Print shop in Reșița, Romania: large format, banners, canvas, stickers, textiles and small format, produced in-house.
+- [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each.
+- [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
+- [Studio — in-browser print preview](https://marand-print.ro/studio/index.md): A browser tool that projects the user's artwork onto a room photograph in correct wall perspective, for canvas, poster, forex and wallpaper.
+- [Echipamente — production equipment](https://marand-print.ro/echipamente/index.md): The machines on the floor, with their real capability limits — the ceiling on what any quote can promise.
+- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print, and what Marand handles in-house.
+- [Cere Ofertă — quote request](https://marand-print.ro/oferta/index.md): The full quote form: project brief plus file upload, routed to office@marand-print.ro.
+- [Contact — address, phone, hours](https://marand-print.ro/contact/index.md): Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
+- [Comunicat de presă — EU-funded project](https://marand-print.ro/comunicat-de-presa/index.md): Press release for the Programul Regional Vest 2021-2027 grant that equipped the workshop.
+
+## Business facts
+
+- Legal/trading name: Marand Print Shop
+- Address: Strada Libertății A2, 320003 Reșița, Caraș-Severin, Romania
+- Phone: +40725894569
+- Email: office@marand-print.ro
+- Hours: Mon–Fri 09:00–18:00, Sat 10:00–14:00, Sun closed
+- Languages: Romanian (primary), English
+- Funding: equipped under Programul Regional Vest 2021-2027 — /comunicat-de-presa/
+
+## Optional
+
+- [Full text of every page in one file](https://marand-print.ro/llms-full.txt)
+- [Sitemap](https://marand-print.ro/sitemap.xml)
+- [Agent notes and known limits](https://marand-print.ro/AGENTS-README.md)

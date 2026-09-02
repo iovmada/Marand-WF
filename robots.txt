@@ -3,4 +3,8 @@ Allow: /
 Disallow: /produse-test/
 Disallow: /backend/
 
+# Machine-readable mirrors. Every page also exists as markdown at the same
+# path plus index.md — see llms.txt for the index and when-to-use guidance.
+# Accept-header negotiation is NOT available on this host; request the .md
+# URL directly. Details: /AGENTS-README.md
 Sitemap: https://marand-print.ro/sitemap.xml
