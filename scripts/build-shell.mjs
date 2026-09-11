@@ -269,6 +269,10 @@ function renderFavicons(toRoute) {
     // one of these that stays sharp on a hidpi tab. The .ico is the fallback.
     `<link rel="icon" type="image/svg+xml" href="${toRoute("/icon.svg")}" />`,
     `<link rel="icon" href="${toRoute("/favicon.ico")}" sizes="32x32" />`,
+    // 192 = 48x4. Google asks for a square favicon that is a multiple of 48px
+    // for search results, and reads only icon / shortcut icon / apple-touch-icon
+    // -- never the manifest -- so the 192 tile has to be linked here to be seen.
+    `<link rel="icon" type="image/png" sizes="192x192" href="${toRoute("/assets/brand/icon-192.png")}" />`,
     `<link rel="apple-touch-icon" href="${toRoute("/apple-touch-icon.png")}" />`,
     `<link rel="manifest" href="${toRoute("/site.webmanifest")}" />`,
     `<meta name="theme-color" content="#0c24c2" />`,
