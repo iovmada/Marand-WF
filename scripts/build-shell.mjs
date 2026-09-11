@@ -8,7 +8,10 @@
  * static markup. This script renders the same markup ahead of time; the
  * browser script now only binds behaviour to it.
  *
- * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR THE NAV AND FOOTER.
+ * It also owns the favicon / manifest links in every page head, for the same
+ * reason: 15 HTML files, one place to change them.
+ *
+ * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR THE NAV, FOOTER AND FAVICONS.
  * After editing anything below, run:  node scripts/build-shell.mjs
  * and commit the regenerated HTML alongside it.
  */
@@ -240,6 +243,54 @@ function replaceShellBlock(html, attr, inner) {
   return `${html.slice(0, open.index)}<div ${attr}>\n${inner}\n  </div>${html.slice(end)}`;
 }
 
+/**
+ * Favicon + web app manifest links, injected into every page head.
+ *
+ * These live here rather than in the page source because there are 15 HTML
+ * files and nothing else owns the head across all of them — hand-editing them
+ * would leave 15 copies with no single source of truth.
+ *
+ * favicon.ico and apple-touch-icon.png sit at the web root on purpose: both
+ * are fetched from fixed root paths by browsers and by iOS even when no
+ * <link> points at them, so the markup below is belt-and-braces.
+ *
+ * icon.svg and favicon.ico are the round mark, as drawn. The apple-touch and
+ * manifest tiles are deliberately SQUARE versions of it: iOS and Android apply
+ * their own mask to a home-screen icon, so a round source with transparent
+ * corners gets masked twice and shows dark corners behind the circle.
+ */
+const FAVICON_START = "<!-- marand:favicons -->";
+const FAVICON_END = "<!-- /marand:favicons -->";
+
+function renderFavicons(toRoute) {
+  return [
+    FAVICON_START,
+    // SVG first: a browser that understands it stops here, and it is the only
+    // one of these that stays sharp on a hidpi tab. The .ico is the fallback.
+    `<link rel="icon" type="image/svg+xml" href="${toRoute("/icon.svg")}" />`,
+    `<link rel="icon" href="${toRoute("/favicon.ico")}" sizes="32x32" />`,
+    `<link rel="apple-touch-icon" href="${toRoute("/apple-touch-icon.png")}" />`,
+    `<link rel="manifest" href="${toRoute("/site.webmanifest")}" />`,
+    `<meta name="theme-color" content="#0c24c2" />`,
+    FAVICON_END,
+  ].join("\n");
+}
+
+/**
+ * Insert-or-replace between the markers, so re-running is a no-op once the
+ * block is present — same contract as the shell placeholders above.
+ */
+function applyFavicons(html, toRoute) {
+  const block = renderFavicons(toRoute);
+  const existing = new RegExp(
+    `${FAVICON_START}[\\s\\S]*?${FAVICON_END}\\n?`,
+    "i"
+  );
+  return existing.test(html)
+    ? html.replace(existing, `${block}\n`)
+    : html.replace("</head>", `${block}\n</head>`);
+}
+
 function navActiveFor(html) {
   const body = /<body([^>]*)>/i.exec(html);
   if (!body) return "";
@@ -278,6 +329,8 @@ for (const page of pages) {
     failed++;
     continue;
   }
+
+  html = applyFavicons(html, toRoute);
 
   if (html === original) {
     console.log(`  ok    ${page.file} (unchanged)`);
