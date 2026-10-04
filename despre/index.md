@@ -28,7 +28,7 @@ Ultima actualizare: 4 octombrie 2026
 - **Email**
 - office@marand-print.ro
 - **Program**
-- Luni–Vineri 09:00–18:00 · Sâmbătă 10:00–14:00
+- Luni–Vineri 09:00–17:00 · Sâmbătă–Duminică: închis
 - **Lățime maximă print**
 - 1361 mm (136,1 cm)
 

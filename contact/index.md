@@ -23,7 +23,7 @@ Dacă vrei doar să deschizi conversația, completează formularul scurt și rev
 
 **Adresă:** Strada Libertății A2, 320003 Reșița, România
 
-**Program:** Lun–Vin: 9:00 – 18:00, Sâm: 10:00 – 14:00
+**Program:** Luni–Vineri: 09:00–17:00, Sâmbătă–Duminică: închis
 
 Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.
 

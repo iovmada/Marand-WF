@@ -220,7 +220,7 @@ const pages = [
       ["Adresă", "Strada Libertății A2, 320003 Reșița, Caraș-Severin"],
       ["Telefon", '<a href="tel:+40725894569">0725 894 569</a>'],
       ["Email", '<a href="mailto:office@marand-print.ro">office@marand-print.ro</a>'],
-      ["Program", "Luni–Vineri 09:00–18:00 · Sâmbătă 10:00–14:00"],
+      ["Program", "Luni–Vineri 09:00–17:00 · Sâmbătă–Duminică: închis"],
       ["Lățime maximă print", "1361 mm (136,1 cm)"],
     ],
     actions: [

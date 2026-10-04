@@ -47,10 +47,9 @@ const business = {
   phoneDisplay: "0725894569",
   email: "office@marand-print.ro",
   hours: [
-    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], open: "09:00", close: "18:00" },
-    { days: ["Saturday"], open: "10:00", close: "14:00" },
+    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], open: "09:00", close: "17:00" },
   ],
-  hoursHuman: "Mon–Fri 09:00–18:00, Sat 10:00–14:00, Sun closed",
+  hoursHuman: "Mon–Fri 09:00–17:00, Sat–Sun closed",
   sameAs: [
     "https://www.instagram.com/marandprint",
     "https://www.facebook.com/profile.php?id=61588679174224",

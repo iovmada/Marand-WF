@@ -82,7 +82,7 @@ const footerGroups = [
       { label: "office@marand-print.ro", href: "mailto:office@marand-print.ro", absolute: true },
       { label: "0725894569", href: "tel:+40725894569", absolute: true },
       { label: "Cere ofertă", href: "/oferta/" },
-      { label: "Luni–Vineri: 09:00–18:00 · Sâmbătă: 10:00–14:00", href: "/contact/" },
+      { label: "Luni–Vineri: 09:00–17:00 · Sâmbătă–Duminică: închis", href: "/contact/" },
       { label: "Strada Libertății A2, 320003 Reșița", href: "/contact/" },
       { label: "Deschide traseul", href: "https://www.google.com/maps/dir/?api=1&destination=Strada%20Libert%C4%83%C8%9Bii%20A2%2C%20320003%20Re%C8%99i%C8%9Ba%2C%20Rom%C3%A2nia", absolute: true }
     ]

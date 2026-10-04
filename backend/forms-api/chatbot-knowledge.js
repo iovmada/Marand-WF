@@ -12,7 +12,7 @@ export const chatbotCatalog = {
     productsPage: '/produse/',
     materialsPage: '/materiale/',
     contactPage: '/contact/',
-    hours: 'Luni–Vineri 09:00–18:00; Sâmbătă 10:00–14:00'
+    hours: 'Luni–Vineri 09:00–17:00; Sâmbătă–Duminică: închis'
   },
   production: {
     largeFormatPrintMaxMm: 1361,

@@ -154,7 +154,7 @@ replace_all("#{ROOT}/marand-wireframes-ro.html", common_rewire + [
   [">Address<", ">Adresă<"],
   ["Street Name, Nr. XX<br>City, Romania", "Numele străzii, nr. XX<br>Oraș, România"],
   ["Working Hours", "Program"],
-  ["Mon–Fri: 9:00 – 18:00<br>Sat: 10:00 – 14:00", "Lun–Vin: 9:00 – 18:00<br>Sâm: 10:00 – 14:00"],
+  ["Mon–Fri: 9:00 – 18:00<br>Sat: 10:00 – 14:00", "Luni–Vineri: 09:00–17:00<br>Sâmbătă–Duminică: închis"],
   ["Google Maps Embed", "Embed Google Maps"],
   [">Name<", ">Nume<"],
   ['placeholder="Your name"', 'placeholder="Numele tău"'],
@@ -175,7 +175,7 @@ replace_all("#{ROOT}/marand-wireframes-ro.html", common_rewire + [
   ["Send Quote Request", "Trimite cererea de ofertă"],
   ["Professional print shop — large format, banners, canvas, stickers, textiles, and more. Quality printing with fast turnaround.", "Print shop profesionist — large format, bannere, canvas, stickere, textile și multe altele. Calitate și execuție rapidă."],
   ["About Us", "Despre noi"],
-  ["Mon–Fri: 9–18", "Lun–Vin: 9–18"],
+  ["Mon–Fri: 9–18", "Luni–Vineri: 09:00–17:00 · Sâmbătă–Duminică: închis"],
   ["All rights reserved.", "Toate drepturile rezervate."],
   ["Terms & Conditions · Privacy Policy", "Termeni și condiții · Politica de confidențialitate"]
 ])
