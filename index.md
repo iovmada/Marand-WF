@@ -16,7 +16,7 @@ Markdown source: https://marand-print.ro/index.md
 
 Bannere canvas stickere mesh textile
 
-Print la calitate japoneza
+Print cu tehnologie japoneză
 
 Bannere, mesh, canvas, stickere, textile
 
@@ -28,33 +28,33 @@ Bannere, mesh, canvas, stickere, textile
 
 ## Produse populare
 
-PVC 440g, full color, tivuit și cu capse
+Bannere PVC, mesh și hârtie blueback, cu finisaje potrivite proiectului
 
-### Printuri Large Format
+### Printuri de mari dimensiuni
 
-de la 12 €/m²
+Preț la cerere
 
-Canvas premium din bumbac, ramă din lemn inclusă
+Canvas din poliester, întins pe șasiu din lemn
 
 ### Canvas întins pe ramă
 
-de la 25 €
+Preț la cerere
 
-PVC 440g, full color, tivuit și cu capse
+Tricouri și textile personalizate prin transfer DTF
 
 ### Tricouri și textile
 
-de la 12 €/m²
+Preț la cerere
 
-Canvas premium din bumbac, ramă din lemn inclusă
+Frontlit, blockout sau mesh, cu tiv și capse conform configurației
 
 ### Bannere și mesh
 
-de la 25 €
+Preț la cerere
 
 ## De la fișier la produsul final, în 4 pași simpli .
 
-Fie că plasezi comanda online sau vii în shop, procesul este rapid și clar.
+Trimite proiectul online sau vino în atelier. Confirmăm produsul, materialul și termenul înainte de producție.
 
 ### Alege, Produsul
 
@@ -64,19 +64,19 @@ Alege tipul de produs, dimensiunea, materialul și cantitatea.
 
 Trimite fișierul pregătit pentru print sau lasă-ne să te ajutăm cu grafica.
 
-### Printăm Și, Finisăm
+### Printăm și, Finisăm
 
 Comanda ta este printată, tăiată, laminată sau presată — cu verificări de calitate la fiecare pas.
 
-### Ridicare Sau, Livrare
+### Ridicare sau, Livrare
 
-Ridici din shop sau livrăm direct la tine. Termen rapid garantat.
+Ridici din shop sau livrăm direct la tine. Termenul de predare este confirmat în ofertă.
 
 ### Formate de fișiere acceptate
 
-Pentru cele mai bune rezultate, trimite fișiere vectoriale (PDF, AI, EPS) sau imagini de înaltă rezoluție (minimum 300 DPI). Preferăm modul de culoare CMYK.
+Trimite fișiere vectoriale (PDF, AI, EPS) sau imagini la dimensiunea finală de print. Verificăm rezoluția, culorile și marginile necesare produsului ales înainte de producție.
 
-Fie că plasezi comanda online sau vii în shop, procesul este rapid și clar.
+Exemple de printuri pentru decor, prezentări și evenimente. Cere detalii despre materialele și finisajele potrivite proiectului tău.
 
 ## Partenerul tău local pentru print.
 
@@ -84,7 +84,7 @@ Marand este un print shop profesionist, echipat cu tehnologie modernă pentru pr
 
 Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.
 
-### 134cm
+### 136,1 cm
 
 Lățime maximă de print
 
@@ -92,11 +92,11 @@ Lățime maximă de print
 
 Echipamente profesionale
 
-### 24h
+### La ofertare
 
-Timp mediu de execuție
+Termen de execuție
 
-### Fără minim
+### După produs
 
 Cantitate minimă
 

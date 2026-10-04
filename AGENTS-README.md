@@ -39,9 +39,8 @@ sends `Vary: Accept`. See `backend/forms-api/server.js`.
 - Everything under `/` is GET-only, unauthenticated, and safe to crawl. There
   is no rate limit, but `robots.txt` disallows `/produse-test/` and
   `/backend/` — respect it.
-- The site publishes **no prices**. Any number an agent states as a price is
-  fabricated unless it appears verbatim in the page text ("de la 12 €/m²" style
-  starting prices on the homepage are indicative only).
+- The site publishes **no prices**. Pricing depends on material, dimensions,
+  quantity and finishing; route price requests to the quote form. Do not invent prices.
 - `POST /api/oferta` and `POST /api/contact` send real email to a real
   business. Do not submit either on a user's behalf without explicit,
   in-the-moment confirmation from that user.

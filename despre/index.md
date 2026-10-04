@@ -13,11 +13,11 @@ Markdown source: https://marand-print.ro/despre/index.md
 Also served at /about/ for convention; /despre/ is the canonical URL.
 
 ---
-## Un atelier, nu un intermediar.
+## Atelier de print în Reșița.
 
-Marand este un design & print shop din Reșița. Tot ce vindem se produce pe echipamentele noastre, în atelierul nostru — de la fișierul primit până la produsul ambalat.
+Marand este un design & print shop din Reșița. În atelier verificăm fișierele, printăm, laminăm, decupăm și aplicăm transferuri textile. Materialul, tehnologia și finisarea fiecărei lucrări sunt stabilite în ofertă.
 
-Ultima actualizare: 2 septembrie 2026
+Ultima actualizare: 4 octombrie 2026
 
 - **Denumire**
 - Marand Print Shop
@@ -30,7 +30,7 @@ Ultima actualizare: 2 septembrie 2026
 - **Program**
 - Luni–Vineri 09:00–18:00 · Sâmbătă 10:00–14:00
 - **Lățime maximă print**
-- 134 cm
+- 1361 mm (136,1 cm)
 
 ## Ce facem
 
@@ -40,9 +40,9 @@ Ne numim „design & print shop" pentru că nu ne oprim la print. Dacă ai doar 
 
 ## De ce contează că avem atelier propriu
 
-Nu subcontractăm nimic. Printul, laminarea, tăierea pe contur, presarea textilelor și finisarea manuală se întâmplă toate în aceeași hală. Asta înseamnă trei lucruri concrete pentru tine: termenul depinde doar de noi, o corecție se poate face pe loc, iar dacă ceva iese prost îl refacem fără să negociem cu un furnizor.
+Printul, laminarea, tăierea pe contur, aplicarea autocolantului pe Bond și transferurile textile sunt etape ale fluxului nostru de producție. Verificăm cerințele înainte de lucru și confirmăm materialul, finisarea și termenul în ofertă.
 
-Termenul mediu de execuție este de 24 de ore. Nu avem cantitate minimă — un singur canvas trece prin același flux ca o mie de stickere. Lățimea maximă de print este de 134 cm; peste ea, lucrarea se împarte în panouri. Detaliile despre utilaje sunt pe pagina de echipamente , iar fluxul complet pe pagina de producție .
+Termenul și tirajul minim depind de produs, material și finisaje. Canvasul și textilele pot fi comandate de la o bucată; celelalte minime sunt precizate în catalog. Lățimea tehnică maximă de print este de 1361 mm (136,1 cm), iar cea de tăiere este de 1320 mm (132 cm). Formatele care nu încap prin orientare se realizează în segmente, conform planului confirmat. Detaliile despre utilaje sunt pe pagina de echipamente , iar fluxul complet pe pagina de producție .
 
 ## Cu cine lucrăm
 

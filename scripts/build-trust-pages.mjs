@@ -29,7 +29,7 @@ import { dirname, join, resolve } from "path";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const ORIGIN = "https://marand-print.ro";
-const UPDATED = "2 septembrie 2026";
+const UPDATED = "4 octombrie 2026";
 
 /* ------------------------------------------------------------------ *
  * Shared chrome — the design system, exactly as Rule 03/04/06 defines it.
@@ -193,20 +193,20 @@ const pages = [
   {
     dir: "despre",
     alias: "about",
-    title: "Marand — Despre noi",
+    title: "Atelier de print digital în Reșița — Despre Marand",
     description:
-      "Cine este Marand: print shop cu atelier propriu în Reșița, echipat prin Programul Regional Vest, care produce large format, canvas, stickere și textile fără subcontractori.",
+      "Cine este Marand: print shop cu atelier propriu în Reșița, echipat prin Programul Regional Vest, care produce large format, canvas, stickere și textile, cu tehnologia și termenul confirmate pentru fiecare proiect.",
     chip: "despre marand",
-    heading: "Un atelier, nu un intermediar.",
-    lede: "Marand este un design & print shop din Reșița. Tot ce vindem se produce pe echipamentele noastre, în atelierul nostru — de la fișierul primit până la produsul ambalat.",
+    heading: "Atelier de print în Reșița.",
+    lede: "Marand este un design & print shop din Reșița. În atelier verificăm fișierele, printăm, laminăm, decupăm și aplicăm transferuri textile. Materialul, tehnologia și finisarea fiecărei lucrări sunt stabilite în ofertă.",
     body: `
       <h2>Ce facem</h2>
       <p>Printăm large format, bannere și mesh, canvas întins pe ramă, stickere și folii decupate, folie pentru geam, plăci rigide, wallpaper, tricouri și textile, precum și lucrări de format mic — etichete, documente color, tiraje mici. Lista completă, cu materialele și finisajele pentru fiecare, este pe <a href="../produse/">pagina de produse</a>.</p>
       <p>Ne numim „design &amp; print shop" pentru că nu ne oprim la print. Dacă ai doar o idee și nicio machetă, pregătim noi grafica. Dacă ai un fișier, îl verificăm înainte să pornim mașina — rezoluție, spațiu de culoare, margini de siguranță, text convertit în curbe. Cele mai multe probleme de print sunt probleme de fișier, iar acelea se rezolvă mai ieftin înainte de a consuma material.</p>
 
       <h2>De ce contează că avem atelier propriu</h2>
-      <p>Nu subcontractăm nimic. Printul, laminarea, tăierea pe contur, presarea textilelor și finisarea manuală se întâmplă toate în aceeași hală. Asta înseamnă trei lucruri concrete pentru tine: termenul depinde doar de noi, o corecție se poate face pe loc, iar dacă ceva iese prost îl refacem fără să negociem cu un furnizor.</p>
-      <p>Termenul mediu de execuție este de 24 de ore. Nu avem cantitate minimă — un singur canvas trece prin același flux ca o mie de stickere. Lățimea maximă de print este de 134 cm; peste ea, lucrarea se împarte în panouri. Detaliile despre utilaje sunt pe <a href="../echipamente/">pagina de echipamente</a>, iar fluxul complet pe <a href="../productie/">pagina de producție</a>.</p>
+      <p>Printul, laminarea, tăierea pe contur, aplicarea autocolantului pe Bond și transferurile textile sunt etape ale fluxului nostru de producție. Verificăm cerințele înainte de lucru și confirmăm materialul, finisarea și termenul în ofertă.</p>
+      <p>Termenul și tirajul minim depind de produs, material și finisaje. Canvasul și textilele pot fi comandate de la o bucată; celelalte minime sunt precizate în catalog. Lățimea tehnică maximă de print este de 1361 mm (136,1 cm), iar cea de tăiere este de 1320 mm (132 cm). Formatele care nu încap prin orientare se realizează în segmente, conform planului confirmat. Detaliile despre utilaje sunt pe <a href="../echipamente/">pagina de echipamente</a>, iar fluxul complet pe <a href="../productie/">pagina de producție</a>.</p>
 
       <h2>Cu cine lucrăm</h2>
       <p>Cu afaceri locale care au nevoie de semnalistică și materiale de prezentare, cu agenții care livrează mai departe către clienții lor, cu organizatori de evenimente și târguri, cu artiști care își tipăresc lucrările pe canvas, și cu persoane fizice care vor un singur tablou pentru living. Nu avem un client „prea mic".</p>
@@ -221,7 +221,7 @@ const pages = [
       ["Telefon", '<a href="tel:+40725894569">0725 894 569</a>'],
       ["Email", '<a href="mailto:office@marand-print.ro">office@marand-print.ro</a>'],
       ["Program", "Luni–Vineri 09:00–18:00 · Sâmbătă 10:00–14:00"],
-      ["Lățime maximă print", "134 cm"],
+      ["Lățime maximă print", "1361 mm (136,1 cm)"],
     ],
     actions: [
       ["cta cta-primary cta-pill", "../oferta/", "Cere ofertă"],

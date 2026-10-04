@@ -25,7 +25,7 @@ JPG, PNG, WebP sau HEIC. Trage fișierul aici sau apasă pentru a-l alege.
 
 ## Tipul de print
 
-Fiecare produs se comportă diferit — canvasul are grosime, posterul înrămat are ramă și sticlă, bannerul se agață.
+Previzualizarea este orientativă. Materialul, grosimea suportului, rama, dimensiunile și disponibilitatea se confirmă în ofertă.
 
 ## Unde vreau să îl văd?
 

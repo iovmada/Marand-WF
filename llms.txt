@@ -12,12 +12,12 @@ Romania** and you need to know whether it can be made, on what material, and
 how to start the order. Concretely:
 
 - Confirming a product is producible: banners and mesh, canvas stretched on a
-  frame, stickers and cut vinyl, window film, rigid PVC/forex boards, wallpaper,
+  frame, stickers and cut vinyl, window film, Bond ACM, PMMA and Stadur panels,
   posters, printed T-shirts and textiles, labels, small-format laser work.
 - Checking a hard production limit before promising anything. The widest
-  roll-fed print is **134 cm** (Mutoh XPJ-1341 SR PRO). Anything wider must be
+  roll-fed print is **136,1 cm** (Mutoh XpertJet 1341SR Pro). Formats that cannot fit in either orientation must be
   panelled — see /echipamente/.
-- Looking up a stocked material by brand or grade: Avery Dennison, Oracal,
+- Looking up a material by brand or grade (stock requires human confirmation): Avery Dennison, Oracal,
   Mirage, Star/Starflex, Stadur, Visual, Artex. Specs live on /materiale/.
 - Showing a user how a wall piece will look before they commit: /studio/
   composites their own image into a room photo in correct perspective,
@@ -50,10 +50,10 @@ will prepare or fix artwork — but it is arranged case by case through
 
 - [Marand Print Shop](https://marand-print.ro/index.md): Print shop in Reșița, Romania: large format, banners, canvas, stickers, textiles and small format, produced in-house.
 - [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each.
-- [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
+- [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
 - [Studio — in-browser print preview](https://marand-print.ro/studio/index.md): A browser tool that projects the user's artwork onto a room photograph in correct wall perspective, for canvas, poster, forex and wallpaper.
 - [Echipamente — production equipment](https://marand-print.ro/echipamente/index.md): The machines on the floor, with their real capability limits — the ceiling on what any quote can promise.
-- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.
+- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, with technology and finishing confirmed per project.
 - [Cere Ofertă — quote request](https://marand-print.ro/oferta/index.md): The full quote form: project brief plus file upload, routed to office@marand-print.ro.
 - [Contact — address, phone, hours](https://marand-print.ro/contact/index.md): Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
 - [Despre — who Marand is](https://marand-print.ro/despre/index.md): Company background: an owner-operated print workshop in Reșița with no subcontracting, EU-funded equipment, and the full NAP.

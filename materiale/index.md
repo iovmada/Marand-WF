@@ -1,12 +1,12 @@
 # Materiale — materials catalogue with technical specs
 
-> Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
+> Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
 
 Canonical HTML: https://marand-print.ro/materiale/
 Markdown source: https://marand-print.ro/materiale/index.md
 
 **When to use this page**
-- the user names a material, brand or grade and you need to confirm it is stocked
+- the user names a material, brand or grade and you need to identify the material; current stock requires human confirmation
 - you need technical specs: grammage, width, adhesive type, indoor vs outdoor rating, durability
 - you are choosing between two substrates for a stated environment
 
@@ -14,7 +14,7 @@ Markdown source: https://marand-print.ro/materiale/index.md
 ---
 ## Materiale profesionale, cu specificații complete.
 
-Lucrăm doar cu branduri testate zi de zi în producție: Avery Dennison, Oracal, Stadur, Mirage, Star și Starflex. Mai jos găsești gama completă cu gramaje, durabilitate, dimensiuni și aplicații recomandate — ca să alegi mediul potrivit din primul click.
+Lucrăm doar cu branduri testate zi de zi în producție: Avery Dennison, Oracal, Stadur, Mirage, Star și Starflex. Mai jos găsești materiale cu gramaje, dimensiuni și aplicații recomandate — ca să alegi suportul potrivit. Lățimile listate sunt variante de material, nu aria maximă de print a atelierului. Disponibilitatea și lățimea utilizată în proiect se confirmă în ofertă; unele role necesită debitare înainte de imprimare.
 
 ## Vinyl printabil pentru vitrine, branding și colantare.
 
@@ -42,14 +42,14 @@ Folie alb lucios, monomerică, adeziv permanent — versatilă pentru semnalisti
 - **Ideal pentru**
 - signage, expoziții, panouri, materiale promo
 
-### MPI 2800 Standard
+### MPI 2800 / MPI 2801
 
-Polimerică alb lucios, opțiune permanent sau removable — raport bun calitate/preț pentru volume.
+Folie polimerică alb lucios: MPI 2800 permanent sau MPI 2801 detașabil — raport bun calitate/preț pentru volume.
 
 - **Specificații**
 - polimeric · alb lucios
 - **Adeziv**
-- permanent / removable
+- MPI 2800 permanent / MPI 2801 detașabil
 - **Ideal pentru**
 - billboarduri, postere, vitrine, signage
 
@@ -60,7 +60,7 @@ Vinyl polimeric plasticizat colorat, 64 µm — 118 culori lucioase plus 2 mate,
 - **Specificații**
 - 64 µm · acrilic permanent
 - **Durabilitate**
-- până la 8 ani
+- până la 8 ani, în condițiile fișei materialului și ale expunerii
 - **Culori**
 - 118 lucioase + 2 mate
 
@@ -92,12 +92,12 @@ Folie perforată pentru vitrine — print vizibil afară, vizibilitate dinăuntr
 
 ### Frosty Airfree
 
-Folie cu efect sablat și tehnologie airfree — aplicare fără bule, fără unelte speciale.
+Folie cu efect sablat și canale de evacuare a aerului — aplicare conform fișei materialului, pe sticlă pregătită corespunzător.
 
 - **Specificații**
 - 80 µm · adeziv acrilic
 - **Durabilitate**
-- 5–7 ani
+- 5–7 ani, estimativ, în funcție de expunere și aplicare
 - **Lățimi**
 - 1.05 / 1.22 / 1.37 / 1.55 m
 
@@ -105,7 +105,7 @@ Folie cu efect sablat și tehnologie airfree — aplicare fără bule, fără un
 
 Pentru proiectele unde textura, reflexia și redarea culorii contează — de la blueback urban până la canvas pe ramă.
 
-### Blueback 120g
+### Blueback 120 g/m²
 
 Hârtie blueback mată pentru afișaj urban și billboarduri — spate albastru pentru opacitate la lipire.
 
@@ -116,7 +116,7 @@ Hârtie blueback mată pentru afișaj urban și billboarduri — spate albastru 
 - **Lungime rolă**
 - 200 / 300 m
 
-### Art Photo Paper Glossy 200g
+### Art Photo Paper Glossy 200 g/m²
 
 Hârtie foto lucioasă pentru postere premium și reproduceri — contrast bun, redare fidelă a culorilor.
 
@@ -168,12 +168,12 @@ Bannerul standard pentru fațade și plase publicitare — coated frontlit cu ec
 
 Bandă de transfer Oracal pentru aplicare litere și logo-uri, plus laminări Avery DOL în finisaj lucios sau mat pentru protecție UV și aspect premium.
 
-### Oratape MT 95
+### ORATAPE MT95
 
-Bandă transfer transparentă low-tack pentru mutarea elementelor decupate — aliniere precisă, fără urme.
+Bandă de transfer transparentă cu aderență medie pentru mutarea elementelor decupate — aliniere precisă, fără urme.
 
 - **Specificații**
-- 150 µm · polyacrilic low-tack
+- 147 µm cu adeziv · poliacrilic, aderență medie
 - **Lățimi**
 - 0.5 / 1.0 / 1.22 m × 50 m
 - **Ideal pentru**
@@ -203,14 +203,14 @@ Laminare mată polimerică pentru aspect anti-reflex și soft — finisaj premiu
 
 ## Suporturi rigide pentru fațade, displays și semnalistică.
 
-Aluminiu compozit pentru fațade, acrilic cast PMMA pentru lightbox-uri și branding premium, plăci PVC compozit ușoare pentru displays interior.
+Aluminiu compozit pentru fațade, acrilic cast PMMA pentru lightbox-uri și branding premium, plăci compozite Stadur fără PVC pentru displays interior.
 
 ### Placă Bond PVDF 4mm
 
 Aluminiu compozit cu finisaj PVDF — fațade, sisteme ventilate și semnalistică permanentă rezistentă la UV.
 
 - **Specificații**
-- 4 mm · miez aluminiu compozit
+- 4 mm · fețe din aluminiu, miez conform fișei suportului
 - **Finisaj**
 - PVDF (rezistent UV)
 - **Ideal pentru**
@@ -240,25 +240,25 @@ Acrilic cast pentru displays iluminate — transmisie luminoasă controlată în
 
 ### Easyprint
 
-Placă rigidă ușoară cu miez foam și fețe poliolefină mat — manevrare simplă pentru displays și panouri interior.
+Placă rigidă ușoară, fără PVC, cu miez XPS și fețe Stadurlon pe bază de polipropilenă — pentru panouri de prezentare și semnalistică de interior.
 
 - **Specificații**
-- miez XPS · fețe poliolefină
+- miez XPS · fețe Stadurlon (polipropilenă)
 - **Greutate**
 - foarte lejeră
 - **Ideal pentru**
 - displays, POS/POP, panouri interior
 
-## Comunicare schimbabilă pe orice suprafață metalică.
+## Comunicare schimbabilă pe suprafețe compatibile cu magneți.
 
 Folie magnetică albă printabilă — disponibilă în cinci grosimi pentru a alege aderența potrivită aplicației tale.
 
 ### Folie Magnetică Albă
 
-Folie magnetică albă cu suprafață printabilă — magnet izotrop, aderență sigură pe metal, repoziționabilă.
+Folie magnetică albă cu suprafață printabilă — magnet izotrop, aderență pe suprafețe feromagnetice compatibile, repoziționabilă.
 
 - **Grosimi**
-- 300 / 400 / 500 / 600 / 850 µ
+- 300 / 400 / 500 / 600 / 850 µm
 - **Forță**
 - 11–40 g/cm² (în funcție de grosime)
 - **Ideal pentru**

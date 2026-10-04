@@ -12,12 +12,12 @@ Romania** and you need to know whether it can be made, on what material, and
 how to start the order. Concretely:
 
 - Confirming a product is producible: banners and mesh, canvas stretched on a
-  frame, stickers and cut vinyl, window film, rigid PVC/forex boards, wallpaper,
+  frame, stickers and cut vinyl, window film, Bond ACM, PMMA and Stadur panels,
   posters, printed T-shirts and textiles, labels, small-format laser work.
 - Checking a hard production limit before promising anything. The widest
-  roll-fed print is **134 cm** (Mutoh XPJ-1341 SR PRO). Anything wider must be
+  roll-fed print is **136,1 cm** (Mutoh XpertJet 1341SR Pro). Formats that cannot fit in either orientation must be
   panelled — see /echipamente/.
-- Looking up a stocked material by brand or grade: Avery Dennison, Oracal,
+- Looking up a material by brand or grade (stock requires human confirmation): Avery Dennison, Oracal,
   Mirage, Star/Starflex, Stadur, Visual, Artex. Specs live on /materiale/.
 - Showing a user how a wall piece will look before they commit: /studio/
   composites their own image into a room photo in correct perspective,
@@ -50,10 +50,10 @@ will prepare or fix artwork — but it is arranged case by case through
 
 - [Marand Print Shop](https://marand-print.ro/index.md): Print shop in Reșița, Romania: large format, banners, canvas, stickers, textiles and small format, produced in-house.
 - [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each.
-- [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
+- [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
 - [Studio — in-browser print preview](https://marand-print.ro/studio/index.md): A browser tool that projects the user's artwork onto a room photograph in correct wall perspective, for canvas, poster, forex and wallpaper.
 - [Echipamente — production equipment](https://marand-print.ro/echipamente/index.md): The machines on the floor, with their real capability limits — the ceiling on what any quote can promise.
-- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.
+- [Producție — production and execution services](https://marand-print.ro/productie/index.md): How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, with technology and finishing confirmed per project.
 - [Cere Ofertă — quote request](https://marand-print.ro/oferta/index.md): The full quote form: project brief plus file upload, routed to office@marand-print.ro.
 - [Contact — address, phone, hours](https://marand-print.ro/contact/index.md): Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
 - [Despre — who Marand is](https://marand-print.ro/despre/index.md): Company background: an owner-operated print workshop in Reșița with no subcontracting, EU-funded equipment, and the full NAP.
@@ -88,7 +88,7 @@ will prepare or fix artwork — but it is arranged case by case through
 
 Bannere canvas stickere mesh textile
 
-Print la calitate japoneza
+Print cu tehnologie japoneză
 
 Bannere, mesh, canvas, stickere, textile
 
@@ -100,33 +100,33 @@ Bannere, mesh, canvas, stickere, textile
 
 ## Produse populare
 
-PVC 440g, full color, tivuit și cu capse
+Bannere PVC, mesh și hârtie blueback, cu finisaje potrivite proiectului
 
-### Printuri Large Format
+### Printuri de mari dimensiuni
 
-de la 12 €/m²
+Preț la cerere
 
-Canvas premium din bumbac, ramă din lemn inclusă
+Canvas din poliester, întins pe șasiu din lemn
 
 ### Canvas întins pe ramă
 
-de la 25 €
+Preț la cerere
 
-PVC 440g, full color, tivuit și cu capse
+Tricouri și textile personalizate prin transfer DTF
 
 ### Tricouri și textile
 
-de la 12 €/m²
+Preț la cerere
 
-Canvas premium din bumbac, ramă din lemn inclusă
+Frontlit, blockout sau mesh, cu tiv și capse conform configurației
 
 ### Bannere și mesh
 
-de la 25 €
+Preț la cerere
 
 ## De la fișier la produsul final, în 4 pași simpli .
 
-Fie că plasezi comanda online sau vii în shop, procesul este rapid și clar.
+Trimite proiectul online sau vino în atelier. Confirmăm produsul, materialul și termenul înainte de producție.
 
 ### Alege, Produsul
 
@@ -136,19 +136,19 @@ Alege tipul de produs, dimensiunea, materialul și cantitatea.
 
 Trimite fișierul pregătit pentru print sau lasă-ne să te ajutăm cu grafica.
 
-### Printăm Și, Finisăm
+### Printăm și, Finisăm
 
 Comanda ta este printată, tăiată, laminată sau presată — cu verificări de calitate la fiecare pas.
 
-### Ridicare Sau, Livrare
+### Ridicare sau, Livrare
 
-Ridici din shop sau livrăm direct la tine. Termen rapid garantat.
+Ridici din shop sau livrăm direct la tine. Termenul de predare este confirmat în ofertă.
 
 ### Formate de fișiere acceptate
 
-Pentru cele mai bune rezultate, trimite fișiere vectoriale (PDF, AI, EPS) sau imagini de înaltă rezoluție (minimum 300 DPI). Preferăm modul de culoare CMYK.
+Trimite fișiere vectoriale (PDF, AI, EPS) sau imagini la dimensiunea finală de print. Verificăm rezoluția, culorile și marginile necesare produsului ales înainte de producție.
 
-Fie că plasezi comanda online sau vii în shop, procesul este rapid și clar.
+Exemple de printuri pentru decor, prezentări și evenimente. Cere detalii despre materialele și finisajele potrivite proiectului tău.
 
 ## Partenerul tău local pentru print.
 
@@ -156,7 +156,7 @@ Marand este un print shop profesionist, echipat cu tehnologie modernă pentru pr
 
 Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.
 
-### 134cm
+### 136,1 cm
 
 Lățime maximă de print
 
@@ -164,11 +164,11 @@ Lățime maximă de print
 
 Echipamente profesionale
 
-### 24h
+### La ofertare
 
-Timp mediu de execuție
+Termen de execuție
 
-### Fără minim
+### După produs
 
 Cantitate minimă
 
@@ -183,11 +183,11 @@ Trimite-ne detaliile proiectului și îți recomandăm produsul, materialul și 
 
 ## Catalog produse Marand.
 
-9 categorii reorganizate pentru print digital, semnalistică și textile personalizate. Specificații tehnice reale: lățime printare 1361 mm, lățime decupare pe contur 1320 mm pentru tot ce iese din MUTOH XPJ-1341 SR PRO . Toate materialele referențiate sunt în stoc.
+Print digital, semnalistică și textile personalizate, în nouă categorii. Lățime tehnică maximă de print: 1361 mm pe Mutoh XpertJet 1341SR Pro ; lățime tehnică maximă de tăiere: 1320 mm pe plotterul ValueCut II 1300. Aria utilă depinde de material, margini și finisaje. Disponibilitatea materialelor și termenul se confirmă în ofertă.
 
 ## Printuri large format
 
-Bannere PVC, mesh perforat și billboard urban — toate printate cu cerneluri eco-solvent pe MUTOH XPJ-1341 SR PRO. Lățime maximă printare 1361 mm, lățime maximă decupare pe contur 1320 mm.
+Bannere PVC, mesh perforat și billboard urban — toate printate cu cerneluri eco-solvent pe Mutoh XpertJet 1341SR Pro. Lățime tehnică maximă de print: 1361 mm. Finisarea și segmentarea se stabilesc după dimensiunea finală.
 
 ### Banner Blockout
 
@@ -199,14 +199,14 @@ Banner heavy-duty cu strat blockout — se imprimă pe ambele părți, fără tr
 - ambele părți · full color
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Finisare**
 - tiv + capse la 50 cm
 - **Aplicații**
 - bannere față-verso, displays, evenimente
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Banner Frontlit
 
@@ -218,14 +218,14 @@ Bannerul standard pentru fațade, evenimente și semnalistică exterioară — p
 - o singură parte · full color
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Finisare**
 - tiv + capse la 50 cm
 - **Durabilitate**
-- exterior 2–3 ani
+- exterior 2–3 ani · estimativ, după expunere și finisare
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Mesh
 
@@ -235,16 +235,16 @@ PVC perforat care lasă vântul să treacă — perfect pentru garduri, schele �
 - PVC mesh perforat
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Vânt**
 - permite trecerea aerului
 - **Finisare**
 - tiv + capse la 50 cm
 - **Durabilitate**
-- exterior 1–2 ani
+- exterior 1–2 ani · estimativ, după expunere și finisare
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Billboard
 
@@ -254,8 +254,6 @@ Print pe hârtie blueback pentru afișaj urban, panouri stradale și billboardur
 - Visual Blueback 120 g/m² mat
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Aplicare**
 - lipire pe panou stradal
 - **Lungime rolă**
@@ -264,6 +262,8 @@ Print pe hârtie blueback pentru afișaj urban, panouri stradale și billboardur
 - billboard, afișaj urban, campanii outdoor
 
 Dimensiuni populare
+
+Formatul afișajului este L × H. Pentru formatele mari, printul se livrează în segmente pentru lipire pe panou; panotarea și suprapunerile se stabilesc după dimensiunea suprafeței.
 
 ## Printuri pe canvas
 
@@ -281,12 +281,12 @@ Print pe canvas poliester, întins pe șasiu din lemn — disponibil în 210 sau
 - mat / lucios
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Configurații**
 - simplu · multipanou (2–5) · panoramic
 
 Dimensiuni populare
+
+Dimensiunile indică fața tabloului finit. Macheta necesită rezervă pentru înfășurarea pe șasiu, confirmată înainte de print. 3 × 50×70 cm înseamnă trei piese, fiecare de 50×70 cm.
 
 ## Poster pe hârtie foto
 
@@ -294,28 +294,28 @@ Poster comercial pe hârtie foto lucioasă sau mată — ideal pentru retail, de
 
 ### Poster pe hârtie foto
 
-Hârtie foto 200 g/m², finisaj lucios sau mat — pentru postere de interior, retail și grafică promo.
+Hârtie foto de 200 g/m², lucioasă — pentru postere de interior, retail și grafică promo. Varianta mată se stabilește după suportul disponibil.
 
 - **Material**
 - Premium Art Photo Paper 200 g/m²
 - **Finisaje**
-- lucios / mat
+- lucios; mat la cerere, cu suportul confirmat în ofertă
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Rezoluție**
-- 1440 dpi
+- până la 1200 × 1200 dpi (utilaj)
 - **Utilizare**
 - interior
 
 Dimensiuni populare
 
+Formatul ales este dimensiunea finală a posterului. Pentru varianta mată, confirmăm hârtia sau finisajul disponibil înainte de producție.
+
 ## Fotografii de mari dimensiuni
 
-Print foto fine-art pentru fotografi, artiști și galerii — pe hârtie foto premium sau canvas, cu opțiuni de cașerare pe panou rigid și ramă pentru aspect de galerie.
+Print foto de mari dimensiuni pentru fotografi, artiști și galerii — pe hârtie foto premium sau canvas, cu opțiuni de cașerare pe panou rigid și ramă pentru aspect de galerie.
 
-### Print foto fine-art
+### Print foto de mari dimensiuni
 
 Reproduceri fotografice de mari dimensiuni — calibrare culoare profesională, opțiuni cașerare și ramă.
 
@@ -323,24 +323,24 @@ Reproduceri fotografice de mari dimensiuni — calibrare culoare profesională, 
 - hârtie foto premium / canvas
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Rezoluție**
-- 1440 dpi · profil ICC dedicat
+- până la 1200 × 1200 dpi (utilaj)
 - **Finisare**
 - cașerare pe Stadur / Bond / ramă lemn
-- **Audience**
+- **Destinație**
 - fotografi, artiști, galerii, decor premium
 
 Dimensiuni populare
 
+Suportul, profilul de culoare și finisarea se aleg pentru lucrarea ta. Pentru cerințe de conservare sau expunere în galerie, cere confirmarea caracteristicilor sistemului de print.
+
 ## Grafică pentru geamuri și vitrine
 
-Aplicații mari pentru vitrine, uși de sticlă și partiții — vinyl opac, one-way vision pentru vizibilitate dintr-o singură direcție, sau folie sablat decorativă pentru intimitate.
+Aplicații mari pentru vitrine, uși de sticlă și partiții — vinyl opac, one-way vision pentru vizibilitate dintr-o singură direcție, sau folie sablată decorativă pentru intimitate.
 
 ### Grafică geamuri / vitrine
 
-Vinyl printat, one-way vision sau folie sablat — pentru retail, birouri, săli meeting și vehicule comerciale.
+Vinyl printat, one-way vision sau folie sablată — pentru retail, birouri, săli de ședință și vehicule comerciale.
 
 - **Materiale**
 - vinyl · OWV · Mirage Frosty Airfree
@@ -351,7 +351,7 @@ Vinyl printat, one-way vision sau folie sablat — pentru retail, birouri, săli
 - **Aplicare**
 - umedă sau uscată
 - **Durabilitate**
-- 5–7 ani (Frosty)
+- 5–7 ani (Frosty) · estimativ, după expunere și finisare
 - **Aplicații**
 - retail, birouri, partiții, vitrine premium
 
@@ -359,11 +359,11 @@ Aplicații tipice
 
 ## Panouri rigide printate
 
-Print pe panouri compozite rigide — Bond ACM pentru exterior și fațade, plexiglass (PMMA) și PVC pentru displays interior și branding rigid. Dimensiuni standard ale colilor: Bond 1500×3050 mm, PMMA și PVC 2050×3050 mm.
+Panouri personalizate pentru semnalistică și decor. Bond se realizează prin aplicarea autocolantului printat pe placa de aluminiu compozit. PMMA și Stadur sunt suporturi distincte; tehnologia și finisarea lor se confirmă în ofertă. Dimensiunea plăcii și aria personalizată se stabilesc separat.
 
 ### Panou Bond ACM
 
-Aluminiu compozit cu finisaj PVDF — pentru fațade, semnalistică permanentă exterior și placări durabile.
+Placă din aluminiu compozit Bond, personalizată cu autocolant printat și aplicat pe suport — pentru semnalistică de exterior și branding.
 
 - **Material**
 - Bond PVDF aluminiu compozit
@@ -378,26 +378,30 @@ Aluminiu compozit cu finisaj PVDF — pentru fațade, semnalistică permanentă 
 
 Dimensiuni populare
 
-### Panou plexiglass / PVC
+Dimensiunile sunt L × H, în cm. 200×300 cm este un ansamblu din mai multe plăci, nu o singură coală de 150×305 cm. La acoperire integrală peste lățimea utilă a autocolantului, grafica se îmbină. Laminarea și montajul se confirmă în ofertă.
 
-Plexiglass (PMMA cast) și PVC compozit pentru displays interior, signage rigid și branding premium.
+### Panou plexiglass / Stadur
+
+Plexiglass (PMMA) sau placă compozită ușoară Stadur Easyprint, fără PVC — pentru panouri de prezentare și semnalistică de interior.
 
 - **Materiale**
-- PMMA cast · Stadur Easyprint PVC
+- PMMA cast · Stadur Easyprint fără PVC
 - **Coală standard**
-- 2050 × 3050 mm
+- PMMA: 2050 × 3050 mm; Stadur: 2030 × 3050 mm
 - **Variante PMMA**
 - Metallic IRO · Seta-LED (backlit)
 - **Finisaje**
-- mat (PVC) · metalizat / opal (PMMA)
+- mat (Stadur) · metalizat / opal (PMMA)
 - **Aplicații**
 - POS / POP, displays interior, lightbox, plăcuțe
 
 Dimensiuni populare
 
+Dimensiunile indică produsul finit. Suportul, grosimea, formatul disponibil și tehnologia de personalizare se confirmă separat.
+
 ## Printuri format mic
 
-Două grupuri de produse în această secțiune: adezive printate (stickere, etichete, autocolante, podea, magnetic) printate pe MUTOH eco-solvent + plotter, și print pe hârtie (cărți de vizită, flyere, broșuri) printate pe Ricoh MC2000 A3 laser.
+Două grupuri de produse în această secțiune: autocolante și etichete , realizate prin print eco-solvent și tăiere la plotter, și print pe hârtie (cărți de vizită, flyere, broșuri), realizat pe Ricoh M C2000 A3 laser. Pentru folia magnetică, suportul și procesul compatibil se confirmă separat.
 
 ### Stickere promoționale
 
@@ -448,7 +452,7 @@ Adezive mici și medii pentru vitrine — ore program, promoții, plăți accept
 - **Decupare**
 - contur personalizat
 - **Durabilitate**
-- 2–5 ani exterior
+- 2–5 ani exterior · estimativ, după expunere și finisare
 
 Dimensiuni populare
 
@@ -465,35 +469,37 @@ Vinyl printat cu laminare anti-slip — pentru retail, evenimente, wayfinding ș
 - **Aplicații**
 - retail, evenimente, marcaje, wayfinding
 - **Durabilitate**
-- 3–6 luni trafic intens
+- 3–6 luni trafic intens · estimativ, după expunere și finisare
 
 Dimensiuni populare
 
 ### Folie magnetică printată
 
-Folie magnetică albă printabilă, 600 µm — branding repoziționabil pe suprafețe metalice.
+Folie magnetică albă printabilă, 600 µm — branding repoziționabil pe suprafețe feromagnetice compatibile.
 
 - **Material**
 - Folie magnetică albă
 - **Grosime**
-- 600 µm (0.6 mm)
+- 600 µm (0,6 mm)
 - **Forță**
 - ~30 g/cm²
-- **Cerneală**
-- print pe bază de apă
+- **Proces**
+- compatibilitatea suportului și procesul se confirmă în ofertă
 - **Aplicații**
 - auto comercial, semnalistică modulară, meniuri, promoții schimbabile
 
 Dimensiuni populare
 
+Verificăm materialul printabil și suprafața de aplicare înainte de producție. Dimensiunile sunt ale elementului finit; compatibilitatea pentru utilizare auto se confirmă după proiect.
+
 ### Cărți de vizită
 
-Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.
+Cărți de vizită standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.
 
 - **Format**
 - 90×50 / 85×55 mm
 - **Hârtie**
-- 300g / 350g / specialty
+- carton până la 300 g/m², conform suportului disponibil
 - **Finisaj**
 - mat · lucios · soft touch
 - **Print**
@@ -503,6 +509,8 @@ Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rot
 
 Tiraje populare
 
+Printul pe ambele fețe și finisajele se confirmă pentru cartonul ales. Limita de 300 g/m² a imprimării nu reprezintă limita duplexului automat.
+
 ### Flyere
 
 Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scurte sau medii.
@@ -510,7 +518,7 @@ Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scu
 - **Format**
 - A6 · A5 · A4 · DL
 - **Hârtie**
-- 130g · 170g · 200g
+- 130 · 170 · 200 g/m²
 - **Print**
 - 1 față / 2 fețe
 - **Finisaj**
@@ -527,15 +535,17 @@ Broșuri capsate pentru prezentări corporate, meniuri, cataloage compacte și m
 - **Format**
 - A5 · A4 închis
 - **Pagini**
-- 8–40 pagini
+- 8–40, în multipli de 4; total inclusiv coperta
 - **Finisare**
 - capsare · pliere
 - **Hârtie**
-- interior 130–170g · copertă 250g
+- interior 130–170 g/m² · copertă 250 g/m²
 - **Cantitate**
 - de la 25 buc
 
 Tiraje populare
+
+Formatul este închis, după pliere. Trimite paginile individual, în ordinea lecturii; marginile de tăiere și spațiul de siguranță se confirmă înainte de print.
 
 ## Semnalistică
 
@@ -546,7 +556,7 @@ Panouri direcționale pentru ghidare și informare — interior pentru birouri, 
 Plăcuțe de birou, săli, room signs și panouri direcționale pentru spații interioare comerciale.
 
 - **Suport**
-- Stadur PVC · plexiglass · Bond
+- Stadur Easyprint fără PVC · plexiglass · Bond
 - **Print**
 - vinyl printat sau lettering decupat
 - **Lățime print**
@@ -569,7 +579,7 @@ Panouri pentru parcări, complexe rezidențiale și comerciale, fațade — rezi
 - **Coală standard**
 - 1500 × 3050 mm
 - **Durabilitate**
-- 5+ ani exterior
+- 5+ ani exterior · estimativ, după expunere și finisare
 - **Aplicații**
 - parcări, complexe, fațade, ghidare exterior
 
@@ -577,7 +587,7 @@ Tipuri populare
 
 ## Printuri pe textile
 
-Personalizare textile cu print DTF — culori vii, transfer rezistent la spălare, execuție flexibilă de la o singură bucată la serii mari. Printate pe DTF XPD 924 și aplicate cu presa termică LOPTUS LTS 38.
+Personalizare textile prin transfer DTF, de la o bucată la serii. Dimensiunea articolului este distinctă de aria printului; poziția, mărimea transferului și compatibilitatea materialului se confirmă în ofertă.
 
 ### Tricou personalizat
 
@@ -594,6 +604,8 @@ Tricouri din bumbac sau mix poli-bumbac, personalizate cu transfer DTF — pentr
 - **Aplicații**
 - merch, echipe, evenimente, promo
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Hanorac personalizat
 
 Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, merch, workwear casual.
@@ -609,6 +621,8 @@ Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, mer
 - **Cantitate**
 - de la 1 buc la serii
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Vestă personalizată
 
 Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau fleece.
@@ -620,13 +634,15 @@ Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau 
 - **Mărimi**
 - S · M · L · XL · XXL
 - **Print**
-- piept · spate · brodare opțional
+- piept · spate
 - **Aplicații**
 - uniforme, team wear, evenimente, promo
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Sacoșe personalizate (tote bag)
 
-Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print simplu sau full-coverage.
+Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print pe una sau două fețe, în aria confirmată pentru modelul ales.
 
 - **Tehnologie**
 - print DTF + presă termică
@@ -635,9 +651,11 @@ Sacoșe textile pentru retail, gifting, evenimente și activări de brand — pr
 - **Print**
 - o singură față sau două
 - **Dimensiuni**
-- standard 38×42 · XL 42×45 cm
+- standard 38×42 cm · XL 42×45 cm
 - **Aplicații**
 - retail, gifting, evenimente, promo
+
+38×42 cm și 42×45 cm sunt dimensiunile sacoșei. Aria imprimabilă, distanța față de cusături și personalizarea celei de-a doua fețe se confirmă separat.
 
 
 ========================================================================
@@ -646,7 +664,7 @@ Sacoșe textile pentru retail, gifting, evenimente și activări de brand — pr
 
 ## Materiale profesionale, cu specificații complete.
 
-Lucrăm doar cu branduri testate zi de zi în producție: Avery Dennison, Oracal, Stadur, Mirage, Star și Starflex. Mai jos găsești gama completă cu gramaje, durabilitate, dimensiuni și aplicații recomandate — ca să alegi mediul potrivit din primul click.
+Lucrăm doar cu branduri testate zi de zi în producție: Avery Dennison, Oracal, Stadur, Mirage, Star și Starflex. Mai jos găsești materiale cu gramaje, dimensiuni și aplicații recomandate — ca să alegi suportul potrivit. Lățimile listate sunt variante de material, nu aria maximă de print a atelierului. Disponibilitatea și lățimea utilizată în proiect se confirmă în ofertă; unele role necesită debitare înainte de imprimare.
 
 ## Vinyl printabil pentru vitrine, branding și colantare.
 
@@ -674,14 +692,14 @@ Folie alb lucios, monomerică, adeziv permanent — versatilă pentru semnalisti
 - **Ideal pentru**
 - signage, expoziții, panouri, materiale promo
 
-### MPI 2800 Standard
+### MPI 2800 / MPI 2801
 
-Polimerică alb lucios, opțiune permanent sau removable — raport bun calitate/preț pentru volume.
+Folie polimerică alb lucios: MPI 2800 permanent sau MPI 2801 detașabil — raport bun calitate/preț pentru volume.
 
 - **Specificații**
 - polimeric · alb lucios
 - **Adeziv**
-- permanent / removable
+- MPI 2800 permanent / MPI 2801 detașabil
 - **Ideal pentru**
 - billboarduri, postere, vitrine, signage
 
@@ -692,7 +710,7 @@ Vinyl polimeric plasticizat colorat, 64 µm — 118 culori lucioase plus 2 mate,
 - **Specificații**
 - 64 µm · acrilic permanent
 - **Durabilitate**
-- până la 8 ani
+- până la 8 ani, în condițiile fișei materialului și ale expunerii
 - **Culori**
 - 118 lucioase + 2 mate
 
@@ -724,12 +742,12 @@ Folie perforată pentru vitrine — print vizibil afară, vizibilitate dinăuntr
 
 ### Frosty Airfree
 
-Folie cu efect sablat și tehnologie airfree — aplicare fără bule, fără unelte speciale.
+Folie cu efect sablat și canale de evacuare a aerului — aplicare conform fișei materialului, pe sticlă pregătită corespunzător.
 
 - **Specificații**
 - 80 µm · adeziv acrilic
 - **Durabilitate**
-- 5–7 ani
+- 5–7 ani, estimativ, în funcție de expunere și aplicare
 - **Lățimi**
 - 1.05 / 1.22 / 1.37 / 1.55 m
 
@@ -737,7 +755,7 @@ Folie cu efect sablat și tehnologie airfree — aplicare fără bule, fără un
 
 Pentru proiectele unde textura, reflexia și redarea culorii contează — de la blueback urban până la canvas pe ramă.
 
-### Blueback 120g
+### Blueback 120 g/m²
 
 Hârtie blueback mată pentru afișaj urban și billboarduri — spate albastru pentru opacitate la lipire.
 
@@ -748,7 +766,7 @@ Hârtie blueback mată pentru afișaj urban și billboarduri — spate albastru 
 - **Lungime rolă**
 - 200 / 300 m
 
-### Art Photo Paper Glossy 200g
+### Art Photo Paper Glossy 200 g/m²
 
 Hârtie foto lucioasă pentru postere premium și reproduceri — contrast bun, redare fidelă a culorilor.
 
@@ -800,12 +818,12 @@ Bannerul standard pentru fațade și plase publicitare — coated frontlit cu ec
 
 Bandă de transfer Oracal pentru aplicare litere și logo-uri, plus laminări Avery DOL în finisaj lucios sau mat pentru protecție UV și aspect premium.
 
-### Oratape MT 95
+### ORATAPE MT95
 
-Bandă transfer transparentă low-tack pentru mutarea elementelor decupate — aliniere precisă, fără urme.
+Bandă de transfer transparentă cu aderență medie pentru mutarea elementelor decupate — aliniere precisă, fără urme.
 
 - **Specificații**
-- 150 µm · polyacrilic low-tack
+- 147 µm cu adeziv · poliacrilic, aderență medie
 - **Lățimi**
 - 0.5 / 1.0 / 1.22 m × 50 m
 - **Ideal pentru**
@@ -835,14 +853,14 @@ Laminare mată polimerică pentru aspect anti-reflex și soft — finisaj premiu
 
 ## Suporturi rigide pentru fațade, displays și semnalistică.
 
-Aluminiu compozit pentru fațade, acrilic cast PMMA pentru lightbox-uri și branding premium, plăci PVC compozit ușoare pentru displays interior.
+Aluminiu compozit pentru fațade, acrilic cast PMMA pentru lightbox-uri și branding premium, plăci compozite Stadur fără PVC pentru displays interior.
 
 ### Placă Bond PVDF 4mm
 
 Aluminiu compozit cu finisaj PVDF — fațade, sisteme ventilate și semnalistică permanentă rezistentă la UV.
 
 - **Specificații**
-- 4 mm · miez aluminiu compozit
+- 4 mm · fețe din aluminiu, miez conform fișei suportului
 - **Finisaj**
 - PVDF (rezistent UV)
 - **Ideal pentru**
@@ -872,25 +890,25 @@ Acrilic cast pentru displays iluminate — transmisie luminoasă controlată în
 
 ### Easyprint
 
-Placă rigidă ușoară cu miez foam și fețe poliolefină mat — manevrare simplă pentru displays și panouri interior.
+Placă rigidă ușoară, fără PVC, cu miez XPS și fețe Stadurlon pe bază de polipropilenă — pentru panouri de prezentare și semnalistică de interior.
 
 - **Specificații**
-- miez XPS · fețe poliolefină
+- miez XPS · fețe Stadurlon (polipropilenă)
 - **Greutate**
 - foarte lejeră
 - **Ideal pentru**
 - displays, POS/POP, panouri interior
 
-## Comunicare schimbabilă pe orice suprafață metalică.
+## Comunicare schimbabilă pe suprafețe compatibile cu magneți.
 
 Folie magnetică albă printabilă — disponibilă în cinci grosimi pentru a alege aderența potrivită aplicației tale.
 
 ### Folie Magnetică Albă
 
-Folie magnetică albă cu suprafață printabilă — magnet izotrop, aderență sigură pe metal, repoziționabilă.
+Folie magnetică albă cu suprafață printabilă — magnet izotrop, aderență pe suprafețe feromagnetice compatibile, repoziționabilă.
 
 - **Grosimi**
-- 300 / 400 / 500 / 600 / 850 µ
+- 300 / 400 / 500 / 600 / 850 µm
 - **Forță**
 - 11–40 g/cm² (în funcție de grosime)
 - **Ideal pentru**
@@ -917,7 +935,7 @@ JPG, PNG, WebP sau HEIC. Trage fișierul aici sau apasă pentru a-l alege.
 
 ## Tipul de print
 
-Fiecare produs se comportă diferit — canvasul are grosime, posterul înrămat are ramă și sticlă, bannerul se agață.
+Previzualizarea este orientativă. Materialul, grosimea suportului, rama, dimensiunile și disponibilitatea se confirmă în ofertă.
 
 ## Unde vreau să îl văd?
 
@@ -944,9 +962,9 @@ Marand poate transforma ideea într-un print real. Trimite-ne proiectul și te a
 
 Investim în echipamente de top pentru a oferi cea mai bună calitate, consistență și viteză de producție.
 
-## MUTOH XPJ-1341 SR PRO
+## Mutoh XpertJet 1341SR Pro
 
-- Lățime maximă: 1341 mm (134 cm)
+- Lățime maximă de print: 1361 mm (136,1 cm)
 - Cerneluri eco-solvent
 - Mod de producție rapid
 - Printuri pentru interior și exterior
@@ -954,32 +972,32 @@ Investim în echipamente de top pentru a oferi cea mai bună calitate, consisten
 ## Mutoh ValueCut II 1300
 
 - Tăiere de contur precisă
-- Lățime de tăiere 1300 mm
+- Lățime maximă de tăiere: 1320 mm (132 cm)
 - Vinyl, stickere, decaluri
 - Flux integrat print și tăiere
 
 ## Flexa X-Pro 160
 
-- 160cm lățime de laminare
+- 160 cm lățime de laminare
 - Laminare la cald și la rece
 - Protecție UV și anti-zgâriere
 - Finisaj mat sau lucios
 
-## DTF XPD 924
+## Imprimantă DTF
 
 - Tehnologie direct-to-film
 - Print textil vibrant
 - Orice culoare de material
 - Rezultate rezistente la spălare
 
-## LOPTUS LTS 38
+## Presă termică pentru textile
 
-- 38×38cm suprafață de presare
+- Aria transferului se confirmă pentru articolul ales
 - Aplicare transfer DTF
-- Tricouri, genți, șepci
+- Tricouri și sacoșe, în funcție de articol și accesoriile disponibile
 - Căldură și presiune constante
 
-## Ricoh MC2000 A3
+## Ricoh M C2000 A3
 
 - Imprimare color laser A3
 - Cărți de vizită și flyere
@@ -992,7 +1010,7 @@ Marand este un print shop profesionist, echipat cu tehnologie modernă pentru pr
 
 Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.
 
-### 134cm
+### 136,1 cm
 
 Lățime maximă de print
 
@@ -1000,11 +1018,11 @@ Lățime maximă de print
 
 Echipamente profesionale
 
-### 24h
+### La ofertare
 
-Timp mediu de execuție
+Termen de execuție
 
-### Fără minim
+### După produs
 
 Cantitate minimă
 
@@ -1019,33 +1037,34 @@ Trimite-ne detaliile proiectului și îți recomandăm produsul, materialul și 
 
 ## De la fișier la produsul finit.
 
-Tot fluxul se întâmplă în atelierul nostru din Reșița: verificăm fișierul, printăm, laminăm, tăiem și finisăm. Nimic nu pleacă la subcontractori, așa că termenul și calitatea rămân în controlul nostru.
+Tot fluxul se întâmplă în atelierul nostru din Reșița: verificăm fișierul, printăm, laminăm, tăiem și finisăm. Tehnologia, finisajele și termenul fiecărui proiect sunt confirmate înainte de producție.
 
 ## Patru pași, fără surprize.
 
-Alegi produsul și dimensiunea, trimiți fișierul, noi printăm și finisăm, iar tu ridici din shop sau primești livrarea. Termenul mediu de execuție este de 24 de ore, iar pentru lucrările simple, aflate în stoc de material, se poate și în aceeași zi.
+Alegi produsul și dimensiunea, trimiți fișierul, noi printăm și finisăm, iar tu ridici din shop sau primești livrarea. Termenul de execuție se confirmă după verificarea fișierului, a cantității, a materialului disponibil și a finisajelor.
 
-Nu avem cantitate minimă. Un singur canvas se produce la fel de serios ca o mie de stickere — se schimbă doar timpul de lucru, nu procesul.
+Canvasul și textilele pot fi comandate de la o bucată. Pentru stickere, etichete și printuri pe hârtie, tirajele minime sunt indicate în catalog și confirmate în ofertă.
 
 ## Verificăm fișierul înainte să pornim mașina.
 
 Cel mai des, problemele apar înainte de print: rezoluție prea mică, culori în RGB, text neconvertit în curbe, lipsa marginilor de siguranță. Ne uităm la fiecare fișier și îți spunem ce nu merge înainte de a consuma material.
 
-Trimite vectori (PDF, AI, EPS) sau imagini de minimum 300 DPI, în CMYK. Dacă ai doar o idee și nicio machetă, pregătim noi grafica — se stabilește de la caz la caz.
+Trimite fișiere vectoriale (PDF, AI, EPS) sau imagini la dimensiunea finală de print. Rezoluția necesară și marginile se verifică după produs, format și distanța de vizualizare; culorile se pregătesc pentru fluxul de producție. Dacă ai doar o idee și nicio machetă, pregătim noi grafica — se stabilește de la caz la caz.
 
 ## Finisarea face diferența.
 
-Un print bun prost finisat rămâne un print prost. Bannerele se tivesc și se capsează, canvasul se întinde pe șasiu de lemn, stickerele se taie pe contur la plotter, iar suprafețele expuse la soare sau la atingere se laminează. Toate acestea se fac aici, în aceeași zi cu printul.
+Un print bun prost finisat rămâne un print prost. Bannerele se tivesc și se capsează, canvasul se întinde pe șasiu de lemn, stickerele se taie pe contur la plotter, iar suprafețele expuse la soare sau la atingere se laminează. Durata finisării este inclusă în termenul confirmat al lucrării.
 
 Dacă lucrarea merge afară — banner pe gard, folie pe vitrină, panou pe fațadă — spune-ne asta din start. Materialul și laminarea se aleg diferit pentru exterior, iar diferența se vede după prima iarnă.
 
 ## Ce se face în atelier
 
-- Print eco-solvent până la 134 cm lățime — Mutoh XPJ-1341 SR PRO. Peste această lățime, lucrarea se împarte în panouri.
+- Print eco-solvent până la 136,1 cm lățime — Mutoh XpertJet 1341SR Pro. Aria utilă depinde de margini și material. Formatele care nu încap prin orientare se realizează în segmente, conform planului confirmat.
 - Tăiere pe contur — plotter Mutoh ValueCut II 1300, pentru stickere, folii decupate și semnalistică.
+- Bond personalizat — autocolant printat și aplicat pe placa de aluminiu compozit; dimensiunea plăcii și îmbinările graficii se stabilesc separat.
 - Laminare la rece până la 160 cm — Flexa X-Pro 160, pentru protecție UV și rezistență la zgâriere.
-- Textile — DTF XPD 924 și presă termică LOPTUS LTS 38, pentru tricouri și materiale textile.
-- Small format — Ricoh MC2000 A3 pentru tiraje mici, etichete și documente color.
+- Textile — imprimantă DTF și presă termică, pentru tricouri și materiale textile.
+- Printuri de format mic — Ricoh M C2000 A3 pentru tiraje mici, etichete și documente color.
 - Finisare manuală — tivire, capsare, întindere pe șasiu, ambalare pentru transport.
 
 ## Ai nevoie de mai multe detalii?
@@ -1063,7 +1082,7 @@ Această pagină te ajută să definești tipul de produs, cantitatea, termenul,
 
 ## Cere ofertă
 
-Câmpurile sunt organizate pentru a reduce cererile vagi și pentru a ajuta Marand să califice rapid lucrările.
+Spune-ne ce vrei să realizăm, dimensiunile și cantitatea. Câmpurile marcate cu * sunt obligatorii.
 
 Stadiul graficii
 
@@ -1085,7 +1104,7 @@ PDF, AI, EPS, PSD, TIFF, PNG, JPG, SVG, CDR
 - Cantitatea și dacă este o lucrare unică sau una recurentă.
 - Preferința de material dacă o cunoști deja sau menționează că vrei o recomandare.
 - Stadiul graficii: gata de print, necesită corecții sau trebuie făcută de la zero.
-- Deadline-ul și dacă este nevoie de montaj sau livrare.
+- Termenul dorit și dacă este nevoie de montaj sau livrare.
 
 ### Factori care influențează oferta
 
@@ -1095,7 +1114,7 @@ Din pagina de produse, galerie sau CTA-ul din homepage.
 
 Cantitate, format, termen, fișiere și date de contact într-o singură cerere structurată.
 
-Material, metodă de print, finisaje și suport de design — estimare imediată.
+Material, metodă de print, finisaje și suport de design — estimare după verificare.
 
 Recomandare clară, termen estimat și confirmarea pașilor următori.
 
@@ -1114,7 +1133,7 @@ Dacă vrei doar să deschizi conversația, completează formularul scurt și rev
 
 **Telefon:** 0725894569
 
-**Adresă:** Strada Libertăţii A2, 320003 Reșița, România
+**Adresă:** Strada Libertății A2, 320003 Reșița, România
 
 **Program:** Lun–Vin: 9:00 – 18:00, Sâm: 10:00 – 14:00
 
@@ -1122,18 +1141,18 @@ Putem verifica fișierele, materialele și finisajele direct la fața locului î
 
 ## Trimite-ne un mesaj
 
-Lasă datele de contact și un scurt rezumat al proiectului. Îți răspundem direct prin Zoho pe aceeași adresă de email.
+Lasă datele de contact și un scurt rezumat al proiectului. Îți răspundem pe adresa de email indicată.
 
 
 ========================================================================
 # Despre — who Marand is — https://marand-print.ro/despre/
 ========================================================================
 
-## Un atelier, nu un intermediar.
+## Atelier de print în Reșița.
 
-Marand este un design & print shop din Reșița. Tot ce vindem se produce pe echipamentele noastre, în atelierul nostru — de la fișierul primit până la produsul ambalat.
+Marand este un design & print shop din Reșița. În atelier verificăm fișierele, printăm, laminăm, decupăm și aplicăm transferuri textile. Materialul, tehnologia și finisarea fiecărei lucrări sunt stabilite în ofertă.
 
-Ultima actualizare: 2 septembrie 2026
+Ultima actualizare: 4 octombrie 2026
 
 - **Denumire**
 - Marand Print Shop
@@ -1146,7 +1165,7 @@ Ultima actualizare: 2 septembrie 2026
 - **Program**
 - Luni–Vineri 09:00–18:00 · Sâmbătă 10:00–14:00
 - **Lățime maximă print**
-- 134 cm
+- 1361 mm (136,1 cm)
 
 ## Ce facem
 
@@ -1156,9 +1175,9 @@ Ne numim „design & print shop" pentru că nu ne oprim la print. Dacă ai doar 
 
 ## De ce contează că avem atelier propriu
 
-Nu subcontractăm nimic. Printul, laminarea, tăierea pe contur, presarea textilelor și finisarea manuală se întâmplă toate în aceeași hală. Asta înseamnă trei lucruri concrete pentru tine: termenul depinde doar de noi, o corecție se poate face pe loc, iar dacă ceva iese prost îl refacem fără să negociem cu un furnizor.
+Printul, laminarea, tăierea pe contur, aplicarea autocolantului pe Bond și transferurile textile sunt etape ale fluxului nostru de producție. Verificăm cerințele înainte de lucru și confirmăm materialul, finisarea și termenul în ofertă.
 
-Termenul mediu de execuție este de 24 de ore. Nu avem cantitate minimă — un singur canvas trece prin același flux ca o mie de stickere. Lățimea maximă de print este de 134 cm; peste ea, lucrarea se împarte în panouri. Detaliile despre utilaje sunt pe pagina de echipamente , iar fluxul complet pe pagina de producție .
+Termenul și tirajul minim depind de produs, material și finisaje. Canvasul și textilele pot fi comandate de la o bucată; celelalte minime sunt precizate în catalog. Lățimea tehnică maximă de print este de 1361 mm (136,1 cm), iar cea de tăiere este de 1320 mm (132 cm). Formatele care nu încap prin orientare se realizează în segmente, conform planului confirmat. Detaliile despre utilaje sunt pe pagina de echipamente , iar fluxul complet pe pagina de producție .
 
 ## Cu cine lucrăm
 
@@ -1179,7 +1198,7 @@ Atelierul a fost dotat printr-un proiect finanțat prin Programul Regional Vest 
 
 Politica descrie exact ce se întâmplă cu datele pe marand-print.ro. Fiecare afirmație de mai jos corespunde a ceea ce face efectiv codul site-ului — nu este un text generic.
 
-Ultima actualizare: 2 septembrie 2026
+Ultima actualizare: 4 octombrie 2026
 
 ## Cine este operatorul
 

@@ -16,9 +16,9 @@ Markdown source: https://marand-print.ro/echipamente/index.md
 
 Investim în echipamente de top pentru a oferi cea mai bună calitate, consistență și viteză de producție.
 
-## MUTOH XPJ-1341 SR PRO
+## Mutoh XpertJet 1341SR Pro
 
-- Lățime maximă: 1341 mm (134 cm)
+- Lățime maximă de print: 1361 mm (136,1 cm)
 - Cerneluri eco-solvent
 - Mod de producție rapid
 - Printuri pentru interior și exterior
@@ -26,32 +26,32 @@ Investim în echipamente de top pentru a oferi cea mai bună calitate, consisten
 ## Mutoh ValueCut II 1300
 
 - Tăiere de contur precisă
-- Lățime de tăiere 1300 mm
+- Lățime maximă de tăiere: 1320 mm (132 cm)
 - Vinyl, stickere, decaluri
 - Flux integrat print și tăiere
 
 ## Flexa X-Pro 160
 
-- 160cm lățime de laminare
+- 160 cm lățime de laminare
 - Laminare la cald și la rece
 - Protecție UV și anti-zgâriere
 - Finisaj mat sau lucios
 
-## DTF XPD 924
+## Imprimantă DTF
 
 - Tehnologie direct-to-film
 - Print textil vibrant
 - Orice culoare de material
 - Rezultate rezistente la spălare
 
-## LOPTUS LTS 38
+## Presă termică pentru textile
 
-- 38×38cm suprafață de presare
+- Aria transferului se confirmă pentru articolul ales
 - Aplicare transfer DTF
-- Tricouri, genți, șepci
+- Tricouri și sacoșe, în funcție de articol și accesoriile disponibile
 - Căldură și presiune constante
 
-## Ricoh MC2000 A3
+## Ricoh M C2000 A3
 
 - Imprimare color laser A3
 - Cărți de vizită și flyere
@@ -64,7 +64,7 @@ Marand este un print shop profesionist, echipat cu tehnologie modernă pentru pr
 
 Lucrăm cu afaceri, agenții, organizatori de evenimente, artiști și persoane fizice — cu oricine are nevoie să își transforme ideile în printuri reușite.
 
-### 134cm
+### 136,1 cm
 
 Lățime maximă de print
 
@@ -72,11 +72,11 @@ Lățime maximă de print
 
 Echipamente profesionale
 
-### 24h
+### La ofertare
 
-Timp mediu de execuție
+Termen de execuție
 
-### Fără minim
+### După produs
 
 Cantitate minimă
 

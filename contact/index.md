@@ -21,7 +21,7 @@ Dacă vrei doar să deschizi conversația, completează formularul scurt și rev
 
 **Telefon:** 0725894569
 
-**Adresă:** Strada Libertăţii A2, 320003 Reșița, România
+**Adresă:** Strada Libertății A2, 320003 Reșița, România
 
 **Program:** Lun–Vin: 9:00 – 18:00, Sâm: 10:00 – 14:00
 
@@ -29,4 +29,4 @@ Putem verifica fișierele, materialele și finisajele direct la fața locului î
 
 ## Trimite-ne un mesaj
 
-Lasă datele de contact și un scurt rezumat al proiectului. Îți răspundem direct prin Zoho pe aceeași adresă de email.
+Lasă datele de contact și un scurt rezumat al proiectului. Îți răspundem pe adresa de email indicată.

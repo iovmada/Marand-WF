@@ -14,11 +14,11 @@ Markdown source: https://marand-print.ro/produse/index.md
 ---
 ## Catalog produse Marand.
 
-9 categorii reorganizate pentru print digital, semnalistică și textile personalizate. Specificații tehnice reale: lățime printare 1361 mm, lățime decupare pe contur 1320 mm pentru tot ce iese din MUTOH XPJ-1341 SR PRO . Toate materialele referențiate sunt în stoc.
+Print digital, semnalistică și textile personalizate, în nouă categorii. Lățime tehnică maximă de print: 1361 mm pe Mutoh XpertJet 1341SR Pro ; lățime tehnică maximă de tăiere: 1320 mm pe plotterul ValueCut II 1300. Aria utilă depinde de material, margini și finisaje. Disponibilitatea materialelor și termenul se confirmă în ofertă.
 
 ## Printuri large format
 
-Bannere PVC, mesh perforat și billboard urban — toate printate cu cerneluri eco-solvent pe MUTOH XPJ-1341 SR PRO. Lățime maximă printare 1361 mm, lățime maximă decupare pe contur 1320 mm.
+Bannere PVC, mesh perforat și billboard urban — toate printate cu cerneluri eco-solvent pe Mutoh XpertJet 1341SR Pro. Lățime tehnică maximă de print: 1361 mm. Finisarea și segmentarea se stabilesc după dimensiunea finală.
 
 ### Banner Blockout
 
@@ -30,14 +30,14 @@ Banner heavy-duty cu strat blockout — se imprimă pe ambele părți, fără tr
 - ambele părți · full color
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Finisare**
 - tiv + capse la 50 cm
 - **Aplicații**
 - bannere față-verso, displays, evenimente
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Banner Frontlit
 
@@ -49,14 +49,14 @@ Bannerul standard pentru fațade, evenimente și semnalistică exterioară — p
 - o singură parte · full color
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Finisare**
 - tiv + capse la 50 cm
 - **Durabilitate**
-- exterior 2–3 ani
+- exterior 2–3 ani · estimativ, după expunere și finisare
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Mesh
 
@@ -66,16 +66,16 @@ PVC perforat care lasă vântul să treacă — perfect pentru garduri, schele �
 - PVC mesh perforat
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Vânt**
 - permite trecerea aerului
 - **Finisare**
 - tiv + capse la 50 cm
 - **Durabilitate**
-- exterior 1–2 ani
+- exterior 1–2 ani · estimativ, după expunere și finisare
 
 Dimensiuni populare
+
+Dimensiunile sunt L × H, în cm, pentru produsul finit. Formatele care depășesc lățimea utilă pe ambele orientări se realizează din segmente; îmbinarea și poziția capselor se stabilesc în ofertă.
 
 ### Billboard
 
@@ -85,8 +85,6 @@ Print pe hârtie blueback pentru afișaj urban, panouri stradale și billboardur
 - Visual Blueback 120 g/m² mat
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Aplicare**
 - lipire pe panou stradal
 - **Lungime rolă**
@@ -95,6 +93,8 @@ Print pe hârtie blueback pentru afișaj urban, panouri stradale și billboardur
 - billboard, afișaj urban, campanii outdoor
 
 Dimensiuni populare
+
+Formatul afișajului este L × H. Pentru formatele mari, printul se livrează în segmente pentru lipire pe panou; panotarea și suprapunerile se stabilesc după dimensiunea suprafeței.
 
 ## Printuri pe canvas
 
@@ -112,12 +112,12 @@ Print pe canvas poliester, întins pe șasiu din lemn — disponibil în 210 sau
 - mat / lucios
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Configurații**
 - simplu · multipanou (2–5) · panoramic
 
 Dimensiuni populare
+
+Dimensiunile indică fața tabloului finit. Macheta necesită rezervă pentru înfășurarea pe șasiu, confirmată înainte de print. 3 × 50×70 cm înseamnă trei piese, fiecare de 50×70 cm.
 
 ## Poster pe hârtie foto
 
@@ -125,28 +125,28 @@ Poster comercial pe hârtie foto lucioasă sau mată — ideal pentru retail, de
 
 ### Poster pe hârtie foto
 
-Hârtie foto 200 g/m², finisaj lucios sau mat — pentru postere de interior, retail și grafică promo.
+Hârtie foto de 200 g/m², lucioasă — pentru postere de interior, retail și grafică promo. Varianta mată se stabilește după suportul disponibil.
 
 - **Material**
 - Premium Art Photo Paper 200 g/m²
 - **Finisaje**
-- lucios / mat
+- lucios; mat la cerere, cu suportul confirmat în ofertă
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Rezoluție**
-- 1440 dpi
+- până la 1200 × 1200 dpi (utilaj)
 - **Utilizare**
 - interior
 
 Dimensiuni populare
 
+Formatul ales este dimensiunea finală a posterului. Pentru varianta mată, confirmăm hârtia sau finisajul disponibil înainte de producție.
+
 ## Fotografii de mari dimensiuni
 
-Print foto fine-art pentru fotografi, artiști și galerii — pe hârtie foto premium sau canvas, cu opțiuni de cașerare pe panou rigid și ramă pentru aspect de galerie.
+Print foto de mari dimensiuni pentru fotografi, artiști și galerii — pe hârtie foto premium sau canvas, cu opțiuni de cașerare pe panou rigid și ramă pentru aspect de galerie.
 
-### Print foto fine-art
+### Print foto de mari dimensiuni
 
 Reproduceri fotografice de mari dimensiuni — calibrare culoare profesională, opțiuni cașerare și ramă.
 
@@ -154,24 +154,24 @@ Reproduceri fotografice de mari dimensiuni — calibrare culoare profesională, 
 - hârtie foto premium / canvas
 - **Lățime print**
 - 1361 mm
-- **Decupare contur**
-- 1320 mm
 - **Rezoluție**
-- 1440 dpi · profil ICC dedicat
+- până la 1200 × 1200 dpi (utilaj)
 - **Finisare**
 - cașerare pe Stadur / Bond / ramă lemn
-- **Audience**
+- **Destinație**
 - fotografi, artiști, galerii, decor premium
 
 Dimensiuni populare
 
+Suportul, profilul de culoare și finisarea se aleg pentru lucrarea ta. Pentru cerințe de conservare sau expunere în galerie, cere confirmarea caracteristicilor sistemului de print.
+
 ## Grafică pentru geamuri și vitrine
 
-Aplicații mari pentru vitrine, uși de sticlă și partiții — vinyl opac, one-way vision pentru vizibilitate dintr-o singură direcție, sau folie sablat decorativă pentru intimitate.
+Aplicații mari pentru vitrine, uși de sticlă și partiții — vinyl opac, one-way vision pentru vizibilitate dintr-o singură direcție, sau folie sablată decorativă pentru intimitate.
 
 ### Grafică geamuri / vitrine
 
-Vinyl printat, one-way vision sau folie sablat — pentru retail, birouri, săli meeting și vehicule comerciale.
+Vinyl printat, one-way vision sau folie sablată — pentru retail, birouri, săli de ședință și vehicule comerciale.
 
 - **Materiale**
 - vinyl · OWV · Mirage Frosty Airfree
@@ -182,7 +182,7 @@ Vinyl printat, one-way vision sau folie sablat — pentru retail, birouri, săli
 - **Aplicare**
 - umedă sau uscată
 - **Durabilitate**
-- 5–7 ani (Frosty)
+- 5–7 ani (Frosty) · estimativ, după expunere și finisare
 - **Aplicații**
 - retail, birouri, partiții, vitrine premium
 
@@ -190,11 +190,11 @@ Aplicații tipice
 
 ## Panouri rigide printate
 
-Print pe panouri compozite rigide — Bond ACM pentru exterior și fațade, plexiglass (PMMA) și PVC pentru displays interior și branding rigid. Dimensiuni standard ale colilor: Bond 1500×3050 mm, PMMA și PVC 2050×3050 mm.
+Panouri personalizate pentru semnalistică și decor. Bond se realizează prin aplicarea autocolantului printat pe placa de aluminiu compozit. PMMA și Stadur sunt suporturi distincte; tehnologia și finisarea lor se confirmă în ofertă. Dimensiunea plăcii și aria personalizată se stabilesc separat.
 
 ### Panou Bond ACM
 
-Aluminiu compozit cu finisaj PVDF — pentru fațade, semnalistică permanentă exterior și placări durabile.
+Placă din aluminiu compozit Bond, personalizată cu autocolant printat și aplicat pe suport — pentru semnalistică de exterior și branding.
 
 - **Material**
 - Bond PVDF aluminiu compozit
@@ -209,26 +209,30 @@ Aluminiu compozit cu finisaj PVDF — pentru fațade, semnalistică permanentă 
 
 Dimensiuni populare
 
-### Panou plexiglass / PVC
+Dimensiunile sunt L × H, în cm. 200×300 cm este un ansamblu din mai multe plăci, nu o singură coală de 150×305 cm. La acoperire integrală peste lățimea utilă a autocolantului, grafica se îmbină. Laminarea și montajul se confirmă în ofertă.
 
-Plexiglass (PMMA cast) și PVC compozit pentru displays interior, signage rigid și branding premium.
+### Panou plexiglass / Stadur
+
+Plexiglass (PMMA) sau placă compozită ușoară Stadur Easyprint, fără PVC — pentru panouri de prezentare și semnalistică de interior.
 
 - **Materiale**
-- PMMA cast · Stadur Easyprint PVC
+- PMMA cast · Stadur Easyprint fără PVC
 - **Coală standard**
-- 2050 × 3050 mm
+- PMMA: 2050 × 3050 mm; Stadur: 2030 × 3050 mm
 - **Variante PMMA**
 - Metallic IRO · Seta-LED (backlit)
 - **Finisaje**
-- mat (PVC) · metalizat / opal (PMMA)
+- mat (Stadur) · metalizat / opal (PMMA)
 - **Aplicații**
 - POS / POP, displays interior, lightbox, plăcuțe
 
 Dimensiuni populare
 
+Dimensiunile indică produsul finit. Suportul, grosimea, formatul disponibil și tehnologia de personalizare se confirmă separat.
+
 ## Printuri format mic
 
-Două grupuri de produse în această secțiune: adezive printate (stickere, etichete, autocolante, podea, magnetic) printate pe MUTOH eco-solvent + plotter, și print pe hârtie (cărți de vizită, flyere, broșuri) printate pe Ricoh MC2000 A3 laser.
+Două grupuri de produse în această secțiune: autocolante și etichete , realizate prin print eco-solvent și tăiere la plotter, și print pe hârtie (cărți de vizită, flyere, broșuri), realizat pe Ricoh M C2000 A3 laser. Pentru folia magnetică, suportul și procesul compatibil se confirmă separat.
 
 ### Stickere promoționale
 
@@ -279,7 +283,7 @@ Adezive mici și medii pentru vitrine — ore program, promoții, plăți accept
 - **Decupare**
 - contur personalizat
 - **Durabilitate**
-- 2–5 ani exterior
+- 2–5 ani exterior · estimativ, după expunere și finisare
 
 Dimensiuni populare
 
@@ -296,35 +300,37 @@ Vinyl printat cu laminare anti-slip — pentru retail, evenimente, wayfinding ș
 - **Aplicații**
 - retail, evenimente, marcaje, wayfinding
 - **Durabilitate**
-- 3–6 luni trafic intens
+- 3–6 luni trafic intens · estimativ, după expunere și finisare
 
 Dimensiuni populare
 
 ### Folie magnetică printată
 
-Folie magnetică albă printabilă, 600 µm — branding repoziționabil pe suprafețe metalice.
+Folie magnetică albă printabilă, 600 µm — branding repoziționabil pe suprafețe feromagnetice compatibile.
 
 - **Material**
 - Folie magnetică albă
 - **Grosime**
-- 600 µm (0.6 mm)
+- 600 µm (0,6 mm)
 - **Forță**
 - ~30 g/cm²
-- **Cerneală**
-- print pe bază de apă
+- **Proces**
+- compatibilitatea suportului și procesul se confirmă în ofertă
 - **Aplicații**
 - auto comercial, semnalistică modulară, meniuri, promoții schimbabile
 
 Dimensiuni populare
 
+Verificăm materialul printabil și suprafața de aplicare înainte de producție. Dimensiunile sunt ale elementului finit; compatibilitatea pentru utilizare auto se confirmă după proiect.
+
 ### Cărți de vizită
 
-Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.
+Cărți de vizită standard sau premium, cu finisaj mat, soft-touch sau colțuri rotunjite.
 
 - **Format**
 - 90×50 / 85×55 mm
 - **Hârtie**
-- 300g / 350g / specialty
+- carton până la 300 g/m², conform suportului disponibil
 - **Finisaj**
 - mat · lucios · soft touch
 - **Print**
@@ -334,6 +340,8 @@ Business cards standard sau premium, cu finisaj mat, soft-touch sau colțuri rot
 
 Tiraje populare
 
+Printul pe ambele fețe și finisajele se confirmă pentru cartonul ales. Limita de 300 g/m² a imprimării nu reprezintă limita duplexului automat.
+
 ### Flyere
 
 Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scurte sau medii.
@@ -341,7 +349,7 @@ Flyere promo pentru campanii, restaurante, evenimente și retail, în tiraje scu
 - **Format**
 - A6 · A5 · A4 · DL
 - **Hârtie**
-- 130g · 170g · 200g
+- 130 · 170 · 200 g/m²
 - **Print**
 - 1 față / 2 fețe
 - **Finisaj**
@@ -358,15 +366,17 @@ Broșuri capsate pentru prezentări corporate, meniuri, cataloage compacte și m
 - **Format**
 - A5 · A4 închis
 - **Pagini**
-- 8–40 pagini
+- 8–40, în multipli de 4; total inclusiv coperta
 - **Finisare**
 - capsare · pliere
 - **Hârtie**
-- interior 130–170g · copertă 250g
+- interior 130–170 g/m² · copertă 250 g/m²
 - **Cantitate**
 - de la 25 buc
 
 Tiraje populare
+
+Formatul este închis, după pliere. Trimite paginile individual, în ordinea lecturii; marginile de tăiere și spațiul de siguranță se confirmă înainte de print.
 
 ## Semnalistică
 
@@ -377,7 +387,7 @@ Panouri direcționale pentru ghidare și informare — interior pentru birouri, 
 Plăcuțe de birou, săli, room signs și panouri direcționale pentru spații interioare comerciale.
 
 - **Suport**
-- Stadur PVC · plexiglass · Bond
+- Stadur Easyprint fără PVC · plexiglass · Bond
 - **Print**
 - vinyl printat sau lettering decupat
 - **Lățime print**
@@ -400,7 +410,7 @@ Panouri pentru parcări, complexe rezidențiale și comerciale, fațade — rezi
 - **Coală standard**
 - 1500 × 3050 mm
 - **Durabilitate**
-- 5+ ani exterior
+- 5+ ani exterior · estimativ, după expunere și finisare
 - **Aplicații**
 - parcări, complexe, fațade, ghidare exterior
 
@@ -408,7 +418,7 @@ Tipuri populare
 
 ## Printuri pe textile
 
-Personalizare textile cu print DTF — culori vii, transfer rezistent la spălare, execuție flexibilă de la o singură bucată la serii mari. Printate pe DTF XPD 924 și aplicate cu presa termică LOPTUS LTS 38.
+Personalizare textile prin transfer DTF, de la o bucată la serii. Dimensiunea articolului este distinctă de aria printului; poziția, mărimea transferului și compatibilitatea materialului se confirmă în ofertă.
 
 ### Tricou personalizat
 
@@ -425,6 +435,8 @@ Tricouri din bumbac sau mix poli-bumbac, personalizate cu transfer DTF — pentr
 - **Aplicații**
 - merch, echipe, evenimente, promo
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Hanorac personalizat
 
 Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, merch, workwear casual.
@@ -440,6 +452,8 @@ Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, mer
 - **Cantitate**
 - de la 1 buc la serii
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Vestă personalizată
 
 Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau fleece.
@@ -451,13 +465,15 @@ Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau 
 - **Mărimi**
 - S · M · L · XL · XXL
 - **Print**
-- piept · spate · brodare opțional
+- piept · spate
 - **Aplicații**
 - uniforme, team wear, evenimente, promo
 
+Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+
 ### Sacoșe personalizate (tote bag)
 
-Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print simplu sau full-coverage.
+Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print pe una sau două fețe, în aria confirmată pentru modelul ales.
 
 - **Tehnologie**
 - print DTF + presă termică
@@ -466,6 +482,8 @@ Sacoșe textile pentru retail, gifting, evenimente și activări de brand — pr
 - **Print**
 - o singură față sau două
 - **Dimensiuni**
-- standard 38×42 · XL 42×45 cm
+- standard 38×42 cm · XL 42×45 cm
 - **Aplicații**
 - retail, gifting, evenimente, promo
+
+38×42 cm și 42×45 cm sunt dimensiunile sacoșei. Aria imprimabilă, distanța față de cusături și personalizarea celei de-a doua fețe se confirmă separat.

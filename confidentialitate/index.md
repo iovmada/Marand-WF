@@ -17,7 +17,7 @@ Also served at /privacy/ for convention; /confidentialitate/ is the canonical UR
 
 Politica descrie exact ce se întâmplă cu datele pe marand-print.ro. Fiecare afirmație de mai jos corespunde a ceea ce face efectiv codul site-ului — nu este un text generic.
 
-Ultima actualizare: 2 septembrie 2026
+Ultima actualizare: 4 octombrie 2026
 
 ## Cine este operatorul
 

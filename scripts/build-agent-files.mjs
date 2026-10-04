@@ -63,7 +63,7 @@ const business = {
  *
  * `whenToUse` is the part agents actually need: not marketing copy, but the
  * concrete jobs this page can answer. Keep it specific — "printing services"
- * is useless to a router; "roll-fed prints up to 134 cm wide" is not.
+ * is useless to a router; "roll-fed prints up to 136,1 cm wide" is not.
  * ------------------------------------------------------------------ */
 
 const pages = [
@@ -99,9 +99,9 @@ const pages = [
     url: "/materiale/",
     title: "Materiale — materials catalogue with technical specs",
     summary:
-      "Stocked substrates by brand and grade — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.",
+      "Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.",
     whenToUse: [
-      "the user names a material, brand or grade and you need to confirm it is stocked",
+      "the user names a material, brand or grade and you need to identify the material; current stock requires human confirmation",
       "you need technical specs: grammage, width, adhesive type, indoor vs outdoor rating, durability",
       "you are choosing between two substrates for a stated environment",
     ],
@@ -139,12 +139,12 @@ const pages = [
     url: "/productie/",
     title: "Producție — production and execution services",
     summary:
-      "How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, all in-house.",
+      "How a job moves from file to finished print: pre-press checks, printing, lamination, contour cutting and manual finishing, with technology and finishing confirmed per project.",
     whenToUse: [
-      "the user asks about turnaround (24h average, no minimum quantity)",
-      "you need the artwork requirements before a file is sent: vector PDF/AI/EPS or 300 DPI raster, CMYK",
+      "the user asks about turnaround and minimum quantity, both confirmed per product and project",
+      "you need the artwork requirements before a file is sent: vector PDF/AI/EPS or raster at final print size; resolution and colour settings are checked per product",
       "the user asks what finishing is possible — hemming, eyelets, stretching on a frame, lamination, contour cutting",
-      "you need to know which steps are in-house rather than subcontracted (all of them)",
+      "you need to know the production steps and technology used for the chosen product",
     ],
   },
   {
@@ -356,12 +356,12 @@ Romania** and you need to know whether it can be made, on what material, and
 how to start the order. Concretely:
 
 - Confirming a product is producible: banners and mesh, canvas stretched on a
-  frame, stickers and cut vinyl, window film, rigid PVC/forex boards, wallpaper,
+  frame, stickers and cut vinyl, window film, Bond ACM, PMMA and Stadur panels,
   posters, printed T-shirts and textiles, labels, small-format laser work.
 - Checking a hard production limit before promising anything. The widest
-  roll-fed print is **134 cm** (Mutoh XPJ-1341 SR PRO). Anything wider must be
+  roll-fed print is **136,1 cm** (Mutoh XpertJet 1341SR Pro). Formats that cannot fit in either orientation must be
   panelled — see /echipamente/.
-- Looking up a stocked material by brand or grade: Avery Dennison, Oracal,
+- Looking up a material by brand or grade (stock requires human confirmation): Avery Dennison, Oracal,
   Mirage, Star/Starflex, Stadur, Visual, Artex. Specs live on /materiale/.
 - Showing a user how a wall piece will look before they commit: /studio/
   composites their own image into a room photo in correct perspective,
@@ -688,9 +688,8 @@ sends \`Vary: Accept\`. See \`backend/forms-api/server.js\`.
 - Everything under \`/\` is GET-only, unauthenticated, and safe to crawl. There
   is no rate limit, but \`robots.txt\` disallows \`/produse-test/\` and
   \`/backend/\` — respect it.
-- The site publishes **no prices**. Any number an agent states as a price is
-  fabricated unless it appears verbatim in the page text ("de la 12 €/m²" style
-  starting prices on the homepage are indicative only).
+- The site publishes **no prices**. Pricing depends on material, dimensions,
+  quantity and finishing; route price requests to the quote form. Do not invent prices.
 - \`POST /api/oferta\` and \`POST /api/contact\` send real email to a real
   business. Do not submit either on a user's behalf without explicit,
   in-the-moment confirmation from that user.

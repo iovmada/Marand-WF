@@ -12,9 +12,21 @@ export const chatbotCatalog = {
     productsPage: '/produse/',
     materialsPage: '/materiale/',
     contactPage: '/contact/',
-    hours: 'Luni-Vineri 09:00-18:00'
+    hours: 'Luni–Vineri 09:00–18:00; Sâmbătă 10:00–14:00'
+  },
+  production: {
+    largeFormatPrintMaxMm: 1361,
+    contourCutMaxMm: 1320,
+    note: 'Useful area depends on substrate, margins and finishing. Oversized products may require segmentation. Stock, price, minimum quantity and deadline are confirmed per product when quoting.'
   },
   products: [
+    {
+      name: 'Panou Bond ACM',
+      useCases: ['exterior signage', 'branding on rigid panels'],
+      recommendWhen: 'the client needs a rigid composite aluminium sign',
+      relatedMaterial: ['Bond ACM', 'printed adhesive vinyl'],
+      shortNote: 'Marand personalizes Bond by applying printed adhesive vinyl to the plate. No direct printing on Bond in the workshop. A 200 x 300 cm format is a multi-panel assembly, not one 150 x 305 cm sheet.'
+    },
     {
       name: 'Bannere si mesh',
       useCases: ['outdoor advertising', 'facades', 'events', 'large visibility'],

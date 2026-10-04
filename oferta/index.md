@@ -18,7 +18,7 @@ Această pagină te ajută să definești tipul de produs, cantitatea, termenul,
 
 ## Cere ofertă
 
-Câmpurile sunt organizate pentru a reduce cererile vagi și pentru a ajuta Marand să califice rapid lucrările.
+Spune-ne ce vrei să realizăm, dimensiunile și cantitatea. Câmpurile marcate cu * sunt obligatorii.
 
 Stadiul graficii
 
@@ -40,7 +40,7 @@ PDF, AI, EPS, PSD, TIFF, PNG, JPG, SVG, CDR
 - Cantitatea și dacă este o lucrare unică sau una recurentă.
 - Preferința de material dacă o cunoști deja sau menționează că vrei o recomandare.
 - Stadiul graficii: gata de print, necesită corecții sau trebuie făcută de la zero.
-- Deadline-ul și dacă este nevoie de montaj sau livrare.
+- Termenul dorit și dacă este nevoie de montaj sau livrare.
 
 ### Factori care influențează oferta
 
@@ -50,6 +50,6 @@ Din pagina de produse, galerie sau CTA-ul din homepage.
 
 Cantitate, format, termen, fișiere și date de contact într-o singură cerere structurată.
 
-Material, metodă de print, finisaje și suport de design — estimare imediată.
+Material, metodă de print, finisaje și suport de design — estimare după verificare.
 
 Recomandare clară, termen estimat și confirmarea pașilor următori.

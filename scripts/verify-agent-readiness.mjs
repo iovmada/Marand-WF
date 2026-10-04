@@ -167,7 +167,7 @@ await check("llms.txt: exists and carries when-to-use guidance", async () => {
   must(/^#\s/m.test(body), "llms.txt has no H1");
   must(/##\s*When to use/i.test(body), "llms.txt has no 'When to use' section");
   must(/##\s*How to call it/i.test(body), "llms.txt does not say how to call the site");
-  must(body.includes("134 cm"), "when-to-use is generic — no concrete capability limit stated");
+  must(body.includes("136,1 cm"), "when-to-use is generic — no concrete capability limit stated");
   must(/Do \*\*not\*\* use this site for/.test(body), "llms.txt never states what it is NOT for");
   return `${body.length} bytes`;
 });

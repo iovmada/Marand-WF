@@ -30,7 +30,7 @@ const navItems = [
   { key: "products", label: "Produse", href: "/produse/" },
   { key: "materials", label: "Materiale", href: "/materiale/" },
   { key: "studio", label: "Studio", href: "/studio/" },
-  { key: "process", label: "Cum Lucram", href: "/#cum-functioneaza" },
+  { key: "process", label: "Cum lucrăm", href: "/#cum-functioneaza" },
   { key: "equipment", label: "Echipamente", href: "/echipamente/" },
   { key: "contact", label: "Contact", href: "/contact/" }
 ];
@@ -45,11 +45,6 @@ const socialLinks = [
     label: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61588679174224",
     icon: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.4c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/></svg>`
-  },
-  {
-    label: "TikTok",
-    href: "#",
-    icon: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.6 6.3a4.6 4.6 0 0 1-3.2-1.4 4.6 4.6 0 0 1-1.3-2.6V2h-3.4v13a2.6 2.6 0 1 1-1.9-2.5V9a6 6 0 1 0 5.3 5.9V8.5a8 8 0 0 0 4.7 1.5V6.6a4.7 4.7 0 0 1-.2-.3z"/></svg>`
   }
 ];
 
@@ -57,20 +52,20 @@ const footerGroups = [
   {
     title: "Produse",
     links: [
-      { label: "Large format", href: "/produse/#large-format" },
-      { label: "Bannere și mesh", href: "/produse/#banners" },
+      { label: "Printuri de mari dimensiuni", href: "/produse/#large-format" },
+      { label: "Bannere și mesh", href: "/produse/#banner-frontlit" },
       { label: "Printuri pe canvas", href: "/produse/#canvas" },
-      { label: "Stickere și vinyl", href: "/produse/#stickers" },
-      { label: "Tricouri și textile", href: "/produse/#textiles" },
-      { label: "Small Format", href: "/produse/#small-format" },
+      { label: "Stickere și autocolant", href: "/produse/#stickere-promo" },
+      { label: "Tricouri și textile", href: "/produse/#textile" },
+      { label: "Printuri de format mic", href: "/produse/#format-mic" },
       { label: "Materiale", href: "/materiale/" },
       { label: "Studio — previzualizare", href: "/studio/" }
     ]
   },
   {
-    title: "Company",
+    title: "Despre Marand",
     links: [
-      { label: "Homepage", href: "/#design" },
+      { label: "Acasă", href: "/#design" },
       { label: "Proces", href: "/#cum-functioneaza" },
       { label: "Galerie", href: "/#galerie" },
       { label: "Ofertă", href: "/oferta/" },
@@ -87,7 +82,9 @@ const footerGroups = [
       { label: "office@marand-print.ro", href: "mailto:office@marand-print.ro", absolute: true },
       { label: "0725894569", href: "tel:+40725894569", absolute: true },
       { label: "Cere ofertă", href: "/oferta/" },
-      { label: "Lun-Vin: 9-18", href: "#contact", absolute: true }
+      { label: "Luni–Vineri: 09:00–18:00 · Sâmbătă: 10:00–14:00", href: "/contact/" },
+      { label: "Strada Libertății A2, 320003 Reșița", href: "/contact/" },
+      { label: "Deschide traseul", href: "https://www.google.com/maps/dir/?api=1&destination=Strada%20Libert%C4%83%C8%9Bii%20A2%2C%20320003%20Re%C8%99i%C8%9Ba%2C%20Rom%C3%A2nia", absolute: true }
     ]
   }
 ];
@@ -148,7 +145,7 @@ function renderHeader(toRoute, navActive) {
             <span></span>
             <span></span>
           </button>
-          <a class="cta cta-primary cta-pill header-cta" href="${toRoute("/oferta/")}">Cere Oferta</a>
+          <a class="cta cta-primary cta-pill header-cta" href="${toRoute("/oferta/")}">Cere ofertă</a>
         </div>
         <div class="mobile-nav" id="mobile-nav" hidden>
           <button class="mobile-nav-close" type="button" aria-label="Închide meniul">×</button>
@@ -156,7 +153,7 @@ function renderHeader(toRoute, navActive) {
             <nav class="mobile-nav-links" aria-label="Navigare principală pe mobil">
               ${links}
             </nav>
-            <a class="cta cta-primary cta-pill mobile-nav-cta" href="${toRoute("/oferta/")}">Cere Oferta</a>
+            <a class="cta cta-primary cta-pill mobile-nav-cta" href="${toRoute("/oferta/")}">Cere ofertă</a>
           </div>
         </div>
       </header>`;
@@ -193,7 +190,7 @@ function renderFooter(toRoute) {
         <div class="site-footer-inner">
           <div class="site-footer-top">
             <div class="site-footer-brand">
-              <div class="site-footer-social" aria-label="Retele sociale Marand">
+              <div class="site-footer-social" aria-label="Rețele sociale Marand">
                 ${social}
               </div>
               <p class="site-footer-intro">Print shop profesionist — large format, bannere, canvas, stickere, textile și multe altele. Calitate și execuție rapidă.</p>

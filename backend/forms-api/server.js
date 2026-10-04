@@ -8,6 +8,7 @@ import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { buildChatInstructions, chatbotCatalog } from './chatbot-knowledge.js';
 import { wantsMarkdown, setVary } from './negotiate.js';
+import { validateFormPayload } from './form-validation.js';
 
 const app = express();
 
@@ -241,8 +242,8 @@ const fallbackChatReply = (locale = 'ro') => {
   const isRomanian = locale.startsWith('ro');
   return {
     reply: isRomanian
-      ? 'Print shop-ul nostru se va deschide pe 03 august. Pana atunci, ne poti trimite o cerere de oferta si revenim cu detalii.'
-      : 'Our print shop opens on July 25. Until then, you can send us a quote request and we will follow up with details.',
+      ? 'Te putem ajuta să alegi produsul și materialul potrivit. Trimite dimensiunile, cantitatea și termenul dorit prin formularul de ofertă.'
+      : 'We can help you choose the right print product and material. Send the dimensions, quantity and desired deadline through the quote form.',
     links: sanitizeChatLinks(['/produse/', '/oferta/'].map((href) => ({ href })), locale)
   };
 };
@@ -439,6 +440,7 @@ app.post(['/oferta', '/api/oferta'], async (req, res) => {
     const email = String(payload.email || '').trim();
     const phone = String(payload.phone || '').trim();
     const category = String(payload.category || '').trim();
+    const product = String(payload.product || '').trim();
     const deadline = String(payload.deadline || '').trim();
     const quantity = String(payload.quantity || '').trim();
     const budget = String(payload.budget || '').trim();
@@ -446,9 +448,8 @@ app.post(['/oferta', '/api/oferta'], async (req, res) => {
     const details = String(payload.details || '').trim();
     const files = Array.isArray(payload.files) ? payload.files : [];
 
-    if (!name || !email || !category || !details) {
-      return res.status(400).json({ error: 'Missing required fields.' });
-    }
+    const validationError = validateFormPayload(payload, { quote: true });
+    if (validationError) return res.status(400).json({ error: validationError });
 
     const subject = `Cerere ofertă Marand - ${name} - ${category}`;
     const lines = [
@@ -460,6 +461,7 @@ app.post(['/oferta', '/api/oferta'], async (req, res) => {
       `Telefon: ${phone || 'Nespecificat'}`,
       '',
       `Categorie produs: ${category}`,
+      `Produs / variantă: ${product || 'De stabilit'}`,
       `Termen dorit: ${deadline || 'Nespecificat'}`,
       `Cantitate estimată: ${quantity || 'Nespecificat'}`,
       `Buget estimat: ${budget || 'Nespecificat'}`,
@@ -509,9 +511,8 @@ app.post(['/contact', '/api/contact'], async (req, res) => {
     const phone = String(payload.phone || '').trim();
     const details = String(payload.details || '').trim();
 
-    if (!name || !email || !details) {
-      return res.status(400).json({ error: 'Missing required fields.' });
-    }
+    const validationError = validateFormPayload(payload);
+    if (validationError) return res.status(400).json({ error: validationError });
 
     const subject = `Mesaj contact Marand - ${name}`;
     const lines = [
