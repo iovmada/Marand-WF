@@ -2580,6 +2580,81 @@
     .hero-category-list .hero-category-thumb { transition: none; }
   }
 </style>
+<style id="hero-service-band-layout">
+  .hero-metrics.hero-services {
+    align-items: stretch;
+    gap: 0;
+    background: var(--blue);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .hero-services .hero-metric {
+    box-sizing: border-box;
+    position: relative;
+    padding: 28px 24px;
+    min-height: 166px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: background-color 180ms ease;
+  }
+  .hero-services .hero-metric + .hero-metric::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    bottom: 28px;
+    left: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.28);
+  }
+  .hero-services .hero-metric-copy {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #fff;
+    transition: transform 180ms ease;
+  }
+  .hero-services .hero-metric-value { color: #fff; }
+  .hero-services .hero-metric-label { color: rgba(255, 255, 255, 0.88); }
+  @media (max-width: 960px) {
+    .hero-services .hero-metric:nth-child(3)::before { display: none; }
+    .hero-services .hero-metric:nth-child(n+3)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.28);
+    }
+  }
+  @media (max-width: 640px) {
+    .hero-services .hero-metric { padding: 24px 16px; min-height: 180px; }
+    .hero-services .hero-metric + .hero-metric::before { top: 24px; bottom: 24px; }
+    .hero-services .hero-metric:nth-child(n+3)::after { left: 16px; right: 16px; }
+  }
+
+  .hero-services .hero-metric:nth-child(1) { --service-hover: #00aeef; --service-hover-text: #000; }
+  .hero-services .hero-metric:nth-child(2) { --service-hover: #ec008c; --service-hover-text: #000; }
+  .hero-services .hero-metric:nth-child(3) { --service-hover: #fff200; --service-hover-text: #000; }
+  .hero-services .hero-metric:nth-child(4) { --service-hover: #111; --service-hover-text: #fff; }
+  .hero-services .hero-metric-value,
+  .hero-services .hero-metric-label { transition: color 180ms ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .hero-services .hero-metric:hover { background-color: var(--service-hover); }
+    .hero-services .hero-metric:hover .hero-metric-copy { transform: translateY(-3px); }
+    .hero-services .hero-metric:hover .hero-metric-value,
+    .hero-services .hero-metric:hover .hero-metric-label { color: var(--service-hover-text); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-services .hero-metric,
+    .hero-services .hero-metric-copy,
+    .hero-services .hero-metric-value,
+    .hero-services .hero-metric-label { transition: none; }
+    .hero-services .hero-metric:hover .hero-metric-copy { transform: none; }
+  }
+</style>
 </head>
 <body data-marand-page="home" data-marand-nav-active="design">
 <div class="pointer-glow" aria-hidden="true"></div>
