@@ -2507,6 +2507,79 @@
 <link rel="manifest" href="./site.webmanifest" />
 <meta name="theme-color" content="#0c24c2" />
 <!-- /marand:favicons -->
+<style id="hero-services-layout">
+  .hero-metrics.hero-services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; gap: 24px; }
+  .hero-services .hero-metric { min-width: 0; width: auto; gap: 14px; align-items: flex-start; }
+  .hero-services .hero-metric-copy { min-width: 0; white-space: normal; gap: 10px; }
+  .hero-services .hero-metric-value { font-size: 24px; line-height: 1.2; }
+  .hero-services .hero-metric-label { line-height: 1.45; max-width: 29ch; }
+  .hero-services .hero-metric-pill { margin-top: 3px; }
+  @media (max-width: 960px) { .hero-metrics.hero-services { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+  @media (max-width: 640px) {
+    .hero-metrics.hero-services { gap: 24px 16px; }
+    .hero-services .hero-metric-value { font-size: 20px; }
+    .hero-services .hero-metric-label { font-size: 14px; }
+    .hero-services .hero-metric-pill { width: 28px; height: 28px; }
+    .hero-services .hero-metric { gap: 10px; }
+  }
+</style>
+<style id="hero-category-layout">
+  .hero-category-list .hero-category {
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: color 180ms ease, transform 180ms ease;
+  }
+  .hero-category-list .hero-category-thumb {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: calc(100% + 18px);
+    width: 136px;
+    height: 102px;
+    max-width: none;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%) translateX(8px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+  .hero-category-list .hero-category:hover,
+  .hero-category-list .hero-category:focus-visible {
+    color: var(--blue);
+    transform: translateX(12px);
+  }
+  .hero-category-list .hero-category:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 5px;
+    border-radius: 4px;
+  }
+  .hero-category-list .hero-category:hover .hero-category-thumb,
+  .hero-category-list .hero-category:focus-visible .hero-category-thumb {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+  @media (min-width: 641px) and (max-width: 960px) {
+    .hero-category-list .hero-category { align-self: flex-start; }
+    .hero-category-list .hero-category-thumb { right: auto; left: calc(100% + 18px); }
+  }
+  @media (max-width: 640px) {
+    .hero-category-list .hero-category { display: inline-flex; flex: 0 0 auto; }
+    .hero-category-list .hero-category:hover,
+    .hero-category-list .hero-category:focus-visible { transform: none; }
+    .hero-category-list .hero-category-thumb { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-category-list .hero-category,
+    .hero-category-list .hero-category-thumb { transition: none; }
+  }
+</style>
 </head>
 <body data-marand-page="home" data-marand-nav-active="design">
 <div class="pointer-glow" aria-hidden="true"></div>
@@ -2548,12 +2621,12 @@
               <span class="accent">Viziunea</span><strong> ta.</strong><br />
               <strong>Printată cu </strong><em>impact.</em>
             </h1>
-            <p class="hero-copy">
-              <span>Bannere</span>
-              <span>canvas</span>
-              <span>stickere</span>
-              <span>mesh</span>
-              <span>textile</span>
+            <p class="hero-copy hero-category-list" id="categorii-print">
+              <a class="hero-category" href="./produse/#banner-frontlit">Bannere<img class="hero-category-thumb" src="./assets/images/produse-test/banner-frontlit.webp" width="136" height="102" alt="" aria-hidden="true" decoding="async" /></a>
+              <a class="hero-category" href="./produse/#canvas">canvas<img class="hero-category-thumb" src="./assets/images/produse-test/canvas-printuri.webp" width="136" height="102" alt="" aria-hidden="true" decoding="async" /></a>
+              <a class="hero-category" href="./produse/#stickere-promo">stickere<img class="hero-category-thumb" src="./assets/images/produse-test/stickere-promo.webp" width="136" height="102" alt="" aria-hidden="true" decoding="async" /></a>
+              <a class="hero-category" href="./produse/#mesh">mesh<img class="hero-category-thumb" src="./assets/images/produse-test/mesh.webp" width="136" height="102" alt="" aria-hidden="true" decoding="async" /></a>
+              <a class="hero-category" href="./produse/#textile">textile<img class="hero-category-thumb" src="./assets/images/produse-test/tricou.webp" width="136" height="102" alt="" aria-hidden="true" decoding="async" /></a>
             </p>
           </div>
           <p class="hero-note">Print cu tehnologie japoneză</p>
@@ -2562,30 +2635,29 @@
               <a class="cta cta-primary hero-action" href="#produse">Ce printam</a>
               <a class="cta cta-secondary hero-action" href="./oferta/">Vreau cea mai buna oferta</a>
             </div>
-            <div class="hero-metrics" aria-label="Indicatori de productie">
+            <div class="hero-metrics hero-services" aria-label="Servicii Marand" id="servicii-print">
               <div class="hero-metric">
-                <span class="hero-metric-pill" aria-hidden="true"></span>
                 <div class="hero-metric-copy">
-                  <span class="hero-metric-value">2500+</span>
-                  <span class="hero-metric-label">proiecte</span>
+                  <span class="hero-metric-value">Print DTF</span>
+                  <span class="hero-metric-label">Personalizăm tricouri, hanorace și sacoșe textile.</span>
                 </div>
               </div>
               <div class="hero-metric">
                 <div class="hero-metric-copy">
-                  <span class="hero-metric-value">24H</span>
-                  <span class="hero-metric-label">executie rapida</span>
+                  <span class="hero-metric-value">Print digital</span>
+                  <span class="hero-metric-label">Bannere, autocolante, canvas și materiale promoționale.</span>
                 </div>
               </div>
               <div class="hero-metric">
                 <div class="hero-metric-copy">
-                  <span class="hero-metric-value">6</span>
-                  <span class="hero-metric-label">echipamente calibrate</span>
+                  <span class="hero-metric-value">Verificare fișiere</span>
+                  <span class="hero-metric-label">Controlăm dimensiunile, rezoluția și marginile înainte de print.</span>
                 </div>
               </div>
               <div class="hero-metric">
                 <div class="hero-metric-copy">
-                  <span class="hero-metric-value">134 cm</span>
-                  <span class="hero-metric-label">latime maxima</span>
+                  <span class="hero-metric-value">Design grafic</span>
+                  <span class="hero-metric-label">Creăm sau adaptăm grafica pentru proiectul tău.</span>
                 </div>
               </div>
             </div>
