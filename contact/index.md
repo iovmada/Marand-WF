@@ -1,6 +1,6 @@
 # Contact — address, phone, hours
 
-> Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.
+> Contact and locations: email, phone, workshop address and hours in Reșița, handover point in Timișoara, short message form.
 
 Canonical HTML: https://marand-print.ro/contact/
 Markdown source: https://marand-print.ro/contact/index.md
@@ -21,9 +21,21 @@ Dacă vrei doar să deschizi conversația, completează formularul scurt și rev
 
 **Telefon:** 0725894569
 
+## Locații
+
+### Reșița
+
+Print shop și producție
+
 **Adresă:** Strada Libertății A2, 320003 Reșița, România
 
 **Program:** Luni–Vineri: 09:00–17:00, Sâmbătă–Duminică: închis
+
+### Timișoara
+
+Punct de predare
+
+**Adresă:** Strada Simion Bărnuțiu 77, Timișoara, România
 
 Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.
 

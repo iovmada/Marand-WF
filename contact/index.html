@@ -175,6 +175,46 @@
     color: #0b0b0b;
   }
 
+  .contact-locations-title {
+    margin: 0 0 24px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: #0b0b0b;
+  }
+
+  .contact-location + .contact-location {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-location-title {
+    margin: 0 0 6px;
+    font-family: "Acrom", "Roboto Flex", sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #0b0b0b;
+  }
+
+  .contact-location-type {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--blue);
+    font-weight: 700;
+  }
+
+  .contact-location-cta {
+    margin-top: 20px;
+    height: 48px;
+    padding: 0 24px;
+  }
+
   .contact-map {
     padding: 0;
     overflow: hidden;
@@ -490,27 +530,49 @@
               <span class="contact-label">Telefon</span>
               <p class="contact-value">0725894569</p>
             </div>
-            <div class="contact-item">
-              <span class="contact-label">Adresă</span>
-              <p class="contact-value">Strada Libertății A2<br />320003 Reșița, România</p>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Program</span>
-              <p class="contact-value">Luni–Vineri: 09:00–17:00<br />Sâmbătă–Duminică: închis</p>
-            </div>
           </div>
         </div>
+
+        <section class="contact-card contact-locations" id="locatii" aria-labelledby="contact-locations-title">
+          <h2 class="contact-locations-title" id="contact-locations-title">Locații</h2>
+          <article class="contact-location" aria-labelledby="location-resita-title">
+            <h3 class="contact-location-title" id="location-resita-title">Reșița</h3>
+            <p class="contact-location-type">Print shop și producție</p>
+            <div class="contact-info-list">
+              <div class="contact-item">
+                <span class="contact-label">Adresă</span>
+                <p class="contact-value">Strada Libertății A2<br />320003 Reșița, România</p>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Program</span>
+                <p class="contact-value">Luni–Vineri: 09:00–17:00<br />Sâmbătă–Duminică: închis</p>
+              </div>
+            </div>
+            <a class="cta cta-primary cta-pill contact-location-cta" href="https://www.google.com/maps/search/?api=1&amp;query=Strada%20Libert%C4%83%C8%9Bii%20A2%2C%20320003%20Re%C8%99i%C8%9Ba%2C%20Rom%C3%A2nia" target="_blank" rel="noopener noreferrer" aria-label="Vezi harta locației din Reșița">Vezi harta</a>
+          </article>
+          <article class="contact-location" aria-labelledby="location-timisoara-title">
+            <h3 class="contact-location-title" id="location-timisoara-title">Timișoara</h3>
+            <p class="contact-location-type">Punct de predare</p>
+            <div class="contact-info-list">
+              <div class="contact-item">
+                <span class="contact-label">Adresă</span>
+                <p class="contact-value">Strada Simion Bărnuțiu 77<br />Timișoara, România</p>
+              </div>
+            </div>
+            <a class="cta cta-primary cta-pill contact-location-cta" href="https://www.google.com/maps/search/?api=1&amp;query=Strada%20Simion%20B%C4%83rnu%C8%9Biu%2077%2C%20Timi%C8%99oara%2C%20Rom%C3%A2nia" target="_blank" rel="noopener noreferrer" aria-label="Vezi harta punctului de predare din Timișoara">Vezi harta</a>
+          </article>
+        </section>
 
         <div class="contact-card contact-map">
           <iframe
             class="contact-map-iframe"
             src="https://maps.google.com/maps?q=Strada+Libert%C4%83%C8%9Bii+A2,+320003+Re%C8%99i%C8%9Ba,+Romania&hl=ro&output=embed"
-            title="Locația Marand Print Shop pe Google Maps"
+            title="Locația Marand Print Shop din Reșița pe Google Maps"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen></iframe>
           <div class="contact-map-caption">
-            <strong>Vizitează shopul</strong>
+            <strong>Vizitează shopul din Reșița</strong>
             <p>Putem verifica fișierele, materialele și finisajele direct la fața locului înainte de producție.</p>
           </div>
         </div>

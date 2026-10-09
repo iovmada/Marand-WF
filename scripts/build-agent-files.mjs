@@ -164,7 +164,7 @@ const pages = [
     md: "contact/index.md",
     url: "/contact/",
     title: "Contact — address, phone, hours",
-    summary: "Reaching the shop: email, phone, street address in Reșița, opening hours, short message form.",
+    summary: "Contact and locations: email, phone, workshop address and hours in Reșița, handover point in Timișoara, short message form.",
     whenToUse: [
       "the user wants to phone, email or visit rather than fill in a form",
       "you need the canonical NAP (name, address, phone) for this business",
