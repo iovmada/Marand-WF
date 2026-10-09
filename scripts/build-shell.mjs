@@ -84,7 +84,8 @@ const footerGroups = [
       { label: "Cere ofertă", href: "/oferta/" },
       { label: "Luni–Vineri: 09:00–17:00 · Sâmbătă–Duminică: închis", href: "/contact/" },
       { label: "Strada Libertății A2, 320003 Reșița", href: "/contact/" },
-      { label: "Vezi harta", cta: true, href: "https://www.google.com/maps/dir/?api=1&destination=Strada%20Libert%C4%83%C8%9Bii%20A2%2C%20320003%20Re%C8%99i%C8%9Ba%2C%20Rom%C3%A2nia", absolute: true }
+      { label: "Vezi harta", cta: true, href: "https://www.google.com/maps/dir/?api=1&destination=Strada%20Libert%C4%83%C8%9Bii%20A2%2C%20320003%20Re%C8%99i%C8%9Ba%2C%20Rom%C3%A2nia", absolute: true },
+      { label: "Punct de predare în Timișoara" }
     ]
   }
 ];
@@ -171,6 +172,9 @@ function renderFooter(toRoute) {
     .map((group) => {
       const items = group.links
         .map((link) => {
+          if (!link.href) {
+            return `<li><span class="site-footer-location">${link.label}</span></li>`;
+          }
           const href = link.absolute ? link.href : toRoute(link.href);
           const className = link.cta ? ' class="cta cta-secondary cta-pill site-footer-map-cta"' : "";
           return `<li><a${className} href="${href}">${link.label}</a></li>`;

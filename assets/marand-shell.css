@@ -586,7 +586,8 @@ body::after {
   gap: 16px;
 }
 
-.site-footer-list a:not(.cta) {
+.site-footer-list a:not(.cta),
+.site-footer-location {
   font-size: 18px;
   line-height: 1.3;
   text-decoration: none;
