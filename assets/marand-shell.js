@@ -1,7 +1,17 @@
 (() => {
-  const isNestedPage = /\/(produse|produse-test|oferta|echipamente|contact|productie|materiale|studio|despre|confidentialitate|about|privacy|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
+  const isNestedPage = /\/(produse|produse-test|showroom|oferta|echipamente|contact|productie|materiale|studio|despre|confidentialitate|about|privacy|comunicat-de-presa)(\/|index\.html$)/.test(window.location.pathname);
   const routeRoot = isNestedPage ? ".." : ".";
   const toRoute = (path) => `${routeRoot}${path}`;
+  const showroomProduct = new URLSearchParams(window.location.search).get('showroom');
+  if (/\/oferta\/(?:index\.html)?$/.test(window.location.pathname) && showroomProduct) {
+    const adapterUrl = new URL('./showroom/quote-prefill.mjs', document.currentScript.src);
+    adapterUrl.searchParams.set('v', 'retail-seo-18');
+    const prefill = () => import(adapterUrl.href)
+      .then(({ prefillShowroomQuote }) => prefillShowroomQuote(showroomProduct))
+      .catch(() => { /* The standard quotation form remains available. */ });
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prefill, { once: true });
+    else prefill();
+  }
   const whatsappHref = "https://wa.me/40725894569?text=Buna%2C%20vreau%20o%20oferta%20pentru%20un%20proiect%20de%20print.";
 
   // The header and footer are baked into the HTML by scripts/build-shell.mjs so

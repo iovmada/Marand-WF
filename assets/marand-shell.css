@@ -645,9 +645,13 @@ body::after {
 
 @media (max-width: 1200px) {
   .nav-pill {
-    gap: 16px;
-    padding: 0 24px;
-    flex-wrap: wrap;
+    gap: 0;
+    padding: 0 4px;
+    flex-wrap: nowrap;
+  }
+  .nav-pill a {
+    padding-inline: 9px;
+    font-size: 10px;
   }
 }
 

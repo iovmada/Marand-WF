@@ -1,0 +1,475 @@
+{
+  "version": "V1",
+  "source": "Marand_DTF_6_Imagini.zip",
+  "metadataSource": "Titles and order from CODEX_IMPORT.md; descriptions and tags authored for this integration. No catalog.json was supplied.",
+  "pending": [],
+  "products": [
+    {
+      "id": "tricouri",
+      "name": "Tricouri personalizate",
+      "copy": "Tricouri personalizate prin DTF, cu logo sau grafică în față și pe spate, pentru branduri, echipe și cadouri.",
+      "tags": [
+        "Tricouri",
+        "Branduri",
+        "Cadouri"
+      ],
+      "applications": "Branduri · Comunități · Cadouri",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate"
+      ],
+      "image": {
+        "src": "showroom/v1/01-tricouri-good-days-front-back.png",
+        "width": 1121,
+        "height": 1403,
+        "sha256": "6dd7225cb9708c8a184ae264fd3265aa0730d3b842ca7d5a222b363d11206ad6",
+        "label": "Compoziție față / spate",
+        "view": "composition",
+        "alt": "Tricou crem Good Days, model feminin prezentat din față și din spate în aceeași compoziție"
+      }
+    },
+    {
+      "id": "hanorace",
+      "name": "Hanorace",
+      "copy": "Hanorace personalizate pentru branduri, echipe și comunități.",
+      "tags": [
+        "Hanorace",
+        "Branduri",
+        "Echipe"
+      ],
+      "applications": "Branduri · Echipe · Comunități · Cadouri",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca"
+      ],
+      "image": {
+        "src": "showroom/hanorace/hanorac-verde-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "42b0797f2796d4d5e32037c3737de27d87a25f3a1c3a08dcfa213c79b94592a1",
+        "label": "Față",
+        "view": "front",
+        "alt": "Model feminin în hanorac verde cu glugă și grafică roz, vedere din față, exemplu de personalizare"
+      },
+      "gallery": [
+        {
+          "src": "showroom/hanorace/hanorac-verde-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "42b0797f2796d4d5e32037c3737de27d87a25f3a1c3a08dcfa213c79b94592a1",
+          "label": "Față",
+          "view": "front",
+          "alt": "Model feminin în hanorac verde cu glugă și grafică roz, vedere din față, exemplu de personalizare"
+        },
+        {
+          "src": "showroom/hanorace/hanorac-verde-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "94dd986042dfbcc68996643de762c3e797887c1723592822fab8909e2360fe37",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Hanorac verde cu glugă și grafică roz amplă, vedere din spate, exemplu de personalizare"
+        }
+      ],
+      "imageSource": "User supplied independent hoodie front/back originals from reference folder 5, 28 October 2026."
+    },
+    {
+      "id": "sport-fitness",
+      "name": "Sport & Fitness",
+      "copy": "Personalizare textile pentru sport, fitness și echipe. Compatibilitatea materialelor tehnice se verifică înainte de imprimare.",
+      "tags": [
+        "Sport",
+        "Echipe",
+        "Fitness"
+      ],
+      "applications": "Echipe · Cluburi · Antrenamente",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate"
+      ],
+      "technical": true,
+      "image": {
+        "src": "showroom/sport-fitness/sport-fitness-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "f541df125bdab21ca9213c74e45cfca4664c78b7ae1abc6592bf424f1e016cc8",
+        "label": "Față",
+        "view": "front",
+        "alt": "Bărbat și femeie în echipamente sport portocalii POWER UP, vedere din față, exemplu de personalizare"
+      },
+      "gallery": [
+        {
+          "src": "showroom/sport-fitness/sport-fitness-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "f541df125bdab21ca9213c74e45cfca4664c78b7ae1abc6592bf424f1e016cc8",
+          "label": "Față",
+          "view": "front",
+          "alt": "Bărbat și femeie în echipamente sport portocalii POWER UP, vedere din față, exemplu de personalizare"
+        },
+        {
+          "src": "showroom/sport-fitness/sport-fitness-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "5580085efb321b8b1d24953a70ef0035ae98c29c5282947e5d575e780874e785",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Bărbat și femeie în echipamente sport portocalii, vedere din spate cu grafică PUSH HARDER GO FURTHER, exemplu de personalizare"
+        }
+      ],
+      "imageSource": "User supplied independent Sport & Fitness front/back originals, 28 October 2026."
+    },
+    {
+      "id": "echipamente-lucru",
+      "name": "Echipamente de lucru",
+      "copy": "Uniforme și echipamente de lucru personalizate cu identitatea echipei, pe poziții de print stabilite împreună.",
+      "tags": [
+        "Workwear",
+        "Uniforme",
+        "Echipe"
+      ],
+      "applications": "Echipe de lucru · Uniforme · Business",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca",
+        "pantalon"
+      ],
+      "technical": true,
+      "fictionalBrand": "NEXORA ENERGY",
+      "image": {
+        "src": "showroom/workwear/echipament-lucru-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "9774645ef0a229eab4b307523543ebb14dacb9d75dc819476b229368599e94b8",
+        "label": "Față",
+        "view": "front",
+        "alt": "Echipament de lucru negru cu vestă, hanorac și pantaloni, vedere din față, exemplu de personalizare NEXORA ENERGY"
+      },
+      "gallery": [
+        {
+          "src": "showroom/workwear/echipament-lucru-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "9774645ef0a229eab4b307523543ebb14dacb9d75dc819476b229368599e94b8",
+          "label": "Față",
+          "view": "front",
+          "alt": "Echipament de lucru negru cu vestă, hanorac și pantaloni, vedere din față, exemplu de personalizare NEXORA ENERGY"
+        },
+        {
+          "src": "showroom/workwear/echipament-lucru-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "007076ebb0a45b583a5c6eb5a779b9c43020d26e750cd210a9dc26ac6a520e4b",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Echipament de lucru negru, vedere din spate cu mesajul PRO CREW 2025, exemplu de personalizare"
+        }
+      ],
+      "imageSource": "User supplied independent front/back originals, 28 October 2026."
+    },
+    {
+      "id": "echipamente-tehnice",
+      "name": "Echipamente tehnice groase / hardshell",
+      "copy": "Personalizare pentru echipamente tehnice groase și hardshell, după verificarea materialului și a zonelor de aplicare.",
+      "tags": [
+        "Hardshell",
+        "Echipamente groase",
+        "Exterior"
+      ],
+      "applications": "Echipe · Lucru în exterior · Îmbrăcăminte de iarnă",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca"
+      ],
+      "technical": true,
+      "fictionalBrand": "NEXORA ENERGY",
+      "image": {
+        "src": "showroom/hardshell/echipament-hardshell-varianta-1.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "40dbff868f6de44849a009f166fa447105e8ea90626c9b4a1c20e80a276433c3",
+        "label": "Varianta 1",
+        "view": "variant-1",
+        "alt": "Echipament tehnic gros de exterior NEXORA ENERGY, varianta 1, compoziție integrală cu prezentare din față și din spate, exemplu de personalizare"
+      },
+      "gallery": [
+        {
+          "src": "showroom/hardshell/echipament-hardshell-varianta-1.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "40dbff868f6de44849a009f166fa447105e8ea90626c9b4a1c20e80a276433c3",
+          "label": "Varianta 1",
+          "view": "variant-1",
+          "alt": "Echipament tehnic gros de exterior NEXORA ENERGY, varianta 1, compoziție integrală cu prezentare din față și din spate, exemplu de personalizare"
+        },
+        {
+          "src": "showroom/hardshell/echipament-hardshell-varianta-2.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "fdaae59cd6c4c143f81a35674a8eaf777faea0c3f16a78af6002b5bd217c78c6",
+          "label": "Varianta 2",
+          "view": "variant-2",
+          "alt": "Echipament tehnic gros de exterior NEXORA ENERGY, varianta 2, compoziție integrală cu prezentare din față și din spate, exemplu de personalizare"
+        }
+      ],
+      "previewLabel": "Altă variantă la hover · ambele în detalii",
+      "photoNote": "Două exemple de personalizare. Fiecare fotografie prezintă integral fața și spatele echipamentului. NEXORA ENERGY este un brand fictiv, nu un client confirmat Marand.",
+      "compatibility": "Personalizarea DTF pe hardshell, materiale groase sau tratate se confirmă în atelier pentru articolul și zona de aplicare alese. Poate fi necesară o probă.",
+      "imageSource": "User supplied two original intact front/back composites from reference folder 6, 28 October 2026; no independent front/back images were inferred."
+    },
+    {
+      "id": "horeca",
+      "name": "HoReCa",
+      "copy": "Textile personalizate pentru restaurante, cafenele și hoteluri. Alegem articolele și verificăm compatibilitatea șorțurilor.",
+      "tags": [
+        "HoReCa",
+        "Cafenele",
+        "Restaurante"
+      ],
+      "applications": "Cafenele · Restaurante · Hoteluri · Personal de servire",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca"
+      ],
+      "technical": true,
+      "image": {
+        "src": "showroom/horeca/horeca-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "e1bcabd0cc6fdd5b5be2f759c07f5ff5f06b6966335862e74ffbcb35a8208724",
+        "label": "Față",
+        "view": "front",
+        "alt": "Ținută HoReCa cu tricou negru și șorț maro ROAST & ROLL, vedere din față, exemplu de personalizare"
+      },
+      "gallery": [
+        {
+          "src": "showroom/horeca/horeca-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "e1bcabd0cc6fdd5b5be2f759c07f5ff5f06b6966335862e74ffbcb35a8208724",
+          "label": "Față",
+          "view": "front",
+          "alt": "Ținută HoReCa cu tricou negru și șorț maro ROAST & ROLL, vedere din față, exemplu de personalizare"
+        },
+        {
+          "src": "showroom/horeca/horeca-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "ad563e908c41345034ca773b542514b72b345a45d4e0e17e150dc83f502c4d8f",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Tricou negru HoReCa cu grafică ROAST & ROLL și ceașcă stilizată, vedere din spate, exemplu de personalizare"
+        }
+      ],
+      "photoNote": "Exemple pentru ținute HoReCa: prezentare frontală cu șorț și tricou văzut din spate. Articolele și materialele se confirmă pentru fiecare proiect.",
+      "compatibility": "Materialul șorțului și compatibilitatea cu imprimarea DTF se confirmă în atelier înainte de personalizare. Pentru materiale tratate poate fi necesară o probă.",
+      "imageSource": "User supplied HoReCa original photographs from reference folder 7, 28 October 2026. Source -2 is the front presentation with apron; -1 is the back of the T-shirt."
+    },
+    {
+      "id": "evenimente-corporate",
+      "name": "Evenimente corporate",
+      "copy": "Tricouri polo și textile personalizate pentru evenimente corporate, conferințe și echipe de organizare.",
+      "tags": [
+        "Corporate",
+        "Staff",
+        "Evenimente"
+      ],
+      "applications": "Evenimente corporate · Staff · Business",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca"
+      ],
+      "fictionalBrand": "AURELIA EVENTS",
+      "image": {
+        "src": "showroom/corporate/evenimente-corporate-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "78ef1652d58c66f453c05cd7d8af831fcea463bb7a8786d98c162db677a580df",
+        "label": "Față",
+        "view": "front",
+        "alt": "Bărbat și femeie în polo și cămașă negre AURELIA EVENTS, vedere din față, exemplu de personalizare corporate"
+      },
+      "gallery": [
+        {
+          "src": "showroom/corporate/evenimente-corporate-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "78ef1652d58c66f453c05cd7d8af831fcea463bb7a8786d98c162db677a580df",
+          "label": "Față",
+          "view": "front",
+          "alt": "Bărbat și femeie în polo și cămașă negre AURELIA EVENTS, vedere din față, exemplu de personalizare corporate"
+        },
+        {
+          "src": "showroom/corporate/evenimente-corporate-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "f2b2d46208317aa9ed123eee91f16a858881a2935fd30234c5f83c81cc057f47",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Bărbat și femeie în ținute business negre cu grafică aurie CORPORATE EVENTS, vedere din spate"
+        }
+      ],
+      "imageSource": "User supplied independent corporate event front/back originals, 28 October 2026; source -2 is front and -1 is back."
+    },
+    {
+      "id": "retail-francize",
+      "name": "Retail & francize",
+      "copy": "Uniforme personalizate pentru magazine și rețele de francize, cu o identitate vizuală unitară.",
+      "tags": [
+        "Retail",
+        "Francize",
+        "Uniforme"
+      ],
+      "applications": "Magazine · Rețele de francize · Echipe în mai multe locații",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate",
+        "maneca"
+      ],
+      "fictionalBrand": "FRESH MARKET",
+      "image": {
+        "src": "showroom/retail/retail-francize-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "28376301a42d29d4c7ec12e4c9d4b798e03ddd8d24936fe8342154b651a5d587",
+        "label": "Față",
+        "view": "front",
+        "alt": "Uniformă roșie pentru retail cu polo și șorț personalizate FRESH MARKET, vedere din față"
+      },
+      "gallery": [
+        {
+          "src": "showroom/retail/retail-francize-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "28376301a42d29d4c7ec12e4c9d4b798e03ddd8d24936fe8342154b651a5d587",
+          "label": "Față",
+          "view": "front",
+          "alt": "Uniformă roșie pentru retail cu polo și șorț personalizate FRESH MARKET, vedere din față"
+        },
+        {
+          "src": "showroom/retail/retail-francize-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "05b3d140309c943378c182e3e42c459758583e5c2ed8084d79adf05f2d8fdcb7",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Uniformă roșie pentru retail cu polo și șorț personalizate FRESH MARKET, vedere din spate"
+        }
+      ],
+      "imageSource": "User supplied retail front/back originals from reference folder 8, 28 October 2026."
+    },
+    {
+      "id": "evenimente-personale",
+      "name": "Evenimente personale",
+      "copy": "Tricouri cu mesaje pentru petreceri, aniversări și momente împreună.",
+      "tags": [
+        "Petreceri",
+        "Aniversări",
+        "Grupuri"
+      ],
+      "applications": "Petreceri · Aniversări · Nunți · Grupuri",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate"
+      ],
+      "image": {
+        "src": "showroom/evenimente-personale/petrecere-burlacite-tricouri-personalizate.png",
+        "width": 864,
+        "height": 1184,
+        "sha256": "7e7fa3b9b566e84ed17472ef066336bd7d7f6cf6d4a0db4848d6b4a121b5185a",
+        "label": "Prezentare",
+        "view": "presentation",
+        "alt": "Grup de femei la o petrecere a burlăcițelor, în tricouri personalizate roz și alb, exemplu pentru evenimente personale"
+      },
+      "photoNote": "Exemplu de personalizare pentru petreceri și evenimente personale. Fotografia prezintă o singură vedere.",
+      "imageSource": "User supplied original 864x1184 photograph, 28 October 2026. One presentation view; no back view supplied."
+    },
+    {
+      "id": "petreceri-copii",
+      "name": "Petreceri & evenimente pentru copii",
+      "copy": "Tricouri colorate pentru aniversări, petreceri tematice și evenimente pentru copii.",
+      "tags": [
+        "Copii",
+        "Aniversări",
+        "Petreceri"
+      ],
+      "applications": "Aniversări · Petreceri tematice · Evenimente pentru copii",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate"
+      ],
+      "image": {
+        "src": "showroom/petreceri-copii/petreceri-copii-front.png",
+        "width": 1796,
+        "height": 2403,
+        "sha256": "33d7d879cfed7e7d2be2069cb220aac13f56728ef336025e621ef7774c08ed7f",
+        "label": "Față",
+        "view": "front",
+        "alt": "Tricou alb pentru copii cu dinozaur colorat și mesajul COOL KIDS CLUB, vedere din față, exemplu de personalizare"
+      },
+      "gallery": [
+        {
+          "src": "showroom/petreceri-copii/petreceri-copii-front.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "33d7d879cfed7e7d2be2069cb220aac13f56728ef336025e621ef7774c08ed7f",
+          "label": "Față",
+          "view": "front",
+          "alt": "Tricou alb pentru copii cu dinozaur colorat și mesajul COOL KIDS CLUB, vedere din față, exemplu de personalizare"
+        },
+        {
+          "src": "showroom/petreceri-copii/petreceri-copii-back.png",
+          "width": 1796,
+          "height": 2403,
+          "sha256": "ed40c0077e097939887ed1b4b60f3505c7f9e2c3ff39f2d5e06a3b440deff14b",
+          "label": "Spate",
+          "view": "back",
+          "alt": "Tricou alb pentru copii cu dinozaur pe skateboard și grafică multicoloră, vedere din spate, exemplu de personalizare"
+        }
+      ],
+      "imageSource": "User supplied independent children’s events front/back originals, 28 October 2026."
+    },
+    {
+      "id": "sacose",
+      "name": "Plase tote din bumbac & accesorii",
+      "copy": "Plase din bumbac și accesorii textile personalizate pentru branduri, cadouri și evenimente.",
+      "tags": [
+        "Tote bags",
+        "Bumbac",
+        "Accesorii textile"
+      ],
+      "applications": "Branduri · Cadouri · Evenimente · Accesorii textile",
+      "positions": [
+        "fata",
+        "spate",
+        "fata-spate"
+      ],
+      "image": {
+        "src": "showroom/accesorii/plasa-tote-bumbac-good-vibes.png",
+        "width": 1792,
+        "height": 2290,
+        "sha256": "73311affa1df2cb03e7c3fd69a01b297f9d900107deadcfbb6f6b5af09fedf65",
+        "label": "Față",
+        "view": "front",
+        "alt": "Plasă tote albă din bumbac, ținută de o femeie, cu grafică florală multicoloră și mesajul Good Vibes Only, exemplu de personalizare"
+      },
+      "photoNote": "Exemplu de personalizare pe plasă tote din bumbac. Fotografia prezintă o singură vedere.",
+      "imageSource": "Single original supplied by the user, 28 October 2026. No back view supplied."
+    }
+  ]
+}

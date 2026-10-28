@@ -194,6 +194,7 @@ await check("AGENTS-README.md: states the negotiation limit honestly", async () 
 const mirrors = [
   "/index.md",
   "/produse/index.md",
+  "/showroom/index.md",
   "/materiale/index.md",
   "/studio/index.md",
   "/echipamente/index.md",

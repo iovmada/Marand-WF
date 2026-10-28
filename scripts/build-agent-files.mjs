@@ -67,6 +67,17 @@ const business = {
 
 const pages = [
   {
+    file: "showroom/index.html",
+    md: "showroom/index.md",
+    url: "/showroom/",
+    title: "Showroom — DTF textile personalisation",
+    summary: "DTF showroom with eleven selections: personalised T-shirts, hoodies, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. No prices or checkout.",
+    whenToUse: [
+      "the user wants to explore textile types or personalize their own garments",
+      "the user wants a quotation for a showroom product using the existing quote form",
+    ],
+  },
+  {
     file: "index.html",
     md: "index.md",
     url: "/",

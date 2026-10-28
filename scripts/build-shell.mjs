@@ -28,6 +28,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const navItems = [
   { key: "products", label: "Produse", href: "/produse/" },
+  { key: "showroom", label: "Showroom", href: "/showroom/" },
   { key: "materials", label: "Materiale", href: "/materiale/" },
   { key: "studio", label: "Studio", href: "/studio/" },
   { key: "process", label: "Cum lucrăm", href: "/#cum-functioneaza" },
@@ -97,6 +98,7 @@ const footerGroups = [
 const pages = [
   { file: "index.html", nested: false },
   { file: "produse/index.html", nested: true },
+  { file: "showroom/index.html", nested: true },
   { file: "materiale/index.html", nested: true },
   { file: "studio/index.html", nested: true },
   { file: "echipamente/index.html", nested: true },

@@ -20,16 +20,20 @@ command -v "$NODE" >/dev/null 2>&1 || { echo "node 20 not found at $NODE (overri
 
 echo "== unit: Cloudflare Worker negotiation =="
 # Runs without wrangler or an account — pure Node, stubbed origin.
-"$NODE" --test "$ROOT/ops/cloudflare-worker/" || status=1
+"$NODE" --test "$ROOT/ops/cloudflare-worker/"*.test.js || status=1
 
 echo
 echo "== unit: Accept negotiation =="
 if [ -d "$ROOT/backend/forms-api/node_modules" ]; then
-  "$NODE" --test "$ROOT/backend/forms-api/" || status=1
+  "$NODE" --test "$ROOT/backend/forms-api/"*.test.js || status=1
 else
   # negotiate.test.js imports only negotiate.js, which has no dependencies.
   "$NODE" --test "$ROOT/backend/forms-api/negotiate.test.js" || status=1
 fi
+
+echo
+echo "== showroom catalogue and quotation compatibility =="
+"$NODE" --test "$ROOT/scripts/showroom.test.mjs" || status=1
 
 echo
 echo "== generators are idempotent =="
@@ -43,6 +47,7 @@ generated() {
        -exec md5 -q {} \; 2>/dev/null | sort
 }
 before="$(generated)"
+"$NODE" "$ROOT/scripts/build-showroom.mjs" >/dev/null || status=1
 "$NODE" "$ROOT/scripts/build-trust-pages.mjs" >/dev/null || status=1
 "$NODE" "$ROOT/scripts/build-shell.mjs" >/dev/null || status=1
 "$NODE" "$ROOT/scripts/build-agent-files.mjs" >/dev/null || status=1
