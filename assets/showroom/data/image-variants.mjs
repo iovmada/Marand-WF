@@ -61,6 +61,23 @@ export const imageVariants = {
       "height": 2141
     }
   ],
+  "showroom/branduri/branduri-creatori-concept.png": [
+    {
+      "src": "showroom/responsive/branduri-creatori-concept-480.webp",
+      "width": 480,
+      "height": 600
+    },
+    {
+      "src": "showroom/responsive/branduri-creatori-concept-800.webp",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "src": "showroom/responsive/branduri-creatori-concept-1122.webp",
+      "width": 1122,
+      "height": 1402
+    }
+  ],
   "showroom/sport-fitness/sport-fitness-front.png": [
     {
       "src": "showroom/responsive/sport-fitness-front-480.webp",
@@ -323,6 +340,23 @@ export const imageVariants = {
       "src": "showroom/responsive/retail-francize-back-1600.webp",
       "width": 1600,
       "height": 2141
+    }
+  ],
+  "showroom/educatie/scoli-absolventi-concept.png": [
+    {
+      "src": "showroom/responsive/scoli-absolventi-concept-480.webp",
+      "width": 480,
+      "height": 600
+    },
+    {
+      "src": "showroom/responsive/scoli-absolventi-concept-800.webp",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "src": "showroom/responsive/scoli-absolventi-concept-1122.webp",
+      "width": 1122,
+      "height": 1402
     }
   ],
   "showroom/evenimente-personale/petrecere-burlacite-tricouri-personalizate.png": [

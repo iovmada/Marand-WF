@@ -27,8 +27,8 @@ export const productDefinitions = [
   },
   {
     "id": "hanorace",
-    "name": "Hanorace",
-    "copy": "Hanorace personalizate pentru branduri, echipe și comunități.",
+    "name": "Hanorace personalizate",
+    "copy": "Hanorace personalizate pentru branduri, echipe și comunități. Alegem croiala, materialul și grafica în funcție de proiect.",
     "tags": [
       "Hanorace",
       "Branduri",
@@ -73,9 +73,43 @@ export const productDefinitions = [
     "imageSource": "User supplied independent hoodie front/back originals from reference folder 5, 28 October 2026."
   },
   {
+    "id": "branduri-creatori",
+    "name": "Branduri & creatori",
+    "copy": "Tricouri, hanorace și accesorii textile personalizate pentru colecții, artiști și comunități.",
+    "tags": [
+      "Branduri",
+      "Creatori",
+      "Merch"
+    ],
+    "applications": "Colecții vestimentare · Artiști · Creatori · Comunități",
+    "positions": [
+      "fata",
+      "spate",
+      "fata-spate",
+      "maneca"
+    ],
+    "image": {
+      "src": "showroom/branduri/branduri-creatori-concept.png",
+      "width": 1122,
+      "height": 1402,
+      "sha256": "f64982ce2ebc07ff0fdf7e1e89ccacd83a672daf5fcb33e387c61866050c8b41",
+      "label": "Compoziție față / spate",
+      "view": "composition",
+      "alt": "Concept de tricou crem STUDIO 13, față cu logo mic și spate cu grafică halftone, prezentate împreună"
+    },
+    "halftoneExample": true,
+    "photoNote": "Concept vizual generat pentru prezentare: același model de tricou este ilustrat din față și din spate. STUDIO 13 este un brand fictiv. Grafica și rezultatul pe material se stabilesc pentru proiectul tău.",
+    "projectNotes": [
+      "Alegem articolul, croiala, compoziția și gramajul în funcție de colecție. Poți veni și cu textilele tale.",
+      "Discutăm dimensiunile și pozițiile graficii, inclusiv adaptarea pe mărimi și posibilitatea unei probe înainte de serie.",
+      "Pentru comenzi repetate, articolul, grafica și disponibilitatea se reconfirmă înainte de producție."
+    ],
+    "imageSource": "New imagegen presentation concept, 29 October 2026; not a photograph of completed Marand production."
+  },
+  {
     "id": "sport-fitness",
     "name": "Sport & Fitness",
-    "copy": "Personalizare textile pentru sport, fitness și echipe. Compatibilitatea materialelor tehnice se verifică înainte de imprimare.",
+    "copy": "Tricouri și echipamente sport personalizate cu nume, numere, identitatea clubului sau logo-uri de sponsori.",
     "tags": [
       "Sport",
       "Echipe",
@@ -117,12 +151,16 @@ export const productDefinitions = [
         "alt": "Bărbat și femeie în echipamente sport portocalii, vedere din spate cu grafică PUSH HARDER GO FURTHER, exemplu de personalizare"
       }
     ],
-    "imageSource": "User supplied independent Sport & Fitness front/back originals, 28 October 2026."
+    "imageSource": "User supplied independent Sport & Fitness front/back originals, 28 October 2026.",
+    "projectNotes": [
+      "Pentru nume și numere individuale, discutăm lista, mărimile și pozițiile înainte de producție.",
+      "Compatibilitatea materialelor tehnice, elasticitatea și comportamentul culorii la aplicare se verifică pentru articolul ales."
+    ]
   },
   {
     "id": "echipamente-lucru",
     "name": "Echipamente de lucru",
-    "copy": "Uniforme și echipamente de lucru personalizate cu identitatea echipei, pe poziții de print stabilite împreună.",
+    "copy": "Uniforme personalizate pentru echipe de lucru, cu logo și identificare pe piept, spate, mânecă sau pantalon.",
     "tags": [
       "Workwear",
       "Uniforme",
@@ -167,12 +205,16 @@ export const productDefinitions = [
         "alt": "Echipament de lucru negru, vedere din spate cu mesajul PRO CREW 2025, exemplu de personalizare"
       }
     ],
-    "imageSource": "User supplied independent front/back originals, 28 October 2026."
+    "imageSource": "User supplied independent front/back originals, 28 October 2026.",
+    "projectNotes": [
+      "Alegem poziția graficii în funcție de croială, cusături, buzunare și utilizarea articolului.",
+      "Pentru articole tratate, tehnice sau cu marcaje de siguranță, compatibilitatea și zona de aplicare se confirmă în atelier."
+    ]
   },
   {
     "id": "echipamente-tehnice",
-    "name": "Echipamente tehnice groase / hardshell",
-    "copy": "Personalizare pentru echipamente tehnice groase și hardshell, după verificarea materialului și a zonelor de aplicare.",
+    "name": "Jachete & echipamente de exterior",
+    "copy": "Jachete groase și echipamente hardshell personalizate după verificarea materialului și a zonelor de aplicare.",
     "tags": [
       "Hardshell",
       "Echipamente groase",
@@ -219,12 +261,16 @@ export const productDefinitions = [
     "previewLabel": "Altă variantă la hover · ambele în detalii",
     "photoNote": "Două exemple de personalizare. Fiecare fotografie prezintă integral fața și spatele echipamentului. NEXORA ENERGY este un brand fictiv, nu un client confirmat Marand.",
     "compatibility": "Personalizarea DTF pe hardshell, materiale groase sau tratate se confirmă în atelier pentru articolul și zona de aplicare alese. Poate fi necesară o probă.",
-    "imageSource": "User supplied two original intact front/back composites from reference folder 6, 28 October 2026; no independent front/back images were inferred."
+    "imageSource": "User supplied two original intact front/back composites from reference folder 6, 28 October 2026; no independent front/back images were inferred.",
+    "projectNotes": [
+      "Menționează compoziția și tratamentele articolului, dacă le cunoști, și trimite o fotografie a zonei dorite.",
+      "Articolele hardshell sau cu finisaje speciale pot necesita o probă înainte de confirmarea personalizării."
+    ]
   },
   {
     "id": "horeca",
     "name": "HoReCa",
-    "copy": "Textile personalizate pentru restaurante, cafenele și hoteluri. Alegem articolele și verificăm compatibilitatea șorțurilor.",
+    "copy": "Textile personalizate pentru echipe de cafenea, restaurant și hotel: tricouri, polo și șorțuri cu material compatibil.",
     "tags": [
       "HoReCa",
       "Cafenele",
@@ -269,18 +315,22 @@ export const productDefinitions = [
     ],
     "photoNote": "Exemple pentru ținute HoReCa: prezentare frontală cu șorț și tricou văzut din spate. Articolele și materialele se confirmă pentru fiecare proiect.",
     "compatibility": "Materialul șorțului și compatibilitatea cu imprimarea DTF se confirmă în atelier înainte de personalizare. Pentru materiale tratate poate fi necesară o probă.",
-    "imageSource": "User supplied HoReCa original photographs from reference folder 7, 28 October 2026. Source -2 is the front presentation with apron; -1 is the back of the T-shirt."
+    "imageSource": "User supplied HoReCa original photographs from reference folder 7, 28 October 2026. Source -2 is the front presentation with apron; -1 is the back of the T-shirt.",
+    "projectNotes": [
+      "Discutăm rolurile echipei și utilizarea zilnică a articolelor, inclusiv cerințele de întreținere.",
+      "Compoziția și finisajul șorțurilor se verifică înainte de alegerea poziției de print."
+    ]
   },
   {
     "id": "evenimente-corporate",
-    "name": "Evenimente corporate",
-    "copy": "Tricouri polo și textile personalizate pentru evenimente corporate, conferințe și echipe de organizare.",
+    "name": "Evenimente corporate & promoționale",
+    "copy": "Textile personalizate pentru conferințe, lansări, festivaluri, promoteri și echipe de voluntari.",
     "tags": [
-      "Corporate",
+      "Evenimente",
       "Staff",
-      "Evenimente"
+      "Promo"
     ],
-    "applications": "Evenimente corporate · Staff · Business",
+    "applications": "Conferințe · Lansări · Festivaluri · Promoteri · Staff · Voluntari",
     "positions": [
       "fata",
       "spate",
@@ -317,12 +367,16 @@ export const productDefinitions = [
         "alt": "Bărbat și femeie în ținute business negre cu grafică aurie CORPORATE EVENTS, vedere din spate"
       }
     ],
-    "imageSource": "User supplied independent corporate event front/back originals, 28 October 2026; source -2 is front and -1 is back."
+    "imageSource": "User supplied independent corporate event front/back originals, 28 October 2026; source -2 is front and -1 is back.",
+    "projectNotes": [
+      "Spune-ne tipul evenimentului, rolurile echipei, cantitatea și data la care ai nevoie de textile.",
+      "Discutăm logo-urile, sponsorii și marcajele de rol, pentru o grafică ușor de recunoscut."
+    ]
   },
   {
     "id": "retail-francize",
     "name": "Retail & francize",
-    "copy": "Uniforme personalizate pentru magazine și rețele de francize, cu o identitate vizuală unitară.",
+    "copy": "Uniforme personalizate pentru magazine și francize. Articole, culori și grafică stabilite pentru o identitate vizuală unitară.",
     "tags": [
       "Retail",
       "Francize",
@@ -365,18 +419,55 @@ export const productDefinitions = [
         "alt": "Uniformă roșie pentru retail cu polo și șorț personalizate FRESH MARKET, vedere din spate"
       }
     ],
-    "imageSource": "User supplied retail front/back originals from reference folder 8, 28 October 2026."
+    "imageSource": "User supplied retail front/back originals from reference folder 8, 28 October 2026.",
+    "projectNotes": [
+      "Pentru echipe din mai multe locații, discutăm articolele, distribuția pe mărimi și pozițiile de imprimare.",
+      "La comenzile repetate, folosim referințele agreate pentru articol și grafică; disponibilitatea și eventualele diferențe între loturi se verifică înainte de producție."
+    ]
+  },
+  {
+    "id": "scoli-facultati-absolventi",
+    "name": "Școli, facultăți & absolvenți",
+    "copy": "Tricouri și hanorace personalizate pentru clase, asociații studențești și promoții, cu grafică de grup sau nume individuale.",
+    "tags": [
+      "Școli",
+      "Facultăți",
+      "Absolvenți"
+    ],
+    "applications": "Clase · Asociații studențești · Promoții · Evenimente educaționale",
+    "positions": [
+      "fata",
+      "spate",
+      "fata-spate",
+      "maneca"
+    ],
+    "image": {
+      "src": "showroom/educatie/scoli-absolventi-concept.png",
+      "width": 1122,
+      "height": 1402,
+      "sha256": "719933deb950ecf94a1ebfcace8dbb7f20e2f498cee4a59737d63d994a479e17",
+      "label": "Compoziție față / spate",
+      "view": "composition",
+      "alt": "Concept de hanorac bleumarin CAMPUS, față cu emblemă și spate cu text de absolvire CLASS OF 2027, prezentate împreună"
+    },
+    "photoNote": "Concept vizual generat pentru prezentare: fața și spatele unui hanorac de absolvire sunt ilustrate împreună. CAMPUS este o identitate fictivă; articolul și grafica se aleg pentru proiectul tău.",
+    "projectNotes": [
+      "Spune-ne clasa, asociația sau promoția, numărul de articole și data evenimentului.",
+      "Putem discuta un design comun și elemente individuale, precum numele sau anul promoției. Lista finală se confirmă înainte de producție.",
+      "Mărimile, culorile, calitatea materialului și disponibilitatea se stabilesc împreună."
+    ],
+    "imageSource": "New imagegen presentation concept, 29 October 2026; not a real university or Marand client."
   },
   {
     "id": "evenimente-personale",
     "name": "Evenimente personale",
-    "copy": "Tricouri cu mesaje pentru petreceri, aniversări și momente împreună.",
+    "copy": "Tricouri cu mesaje pentru aniversări, grupuri de familie și petreceri de burlaci sau burlăcițe.",
     "tags": [
       "Petreceri",
       "Aniversări",
       "Grupuri"
     ],
-    "applications": "Petreceri · Aniversări · Nunți · Grupuri",
+    "applications": "Aniversări · Familie · Petreceri de burlaci · Petreceri de burlăcițe",
     "positions": [
       "fata",
       "spate",
@@ -397,7 +488,7 @@ export const productDefinitions = [
   {
     "id": "petreceri-copii",
     "name": "Petreceri & evenimente pentru copii",
-    "copy": "Tricouri colorate pentru aniversări, petreceri tematice și evenimente pentru copii.",
+    "copy": "Tricouri personalizate pentru aniversări și petreceri tematice de copii, cu grafică adaptată ideii evenimentului.",
     "tags": [
       "Copii",
       "Aniversări",
@@ -442,8 +533,8 @@ export const productDefinitions = [
   },
   {
     "id": "sacose",
-    "name": "Plase tote din bumbac & accesorii",
-    "copy": "Plase din bumbac și accesorii textile personalizate pentru branduri, cadouri și evenimente.",
+    "name": "Sacoșe din bumbac & accesorii textile",
+    "copy": "Sacoșe din bumbac, tote bags și accesorii textile pentru branduri, cadouri și evenimente. Articolele se confirmă în ofertă.",
     "tags": [
       "Tote bags",
       "Bumbac",

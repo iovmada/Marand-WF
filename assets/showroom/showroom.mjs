@@ -1,5 +1,6 @@
-import {getProduct,quoteHref} from './catalog.mjs?v=retail-seo-18';
-import {showImage,viewButtons} from './gallery.mjs?v=retail-seo-18';
+import {bindCardSwipe} from './swipe.mjs?v=mobile-swipe-20';
+import {getProduct,quoteHref} from './catalog.mjs?v=categories-19';
+import {showImage,viewButtons} from './gallery.mjs?v=categories-19';
 const $=s=>document.querySelector(s);
 const dialog=$('#sr-dialog'),config=$('#sr-config');
 let opener,currentProduct;
@@ -21,9 +22,14 @@ function openProduct(id,trigger){
   $('#sr-dialog-applications').textContent=p.applications;
   $('#sr-dialog-quantity').textContent=p.quantity;$('#sr-dialog-compatibility').textContent=p.compatibility;
   $('#sr-dialog-photo-note').textContent=p.photoNote;
+  const notes=p.projectNotes||[];
+  $('#sr-dialog-project').hidden=notes.length===0;
+  $('#sr-dialog-project-notes').replaceChildren(...notes.map(text=>{const item=document.createElement('li');item.textContent=text;return item;}));
   config.reset();$('#sr-config-position').replaceChildren(option('','Alegem împreună'),...p.positions.map(x=>option(x.id,x.name)));
-  const controls=$('#sr-dialog-views');controls.replaceChildren(...viewButtons(p,p.gallery[0].view,modalView));controls.hidden=p.gallery.length<2;
-  modalView(p.gallery[0].view);updateQuote();dialog.showModal();document.body.classList.add('sr-preview-open');
+  const selectedIndex=Number(trigger.closest?.('.sr-card-gallery')?.dataset.cardView||0);
+  const initialView=(p.gallery[selectedIndex]||p.gallery[0]).view;
+  const controls=$('#sr-dialog-views');controls.replaceChildren(...viewButtons(p,initialView,modalView));controls.hidden=p.gallery.length<2;
+  modalView(initialView);updateQuote();dialog.showModal();document.body.classList.add('sr-preview-open');
 }
 document.querySelectorAll('[data-preview]').forEach(b=>{b.hidden=false;b.addEventListener('click',()=>openProduct(b.dataset.preview,b));});
 config.addEventListener('input',updateQuote);config.addEventListener('change',updateQuote);config.addEventListener('submit',e=>e.preventDefault());
@@ -31,4 +37,8 @@ $('#sr-dialog-quote').addEventListener('click',e=>{if(!config.checkValidity()){e
 $('.sr-dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});
 dialog.addEventListener('close',()=>{document.body.classList.remove('sr-preview-open');if(opener?.isConnected)opener.focus();});
+document.querySelectorAll('.sr-product[data-product]').forEach(card=>{
+  const product=getProduct(card.dataset.product);
+  if(product?.gallery.length===2)bindCardSwipe(card.querySelector('.sr-card-gallery'),product);
+});
 document.body.classList.add('sr-enhanced');

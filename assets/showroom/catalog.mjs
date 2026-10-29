@@ -1,4 +1,4 @@
-import {productDefinitions} from './data/product-definitions.mjs?v=retail-seo-18';
+import {productDefinitions} from './data/product-definitions.mjs?v=categories-19';
 const positionNames={fata:'Față',spate:'Spate','fata-spate':'Față și spate',maneca:'Mânecă',pantalon:'Pantalon'};
 export const products=productDefinitions.map(p=>({...p,quoteCategory:'textile',gallery:p.gallery||[p.image],
   availableColors:[],availableSizes:[],sizes:'De stabilit ulterior.',colors:'De stabilit ulterior.',
@@ -14,12 +14,12 @@ const aliases={
  sorturi:'horeca','sort-bej':'horeca','jacheta-chef-alba':'horeca',
  hanorac:'hanorace','hanorac-verde':'hanorace','hanorac-crem':'hanorace',
  tote:'sacose','tote-accesoriu':'sacose','tote-eveniment':'sacose','sacosa-textila':'sacose',
- 'tricou-clasic':'tricouri','tricou-halftone':'tricouri','tricou-negru-halftone':'tricouri','tricou-alb':'tricouri','tricou-rosu':'tricouri','tricou-roz':'tricouri',
+ 'tricou-clasic':'tricouri','tricou-halftone':'branduri-creatori','tricou-negru-halftone':'branduri-creatori','tricou-alb':'tricouri','tricou-rosu':'tricouri','tricou-roz':'tricouri',
  'tricou-lucru-negru':'echipamente-lucru',workwear:'echipamente-lucru',jachete:'echipamente-lucru','jacheta-reflectorizanta':'echipamente-lucru',
  'echipament-sport':'sport-fitness','echipamente-sport':'sport-fitness','tricou-echipa-negru':'sport-fitness','maiou-lavanda':'sport-fitness',maiouri:'sport-fitness',
  vesta:'echipamente-tehnice',veste:'echipamente-tehnice','vesta-softshell':'echipamente-tehnice',
  polo:'evenimente-corporate','polo-negru':'evenimente-corporate','polo-sport':'evenimente-corporate',uniforme:'evenimente-corporate',
- 'tricou-eveniment-alb':'evenimente-corporate','kit-eveniment':'evenimente-corporate','tricou-nunta-crem':'evenimente-personale','tricou-absolvire-gri':'evenimente-personale'
+ 'tricou-eveniment-alb':'evenimente-corporate','kit-eveniment':'evenimente-corporate','tricou-nunta-crem':'evenimente-personale','tricou-absolvire-gri':'scoli-facultati-absolventi'
 };
 export const getProduct=id=>products.find(p=>p.id===(aliases[id]||id));
 export function readConfiguration(p,params){

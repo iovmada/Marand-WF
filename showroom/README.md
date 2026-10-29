@@ -13,10 +13,11 @@ The ZIP did not include catalog.json or an audit: titles/order come from the
 supplied instructions; Romanian descriptions, tags and applications were authored
 for this integration. No fabric, size, color or stock claims were inferred.
 
-One level, eleven selections: Tricouri personalizate, Hanorace, Sport & Fitness,
-Echipamente de lucru, Echipamente tehnice, HoReCa, Evenimente corporate, Retail & francize and Evenimente
-personale, Petreceri & evenimente pentru copii and Plase tote din bumbac &
-accesorii. All currently planned selections have approved user-supplied imagery.
+One level, thirteen selections: Tricouri personalizate, Hanorace personalizate,
+Branduri & creatori, Sport & Fitness, Echipamente de lucru, Jachete & echipamente
+de exterior, HoReCa, Evenimente corporate & promoționale, Retail & francize,
+Școli, facultăți & absolvenți, Evenimente personale, Petreceri & evenimente pentru
+copii and Sacoșe din bumbac & accesorii textile. The eleven original selections retain user-supplied imagery. Branduri & creatori and Școli, facultăți & absolvenți use newly generated presentation concepts, with provenance recorded alongside each PNG.
 
 The original V1 PNGs are intact composites. Per the latest user request, catalogue
 images fill the card frame with object-fit:cover, including hover alternatives,
@@ -24,9 +25,7 @@ on desktop and mobile. The detail gallery retains object-fit:contain so the whol
 original can be inspected. Source photographs are not modified or cropped. The originals are 1121x1403 or 1312x1199 pixels and use native
 dimensions, responsive sizing, async decode and lazy loading outside the hero.
 No old lookbook assets are referenced by the page or active data modules.
-The supplied Good Days design replaces the old halftone portrait example. This
-new pack does not identify a separate halftone example: do not label it as such or
-reintroduce an old crop to satisfy that earlier requirement.
+The supplied Good Days design remains the first selection. The new Branduri & creatori concept contains the only halftone T-shirt example; no old crop is reused.
 
 `v1/catalog.json` is the source of truth. `scripts/build-showroom.mjs` generates
 `data/product-definitions.mjs` plus the marked hero and card blocks in index.html.
@@ -158,3 +157,36 @@ changing source photographs. It produces responsive WebP files and image-variant
 PNG masters remain byte-identical. Cards still cover their frames; details contain the
 full image. Robots/canonical are retained; only this route's sitemap date changes.
 Search Console inspection must follow publishing; local changes alone cannot be indexed.
+
+## Category proposals applied locally, 29 October 2026
+
+Two new single-level entries: Branduri & creatori and Școli, facultăți & absolvenți.
+The front/back concepts are separate new PNG masters, not crops from old packs.
+Their generation prompts and hashes are stored in their folders. Only the brand
+T-shirt is a halftone example. Detail notes identify both images as generated
+presentation concepts; neither depicts a real customer or completed production.
+
+Existing cards have clearer names, uses and project-specific detail notes. Size,
+colour and material remain to be agreed. Caps are not offered. Deferred research
+ideas (medical, beauty, transfer-only sales) are not added. Existing card fill,
+responsive WebP, original photographs and no-commerce quotation flow remain.
+No new search, filters, category tree or tracking scripts are introduced.
+
+## Mobile two-image swipe
+
+The eight cards with two independently supplied images support left/right touch
+swipes and two accessible dot buttons. Vertical scrolling and pinch zoom remain
+native. A completed horizontal gesture suppresses its synthetic click so it does
+not open details. A fresh tap still opens the selected photo in the detail dialog.
+One-image composites remain intact. Desktop hover behavior remains available.
+The static no-JavaScript quotation links and existing form workflow are retained.
+
+## CTA alignment
+
+Showroom quotation buttons reuse .cta/.cta-secondary from the shared
+shell, with card sizing only. Primary hero/dialog/banner actions retain the shared
+.cta-primary style. The own-textiles button no longer overrides colours. The
+closing banner follows the existing .tpl-cta-heading/copy/btn pattern and spacing.
+Shared site styles and other pages are not edited by this adjustment.
+
+Card details open from the image; the separate “Vezi detalii” button below each card is removed. Quotation actions remain available.

@@ -1,4 +1,4 @@
-import {getProduct,readConfiguration} from './catalog.mjs?v=retail-seo-18';
+import {getProduct,readConfiguration} from './catalog.mjs?v=categories-19';
 // Preserve the existing form and never overwrite contact data or user edits.
 export function prefillShowroomQuote(id){
   const p=getProduct(id),product=document.querySelector('#produs'),category=document.querySelector('#categorie');

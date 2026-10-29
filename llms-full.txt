@@ -48,7 +48,7 @@ will prepare or fix artwork — but it is arranged case by case through
 
 ## Pages
 
-- [Showroom — DTF textile personalisation](https://marand-print.ro/showroom/index.md): DTF showroom with eleven selections: personalised T-shirts, hoodies, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. No prices or checkout.
+- [Showroom — DTF textile personalisation](https://marand-print.ro/showroom/index.md): DTF showroom with thirteen selections: personalised T-shirts, hoodies, brand/creator merchandise, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, school/university/graduation textiles, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals and two documented AI-generated presentation concepts; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. Caps are not offered. No prices or checkout.
 - [Marand Print Shop](https://marand-print.ro/index.md): Print shop in Reșița, Romania: large format, banners, canvas, stickers, textiles and small format, produced in-house.
 - [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each.
 - [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
@@ -117,9 +117,9 @@ Tricouri personalizate prin DTF, cu logo sau grafică în față și pe spate, p
 
 Poți veni cu textilele tale.
 
-### Hanorace
+### Hanorace personalizate
 
-Hanorace personalizate pentru branduri, echipe și comunități.
+Hanorace personalizate pentru branduri, echipe și comunități. Alegem croiala, materialul și grafica în funcție de proiect.
 
 - Hanorace
 - Branduri
@@ -133,9 +133,25 @@ Hanorace personalizate pentru branduri, echipe și comunități.
 
 Poți veni cu textilele tale.
 
+### Branduri & creatori
+
+Tricouri, hanorace și accesorii textile personalizate pentru colecții, artiști și comunități.
+
+- Branduri
+- Creatori
+- Merch
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Calitatea materialului**
+- De stabilit împreună.
+
+Poți veni cu textilele tale.
+
 ### Sport & Fitness
 
-Personalizare textile pentru sport, fitness și echipe. Compatibilitatea materialelor tehnice se verifică înainte de imprimare.
+Tricouri și echipamente sport personalizate cu nume, numere, identitatea clubului sau logo-uri de sponsori.
 
 - Sport
 - Echipe
@@ -151,7 +167,7 @@ Poți veni cu textilele tale.
 
 ### Echipamente de lucru
 
-Uniforme și echipamente de lucru personalizate cu identitatea echipei, pe poziții de print stabilite împreună.
+Uniforme personalizate pentru echipe de lucru, cu logo și identificare pe piept, spate, mânecă sau pantalon.
 
 - Workwear
 - Uniforme
@@ -165,9 +181,9 @@ Uniforme și echipamente de lucru personalizate cu identitatea echipei, pe pozi�
 
 Poți veni cu textilele tale.
 
-### Echipamente tehnice groase / hardshell
+### Jachete & echipamente de exterior
 
-Personalizare pentru echipamente tehnice groase și hardshell, după verificarea materialului și a zonelor de aplicare.
+Jachete groase și echipamente hardshell personalizate după verificarea materialului și a zonelor de aplicare.
 
 - Hardshell
 - Echipamente groase
@@ -183,7 +199,7 @@ Poți veni cu textilele tale.
 
 ### HoReCa
 
-Textile personalizate pentru restaurante, cafenele și hoteluri. Alegem articolele și verificăm compatibilitatea șorțurilor.
+Textile personalizate pentru echipe de cafenea, restaurant și hotel: tricouri, polo și șorțuri cu material compatibil.
 
 - HoReCa
 - Cafenele
@@ -197,13 +213,13 @@ Textile personalizate pentru restaurante, cafenele și hoteluri. Alegem articole
 
 Poți veni cu textilele tale.
 
-### Evenimente corporate
+### Evenimente corporate & promoționale
 
-Tricouri polo și textile personalizate pentru evenimente corporate, conferințe și echipe de organizare.
+Textile personalizate pentru conferințe, lansări, festivaluri, promoteri și echipe de voluntari.
 
-- Corporate
-- Staff
 - Evenimente
+- Staff
+- Promo
 - **Mărimi**
 - De stabilit ulterior.
 - **Culori**
@@ -215,7 +231,7 @@ Poți veni cu textilele tale.
 
 ### Retail & francize
 
-Uniforme personalizate pentru magazine și rețele de francize, cu o identitate vizuală unitară.
+Uniforme personalizate pentru magazine și francize. Articole, culori și grafică stabilite pentru o identitate vizuală unitară.
 
 - Retail
 - Francize
@@ -229,9 +245,25 @@ Uniforme personalizate pentru magazine și rețele de francize, cu o identitate 
 
 Poți veni cu textilele tale.
 
+### Școli, facultăți & absolvenți
+
+Tricouri și hanorace personalizate pentru clase, asociații studențești și promoții, cu grafică de grup sau nume individuale.
+
+- Școli
+- Facultăți
+- Absolvenți
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Calitatea materialului**
+- De stabilit împreună.
+
+Poți veni cu textilele tale.
+
 ### Evenimente personale
 
-Tricouri cu mesaje pentru petreceri, aniversări și momente împreună.
+Tricouri cu mesaje pentru aniversări, grupuri de familie și petreceri de burlaci sau burlăcițe.
 
 - Petreceri
 - Aniversări
@@ -247,7 +279,7 @@ Poți veni cu textilele tale.
 
 ### Petreceri & evenimente pentru copii
 
-Tricouri colorate pentru aniversări, petreceri tematice și evenimente pentru copii.
+Tricouri personalizate pentru aniversări și petreceri tematice de copii, cu grafică adaptată ideii evenimentului.
 
 - Copii
 - Aniversări
@@ -261,9 +293,9 @@ Tricouri colorate pentru aniversări, petreceri tematice și evenimente pentru c
 
 Poți veni cu textilele tale.
 
-### Plase tote din bumbac & accesorii
+### Sacoșe din bumbac & accesorii textile
 
-Plase din bumbac și accesorii textile personalizate pentru branduri, cadouri și evenimente.
+Sacoșe din bumbac, tote bags și accesorii textile pentru branduri, cadouri și evenimente. Articolele se confirmă în ofertă.
 
 - Tote bags
 - Bumbac
@@ -288,6 +320,8 @@ Compatibilitatea depinde de compoziția și finisajul articolului. Materialele t
 Le stabilim în funcție de proiect, împreună cu tipul de articol, compoziția și gramajul. Variantele disponibile se confirmă în ofertă, înainte de comandă.
 
 Stabilim articolele, culorile, materialele și pozițiile graficii pentru identitatea brandului. Detaliile agreate devin repere pentru comenzile ulterioare; disponibilitatea textilelor și eventualele diferențe între loturi se verifică la fiecare comandă.
+
+Discutăm tricouri, hanorace și accesorii textile pentru colecții de brand, clase și promoții. Stabilim grafica, pozițiile și eventualele nume individuale, împreună cu articolul, mărimile, culorile și materialul. Poți veni și cu textilele tale, după verificarea compatibilității DTF.
 
 Spune-ne ce articol dorești, cantitatea, termenul și unde vrei imprimarea. Trimite grafica sau logo-ul și menționează dacă vii cu textilele tale. Verificăm fișierul și confirmăm configurația înainte de producție.
 

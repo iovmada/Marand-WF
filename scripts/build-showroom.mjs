@@ -13,4 +13,4 @@ for(const [name,content]of Object.entries({products:products.map(card).join('\n'
  html=html.replace(re,`<!-- showroom:${name} -->\n${content}\n<!-- /showroom:${name} -->`);
 }
 writeFileSync(path,html);
-console.log(`Showroom V1: ${products.length} selections using supplied original photographs.`);
+console.log(`Showroom V1: ${products.length} selections using preserved photographs and documented presentation concepts.`);

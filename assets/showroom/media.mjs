@@ -1,4 +1,4 @@
-import {imageVariants} from './data/image-variants.mjs?v=retail-seo-18';
+import {imageVariants} from './data/image-variants.mjs?v=categories-19';
 // One shared source selection for static cards, the hero and the detail gallery.
 export function imageSources(image){
   const variants=imageVariants[image.src]||[image];

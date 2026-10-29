@@ -1,4 +1,4 @@
-import {imageSources} from './media.mjs?v=retail-seo-18';
+import {imageSources} from './media.mjs?v=categories-19';
 // Independent views exist only when explicitly supplied and mapped in the data.
 export function showImage(image,product,view){
   const item=product.gallery.find(item=>item.view===view)||product.gallery[0];

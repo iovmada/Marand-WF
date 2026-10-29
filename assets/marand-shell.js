@@ -5,7 +5,7 @@
   const showroomProduct = new URLSearchParams(window.location.search).get('showroom');
   if (/\/oferta\/(?:index\.html)?$/.test(window.location.pathname) && showroomProduct) {
     const adapterUrl = new URL('./showroom/quote-prefill.mjs', document.currentScript.src);
-    adapterUrl.searchParams.set('v', 'retail-seo-18');
+    adapterUrl.searchParams.set('v', 'categories-19');
     const prefill = () => import(adapterUrl.href)
       .then(({ prefillShowroomQuote }) => prefillShowroomQuote(showroomProduct))
       .catch(() => { /* The standard quotation form remains available. */ });
