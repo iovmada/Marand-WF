@@ -28,7 +28,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const navItems = [
   { key: "products", label: "Produse", href: "/produse/" },
-  { key: "showroom", label: "Showroom", href: "/showroom/" },
+  { key: "showroom", label: "Textile personalizate", href: "/showroom/" },
   { key: "materials", label: "Materiale", href: "/materiale/" },
   { key: "studio", label: "Studio", href: "/studio/" },
   { key: "process", label: "Cum lucrăm", href: "/#cum-functioneaza" },

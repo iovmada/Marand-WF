@@ -70,7 +70,7 @@ const pages = [
     file: "showroom/index.html",
     md: "showroom/index.md",
     url: "/showroom/",
-    title: "Showroom — DTF textile personalisation",
+    title: "Textile personalizate — DTF textile personalisation",
     summary: "DTF showroom with thirteen selections: personalised T-shirts, hoodies, brand/creator merchandise, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, school/university/graduation textiles, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals and two documented AI-generated presentation concepts; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. Caps are not offered. No prices or checkout.",
     whenToUse: [
       "the user wants to explore textile types or personalize their own garments",
@@ -96,7 +96,7 @@ const pages = [
     url: "/produse/",
     title: "Produse — product catalogue",
     summary:
-      "Every product family Marand sells, with the substrate, finishing and typical use for each.",
+      "Every product family Marand sells, with the substrate, finishing and typical use for each. The textile section reuses all thirteen selections and responsive images from the shared DTF catalogue, with individual quotation links; sizes, colours and material quality are confirmed per project.",
     whenToUse: [
       "the user asks whether a specific printed product can be made (banner, canvas, sticker, T-shirt, sign, label)",
       "you need to map a described job onto a concrete product family",

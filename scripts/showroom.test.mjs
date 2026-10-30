@@ -9,6 +9,34 @@ import {imageSources} from '../assets/showroom/media.mjs';
 import {imageVariants} from '../assets/showroom/data/image-variants.mjs';
 import {products,getProduct,quoteHref,readConfiguration} from '../assets/showroom/catalog.mjs';
 const read=path=>readFileSync(new URL(`../${path}`,import.meta.url),'utf8');
+test('Products textile selections share catalogue images, quote IDs and resolvable detail links',()=>{
+  const html=read('produse/index.html'),showroom=read('showroom/index.html');
+  const textile=html.split('<!-- showroom:product-catalog -->')[1].split('<!-- /showroom:product-catalog -->')[0];
+  const cards=[...textile.matchAll(/<article\b[^>]*data-showroom-product="([^"]+)"[^>]*>[\s\S]*?<\/article>/g)];
+  assert.deepEqual(cards.map(c=>c[1]),products.map(p=>p.id));
+  for(const [card,id]of cards){
+    const p=getProduct(id),photo=imageSources(p.image);
+    assert(card.includes(`src="${photo.src}"`));
+    assert(card.includes(`href="../oferta/?showroom=${id}"`));
+    assert(card.includes(`href="../showroom/#showroom-${id}"`));
+    assert(showroom.includes(`id="showroom-${id}"`));
+    assert(card.includes('Poți veni cu textilele tale.'));
+    assert(card.includes(p.sizes));assert(card.includes(p.colors));assert(card.includes(p.material));
+    if(p.technical)assert(card.includes(p.compatibility));
+  }
+  for(const id of ['textile','textiles','tricou','hanorac','vesta','sacosa'])assert(html.includes(`id="${id}"`));
+  assert(!/S · M · L|38×42|șepci|sapca|checkout|add-to-cart/.test(textile));
+  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
+});
+test('descriptive textile navigation preserves the indexed showroom route on every shared shell',()=>{
+  const pages=['index.html','produse/index.html','showroom/index.html','materiale/index.html','studio/index.html','echipamente/index.html','productie/index.html','oferta/index.html','contact/index.html','comunicat-de-presa/index.html','produse-test/index.html','despre/index.html','confidentialitate/index.html','about/index.html','privacy/index.html','404.html'];
+  for(const page of pages){
+    const html=read(page);
+    assert.equal([...html.matchAll(/href="(?:\.\/|\.\.\/|\/)showroom\/">Textile personalizate<\/a>/g)].length,2,page);
+    assert(!/href="[^"]*showroom\/">Showroom<\/a>/.test(html),page);
+  }
+  assert.match(read('showroom/index.html'),/rel="canonical" href="https:\/\/marand-print.ro\/showroom\/"/);
+});
 test('thirteen single-level showroom selections in documented order, personalised T-shirts first',()=>{
   assert.deepEqual(products.map(p=>p.id),['tricouri','hanorace','branduri-creatori','sport-fitness','echipamente-lucru','echipamente-tehnice','horeca','evenimente-corporate','retail-francize','scoli-facultati-absolventi','evenimente-personale','petreceri-copii','sacose']);
   assert.equal(products[0].name,'Tricouri personalizate');assert.equal(new Set(products.map(p=>p.id)).size,13);
@@ -73,8 +101,8 @@ test('static showroom has one listing, documented images, future specs and no co
   const script=read('assets/showroom/showroom.mjs');assert(!/sr-result|showroom-filters|sr-search|sr-empty/.test(script));
   for(const match of script.matchAll(/\$\('#([^']+)'\)/g))assert(html.includes(`id="${match[1]}"`),`Missing detail element ${match[1]}`);assert(html.includes('id="sr-config-own"'));assert(!html.includes('id="sr-config-sizes"'));
   assert(read('assets/showroom/showroom.css').includes('object-fit:contain'));
-  const tote=main.match(/<article class="sr-product" data-product="sacose">[\s\S]*?<\/article>/)[0];assert(!tote.includes('sr-card-alternate'));assert(!tote.includes('Față / spate'));assert.equal(getProduct('sacose').gallery.length,1);assert.match(getProduct('sacose').photoNote,/singură vedere/);
-  const personal=main.match(/<article class="sr-product" data-product="evenimente-personale">[\s\S]*?<\/article>/)[0];assert(!personal.includes('sr-card-alternate'));assert(!personal.includes('Față / spate'));assert.equal(getProduct('evenimente-personale').gallery.length,1);assert.match(getProduct('evenimente-personale').photoNote,/singură vedere/);
+  const tote=main.match(/<article class="sr-product"[^>]*data-product="sacose"[^>]*>[\s\S]*?<\/article>/)[0];assert(!tote.includes('sr-card-alternate'));assert(!tote.includes('Față / spate'));assert.equal(getProduct('sacose').gallery.length,1);assert.match(getProduct('sacose').photoNote,/singură vedere/);
+  const personal=main.match(/<article class="sr-product"[^>]*data-product="evenimente-personale"[^>]*>[\s\S]*?<\/article>/)[0];assert(!personal.includes('sr-card-alternate'));assert(!personal.includes('Față / spate'));assert.equal(getProduct('evenimente-personale').gallery.length,1);assert.match(getProduct('evenimente-personale').photoNote,/singură vedere/);
 });
 
 test('galleries switch supplied views or intact composite variants in details',()=>{

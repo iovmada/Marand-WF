@@ -190,3 +190,14 @@ closing banner follows the existing .tpl-cta-heading/copy/btn pattern and spacin
 Shared site styles and other pages are not edited by this adjustment.
 
 Card details open from the image; the separate “Vezi detalii” button below each card is removed. Quotation actions remain available.
+
+## Products integration and public name
+
+The public navigation and page eyebrow use “Textile personalizate”. The canonical
+URL stays /showroom/ and the existing descriptive SEO title stays in place.
+Running scripts/build-showroom.mjs also generates the textile cards inside
+produse/index.html from the same catalogue, using that page’s existing product
+card classes. Only textile media use portrait framing. Legacy anchors tricou,
+hanorac, vesta and sacosa remain available. Each card image links to its stable
+showroom selection anchor; the quote action uses the existing showroom prefill.
+No sizes, colours, material quality or stock are assumed.

@@ -48,9 +48,9 @@ will prepare or fix artwork — but it is arranged case by case through
 
 ## Pages
 
-- [Showroom — DTF textile personalisation](https://marand-print.ro/showroom/index.md): DTF showroom with thirteen selections: personalised T-shirts, hoodies, brand/creator merchandise, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, school/university/graduation textiles, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals and two documented AI-generated presentation concepts; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. Caps are not offered. No prices or checkout.
+- [Textile personalizate — DTF textile personalisation](https://marand-print.ro/showroom/index.md): DTF showroom with thirteen selections: personalised T-shirts, hoodies, brand/creator merchandise, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, school/university/graduation textiles, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals and two documented AI-generated presentation concepts; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. Caps are not offered. No prices or checkout.
 - [Marand Print Shop](https://marand-print.ro/index.md): Print shop in Reșița, Romania: large format, banners, canvas, stickers, textiles and small format, produced in-house.
-- [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each.
+- [Produse — product catalogue](https://marand-print.ro/produse/index.md): Every product family Marand sells, with the substrate, finishing and typical use for each. The textile section reuses all thirteen selections and responsive images from the shared DTF catalogue, with individual quotation links; sizes, colours and material quality are confirmed per project.
 - [Materiale — materials catalogue with technical specs](https://marand-print.ro/materiale/index.md): Substrates by brand and grade; availability is confirmed when quoting — Avery Dennison, Oracal, Mirage, Star, Stadur, Visual, Artex — with weights, widths and finishes.
 - [Studio — in-browser print preview](https://marand-print.ro/studio/index.md): A browser tool that projects the user's artwork onto a room photograph in correct wall perspective, for canvas, poster, forex and wallpaper.
 - [Echipamente — production equipment](https://marand-print.ro/echipamente/index.md): The machines on the floor, with their real capability limits — the ceiling on what any quote can promise.
@@ -82,10 +82,10 @@ will prepare or fix artwork — but it is arranged case by case through
 
 
 ========================================================================
-# Showroom — DTF textile personalisation — https://marand-print.ro/showroom/
+# Textile personalizate — DTF textile personalisation — https://marand-print.ro/showroom/
 ========================================================================
 
-Marand Print / DTF Showroom
+Marand Print / Textile personalizate
 
 ## Personalizare, textile prin DTF
 
@@ -835,77 +835,204 @@ Panouri pentru parcări, complexe rezidențiale și comerciale, fațade — rezi
 
 Tipuri populare
 
-## Printuri pe textile
+## Textile personalizate prin DTF
 
-Personalizare textile prin transfer DTF, de la o bucată la serii. Dimensiunea articolului este distinctă de aria printului; poziția, mărimea transferului și compatibilitatea materialului se confirmă în ofertă.
+Tricouri, hanorace, uniforme și accesorii textile pentru branduri, echipe și evenimente, personalizate prin DTF. Mărimile, culorile și calitatea materialului le stabilim împreună. Poți veni și cu textilele tale, după verificarea compatibilității cu imprimarea.
 
-### Tricou personalizat
+### Tricouri personalizate
 
-Tricouri din bumbac sau mix poli-bumbac, personalizate cu transfer DTF — pentru merch, uniforme, evenimente.
+Tricouri personalizate prin DTF, cu logo sau grafică în față și pe spate, pentru branduri, echipe și cadouri.
 
 - **Tehnologie**
-- print DTF + presă termică
-- **Material**
-- bumbac · poli-bumbac
+- Transfer DTF
 - **Mărimi**
-- S · M · L · XL · XXL
-- **Cantitate**
-- de la 1 buc la serii
-- **Aplicații**
-- merch, echipe, evenimente, promo
-
-Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
-
-### Hanorac personalizat
-
-Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, merch, workwear casual.
-
-- **Tehnologie**
-- print DTF + presă termică
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
 - **Material**
-- bumbac · fleece poli-bumbac
-- **Mărimi**
-- S · M · L · XL · XXL
-- **Print**
-- față / spate / mâneci
-- **Cantitate**
-- de la 1 buc la serii
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
 
-Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
 
-### Vestă personalizată
+### Hanorace personalizate
 
-Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau fleece.
+Hanorace personalizate pentru branduri, echipe și comunități. Alegem croiala, materialul și grafica în funcție de proiect.
 
 - **Tehnologie**
-- print DTF + presă termică
-- **Variante**
-- softshell · reflectorizantă · fleece
+- Transfer DTF
 - **Mărimi**
-- S · M · L · XL · XXL
-- **Print**
-- piept · spate
-- **Aplicații**
-- uniforme, team wear, evenimente, promo
-
-Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.
-
-### Sacoșe personalizate (tote bag)
-
-Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print pe una sau două fețe, în aria confirmată pentru modelul ales.
-
-- **Tehnologie**
-- print DTF + presă termică
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
 - **Material**
-- bumbac · canvas textil
-- **Print**
-- o singură față sau două
-- **Dimensiuni**
-- standard 38×42 cm · XL 42×45 cm
-- **Aplicații**
-- retail, gifting, evenimente, promo
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
 
-38×42 cm și 42×45 cm sunt dimensiunile sacoșei. Aria imprimabilă, distanța față de cusături și personalizarea celei de-a doua fețe se confirmă separat.
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Branduri & creatori
+
+Tricouri, hanorace și accesorii textile personalizate pentru colecții, artiști și comunități.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Sport & Fitness
+
+Tricouri și echipamente sport personalizate cu nume, numere, identitatea clubului sau logo-uri de sponsori.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Aplicarea DTF pe materiale tehnice, softshell, poliester special, textile tratate sau articole cu marcaje de siguranță se confirmă în atelier. Poate fi necesară o probă.
+
+### Echipamente de lucru
+
+Uniforme personalizate pentru echipe de lucru, cu logo și identificare pe piept, spate, mânecă sau pantalon.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Aplicarea DTF pe materiale tehnice, softshell, poliester special, textile tratate sau articole cu marcaje de siguranță se confirmă în atelier. Poate fi necesară o probă.
+
+### Jachete & echipamente de exterior
+
+Jachete groase și echipamente hardshell personalizate după verificarea materialului și a zonelor de aplicare.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Personalizarea DTF pe hardshell, materiale groase sau tratate se confirmă în atelier pentru articolul și zona de aplicare alese. Poate fi necesară o probă.
+
+### HoReCa
+
+Textile personalizate pentru echipe de cafenea, restaurant și hotel: tricouri, polo și șorțuri cu material compatibil.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Materialul șorțului și compatibilitatea cu imprimarea DTF se confirmă în atelier înainte de personalizare. Pentru materiale tratate poate fi necesară o probă.
+
+### Evenimente corporate & promoționale
+
+Textile personalizate pentru conferințe, lansări, festivaluri, promoteri și echipe de voluntari.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Retail & francize
+
+Uniforme personalizate pentru magazine și francize. Articole, culori și grafică stabilite pentru o identitate vizuală unitară.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Școli, facultăți & absolvenți
+
+Tricouri și hanorace personalizate pentru clase, asociații studențești și promoții, cu grafică de grup sau nume individuale.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Evenimente personale
+
+Tricouri cu mesaje pentru aniversări, grupuri de familie și petreceri de burlaci sau burlăcițe.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Petreceri & evenimente pentru copii
+
+Tricouri personalizate pentru aniversări și petreceri tematice de copii, cu grafică adaptată ideii evenimentului.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
+
+### Sacoșe din bumbac & accesorii textile
+
+Sacoșe din bumbac, tote bags și accesorii textile pentru branduri, cadouri și evenimente. Articolele se confirmă în ofertă.
+
+- **Tehnologie**
+- Transfer DTF
+- **Mărimi**
+- De stabilit ulterior.
+- **Culori**
+- De stabilit ulterior.
+- **Material**
+- Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.
+
+Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.
 
 
 ========================================================================

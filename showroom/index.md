@@ -1,4 +1,4 @@
-# Showroom — DTF textile personalisation
+# Textile personalizate — DTF textile personalisation
 
 > DTF showroom with thirteen selections: personalised T-shirts, hoodies, brand/creator merchandise, sport, workwear, thick hardshell equipment, HoReCa, corporate events, retail and franchise uniforms, school/university/graduation textiles, personal events, children’s parties and cotton tote bags/textile accessories. Web images are responsive WebP derivatives of preserved supplied originals and two documented AI-generated presentation concepts; technical equipment has two intact front/back composite variants; separate front/back views exist for hoodies, sport, workwear, HoReCa, corporate and children’s events. Sizes, colors and material quality are discussed individually. Customers may bring their own textiles, subject to workshop compatibility checks. Illustrated brands are fictitious. Caps are not offered. No prices or checkout.
 
@@ -11,7 +11,7 @@ Markdown source: https://marand-print.ro/showroom/index.md
 
 
 ---
-Marand Print / DTF Showroom
+Marand Print / Textile personalizate
 
 ## Personalizare, textile prin DTF
 

@@ -393,6 +393,10 @@
     font-weight: 700;
   }
 
+  /* Textile selections reuse the product cards and original portrait photography. */
+  #textile .product-detail-media { aspect-ratio: 4 / 5; }
+  #textile .product-detail-note { padding: 0 28px; }
+
   @media (max-width: 960px) {
     :root { --header-offset: 104px; }
     .products-page { padding-top: 150px; }
@@ -448,7 +452,7 @@
             <img class="logo-full" src="../assets/brand/logo.svg" alt="Marand" />
           </a>
           <nav class="nav-pill" aria-label="Navigare principală">
-            <a class="is-active" href="../produse/">Produse</a><a class="" href="../showroom/">Showroom</a><a class="" href="../materiale/">Materiale</a><a class="" href="../studio/">Studio</a><a class="" href="../#cum-functioneaza">Cum lucrăm</a><a class="" href="../echipamente/">Echipamente</a><a class="" href="../contact/">Contact</a>
+            <a class="is-active" href="../produse/">Produse</a><a class="" href="../showroom/">Textile personalizate</a><a class="" href="../materiale/">Materiale</a><a class="" href="../studio/">Studio</a><a class="" href="../#cum-functioneaza">Cum lucrăm</a><a class="" href="../echipamente/">Echipamente</a><a class="" href="../contact/">Contact</a>
           </nav>
           <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Deschide meniul">
             <span></span>
@@ -461,7 +465,7 @@
           <button class="mobile-nav-close" type="button" aria-label="Închide meniul">×</button>
           <div class="mobile-nav-panel">
             <nav class="mobile-nav-links" aria-label="Navigare principală pe mobil">
-              <a class="is-active" href="../produse/">Produse</a><a class="" href="../showroom/">Showroom</a><a class="" href="../materiale/">Materiale</a><a class="" href="../studio/">Studio</a><a class="" href="../#cum-functioneaza">Cum lucrăm</a><a class="" href="../echipamente/">Echipamente</a><a class="" href="../contact/">Contact</a>
+              <a class="is-active" href="../produse/">Produse</a><a class="" href="../showroom/">Textile personalizate</a><a class="" href="../materiale/">Materiale</a><a class="" href="../studio/">Studio</a><a class="" href="../#cum-functioneaza">Cum lucrăm</a><a class="" href="../echipamente/">Echipamente</a><a class="" href="../contact/">Contact</a>
             </nav>
             <a class="cta cta-primary cta-pill mobile-nav-cta" href="../oferta/">Cere ofertă</a>
           </div>
@@ -497,7 +501,7 @@
             <button class="products-overview-option" type="button" role="option" data-target="#panouri-rigide" aria-selected="false">6. Panouri rigide printate</button>
             <button class="products-overview-option" type="button" role="option" data-target="#format-mic" aria-selected="false">7. Printuri format mic</button>
             <button class="products-overview-option" type="button" role="option" data-target="#semnalistica" aria-selected="false">8. Semnalistică</button>
-            <button class="products-overview-option" type="button" role="option" data-target="#textile" aria-selected="false">9. Printuri pe textile</button>
+            <button class="products-overview-option" type="button" role="option" data-target="#textile" aria-selected="false">9. Textile personalizate</button>
           </div>
         </div>
       </div>
@@ -1264,105 +1268,158 @@
     <section class="products-layout" id="textile">
       <span id="textiles" aria-hidden="true"></span>
       <header class="products-header">
-        <span class="section-chip">9. printuri pe textile</span>
-        <h2 class="products-title">Printuri pe textile</h2>
-        <p class="products-copy">Personalizare textile prin transfer DTF, de la o bucată la serii. Dimensiunea articolului este distinctă de aria printului; poziția, mărimea transferului și compatibilitatea materialului se confirmă în ofertă.</p>
+        <span class="section-chip">9. textile personalizate</span>
+        <h2 class="products-title">Textile personalizate prin DTF</h2>
+        <p class="products-copy">Tricouri, hanorace, uniforme și accesorii textile pentru branduri, echipe și evenimente, personalizate prin DTF. Mărimile, culorile și calitatea materialului le stabilim împreună. Poți veni și cu textilele tale, după verificarea compatibilității cu imprimarea.</p>
+        <a class="cta cta-secondary" href="../showroom/#categorii">Explorează textilele personalizate</a>
       </header>
 
       <div class="products-grid">
-
-        <article class="product-detail-card" id="tricou">
-          <div class="product-detail-media"><img src="../assets/images/produse-test/tricou.webp" width="1448" height="1086" alt="Tricou personalizat cu print DTF pentru merch, uniforme și evenimente" loading="lazy" decoding="async" /></div>
-          <div class="product-detail-content">
-            <div class="product-detail-main">
-              <div class="product-copy-group">
-                <h3 class="product-detail-title">Tricou personalizat</h3>
-                <p class="product-detail-description">Tricouri din bumbac sau mix poli-bumbac, personalizate cu transfer DTF — pentru merch, uniforme, evenimente.</p>
-              </div>
-              <dl class="product-specs">
-                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
-                <div><dt>Material</dt><dd>bumbac · poli-bumbac</dd></div>
-                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
-                <div><dt>Cantitate</dt><dd>de la 1 buc la serii</dd></div>
-                <div><dt>Aplicații</dt><dd>merch, echipe, evenimente, promo</dd></div>
-              </dl>
-            </div>
-            <p class="product-detail-note">Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.</p>
-            <div class="product-card-actions">
-              <a class="cta cta-secondary" href="../oferta/?produs=tricou">Cere ofertă</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-detail-card" id="hanorac">
-          <div class="product-detail-media"><img src="../assets/images/produse-test/hanorac.webp" width="1448" height="1086" alt="Hanorac personalizat cu print DTF pentru echipe, merch și workwear casual" loading="lazy" decoding="async" /></div>
-          <div class="product-detail-content">
-            <div class="product-detail-main">
-              <div class="product-copy-group">
-                <h3 class="product-detail-title">Hanorac personalizat</h3>
-                <p class="product-detail-description">Hanorace cu sau fără glugă, personalizate cu print DTF — pentru echipe, merch, workwear casual.</p>
-              </div>
-              <dl class="product-specs">
-                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
-                <div><dt>Material</dt><dd>bumbac · fleece poli-bumbac</dd></div>
-                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
-                <div><dt>Print</dt><dd>față / spate / mâneci</dd></div>
-                <div><dt>Cantitate</dt><dd>de la 1 buc la serii</dd></div>
-              </dl>
-            </div>
-            <p class="product-detail-note">Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.</p>
-            <div class="product-card-actions">
-              <a class="cta cta-secondary" href="../oferta/?produs=hanorac">Cere ofertă</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-detail-card" id="vesta">
-          <div class="product-detail-media"><img src="../assets/images/produse-test/vesta.webp" width="1448" height="1086" alt="Vestă personalizată pentru workwear, evenimente, echipe și promo" loading="lazy" decoding="async" /></div>
-          <div class="product-detail-content">
-            <div class="product-detail-main">
-              <div class="product-copy-group">
-                <h3 class="product-detail-title">Vestă personalizată</h3>
-                <p class="product-detail-description">Veste pentru echipe, evenimente sau workwear — softshell, reflectorizante sau fleece.</p>
-              </div>
-              <dl class="product-specs">
-                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
-                <div><dt>Variante</dt><dd>softshell · reflectorizantă · fleece</dd></div>
-                <div><dt>Mărimi</dt><dd>S · M · L · XL · XXL</dd></div>
-                <div><dt>Print</dt><dd>piept · spate</dd></div>
-                <div><dt>Aplicații</dt><dd>uniforme, team wear, evenimente, promo</dd></div>
-              </dl>
-            </div>
-            <p class="product-detail-note">Mărimile S–XXL se confirmă după modelul textil ales și tabelul lui de măsuri. Specifică poziția și dimensiunea printului în cm; primești recomandările de îngrijire pentru configurația comandată.</p>
-            <div class="product-card-actions">
-              <a class="cta cta-secondary" href="../oferta/?produs=vesta">Cere ofertă</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-detail-card" id="sacosa">
-          <div class="product-detail-media"><img src="../assets/images/produse-test/sacosa.webp" width="1448" height="1086" alt="Sacoșă tote bag personalizată pentru retail, gifting, evenimente și activări de brand" loading="lazy" decoding="async" /></div>
-          <div class="product-detail-content">
-            <div class="product-detail-main">
-              <div class="product-copy-group">
-                <h3 class="product-detail-title">Sacoșe personalizate (tote bag)</h3>
-                <p class="product-detail-description">Sacoșe textile pentru retail, gifting, evenimente și activări de brand — print pe una sau două fețe, în aria confirmată pentru modelul ales.</p>
-              </div>
-              <dl class="product-specs">
-                <div><dt>Tehnologie</dt><dd>print DTF + presă termică</dd></div>
-                <div><dt>Material</dt><dd>bumbac · canvas textil</dd></div>
-                <div><dt>Print</dt><dd>o singură față sau două</dd></div>
-                <div><dt>Dimensiuni</dt><dd>standard 38×42 cm · XL 42×45 cm</dd></div>
-                <div><dt>Aplicații</dt><dd>retail, gifting, evenimente, promo</dd></div>
-              </dl>
-            </div>
-            <p class="product-detail-note">38×42 cm și 42×45 cm sunt dimensiunile sacoșei. Aria imprimabilă, distanța față de cusături și personalizarea celei de-a doua fețe se confirmă separat.</p>
-            <div class="product-card-actions">
-              <a class="cta cta-secondary" href="../oferta/?produs=sacosa">Cere ofertă</a>
-            </div>
-          </div>
-        </article>
-
+<!-- showroom:product-catalog -->
+<article class="product-detail-card" id="tricou" data-showroom-product="tricouri">
+  <a class="product-detail-media" href="../showroom/#showroom-tricouri" aria-label="Explorează Tricouri personalizate"><img class="" src="../assets/showroom/responsive/01-tricouri-good-days-front-back-800.webp" srcset="../assets/showroom/responsive/01-tricouri-good-days-front-back-480.webp 480w, ../assets/showroom/responsive/01-tricouri-good-days-front-back-800.webp 800w, ../assets/showroom/responsive/01-tricouri-good-days-front-back-1121.webp 1121w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Tricou crem Good Days, model feminin prezentat din față și din spate în aceeași compoziție" width="1121" height="1403" style="--native-width:1121px;--image-ratio:1121/1403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Tricouri personalizate</h3><p class="product-detail-description">Tricouri personalizate prin DTF, cu logo sau grafică în față și pe spate, pentru branduri, echipe și cadouri.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=tricouri">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="hanorac" data-showroom-product="hanorace">
+  <a class="product-detail-media" href="../showroom/#showroom-hanorace" aria-label="Explorează Hanorace personalizate"><img class="" src="../assets/showroom/responsive/hanorac-verde-front-800.webp" srcset="../assets/showroom/responsive/hanorac-verde-front-480.webp 480w, ../assets/showroom/responsive/hanorac-verde-front-800.webp 800w, ../assets/showroom/responsive/hanorac-verde-front-1200.webp 1200w, ../assets/showroom/responsive/hanorac-verde-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Model feminin în hanorac verde cu glugă și grafică roz, vedere din față, exemplu de personalizare" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Hanorace personalizate</h3><p class="product-detail-description">Hanorace personalizate pentru branduri, echipe și comunități. Alegem croiala, materialul și grafica în funcție de proiect.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=hanorace">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-branduri-creatori" data-showroom-product="branduri-creatori">
+  <a class="product-detail-media" href="../showroom/#showroom-branduri-creatori" aria-label="Explorează Branduri &amp; creatori"><img class="" src="../assets/showroom/responsive/branduri-creatori-concept-800.webp" srcset="../assets/showroom/responsive/branduri-creatori-concept-480.webp 480w, ../assets/showroom/responsive/branduri-creatori-concept-800.webp 800w, ../assets/showroom/responsive/branduri-creatori-concept-1122.webp 1122w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Concept de tricou crem STUDIO 13, față cu logo mic și spate cu grafică halftone, prezentate împreună" width="1122" height="1402" style="--native-width:1122px;--image-ratio:1122/1402" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Branduri &amp; creatori</h3><p class="product-detail-description">Tricouri, hanorace și accesorii textile personalizate pentru colecții, artiști și comunități.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=branduri-creatori">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-sport-fitness" data-showroom-product="sport-fitness">
+  <a class="product-detail-media" href="../showroom/#showroom-sport-fitness" aria-label="Explorează Sport &amp; Fitness"><img class="" src="../assets/showroom/responsive/sport-fitness-front-800.webp" srcset="../assets/showroom/responsive/sport-fitness-front-480.webp 480w, ../assets/showroom/responsive/sport-fitness-front-800.webp 800w, ../assets/showroom/responsive/sport-fitness-front-1200.webp 1200w, ../assets/showroom/responsive/sport-fitness-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Bărbat și femeie în echipamente sport portocalii POWER UP, vedere din față, exemplu de personalizare" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Sport &amp; Fitness</h3><p class="product-detail-description">Tricouri și echipamente sport personalizate cu nume, numere, identitatea clubului sau logo-uri de sponsori.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Aplicarea DTF pe materiale tehnice, softshell, poliester special, textile tratate sau articole cu marcaje de siguranță se confirmă în atelier. Poate fi necesară o probă.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=sport-fitness">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-echipamente-lucru" data-showroom-product="echipamente-lucru">
+  <a class="product-detail-media" href="../showroom/#showroom-echipamente-lucru" aria-label="Explorează Echipamente de lucru"><img class="" src="../assets/showroom/responsive/echipament-lucru-front-800.webp" srcset="../assets/showroom/responsive/echipament-lucru-front-480.webp 480w, ../assets/showroom/responsive/echipament-lucru-front-800.webp 800w, ../assets/showroom/responsive/echipament-lucru-front-1200.webp 1200w, ../assets/showroom/responsive/echipament-lucru-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Echipament de lucru negru cu vestă, hanorac și pantaloni, vedere din față, exemplu de personalizare NEXORA ENERGY" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Echipamente de lucru</h3><p class="product-detail-description">Uniforme personalizate pentru echipe de lucru, cu logo și identificare pe piept, spate, mânecă sau pantalon.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Aplicarea DTF pe materiale tehnice, softshell, poliester special, textile tratate sau articole cu marcaje de siguranță se confirmă în atelier. Poate fi necesară o probă.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=echipamente-lucru">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="vesta" data-showroom-product="echipamente-tehnice">
+  <a class="product-detail-media" href="../showroom/#showroom-echipamente-tehnice" aria-label="Explorează Jachete &amp; echipamente de exterior"><img class="" src="../assets/showroom/responsive/echipament-hardshell-varianta-1-800.webp" srcset="../assets/showroom/responsive/echipament-hardshell-varianta-1-480.webp 480w, ../assets/showroom/responsive/echipament-hardshell-varianta-1-800.webp 800w, ../assets/showroom/responsive/echipament-hardshell-varianta-1-1200.webp 1200w, ../assets/showroom/responsive/echipament-hardshell-varianta-1-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Echipament tehnic gros de exterior NEXORA ENERGY, varianta 1, compoziție integrală cu prezentare din față și din spate, exemplu de personalizare" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Jachete &amp; echipamente de exterior</h3><p class="product-detail-description">Jachete groase și echipamente hardshell personalizate după verificarea materialului și a zonelor de aplicare.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Personalizarea DTF pe hardshell, materiale groase sau tratate se confirmă în atelier pentru articolul și zona de aplicare alese. Poate fi necesară o probă.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=echipamente-tehnice">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-horeca" data-showroom-product="horeca">
+  <a class="product-detail-media" href="../showroom/#showroom-horeca" aria-label="Explorează HoReCa"><img class="" src="../assets/showroom/responsive/horeca-front-800.webp" srcset="../assets/showroom/responsive/horeca-front-480.webp 480w, ../assets/showroom/responsive/horeca-front-800.webp 800w, ../assets/showroom/responsive/horeca-front-1200.webp 1200w, ../assets/showroom/responsive/horeca-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Ținută HoReCa cu tricou negru și șorț maro ROAST &amp; ROLL, vedere din față, exemplu de personalizare" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">HoReCa</h3><p class="product-detail-description">Textile personalizate pentru echipe de cafenea, restaurant și hotel: tricouri, polo și șorțuri cu material compatibil.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare. Materialul șorțului și compatibilitatea cu imprimarea DTF se confirmă în atelier înainte de personalizare. Pentru materiale tratate poate fi necesară o probă.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=horeca">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-evenimente-corporate" data-showroom-product="evenimente-corporate">
+  <a class="product-detail-media" href="../showroom/#showroom-evenimente-corporate" aria-label="Explorează Evenimente corporate &amp; promoționale"><img class="" src="../assets/showroom/responsive/evenimente-corporate-front-800.webp" srcset="../assets/showroom/responsive/evenimente-corporate-front-480.webp 480w, ../assets/showroom/responsive/evenimente-corporate-front-800.webp 800w, ../assets/showroom/responsive/evenimente-corporate-front-1200.webp 1200w, ../assets/showroom/responsive/evenimente-corporate-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Bărbat și femeie în polo și cămașă negre AURELIA EVENTS, vedere din față, exemplu de personalizare corporate" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Evenimente corporate &amp; promoționale</h3><p class="product-detail-description">Textile personalizate pentru conferințe, lansări, festivaluri, promoteri și echipe de voluntari.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=evenimente-corporate">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-retail-francize" data-showroom-product="retail-francize">
+  <a class="product-detail-media" href="../showroom/#showroom-retail-francize" aria-label="Explorează Retail &amp; francize"><img class="" src="../assets/showroom/responsive/retail-francize-front-800.webp" srcset="../assets/showroom/responsive/retail-francize-front-480.webp 480w, ../assets/showroom/responsive/retail-francize-front-800.webp 800w, ../assets/showroom/responsive/retail-francize-front-1200.webp 1200w, ../assets/showroom/responsive/retail-francize-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Uniformă roșie pentru retail cu polo și șorț personalizate FRESH MARKET, vedere din față" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Retail &amp; francize</h3><p class="product-detail-description">Uniforme personalizate pentru magazine și francize. Articole, culori și grafică stabilite pentru o identitate vizuală unitară.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=retail-francize">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-scoli-facultati-absolventi" data-showroom-product="scoli-facultati-absolventi">
+  <a class="product-detail-media" href="../showroom/#showroom-scoli-facultati-absolventi" aria-label="Explorează Școli, facultăți &amp; absolvenți"><img class="" src="../assets/showroom/responsive/scoli-absolventi-concept-800.webp" srcset="../assets/showroom/responsive/scoli-absolventi-concept-480.webp 480w, ../assets/showroom/responsive/scoli-absolventi-concept-800.webp 800w, ../assets/showroom/responsive/scoli-absolventi-concept-1122.webp 1122w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Concept de hanorac bleumarin CAMPUS, față cu emblemă și spate cu text de absolvire CLASS OF 2027, prezentate împreună" width="1122" height="1402" style="--native-width:1122px;--image-ratio:1122/1402" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Școli, facultăți &amp; absolvenți</h3><p class="product-detail-description">Tricouri și hanorace personalizate pentru clase, asociații studențești și promoții, cu grafică de grup sau nume individuale.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=scoli-facultati-absolventi">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-evenimente-personale" data-showroom-product="evenimente-personale">
+  <a class="product-detail-media" href="../showroom/#showroom-evenimente-personale" aria-label="Explorează Evenimente personale"><img class="" src="../assets/showroom/responsive/petrecere-burlacite-tricouri-personalizate-800.webp" srcset="../assets/showroom/responsive/petrecere-burlacite-tricouri-personalizate-480.webp 480w, ../assets/showroom/responsive/petrecere-burlacite-tricouri-personalizate-800.webp 800w, ../assets/showroom/responsive/petrecere-burlacite-tricouri-personalizate-864.webp 864w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Grup de femei la o petrecere a burlăcițelor, în tricouri personalizate roz și alb, exemplu pentru evenimente personale" width="864" height="1184" style="--native-width:864px;--image-ratio:864/1184" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Evenimente personale</h3><p class="product-detail-description">Tricouri cu mesaje pentru aniversări, grupuri de familie și petreceri de burlaci sau burlăcițe.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=evenimente-personale">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="textile-petreceri-copii" data-showroom-product="petreceri-copii">
+  <a class="product-detail-media" href="../showroom/#showroom-petreceri-copii" aria-label="Explorează Petreceri &amp; evenimente pentru copii"><img class="" src="../assets/showroom/responsive/petreceri-copii-front-800.webp" srcset="../assets/showroom/responsive/petreceri-copii-front-480.webp 480w, ../assets/showroom/responsive/petreceri-copii-front-800.webp 800w, ../assets/showroom/responsive/petreceri-copii-front-1200.webp 1200w, ../assets/showroom/responsive/petreceri-copii-front-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Tricou alb pentru copii cu dinozaur colorat și mesajul COOL KIDS CLUB, vedere din față, exemplu de personalizare" width="1796" height="2403" style="--native-width:1796px;--image-ratio:1796/2403" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Petreceri &amp; evenimente pentru copii</h3><p class="product-detail-description">Tricouri personalizate pentru aniversări și petreceri tematice de copii, cu grafică adaptată ideii evenimentului.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=petreceri-copii">Cere ofertă</a></div>
+  </div>
+</article>
+<article class="product-detail-card" id="sacosa" data-showroom-product="sacose">
+  <a class="product-detail-media" href="../showroom/#showroom-sacose" aria-label="Explorează Sacoșe din bumbac &amp; accesorii textile"><img class="" src="../assets/showroom/responsive/plasa-tote-bumbac-good-vibes-800.webp" srcset="../assets/showroom/responsive/plasa-tote-bumbac-good-vibes-480.webp 480w, ../assets/showroom/responsive/plasa-tote-bumbac-good-vibes-800.webp 800w, ../assets/showroom/responsive/plasa-tote-bumbac-good-vibes-1200.webp 1200w, ../assets/showroom/responsive/plasa-tote-bumbac-good-vibes-1600.webp 1600w" sizes="(max-width:640px) calc(100vw - 56px), (max-width:960px) calc((100vw - 88px) / 2), 440px" alt="Plasă tote albă din bumbac, ținută de o femeie, cu grafică florală multicoloră și mesajul Good Vibes Only, exemplu de personalizare" width="1792" height="2290" style="--native-width:1792px;--image-ratio:1792/2290" loading="lazy" decoding="async" /></a>
+  <div class="product-detail-content">
+    <div class="product-detail-main">
+      <div class="product-copy-group"><h3 class="product-detail-title">Sacoșe din bumbac &amp; accesorii textile</h3><p class="product-detail-description">Sacoșe din bumbac, tote bags și accesorii textile pentru branduri, cadouri și evenimente. Articolele se confirmă în ofertă.</p></div>
+      <dl class="product-specs"><div><dt>Tehnologie</dt><dd>Transfer DTF</dd></div><div><dt>Mărimi</dt><dd>De stabilit ulterior.</dd></div><div><dt>Culori</dt><dd>De stabilit ulterior.</dd></div><div><dt>Material</dt><dd>Compoziția, gramajul și calitatea materialului se stabilesc împreună, în funcție de proiect.</dd></div></dl>
+    </div>
+    <p class="product-detail-note">Poți veni cu textilele tale. Verificăm materialul și compatibilitatea DTF înainte de personalizare.</p>
+    <div class="product-card-actions"><a class="cta cta-secondary" href="../oferta/?showroom=sacose">Cere ofertă</a></div>
+  </div>
+</article>
+<!-- /showroom:product-catalog -->
       </div>
     </section>
 
