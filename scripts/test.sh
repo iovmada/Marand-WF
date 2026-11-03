@@ -36,6 +36,10 @@ echo "== showroom catalogue and quotation compatibility =="
 "$NODE" --test "$ROOT/scripts/showroom.test.mjs" || status=1
 
 echo
+echo "== sitewide Google tag =="
+"$NODE" --test "$ROOT/scripts/google-tag.test.mjs" || status=1
+
+echo
 echo "== generators are idempotent =="
 # Compare the generated files before and after a re-run. Deliberately NOT a
 # git diff: uncommitted work in progress is normal and is not drift. What we

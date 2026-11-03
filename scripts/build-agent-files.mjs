@@ -205,7 +205,7 @@ const pages = [
     whenToUse: [
       "the user asks what happens to data or files they submit",
       "you need to tell a user whether uploading artwork is safe and where it is stored (DigitalOcean Spaces, Frankfurt, EU; signed links expiring within 7 days)",
-      "you need to know whether the site tracks visitors (it does not — no analytics, no advertising pixels)",
+      "you need to understand Google Ads campaign measurement through the sitewide Google tag, alongside form data and browser storage",
     ],
     note: "Also served at /privacy/ for convention; /confidentialitate/ is the canonical URL.",
   },

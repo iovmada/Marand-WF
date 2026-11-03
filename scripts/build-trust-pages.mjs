@@ -231,6 +231,7 @@ const pages = [
   {
     dir: "confidentialitate",
     alias: "privacy",
+    updated: "3 noiembrie 2026",
     title: "Marand — Politica de confidențialitate",
     description:
       "Ce date colectează marand-print.ro prin formularele de contact și ofertă, unde ajung fișierele încărcate, cât timp se păstrează și cum îți exerciți drepturile GDPR.",
@@ -259,11 +260,11 @@ const pages = [
         <li>Nu folosim Google Analytics, Meta Pixel sau orice alt instrument de analiză ori de urmărire publicitară. Site-ul nu conține niciun tracker.</li>
         <li>Nu vindem și nu închiriem datele tale nimănui.</li>
         <li>Nu trimitem newslettere și nu te înscriem automat în liste de marketing.</li>
-        <li>Nu creăm profiluri și nu luăm decizii automate pe baza datelor tale.</li>
       </ul>
 
       <h2>Cookie-uri și stocare în browser</h2>
-      <p>Nu punem cookie-uri de marketing sau de analiză. Site-ul folosește <code>sessionStorage</code> — o zonă din browserul tău, ștearsă când închizi fila — pentru a reține că ai închis un anunț, ca să nu ți-l arătăm din nou în aceeași vizită. Aceste date nu părăsesc browserul.</p>
+      <p>Site-ul încarcă Google tag pentru Google Ads, pentru măsurarea campaniilor publicitare. Google poate folosi cookie-uri și identificatori pentru a asocia vizitele cu interacțiunile cu reclamele. Mai multe informații sunt disponibile în <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">explicațiile Google despre publicitate</a>.</p>
+      <p>Site-ul folosește și <code>sessionStorage</code> — o zonă din browserul tău, ștearsă când închizi fila — pentru a reține că ai închis un anunț, ca să nu ți-l arătăm din nou în aceeași vizită. Această preferință rămâne în browser.</p>
       <p>Rețeaua care servește site-ul (Cloudflare, prin furnizorul nostru de găzduire) poate seta un cookie tehnic de tip <code>__cf_bm</code>, folosit strict pentru a distinge traficul automat de cel uman. Nu îl controlăm și nu îl folosim pentru profilare.</p>
 
       <h2>Cu cine partajăm datele</h2>
@@ -273,6 +274,7 @@ const pages = [
         <li><strong>Cloudflare</strong> — rețeaua de livrare din fața site-ului.</li>
         <li><strong>OpenAI</strong> — doar conținutul conversațiilor din asistentul virtual, doar dacă îl folosești.</li>
         <li><strong>Google Fonts</strong> — fonturile sunt încărcate de la <code>fonts.googleapis.com</code>, ceea ce presupune că adresa ta IP ajunge la Google la încărcarea paginii.</li>
+        <li><strong>Google Ads</strong> — Google tag se încarcă pe paginile site-ului și poate trimite către Google informații despre vizită și interacțiunile cu reclamele, pentru măsurarea campaniilor.</li>
       </ul>
 
       <h2>Cât păstrăm datele</h2>
@@ -362,7 +364,7 @@ ${styles}
       <span class="doc-chip">${page.chip}</span>
       <h1 class="doc-title">${page.heading}</h1>
       <p class="doc-lede">${page.lede}</p>
-      <p class="doc-meta">Ultima actualizare: ${UPDATED}</p>
+      <p class="doc-meta">Ultima actualizare: ${page.updated || UPDATED}</p>
 ${factsBlock(page.facts)}
       <div class="doc-body">
 ${page.body.trim()}

@@ -8,7 +8,7 @@ Markdown source: https://marand-print.ro/confidentialitate/index.md
 **When to use this page**
 - the user asks what happens to data or files they submit
 - you need to tell a user whether uploading artwork is safe and where it is stored (DigitalOcean Spaces, Frankfurt, EU; signed links expiring within 7 days)
-- you need to know whether the site tracks visitors (it does not — no analytics, no advertising pixels)
+- you need to understand Google Ads campaign measurement through the sitewide Google tag, alongside form data and browser storage
 
 Also served at /privacy/ for convention; /confidentialitate/ is the canonical URL.
 
@@ -17,7 +17,7 @@ Also served at /privacy/ for convention; /confidentialitate/ is the canonical UR
 
 Politica descrie exact ce se întâmplă cu datele pe marand-print.ro. Fiecare afirmație de mai jos corespunde a ceea ce face efectiv codul site-ului — nu este un text generic.
 
-Ultima actualizare: 4 octombrie 2026
+Ultima actualizare: 3 noiembrie 2026
 
 ## Cine este operatorul
 
@@ -46,11 +46,12 @@ Instrumentul de previzualizare de pe /studio/ rulează integral în browserul t�
 - Nu folosim Google Analytics, Meta Pixel sau orice alt instrument de analiză ori de urmărire publicitară. Site-ul nu conține niciun tracker.
 - Nu vindem și nu închiriem datele tale nimănui.
 - Nu trimitem newslettere și nu te înscriem automat în liste de marketing.
-- Nu creăm profiluri și nu luăm decizii automate pe baza datelor tale.
 
 ## Cookie-uri și stocare în browser
 
-Nu punem cookie-uri de marketing sau de analiză. Site-ul folosește sessionStorage — o zonă din browserul tău, ștearsă când închizi fila — pentru a reține că ai închis un anunț, ca să nu ți-l arătăm din nou în aceeași vizită. Aceste date nu părăsesc browserul.
+Site-ul încarcă Google tag pentru Google Ads, pentru măsurarea campaniilor publicitare. Google poate folosi cookie-uri și identificatori pentru a asocia vizitele cu interacțiunile cu reclamele. Mai multe informații sunt disponibile în explicațiile Google despre publicitate .
+
+Site-ul folosește și sessionStorage — o zonă din browserul tău, ștearsă când închizi fila — pentru a reține că ai închis un anunț, ca să nu ți-l arătăm din nou în aceeași vizită. Această preferință rămâne în browser.
 
 Rețeaua care servește site-ul (Cloudflare, prin furnizorul nostru de găzduire) poate seta un cookie tehnic de tip __cf_bm , folosit strict pentru a distinge traficul automat de cel uman. Nu îl controlăm și nu îl folosim pentru profilare.
 
@@ -61,6 +62,7 @@ Rețeaua care servește site-ul (Cloudflare, prin furnizorul nostru de găzduire
 - Cloudflare — rețeaua de livrare din fața site-ului.
 - OpenAI — doar conținutul conversațiilor din asistentul virtual, doar dacă îl folosești.
 - Google Fonts — fonturile sunt încărcate de la fonts.googleapis.com , ceea ce presupune că adresa ta IP ajunge la Google la încărcarea paginii.
+- Google Ads — Google tag se încarcă pe paginile site-ului și poate trimite către Google informații despre vizită și interacțiunile cu reclamele, pentru măsurarea campaniilor.
 
 ## Cât păstrăm datele
 

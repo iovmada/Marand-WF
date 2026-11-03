@@ -8,10 +8,10 @@
  * static markup. This script renders the same markup ahead of time; the
  * browser script now only binds behaviour to it.
  *
- * It also owns the favicon / manifest links in every page head, for the same
+ * It also owns the Google tag and favicon / manifest links in every page head, for the same
  * reason: 15 HTML files, one place to change them.
  *
- * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR THE NAV, FOOTER AND FAVICONS.
+ * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR THE NAV, FOOTER AND SHARED HEAD.
  * After editing anything below, run:  node scripts/build-shell.mjs
  * and commit the regenerated HTML alongside it.
  */
@@ -19,6 +19,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join, resolve } from "path";
+import { applyGoogleTag } from "./google-tag.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -339,6 +340,7 @@ for (const page of pages) {
   }
 
   html = applyFavicons(html, toRoute);
+  html = applyGoogleTag(html);
 
   if (html === original) {
     console.log(`  ok    ${page.file} (unchanged)`);
